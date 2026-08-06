@@ -1,17 +1,71 @@
-<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>水果行业日报 · 汇总</title>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>煜谦果报 · 水果行业看板</title>
 <style>
-body{font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif;background:#f9f9f7;color:#111;max-width:720px;margin:0 auto;padding:28px 18px;line-height:1.7}
-h1{font-size:24px}h1 span{font-size:15px;color:#666;font-weight:400}
-ul{list-style:none;padding:0}
-li{background:#fff;border:1px solid #e6e6e6;border-radius:12px;margin:8px 0;padding:14px 16px}
-a{text-decoration:none;color:#1a5fb4;font-size:15px}a:hover{text-decoration:underline}
-p{color:#666;font-size:13px}
-</style></head><body>
-<h1>🍎 水果行业日报 <span>· 历史汇总</span></h1>
-<p>点击查看任意一天的日报（手机 / 电脑均可打开，含图表与原文链接）</p>
-<ul><li><a href="2026.08.06%E6%B0%B4%E6%9E%9C%E8%A1%8C%E4%B8%9A%E6%97%A5%E6%8A%A5.html">🍎 2026.08.06 水果行业日报</a></li></ul>
-<p>由 Claude 自动生成 · 数据来源见各日报内原文链接</p>
-</body></html>
+  :root{
+    --bg:#f3f6f1; --card:#ffffff; --ink:#1a2b22; --sub:#5c6b63;
+    --gree:#2f7d4f; --gree2:#1f5c38; --line:#e2e8df; --shadow:0 6px 20px rgba(20,60,40,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
+    background:var(--bg); color:var(--ink); min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; padding:0 16px 48px;
+  }
+  header{ text-align:center; padding:48px 0 28px; }
+  header .logo{
+    font-size:15px; letter-spacing:2px; color:var(--gree); font-weight:600;
+    display:inline-block; padding:4px 14px; border:1px solid var(--gree); border-radius:20px; margin-bottom:14px;
+  }
+  header h1{ font-size:34px; font-weight:800; letter-spacing:3px; }
+  header p.sub{ margin-top:8px; color:var(--sub); font-size:14px; letter-spacing:1px; }
+  main{ width:100%; max-width:440px; display:flex; flex-direction:column; gap:16px; }
+  a.card{
+    display:flex; align-items:center; gap:16px; text-decoration:none; color:inherit;
+    background:var(--card); border-radius:18px; padding:20px; box-shadow:var(--shadow);
+    border:1px solid var(--line); transition:transform .15s ease, box-shadow .15s ease;
+  }
+  a.card:hover{ transform:translateY(-2px); box-shadow:0 10px 28px rgba(20,60,40,.16); }
+  a.card .icon{
+    flex:0 0 52px; width:52px; height:52px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+    background:linear-gradient(135deg,#eaf4ec,#d7eadc);
+  }
+  a.card .info{ flex:1; min-width:0; }
+  a.card h2{ font-size:19px; font-weight:700; }
+  a.card p{ margin-top:4px; color:var(--sub); font-size:13px; line-height:1.5; }
+  a.card .arrow{ flex:0 0 auto; color:var(--gree); font-size:22px; font-weight:700; }
+  footer{ margin-top:auto; padding-top:36px; color:#9aa89f; font-size:12px; letter-spacing:1px; }
+  footer .dot{ color:var(--gree); }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">煜谦果业</div>
+    <h1>煜谦果报</h1>
+    <p class="sub">水果行业 · 每日看板</p>
+  </header>
+  <main>
+    <a class="card" href="2026年8月6日水果行业日报.html?v=20260806">
+      <div class="icon">📰</div>
+      <div class="info">
+        <h2>水果行业日报</h2>
+        <p>2026年8月6日 · 9 大板块 · 国内外新闻汇总（含原文链接）</p>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+    <a class="card" href="财报.html?v=20260806">
+      <div class="icon">📊</div>
+      <div class="info">
+        <h2>水果行业财报</h2>
+        <p>国内外头部水果企业及种植产业财报速览 · 2026 年中报季</p>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+  </main>
+  <footer><span class="dot">●</span> 煜谦果报 · 每日更新 <span class="dot">●</span></footer>
+</body>
+</html>
