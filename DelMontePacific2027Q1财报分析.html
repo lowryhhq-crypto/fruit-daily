@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Del Monte Pacific 2027财年Q1财报分析</title>
+<style>
+  :root{
+    --bg:#f6f7f4; --card:#ffffff; --ink:#1a2b22; --sub:#5c6b63;
+    --line:#e4e8e2; --green:#1f7a3d; --green-bg:#e7f3ea;
+    --red:#c0392b; --red-bg:#fdecea; --amber:#b5791a; --amber-bg:#fdf3e2;
+    --blue:#2c5f8a; --blue-bg:#e9f1f8; --violet:#6b4fa0; --violet-bg:#efeaf8; --gray:#8a918d;
+    --shadow:0 1px 3px rgba(20,40,30,.06),0 4px 16px rgba(20,40,30,.05);
+    --radius:14px;
+    --c26:#2a78d6; --c25:#aebbc7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121613; --card:#1b211c; --ink:#e8efe9; --sub:#9aa79f;
+      --line:#2c362f; --green:#6fd08f; --green-bg:#16301f;
+      --red:#ff8f84; --red-bg:#3a1d1a; --amber:#e3b262; --amber-bg:#3a2e15;
+      --blue:#8cbce0; --blue-bg:#16283a; --violet:#b39df0; --violet-bg:#241b3a; --gray:#7d8981;
+      --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+      --c26:#3987e5; --c25:#5a6a78;
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.65; padding:24px 16px 60px;
+  }
+  .wrap{max-width:1020px; margin:0 auto;}
+  header{margin-bottom:22px;}
+  .kicker{color:var(--green); font-weight:700; font-size:13px; letter-spacing:.12em;}
+  h1{font-size:27px; font-weight:800; margin:6px 0 6px; letter-spacing:-.01em;}
+  .meta{color:var(--sub); font-size:13px;}
+  .meta .dot{margin:0 8px; opacity:.5;}
+
+  .summary{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 18px; margin:16px 0 10px; font-size:14.5px;
+  }
+  .summary b{color:var(--green);}
+  .summary .tag{display:inline-block; padding:1px 9px; border-radius:20px; font-size:12px; font-weight:600; margin:0 2px;}
+  .tag.up{background:var(--green-bg); color:var(--green);}
+  .tag.down{background:var(--red-bg); color:var(--red);}
+  .tag.warn{background:var(--amber-bg); color:var(--amber);}
+  .tag.blue{background:var(--blue-bg); color:var(--blue);}
+  .tags{margin-top:10px; display:flex; flex-wrap:wrap; gap:6px;}
+
+  section{margin:34px 0;}
+  h2{font-size:20px; font-weight:800; display:flex; align-items:center; gap:9px; margin-bottom:16px; padding-bottom:9px; border-bottom:2px solid var(--line);}
+  h2 .bar{width:5px; height:20px; border-radius:3px; background:var(--green); display:inline-block;}
+  h2 .cnt{font-size:12px; color:var(--sub); font-weight:600;}
+  h3{font-size:15px; font-weight:700; margin:0 0 12px;}
+
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px;}
+  .tile{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:14px 16px;
+  }
+  .tile .lab{font-size:12.5px; color:var(--sub); font-weight:600;}
+  .tile .val{font-size:24px; font-weight:800; margin:4px 0 2px; letter-spacing:-.01em;}
+  .tile .delta{font-size:12.5px; font-weight:700; display:inline-flex; align-items:center; gap:4px;}
+  .delta.up{color:var(--green);}
+  .delta.down{color:var(--red);}
+  .delta.flat{color:var(--gray);}
+  .tile .sub2{font-size:11.5px; color:var(--sub); margin-top:3px;}
+
+  .chart-box{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 18px 14px; margin-top:14px;
+  }
+  .chart-cap{font-size:13px; color:var(--sub); margin:8px 2px 0;}
+  .chart-cap b{color:var(--ink);}
+  .drow{display:flex; align-items:center; gap:10px; margin:9px 0;}
+  .dlabel{width:92px; flex:none; text-align:right; font-size:13px; color:var(--sub); font-weight:600;}
+  .dtrack{position:relative; flex:1; height:22px; background:
+    linear-gradient(to right, transparent calc(50% - .5px), var(--line) 50%, transparent calc(50% + .5px));}
+  .dbar{position:absolute; top:1px; height:20px; border-radius:4px; min-width:2px;}
+  .dbar.up{background:var(--green);}
+  .dbar.down{background:var(--red);}
+  .dval{width:64px; flex:none; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums;}
+  .dval.up{color:var(--green);}
+  .dval.down{color:var(--red);}
+  .note-star{font-size:11px; color:var(--amber); font-weight:600;}
+
+  .cols-row{display:flex; align-items:flex-end; justify-content:space-around; gap:18px; padding:10px 4px 0; min-height:250px;}
+  .colg{display:flex; flex-direction:column; align-items:center; flex:1; min-width:0;}
+  .colg .pair{display:flex; align-items:flex-end; gap:8px; height:210px;}
+  .col{width:44px; border-radius:4px 4px 0 0; position:relative; height:0;}
+  .col.c26{background:var(--c26);}
+  .col.c25{background:var(--c25);}
+  .col .v{position:absolute; bottom:calc(100% + 4px); left:50%; transform:translateX(-50%);
+    font-size:11.5px; font-weight:700; color:var(--ink); white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .colg .gname{font-size:13px; font-weight:700; margin-top:8px; text-align:center;}
+  .colg .gchg{font-size:11.5px; font-weight:600; margin-top:2px;}
+  .colg .gchg.up{color:var(--green);}
+  .colg .gchg.down{color:var(--red);}
+  .colg .gchg.flat{color:var(--gray);}
+  .legend{display:flex; flex-wrap:wrap; gap:14px; font-size:12.5px; color:var(--sub); margin-top:10px;}
+  .legend .item{display:flex; align-items:center; gap:6px;}
+  .legend .sw{width:12px; height:12px; border-radius:3px; display:inline-block;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 16px 14px; display:flex; flex-direction:column; gap:8px;
+  }
+  .card .top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+  .card .name{font-weight:800; font-size:15.5px;}
+  .card .code{font-size:12px; color:var(--sub); font-weight:500;}
+  .badge{font-size:11px; font-weight:700; padding:2px 9px; border-radius:20px; white-space:nowrap;}
+  .badge.down{background:var(--red-bg); color:var(--red);}
+  .badge.up{background:var(--green-bg); color:var(--green);}
+  .badge.warn{background:var(--amber-bg); color:var(--amber);}
+  .badge.blue{background:var(--blue-bg); color:var(--blue);}
+  .card .kpis{display:flex; flex-wrap:wrap; gap:6px;}
+  .kpi{background:var(--bg); border:1px solid var(--line); border-radius:9px; padding:4px 9px; font-size:12.5px; color:var(--sub);}
+  .kpi b{color:var(--ink); font-size:13px;}
+  .kpi b.up{color:var(--green);}
+  .kpi b.down{color:var(--red);}
+  .card .note{font-size:13px; color:var(--sub); flex:1;}
+  .card .note b{color:var(--ink); font-weight:600;}
+  .card ul{margin:2px 0 0 18px; font-size:13px; color:var(--sub); display:flex; flex-direction:column; gap:4px;}
+  .card ul b{color:var(--ink); font-weight:600;}
+
+  .tbl-wrap{overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow);}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:640px;}
+  th{text-align:left; padding:11px 14px; font-size:12.5px; color:var(--sub); border-bottom:2px solid var(--line); background:var(--bg);}
+  td{padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  td b{font-weight:700;}
+  .num{font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .up{color:var(--green);} .down{color:var(--red);} .warn{color:var(--amber);} .flat{color:var(--gray);}
+
+  .hint{background:var(--blue-bg); border:1px solid var(--line); border-radius:12px; padding:12px 16px;
+    font-size:12.5px; color:var(--sub); margin-top:14px;}
+  .hint b{color:var(--ink);}
+  .hint.warnbox{background:var(--amber-bg);}
+
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media(max-width:720px){.two{grid-template-columns:1fr;}}
+  .good{border:1px solid var(--green); background:var(--green-bg);}
+  .bad{border:1px solid var(--red); background:var(--red-bg);}
+  .poscard{border-radius:var(--radius); padding:16px 16px 14px; display:flex; flex-direction:column; gap:9px;}
+  .poscard h3{display:flex; align-items:center; gap:8px;}
+  .poscard ul{margin:0 0 0 18px; display:flex; flex-direction:column; gap:7px; font-size:13.5px;}
+  .poscard .goth{background:rgba(255,255,255,.55); border-radius:10px; padding:11px 13px;}
+  @media (prefers-color-scheme: dark){ .poscard .goth{background:rgba(255,255,255,.05);} }
+  .poscard .goth b{font-weight:700;}
+
+  .verdict{
+    background:linear-gradient(135deg,var(--green-bg),var(--blue-bg)); border:1px solid var(--line);
+    border-radius:var(--radius); padding:16px 18px; margin-top:14px; font-size:14px;
+  }
+  .verdict b{color:var(--green);}
+  .verdict .watch{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
+  .watch .k{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:3px 11px; font-size:12px; font-weight:600; color:var(--ink);}
+
+  footer{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); color:var(--gray); font-size:12px;}
+  footer b{color:var(--sub);}
+  footer a{color:var(--blue); word-break:break-all;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">DEL MONTE PACIFIC · FY2027 Q1 财报解读</div>
+    <h1>Del Monte Pacific 2027财年第一季度财报深度分析</h1>
+    <div class="meta">SGX: D03 · 财报期间：2026-05-01 至 2026-07-31（2026-09-09 盘后发布）<span class="dot">·</span>分析整理：2026-09-14<span class="dot">·</span>单位：美元（另标注者除外）<span class="dot">·</span>本季报表<b>未经审计、亦未经审计师审阅</b></div>
+  </header>
+
+  <div class="summary">
+    <b>核心评价</b>：<b>经营层面交出了近年最好的一份季报，资本结构层面同时在打一场硬仗。</b>Q1 营收 $2.221 亿（+9%）、净利 $1,610 万（<b>+192.6%，接近 3 倍</b>）、毛利率 33.7%（+120bps）、净负债率由 6.9x 改善至 5.1x。驱动力非常清晰：<b>国际业务（尤其中国）鲜菠萝出口 +20.3%</b>、定价与产品结构改善。但同时，公司<b>首次公开启动与主要债权人的整体债务重组谈判</b>，净资本亏绌 $578.5 万（$5.785 亿）、总负债约 US$12 亿、流动负债超流动资产 $6.097 亿，并明确在亏绌消除前<b>不分红</b>。一句话：<b>主业在赚钱，母公司资产负债表在流血。</b>
+    <div class="tags">
+      <span class="tag up">净利 +192.6%（近 3 倍）</span>
+      <span class="tag up">鲜菠萝出口 +20.3%</span>
+      <span class="tag up">中国进口鲜菠萝份额 74%</span>
+      <span class="tag down">净资本亏绌 $5.785 亿</span>
+      <span class="tag warn">已启动债权人重组谈判</span>
+      <span class="tag warn">经营现金流 -25.0%</span>
+    </div>
+  </div>
+
+  <!-- ============ 一、整体财务表现 ============ -->
+  <section>
+    <h2><span class="bar"></span>一、整体财务表现 <span class="cnt">利润与负债率同步大幅改善</span></h2>
+
+    <div class="tiles">
+      <div class="tile"><div class="lab">营收 Turnover</div><div class="val">$2.221亿</div><span class="delta up">▲ +9.0%</span>
+        <div class="sub2">国际 +21.4%，菲律宾 -6.9%（美元口径）</div></div>
+      <div class="tile"><div class="lab">毛利润</div><div class="val">$7,473万</div><span class="delta up">▲ +13.0%</span>
+        <div class="sub2">毛利率 33.7%，+120bps</div></div>
+      <div class="tile"><div class="lab">EBITDA</div><div class="val">$4,927万</div><span class="delta up">▲ +25.7%</span>
+        <div class="sub2">营业利润率 18.5%（+0.9pp）</div></div>
+      <div class="tile"><div class="lab">营业利润</div><div class="val">$4,098万</div><span class="delta up">▲ +14.1%</span>
+        <div class="sub2">三大区域分部合计 +18.6%</div></div>
+      <div class="tile"><div class="lab">净利润</div><div class="val">$1,612万</div><span class="delta up">▲ +192.6%</span>
+        <div class="sub2">净利率 7.3%（去年 2.7%）</div></div>
+      <div class="tile"><div class="lab">每股收益</div><div class="val">0.83 美分</div><span class="delta up">▲ +196.4%</span>
+        <div class="sub2">去年 0.28 美分</div></div>
+    </div>
+
+    <div class="chart-box">
+      <h3>关键指标同比变动（FY2027 Q1 vs FY2026 Q1）</h3>
+      <div class="drow"><div class="dlabel">每股收益</div><div class="dtrack"><div class="dbar up" data-v="196.4"></div></div><div class="dval up">+196.4%</div></div>
+      <div class="drow"><div class="dlabel">净利润</div><div class="dtrack"><div class="dbar up" data-v="192.6"></div></div><div class="dval up">+192.6%</div></div>
+      <div class="drow"><div class="dlabel">EBITDA</div><div class="dtrack"><div class="dbar up" data-v="25.7"></div></div><div class="dval up">+25.7%</div></div>
+      <div class="drow"><div class="dlabel">营业利润</div><div class="dtrack"><div class="dbar up" data-v="14.1"></div></div><div class="dval up">+14.1%</div></div>
+      <div class="drow"><div class="dlabel">毛利润</div><div class="dtrack"><div class="dbar up" data-v="13.0"></div></div><div class="dval up">+13.0%</div></div>
+      <div class="drow"><div class="dlabel">营收</div><div class="dtrack"><div class="dbar up" data-v="9.0"></div></div><div class="dval up">+9.0%</div></div>
+      <div class="drow"><div class="dlabel">资本支出</div><div class="dtrack"><div class="dbar up" data-v="8.4"></div></div><div class="dval up">+8.4%</div></div>
+      <div class="drow"><div class="dlabel">经营现金流</div><div class="dtrack"><div class="dbar down" data-v="25.0"></div></div><div class="dval down">-25.0%</div></div>
+      <div class="chart-cap">绿色 = 同比改善，红色 = 同比承压，条形长度按绝对值成比例（每股收益 +196.4% 为满幅基准）。<span class="note-star">※ 净利 +192.6% 建立在去年低基数（$550 万）之上；且经营现金流转弱，与利润方向相反，需留意。</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 二、分区域 ============ -->
+  <section>
+    <h2><span class="bar"></span>二、分区域表现 <span class="cnt">国际强、菲律宾弱、欧洲爆量</span></h2>
+
+    <div class="grid">
+      <div class="card">
+        <div class="top"><div><div class="name">① 亚太 Asia Pacific</div><div class="code">营收占比 87.9%</div></div><span class="badge up">营业利润 +17.3%</span></div>
+        <div class="kpis">
+          <span class="kpi">营收 <b class="up">$1.951亿 (+5.8%)</b></span>
+          <span class="kpi">营业利润 <b class="up">$4,759万 (+17.3%)</b></span>
+          <span class="kpi">利润率 <b>24.4%</b></span>
+        </div>
+        <div class="note">增长来自<b>对华、对韩出口量提升</b>与 S&amp;W Deluxe 菠萝定价改善，抵消了菲律宾本土销售下滑。</div>
+        <ul>
+          <li>菲律宾：$8,260 万，<b>本币 +2.2% 但美元口径 -6.9%</b>（比索贬值拖累）。</li>
+          <li>销量偏软，公司归因于<b>美伊战争引发的经济波动</b>压制消费。</li>
+          <li>价格上调、贸易折扣与促销费下降部分对冲了销量下滑。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="top"><div><div class="name">② 欧洲 Europe</div><div class="code">营收占比 8.8%</div></div><span class="badge up">营收 +71.0%</span></div>
+        <div class="kpis">
+          <span class="kpi">营收 <b class="up">$1,950万 (+71.0%)</b></span>
+          <span class="kpi">营业利润 <b class="up">$413万 (+57.3%)</b></span>
+          <span class="kpi">利润率 <b>21.2%</b></span>
+        </div>
+        <div class="note">增长几乎全部来自<b>罐装/包装菠萝销售增加</b>，是本次增幅最大的区域。</div>
+        <ul>
+          <li>体量仍小（不足集团 9%），对整体贡献有限。</li>
+          <li>包装菠萝出口在全球口径增长 23.3%，欧洲是其中一环。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="top"><div><div class="name">③ 美洲 Americas</div><div class="code">营收占比 3.4%</div></div><span class="badge down">营收 -6.0%</span></div>
+        <div class="kpis">
+          <span class="kpi">营收 <b class="down">$748万 (-6.0%)</b></span>
+          <span class="kpi">营业利润 <b class="down">$145万 (-12.4%)</b></span>
+          <span class="kpi">利润率 <b>19.4%</b></span>
+        </div>
+        <div class="note">公司解释为<b>分部间分摊减少</b>导致各品类销售全面下滑，属结构性而非需求性下滑。</div>
+        <ul>
+          <li>该区域规模已很小，2025 年 5 月起美国业务（DMFHL）已<b>去合并</b>，本期同比为<b>持续经营口径</b>。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <h3>分区域营收对比 <span style="font-size:12px;color:var(--sub);font-weight:600;">单位：亿美元</span></h3>
+      <div class="legend">
+        <span class="item"><span class="sw" style="background:var(--c26)"></span>FY2027 Q1</span>
+        <span class="item"><span class="sw" style="background:var(--c25)"></span>FY2026 Q1</span>
+      </div>
+      <div class="cols-row" data-max="200">
+        <div class="colg">
+          <div class="pair">
+            <div class="col c26" data-v="195.071" data-max="200" data-label="1.951"></div>
+            <div class="col c25" data-v="184.361" data-max="200"></div>
+          </div>
+          <div class="gname">亚太</div><div class="gchg up">+5.8%</div>
+        </div>
+        <div class="colg">
+          <div class="pair">
+            <div class="col c26" data-v="19.503" data-max="200" data-label="0.195"></div>
+            <div class="col c25" data-v="11.407" data-max="200"></div>
+          </div>
+          <div class="gname">欧洲</div><div class="gchg up">+71.0%</div>
+        </div>
+        <div class="colg">
+          <div class="pair">
+            <div class="col c26" data-v="7.479" data-max="200" data-label="0.075"></div>
+            <div class="col c25" data-v="7.953" data-max="200"></div>
+          </div>
+          <div class="gname">美洲</div><div class="gchg down">-6.0%</div>
+        </div>
+      </div>
+      <div class="chart-cap"><b>区域结构</b>：亚太一家独大（87.9%），欧洲是增量最猛的小分部，美洲已收缩至零头。三大区域营业利润合计 $5,317 万（+18.6%），扣总部未分摊管理费用 $900 万及其他费用 $319 万后，集团营业利润 $4,098 万。</div>
+    </div>
+  </section>
+
+  <!-- ============ 三、分品类 —— 水果视角 ============ -->
+  <section>
+    <h2><span class="bar"></span>三、分品类：<b>鲜菠萝是唯一量价齐升的引擎</b> <span class="cnt">按水果行业视角重点看 Premium Fresh Fruit</span></h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>品类</th><th>FY2027 Q1</th><th>FY2026 Q1</th><th>同比</th><th>占营收</th><th>解读</th></tr>
+        <tr>
+          <td><b>Premium Fresh Fruit</b><br><span class="flat">优质鲜果（鲜菠萝）</span></td>
+          <td class="num"><b>$7,093万</b></td><td class="num">$5,898万</td>
+          <td class="num up"><b>+20.3%</b></td><td class="num">31.9%</td>
+          <td>唯一双位数增长的<b>核心水果业务</b>，S&amp;W Deluxe 品种驱动</td>
+        </tr>
+        <tr>
+          <td>Meals &amp; Meal Enhancers<br><span class="flat">餐饮配料（番茄酱等）</span></td>
+          <td class="num">$4,962万</td><td class="num">$5,008万</td>
+          <td class="num down">-0.9%</td><td class="num">22.3%</td>
+          <td>欧美萎缩、亚太微降，整体基本走平</td>
+        </tr>
+        <tr>
+          <td>Others<br><span class="flat">其他</span></td>
+          <td class="num">$4,402万</td><td class="num">$3,564万</td>
+          <td class="num up">+23.5%</td><td class="num">19.8%</td>
+          <td>增速最快，但品类构成披露有限</td>
+        </tr>
+        <tr>
+          <td>Beverages<br><span class="flat">饮料（果汁等）</span></td>
+          <td class="num">$3,967万</td><td class="num">$4,043万</td>
+          <td class="num down">-1.9%</td><td class="num">17.9%</td>
+          <td>菲律宾本土饮料走弱</td>
+        </tr>
+        <tr>
+          <td>Snacking &amp; Desserts<br><span class="flat">零食甜点</span></td>
+          <td class="num">$1,781万</td><td class="num">$1,860万</td>
+          <td class="num down">-4.3%</td><td class="num">8.0%</td>
+          <td>美国去合并 + 欧洲骤降</td>
+        </tr>
+        <tr>
+          <td><b>合计</b></td><td class="num"><b>$2.221亿</b></td><td class="num">$2.037亿</td>
+          <td class="num up"><b>+9.0%</b></td><td class="num">100%</td><td>—</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="hint"><b>对水果行业的含义</b>：这家公司<b>四个品类里只有鲜菠萝在真正增长</b>，其余全部走平或下滑。也就是说，本季 +9% 的营收增长、+13% 的毛利增长，<b>几乎全部由鲜菠萝一条腿撑起</b>——这既是它的亮点，也是它的单点风险：一旦菠萝供应（厄尔尼诺）或价格出问题，增长引擎就会熄火。公司也在展望中明确点名"需主动缓解厄尔尼诺对菠萝供应与品质的影响"。</div>
+
+    <div class="chart-box">
+      <h3>分品类营收对比 <span style="font-size:12px;color:var(--sub);font-weight:600;">单位：亿美元</span></h3>
+      <div class="legend">
+        <span class="item"><span class="sw" style="background:var(--c26)"></span>FY2027 Q1</span>
+        <span class="item"><span class="sw" style="background:var(--c25)"></span>FY2026 Q1</span>
+      </div>
+      <div class="cols-row" data-max="75">
+        <div class="colg">
+          <div class="pair">
+            <div class="col c26" data-v="70.929" data-max="75" data-label="0.709"></div>
+            <div class="col c25" data-v="58.979" data-max="75"></div>
+          </div>
+          <div class="gname">优质鲜果</div><div class="gchg up">+20.3%</div>
+        </div>
+        <div class="colg">
+          <div class="pair">
+            <div class="col c26" data-v="49.623" data-max="75" data-label="0.496"></div>
+            <div class="col c25" data-v="50.079" data-max="75"></div>
+          </div>
+          <div class="gname">餐饮配料</div><div class="gchg down">-0.9%</div>
+        </div>
+        <div class="colg">
+          <div class="pair">
+            <div class="col c26" data-v="44.021" data-max="75" data-label="0.440"></div>
+            <div class="col c25" data-v="35.636" data-max="75"></div>
+          </div>
+          <div class="gname">其他</div><div class="gchg up">+23.5%</div>
+        </div>
+        <div class="colg">
+          <div class="pair">
+            <div class="col c26" data-v="39.674" data-max="75" data-label="0.397"></div>
+            <div class="col c25" data-v="40.430" data-max="75"></div>
+          </div>
+          <div class="gname">饮料</div><div class="gchg down">-1.9%</div>
+        </div>
+        <div class="colg">
+          <div class="pair">
+            <div class="col c26" data-v="17.806" data-max="75" data-label="0.178"></div>
+            <div class="col c25" data-v="18.597" data-max="75"></div>
+          </div>
+          <div class="gname">零食甜点</div><div class="gchg down">-4.3%</div>
+        </div>
+      </div>
+      <div class="chart-cap"><b>品类对比</b>：优质鲜果（鲜菠萝）已是第一大品类，且是唯一显著增长的品类；其余四类合计同比基本持平。</div>
+    </div>
+  </section>
+
+  <!-- ============ 四、中国市场是最大看点 ============ -->
+  <section>
+    <h2><span class="bar"></span>四、中国市场：本次财报最大的增量来源 <span class="cnt">份额 74% · 渠道连下三城</span></h2>
+
+    <div class="tiles">
+      <div class="tile"><div class="lab">国际业务营收</div><div class="val">$1.18亿</div><span class="delta up">▲ +21.4%</span>
+        <div class="sub2">鲜菠萝 +20.3%，包装菠萝出口 +23.3%</div></div>
+      <div class="tile"><div class="lab">北亚进口鲜菠萝份额</div><div class="val">54%</div>
+        <div class="sub2">S&amp;W 稳居第一</div></div>
+      <div class="tile"><div class="lab">中国进口鲜菠萝份额</div><div class="val">74%</div>
+        <div class="sub2">截至 2026 年 6 月</div></div>
+      <div class="tile"><div class="lab">韩国 / 日本份额</div><div class="val">43% / 24%</div>
+        <div class="sub2">同期口径</div></div>
+    </div>
+
+    <div class="grid" style="margin-top:14px;">
+      <div class="card">
+        <div class="top"><div><div class="name">佳农（Goodfarmer）· 山姆会员店</div><div class="code">中国 · S&amp;W Deluxe 鲜菠萝合作分销商</div></div><span class="badge up">打破垄断</span></div>
+        <div class="note">佳农作为 S&amp;W Deluxe 鲜菠萝在中国的合作分销商，<b>在山姆会员店上线鲜切菠萝，打破了竞争对手此前对该渠道的垄断</b>。</div>
+        <ul>
+          <li>这是本次财报中<b>唯一被点名表扬的中国渠道伙伴</b>。</li>
+          <li>对国内水果行业的信号：<b>山姆鲜切菠萝的供应格局已被改写</b>。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="top"><div><div class="name">鲜丰水果（Xianfeng）· 社区店升级</div><div class="code">中国 · 零售终端</div></div><span class="badge blue">品牌化包装</span></div>
+        <div class="note">鲜丰正在<b>升级社区门店以强化"便利 + 高端"定位</b>，鲜切菠萝已采用<b>品牌化、高品质包装</b>呈现。</div>
+        <ul>
+          <li>说明 S&amp;W 正从"卖原料"转向<b>借助中国连锁鲜果渠道做品牌</b>。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="top"><div><div class="name">Eachtake · 二线城市扩张</div><div class="code">中国 · S&amp;W 鲜菠萝分销商</div></div><span class="badge blue">下沉二线</span></div>
+        <div class="note">分销商 Eachtake 扩大在<b>新余楼、中百、淘小胖</b>等区域零售的铺货，<b>强化二线城市覆盖</b>与 S&amp;W 品牌曝光。</div>
+        <ul>
+          <li>渠道从一线会员店向区域连锁、二线市场延伸。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="top"><div><div class="name">菲律宾 &amp; 香港的其他动作</div><div class="code">区域拓展</div></div><span class="badge blue">渠道复制</span></div>
+        <div class="note">S&amp;W Deluxe 鲜菠萝在<b>马尼拉 5 家 S&amp;R 会员店上市，2 个月内因反响热烈扩至另外 15 家</b>。</div>
+        <ul>
+          <li>香港：麦当劳 × Chiikawa 夏季联名，<b>250+ 门店</b>选用 S&amp;W 水果鸡尾酒与菠萝片。</li>
+          <li>渠道验证后可复制到中国，是后续看点。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hint"><b>份额数据口径</b>：北亚进口鲜菠萝份额来源为 CY2021–2023 年 <i>Asiafruit Congress Statistical Handbook</i>，CY2024–2026 年二季度为进口国海关数据；中国 74%、北亚 54%、韩国 43%、日本 24% 均为<b>截至 2026 年 6 月</b>的口径。菲律宾本土份额来自 <b>Nielsen（1Q FY2027，2026 年 5–7 月）</b>：即饮果汁 38.8%（-3.6pts，品类 +4.9%）、番茄酱 83.8%（-0.5pt）、意面酱 42.6%（持平，品类 -2.0%）。</div>
+  </section>
+
+  <!-- ============ 五、资本结构 —— 本次财报最重的部分 ============ -->
+  <section>
+    <h2><span class="bar" style="background:var(--red)"></span>五、资本结构与债务重组：<b>利润之外的另一条主线</b></h2>
+
+    <div class="tiles">
+      <div class="tile"><div class="lab">净债务</div><div class="val">$9.697亿</div><span class="delta up">▼ -5.0%</span>
+        <div class="sub2">较 2026-04-30 环比减少 $730 万</div></div>
+      <div class="tile"><div class="lab">净债务 / LTM 调整后 EBITDA</div><div class="val">5.1x</div><span class="delta up">▼ 由 6.9x 改善</span>
+        <div class="sub2">杠杆明显下降</div></div>
+      <div class="tile"><div class="lab">净资本亏绌</div><div class="val down">-$5.785亿</div><span class="delta up">▲ 环比改善 $1,130 万</span>
+        <div class="sub2">2026-04-30 为 -$5.898 亿</div></div>
+      <div class="tile"><div class="lab">总负债</div><div class="val down">约 $12亿</div>
+        <div class="sub2">管理层明示：仅靠 DMPI 自身盈利不足以覆盖</div></div>
+      <div class="tile"><div class="lab">流动负债超流动资产</div><div class="val down">$6.097亿</div>
+        <div class="sub2">主因历史上本地合作银行提供的循环贷款</div></div>
+      <div class="tile"><div class="lab">分红</div><div class="val down">不派发</div>
+        <div class="sub2">资本亏绌消除前不分红（FY2024/FY2025/FY2026 均未派）</div></div>
+    </div>
+
+    <div class="chart-box">
+      <h3>重组谈判：公司披露的三条主线</h3>
+      <ul style="margin:0 0 0 18px; display:flex; flex-direction:column; gap:7px; font-size:13.5px;">
+        <li><b>启动与主要债权人及其他利益相关方的整体重组磋商</b>，并聘请外部财务顾问搭建全面框架。</li>
+        <li>框架聚焦三件事：① 缓解<b>近期流动性与到期压力</b>；② 强化 <b>DMPI（菲律宾主体）的资产负债表与现金创造能力</b>；③ 建立<b>可持续的集团资本结构</b>。</li>
+        <li>管理层明确：<b>重组不依赖单一融资或孤立交易</b>，需要"债务重组 + 运营改善 + 资产变现 + 股东支持 + 其他资本手段"的组合；<b>单靠股权融资无法让权益转正</b>。</li>
+        <li>正在<b>探索处置部分资产</b>以简化架构、补充流动性（需取得包括小股东在内的相应批准）。</li>
+      </ul>
+      <div class="chart-cap">已完成的一笔：<b>2026-06-04</b>，间接子公司 DMPL India Limited（毛里求斯）行使看跌期权，处置所持 Sundrop Brands 剩余 <b>188 万股</b>，净回笼约 <b>US$1,330 万</b>，用于营运资金与偿债。</div>
+    </div>
+
+    <div class="hint warnbox" style="background:var(--amber-bg)"><b>亏绌的根源要说清楚</b>：这笔 -$5.785 亿不是经营亏损造成的，而是 <b>FY2025 对美国业务（DMFHL 等）资产的大额减记（约 US$7.03 亿）</b>留下的历史包袱。公司自己在报告里强调："合并层面的资本亏绌<b>不能完全反映 DMPL 核心菲律宾业务的财务实力与经营能力</b>"——这话有道理，但也紧接着承认："<b>仅靠 DMPI 自身表现，不足以覆盖集团 US$12 亿的总负债或母公司层面的负权益</b>"。<b>两句都要读，不能只读前一句。</b></div>
+  </section>
+
+  <!-- ============ 六、成本与现金流 ============ -->
+  <section>
+    <h2><span class="bar"></span>六、成本结构与现金流 <span class="cnt">毛利率改善 · 现金流走弱</span></h2>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>占营收比重</th><th>FY2027 Q1</th><th>FY2026 Q1</th><th>变动</th><th>说明</th></tr>
+        <tr><td>销售成本 COGS</td><td class="num">66.3%</td><td class="num">67.5%</td><td class="up">-1.2pp</td><td>定价改善 + 比索贬值使 DMPI 比索成本折算更有利</td></tr>
+        <tr><td>分销与销售费用</td><td class="num">8.6%</td><td class="num">9.5%</td><td class="up">-0.9pp</td><td>菲律宾市场广告促销投放节奏所致</td></tr>
+        <tr><td>管理费用 G&amp;A</td><td class="num">5.1%</td><td class="num">5.4%</td><td class="up">-0.3pp</td><td>占比下降因营收变大，<b>绝对额实际上升</b>（薪酬增加）</td></tr>
+        <tr><td>其他经营费用</td><td class="num">1.4%</td><td class="num">-0.1%</td><td class="down">转正</td><td>杂项预提增加</td></tr>
+      </table>
+    </div>
+    <div class="tbl-wrap" style="margin-top:14px;">
+      <table>
+        <tr><th>现金流项目</th><th>FY2027 Q1</th><th>FY2026 Q1</th><th>同比</th><th>说明</th></tr>
+        <tr><td>经营现金流</td><td class="num">$5,757万</td><td class="num">$7,682万</td><td class="down">-25.0%</td><td><b>主因国际销售增长带来的应收账款增加</b>——利润在涨、回款在慢</td></tr>
+        <tr><td>资本支出</td><td class="num">$4,710万</td><td class="num">$4,345万</td><td class="up">+8.4%</td><td>经营现金仍可覆盖资本开支（结余约 $1,048 万）</td></tr>
+        <tr><td>折旧摊销</td><td class="num">$4,957万</td><td class="num">$4,834万</td><td class="down">-2.5%</td><td>生物资产（Bearer Plants）折旧增加，源于本季采收量上升</td></tr>
+      </table>
+    </div>
+    <div class="hint"><b>要盯的一处背离</b>：净利 +192.6%，但经营现金流 <b>-25.0%</b>。公司归因于国际销售增长推高应收账款——在正常年份这属扩张期的自然现象，但在<b>流动性本就紧张、正在和债权人谈判</b>的当下，「利润好看、现金变紧」这个组合需要持续跟踪。本季经营现金 $5,757 万仅能勉强覆盖 $4,710 万的资本开支。</div>
+  </section>
+
+  <!-- ============ 七、总结与风险 ============ -->
+  <section>
+    <h2><span class="bar"></span>七、总结与风险评估</h2>
+    <div class="two">
+      <div class="poscard good">
+        <h3>✅ 优势 / 积极因素</h3>
+        <ul>
+          <li><b>主业盈利能力真实改善</b>：毛利率 +120bps、EBITDA +25.7%、营业利润 +14.1%，且是<b>靠定价与产品结构</b>而非一次性收益。</li>
+          <li><b>鲜菠萝是硬增长</b>：+20.3%，中国份额 74% 且渠道持续突破（山姆鲜切、社区店、二线城市）。</li>
+          <li><b>杠杆在降</b>：净债务/LTM EBITDA 由 6.9x 降至 5.1x，净债环比再减 $730 万。</li>
+          <li><b>亏绌环比收窄</b> $1,130 万，并已通过处置 Sundrop Brands 股权回笼 $1,330 万。</li>
+          <li>管理层明确 FY2027 <b>维持盈利</b>，且本季净利<b>符合此前指引</b>。</li>
+        </ul>
+      </div>
+      <div class="poscard bad">
+        <h3>⚠️ 风险 / 关注点</h3>
+        <ul>
+          <li><b>资本结构是最大风险</b>：总负债约 $12 亿、净资本亏绌 $5.785 亿、流动负债超流动资产 $6.097 亿。重组谈判结果<b>高度不确定</b>。</li>
+          <li><b>单腿增长</b>：五个品类里只有鲜菠萝真正在长，其余走平或下滑，<b>增长集中度极高</b>。</li>
+          <li><b>厄尔尼诺</b>：公司自己点名将影响 FY2027 下半年菠萝供应与品质。</li>
+          <li><b>美伊战争推高成本</b>：燃料、化肥、马口铁价格波动已在压制成本端。</li>
+          <li><b>利润与现金流背离</b>：净利 +192.6% vs 经营现金流 -25.0%。</li>
+          <li><b>菲律宾本土走弱</b>：美元口径 -6.9%，消费受经济波动压制。</li>
+          <li><b>权益转正无捷径</b>：管理层自认单靠股权融资不够，意味着重组过程可能涉及<b>资产出售或股东层面的稀释性安排</b>。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict">
+      <b>综合评价</b>：这份季报应当<b>拆成两张报表读</b>。<b>损益表</b>是一份好成绩单——鲜菠萝出口带动营收 +9%、净利近 3 倍、毛利率与杠杆率同步改善，中国市场 74% 的份额和接连拿下的渠道（山姆鲜切、鲜丰、二线城市）都说明它在中国的生意是真的在往上走。<b>资产负债表</b>则是一份仍在急诊的报告——$5.785 亿净资本亏绌、$12 亿总负债、已启动的债权人重组谈判，且管理层亲口承认"单靠 DMPI 盈利不够、单靠股权融资也不够"。对水果行业观察者而言，<b>它的经营面值得跟踪（尤其是中国鲜菠萝的渠道打法），但它的股票不是一个可以用常规估值框架讨论的标的</b>，重组路径（债务展期 / 资产出售 / 股东输血）才是决定股东结局的变量。
+      <div class="watch">
+        <span class="k">🔍 债权人重组框架的落地条件</span>
+        <span class="k">🔍 资产处置的具体标的与对价</span>
+        <span class="k">🔍 厄尔尼诺对 FY2027 下半年菠萝供应</span>
+        <span class="k">🔍 中国鲜切菠萝渠道的复制进度</span>
+        <span class="k">🔍 应收账款能否回笼、经营现金流修复</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <b>数据来源（原文）</b>：Del Monte Pacific Limited《Management Discussion and Analysis — First Quarter Ended 31 July 2026》（2026-09-09 发布，未经审计）——
+    <a href="https://www.delmontepacific.com/hubfs/pdf/DMPL%20MDA%201QFY2027_May%201%20to%20July%2031%202026_FINAL.pdf" target="_blank">DMPL MDA 1QFY2027 PDF</a>；同期业绩演示材料——
+    <a href="https://www.delmontepacific.com/hubfs/pdf/DMPL%201Q%20FY2027%20Presentation%20FINAL.pdf" target="_blank">DMPL 1Q FY2027 Presentation PDF</a>。<br>
+    本页所有数字与引述均取自上述两份原文，未采用媒体二手转述。<b>关于「2027 财年」</b>：Del Monte Pacific 的<b>财年每年 4 月 30 日结束</b>（原文："First Quarter FY2027 results covering the period from 1 May 2026 to 31 July 2026"；另处净资本亏绌"较 30 April 2026 改善"亦印证该资产负债表日），故 <b>FY2027 = 2026-05-01 至 2027-04-30</b>，其第一个季度为 <b>2026-05-01 至 2026-07-31</b>——是财年第 1 季，<b>不是日历年 Q1，也不是 2027 年发生的事</b>；本财年全年业绩约 2027 年 6 月才会公布。<b>对比</b>：Mission Produce 财年 10 月 31 日结束，同样的 5–7 月在其口径下是 FY2026 Q3——同三个月、两个标号，差别只在财年起点。同比数据已按<b>持续经营口径</b>列示（剔除 2025-05-01 起去合并的美国 DMFHL 及其子公司）。本页为学习研究用途，不构成投资建议。
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var MAX = 196.4, SIDE = 44;
+    document.querySelectorAll('.dbar').forEach(function(bar){
+      var v = Math.abs(parseFloat(bar.dataset.v));
+      var w = Math.min(v / MAX * SIDE, SIDE);
+      if (parseFloat(bar.dataset.v) > 0){ bar.style.left = '50%'; }
+      else { bar.style.left = (50 - w) + '%'; }
+      bar.style.width = w + '%';
+      bar.style.minWidth = '2px';
+    });
+  })();
+
+  (function(){
+    var PLOT = 175;
+    document.querySelectorAll('.cols-row').forEach(function(row){
+      var mx = parseFloat(row.dataset.max);
+      row.querySelectorAll('.col').forEach(function(col){
+        var v = parseFloat(col.dataset.v);
+        var h = Math.max(0, Math.round(v / mx * PLOT));
+        col.style.height = h + 'px';
+        if (col.dataset.label){
+          var lab = document.createElement('div');
+          lab.className = 'v';
+          lab.textContent = col.dataset.label;
+          col.appendChild(lab);
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>

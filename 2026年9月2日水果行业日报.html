@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.02</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.02</b> 星期三</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">9</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">9</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">2</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">9</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">企业端，9月2日香港亚洲国际果蔬展开幕，地扪集团（Del Monte）与煜谦集团官宣成立合资企业、共同开拓中国高端鲜切水果市场；爱莓庄同日获MBO品种深化合作、正大集团东南亚蓝莓专属供应商资格与欧睿"全球蓝莓产量领先"认证三份国际加持。加工端，陕西前7个月浓缩苹果汁出口承压，出口量2.56万吨、金额3533.45万美元，同比分别降31.74%、38.1%。行情端，农业农村部监测显示9月2日"农产品批发价格200指数"116.16、较昨日上升0.06个点，重点监测的6种水果平均批发价6.68元/公斤、较昨日上升1.1%，北京新发地富士苹果7.60元/公斤、猕猴桃10.00元/公斤、香蕉4.50元/公斤。贸易端，榴莲价格"崩了"冲上热搜，广州江南批发市场实地走访显示批发价较去年降三成以上、泰国金枕最低13.8元/斤；平陆运河将于9月中旬、第23届东博会前夕建成通航，中国西南腹地与东盟运距缩短560公里、物流成本降低18%-30%，东盟水果咖啡将更快进入中国市场。电商与气象端，2026中国农民丰收节金秋消费季将于9月4日在上海陆家嘴启幕、近1500款农业精品汇聚申城；中央气象台9月2日继续发布台风蓝色预警和暴雨黄色预警，双台风"沙德尔""科罗旺"共舞，江南华南强降雨持续、局地特大暴雨（250-300毫米），华东华南果产区需防范暴雨渍涝与大风。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="地扪集团与煜谦集团宣布成立合资企业，拓展中国鲜切水果市场（香港亚洲国际果蔬展官宣） 9月2日香港亚洲国际果蔬展期间，地扪集团（del monte corporation，nyse:dmc，原fresh del monte，2026年6月更名）子公司地扪鲜果（香港）有限公司与煜谦（上海）农业科技发展有限公司宣布成立合资企业，整合地扪的品牌、差异化包装与鲜切技术经验，以及煜谦的本土采购能力、分销网络与客户资源，共同为中国消费者提供品牌化、高端鲜切水果产品。地扪集团总裁兼首席运营官mohammad abbas与煜谦集团创始人兼董事长张明共同见证；据dataintelo报告，预计到2034年中国将占亚洲鲜切农产品市场约45%份额。 煜谦集团 / 地扪集团(del monte) 中华区商报" style="--acc:var(--s1)"><a class="n-title" href="https://www.zqbao.com.cn/news/19826.html" target="_blank" rel="noopener noreferrer">地扪集团与煜谦集团宣布成立合资企业，拓展中国鲜切水果市场（香港亚洲国际果蔬展官宣）</a><p class="n-sum">9月2日香港亚洲国际果蔬展期间，地扪集团（Del Monte Corporation，NYSE:DMC，原Fresh Del Monte，2026年6月更名）子公司地扪鲜果（香港）有限公司与煜谦（上海）农业科技发展有限公司宣布成立合资企业，整合地扪的品牌、差异化包装与鲜切技术经验，以及煜谦的本土采购能力、分销网络与客户资源，共同为中国消费者提供品牌化、高端鲜切水果产品。地扪集团总裁兼首席运营官Mohammad Abbas与煜谦集团创始人兼董事长张明共同见证；据DataIntelo报告，预计到2034年中国将占亚洲鲜切农产品市场约45%份额。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">煜谦集团 / 地扪集团(Del Monte)</span><span>中华区商报</span><span>·</span><span>9月2日</span><a class="n-link" href="https://www.zqbao.com.cn/news/19826.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="爱莓庄香港果蔬展连获三份国际认可：mbo深化品种合作、正大集团授东南亚蓝莓专属供应商资格、欧睿认证全球蓝莓产量领先 9月2日下午亚洲国际果蔬展爱莓庄展位现场：国际顶尖蓝莓育种企业mbo（mountain blue orchards，品种在全球40国种植超7000公顷）宣布与爱莓庄深化品种战略合作，将其代表性品种授权爱莓庄在中国商业化种植经营；泰国正大集团授予爱莓庄蓝莓品类专属供应商资格，指定其在泰国等东南亚国家独家销售；欧睿国际（euromonitor）为爱莓庄颁发&quot;全球蓝莓产量领先&quot;市场地位认证。爱莓庄系诺普信旗下云南基质蓝莓龙头（70余座庄园、44座冷链加工中心），此前已获mbo蓝莓新品种知识产权许可。 爱莓庄(imberri) / mbo / 正大集团 亚洲水果 asiafruit" style="--acc:var(--s3)"><a class="n-title" href="https://mp.weixin.qq.com/s/o8bAeTLwQPN4_Y3dOuoEbg" target="_blank" rel="noopener noreferrer">爱莓庄香港果蔬展连获三份国际认可：MBO深化品种合作、正大集团授东南亚蓝莓专属供应商资格、欧睿认证全球蓝莓产量领先</a><p class="n-sum">9月2日下午亚洲国际果蔬展爱莓庄展位现场：国际顶尖蓝莓育种企业MBO（Mountain Blue Orchards，品种在全球40国种植超7000公顷）宣布与爱莓庄深化品种战略合作，将其代表性品种授权爱莓庄在中国商业化种植经营；泰国正大集团授予爱莓庄蓝莓品类专属供应商资格，指定其在泰国等东南亚国家独家销售；欧睿国际（Euromonitor）为爱莓庄颁发&quot;全球蓝莓产量领先&quot;市场地位认证。爱莓庄系诺普信旗下云南基质蓝莓龙头（70余座庄园、44座冷链加工中心），此前已获MBO蓝莓新品种知识产权许可。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">爱莓庄(IMBERRI) / MBO / 正大集团</span><span>亚洲水果 ASIAFRUIT</span><span>·</span><span>9月2日</span><a class="n-link" href="https://mp.weixin.qq.com/s/o8bAeTLwQPN4_Y3dOuoEbg" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国内" data-search="陕西前7个月浓缩苹果汁出口承压：出口量2.56万吨、金额3533.45万美元，同比降31.74%和38.1% 陕西乡村振兴融媒体平台9月2日转省果业中心数据：今年前7个月陕西苹果、梨、浓缩苹果汁、猕猴桃四大主力出口果品呈现结构性分化，整体呈鲜果提质溢价新态势；其中浓缩苹果汁出口承压明显，出口数量2.56万吨、出口金额3533.45万美元，同比分别下降31.74%、38.1%，出口均价每吨1380美元、同比下降9.33%，反映深加工果品海外市场竞争加剧、出口需求阶段性收缩。 陕西浓缩苹果汁行业 陕西乡村振兴融媒体平台（省果业中心数据）" style="--acc:var(--s4)"><a class="n-title" href="http://xczxrmt.cnwest.com/sytj/p/40117.html" target="_blank" rel="noopener noreferrer">陕西前7个月浓缩苹果汁出口承压：出口量2.56万吨、金额3533.45万美元，同比降31.74%和38.1%</a><p class="n-sum">陕西乡村振兴融媒体平台9月2日转省果业中心数据：今年前7个月陕西苹果、梨、浓缩苹果汁、猕猴桃四大主力出口果品呈现结构性分化，整体呈鲜果提质溢价新态势；其中浓缩苹果汁出口承压明显，出口数量2.56万吨、出口金额3533.45万美元，同比分别下降31.74%、38.1%，出口均价每吨1380美元、同比下降9.33%，反映深加工果品海外市场竞争加剧、出口需求阶段性收缩。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">陕西浓缩苹果汁行业</span><span>陕西乡村振兴融媒体平台（省果业中心数据）</span><span>·</span><span>9月2日</span><a class="n-link" href="http://xczxrmt.cnwest.com/sytj/p/40117.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="2026中国农民丰收节金秋消费季将于9月4日在上海陆家嘴启幕：京东/天猫/拼多多/叮咚/抖音等牵头组展、近1500款农业精品汇聚 中国发展网9月2日报道：2026中国农民丰收节金秋消费季启动活动将于9月4日至6日在上海陆家嘴上海国际会议中心举行，主题为&quot;丰收开新局、实干促振兴&quot;，全国近1500款农业精品汇聚申城；丰收市集设置八大主题品类区，由京东、天猫、淘宝、拼多多、叮咚买菜、百联集团、抖音等平台和企业牵头组展，叮咚买菜&quot;枝头甜度&quot;展区推出水果&quot;甜度大pk&quot;，消费者可为西梅、葡萄等糖度超15度的当季水果贴上&quot;心选甜度天花板&quot;标签。 京东/天猫/拼多多/叮咚买菜/抖音 中国发展网" style="--acc:var(--s6)"><a class="n-title" href="https://jjdf.chinadevelopment.com.cn/xw/2026/09/2013393.shtml" target="_blank" rel="noopener noreferrer">2026中国农民丰收节金秋消费季将于9月4日在上海陆家嘴启幕：京东/天猫/拼多多/叮咚/抖音等牵头组展、近1500款农业精品汇聚</a><p class="n-sum">中国发展网9月2日报道：2026中国农民丰收节金秋消费季启动活动将于9月4日至6日在上海陆家嘴上海国际会议中心举行，主题为&quot;丰收开新局、实干促振兴&quot;，全国近1500款农业精品汇聚申城；丰收市集设置八大主题品类区，由京东、天猫、淘宝、拼多多、叮咚买菜、百联集团、抖音等平台和企业牵头组展，叮咚买菜&quot;枝头甜度&quot;展区推出水果&quot;甜度大PK&quot;，消费者可为西梅、葡萄等糖度超15度的当季水果贴上&quot;心选甜度天花板&quot;标签。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">京东/天猫/拼多多/叮咚买菜/抖音</span><span>中国发展网</span><span>·</span><span>9月2日</span><a class="n-link" href="https://jjdf.chinadevelopment.com.cn/xw/2026/09/2013393.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="农业农村部：9月2日&quot;农产品批发价格200指数&quot;116.16、较昨日升0.06点，6种水果平均6.68元/公斤、升1.1% 东方财富9月2日转农业农村部监测：9月2日&quot;农产品批发价格200指数&quot;为116.16、比昨天上升0.06个点，&quot;菜篮子&quot;产品批发价格指数为116.79、比昨天上升0.07个点；重点监测的6种水果平均批发价6.68元/公斤、比昨天上升1.1%，28种蔬菜平均4.65元/公斤、上升1.1%，重点监测的46个鲜活农产品中鸭梨涨幅居前（升3.8%）、西瓜降1.6%、香蕉降1.2%。 全国农产品批发市场 东方财富（农业农村部监测）" style="--acc:var(--s7)"><a class="n-title" href="https://qhweb.eastmoney.com/news/202609023862693327.html" target="_blank" rel="noopener noreferrer">农业农村部：9月2日&quot;农产品批发价格200指数&quot;116.16、较昨日升0.06点，6种水果平均6.68元/公斤、升1.1%</a><p class="n-sum">东方财富9月2日转农业农村部监测：9月2日&quot;农产品批发价格200指数&quot;为116.16、比昨天上升0.06个点，&quot;菜篮子&quot;产品批发价格指数为116.79、比昨天上升0.07个点；重点监测的6种水果平均批发价6.68元/公斤、比昨天上升1.1%，28种蔬菜平均4.65元/公斤、上升1.1%，重点监测的46个鲜活农产品中鸭梨涨幅居前（升3.8%）、西瓜降1.6%、香蕉降1.2%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">全国农产品批发市场</span><span>东方财富（农业农村部监测）</span><span>·</span><span>9月2日</span><a class="n-link" href="https://qhweb.eastmoney.com/news/202609023862693327.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="9月2日北京新发地水果价格行情：富士苹果7.60元/公斤、猕猴桃10.00元/公斤、香蕉4.50元/公斤 证券之星9月2日转农业农村部信息中心数据：9月2日北京新发地农副产品批发市场信息中心价格行情，富士苹果7.60元/公斤、黄元帅苹果5.80元/公斤、鸭梨3.55元/公斤、香梨8.50元/公斤、西瓜3.20元/公斤、香蕉4.50元/公斤、菠萝7.00元/公斤、芒果11.61元/公斤、猕猴桃10.00元/公斤、柠檬14.00元/公斤、木瓜10.50元/公斤。 北京新发地市场 证券之星（农业农村部信息中心数据）" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026090200019621.shtml" target="_blank" rel="noopener noreferrer">9月2日北京新发地水果价格行情：富士苹果7.60元/公斤、猕猴桃10.00元/公斤、香蕉4.50元/公斤</a><p class="n-sum">证券之星9月2日转农业农村部信息中心数据：9月2日北京新发地农副产品批发市场信息中心价格行情，富士苹果7.60元/公斤、黄元帅苹果5.80元/公斤、鸭梨3.55元/公斤、香梨8.50元/公斤、西瓜3.20元/公斤、香蕉4.50元/公斤、菠萝7.00元/公斤、芒果11.61元/公斤、猕猴桃10.00元/公斤、柠檬14.00元/公斤、木瓜10.50元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">北京新发地市场</span><span>证券之星（农业农村部信息中心数据）</span><span>·</span><span>9月2日</span><a class="n-link" href="https://futures.stockstar.com/IG2026090200019621.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="平陆运河将于9月中旬、东博会前夕建成通航：西南与东盟运距缩短560公里、物流成本降18%-30%，东盟水果咖啡更快上桌 潮新闻9月1日报道（国新办发布会）：平陆运河将于9月中旬、第23届中国—东盟博览会（9月17-21日在南宁举行）召开前夕建成通航，运河全长134.2公里、可通航5000吨级船舶，是国内乃至世界通航等级最高的江海联通运河；通航后中国西南腹地与东盟之间运距缩短560公里、物流成本降低18%-30%，14亿人大市场与6.7亿大市场之间多了一条货物双向流动的通道，东盟热带水果、咖啡等特色产品将更快进入中国大市场。 平陆运河/西部陆海新通道 潮新闻" style="--acc:var(--s8)"><a class="n-title" href="https://tidenews.com.cn/news.html?id=3546074" target="_blank" rel="noopener noreferrer">平陆运河将于9月中旬、东博会前夕建成通航：西南与东盟运距缩短560公里、物流成本降18%-30%，东盟水果咖啡更快上桌</a><p class="n-sum">潮新闻9月1日报道（国新办发布会）：平陆运河将于9月中旬、第23届中国—东盟博览会（9月17-21日在南宁举行）召开前夕建成通航，运河全长134.2公里、可通航5000吨级船舶，是国内乃至世界通航等级最高的江海联通运河；通航后中国西南腹地与东盟之间运距缩短560公里、物流成本降低18%-30%，14亿人大市场与6.7亿大市场之间多了一条货物双向流动的通道，东盟热带水果、咖啡等特色产品将更快进入中国大市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">平陆运河/西部陆海新通道</span><span>潮新闻</span><span>·</span><span>9月1日</span><a class="n-link" href="https://tidenews.com.cn/news.html?id=3546074" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="榴莲价格&quot;崩了&quot;冲上热搜：广州江南市场泰国金枕最低13.8元/斤、猫山王最低20元/斤，批发价较去年降三成以上 广州日报·新花城9月2日报道：记者实地走访广州规模最大的水果批发市场——江南水果批发市场，有批发档主反映今年榴莲批发价较往年下降三成以上，泰国金枕榴莲最便宜的只需13.8元/斤，猫山王榴莲最低批发价也达20元/斤，约100元即可买到一整颗榴莲；泰国、越南、马来西亚主产榴莲供应充足，推动对华价格持续走低。 泰国/越南/马来西亚榴莲对华贸易 广州日报·新花城" style="--acc:var(--s8)"><a class="n-title" href="https://huacheng.gz-cmc.com/pages/2026/09/02/9fdc052d23d949c38ecb3d3ec392bd40.html" target="_blank" rel="noopener noreferrer">榴莲价格&quot;崩了&quot;冲上热搜：广州江南市场泰国金枕最低13.8元/斤、猫山王最低20元/斤，批发价较去年降三成以上</a><p class="n-sum">广州日报·新花城9月2日报道：记者实地走访广州规模最大的水果批发市场——江南水果批发市场，有批发档主反映今年榴莲批发价较往年下降三成以上，泰国金枕榴莲最便宜的只需13.8元/斤，猫山王榴莲最低批发价也达20元/斤，约100元即可买到一整颗榴莲；泰国、越南、马来西亚主产榴莲供应充足，推动对华价格持续走低。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">泰国/越南/马来西亚榴莲对华贸易</span><span>广州日报·新花城</span><span>·</span><span>9月2日</span><a class="n-link" href="https://huacheng.gz-cmc.com/pages/2026/09/02/9fdc052d23d949c38ecb3d3ec392bd40.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="中央气象台9月2日继续发布台风蓝色+暴雨黄色预警：双台风&quot;沙德尔&quot;&quot;科罗旺&quot;共舞，江南华南大到暴雨、局地特大暴雨（250-300毫米） 新浪财经9月2日转中央气象台：中央气象台9月2日10时继续发布暴雨黄色预警和台风蓝色预警，受第18号台风&quot;沙德尔&quot;与第24号台风&quot;科罗旺&quot;共同影响，预计9月2日14时至3日14时广东东部、台湾岛、福建大部、浙江南部和北部、湖南东部、江西中南部等地有大到暴雨，其中福建东部、浙江东南部、台湾岛南部、江西南部部分地区有大暴雨，福建东南部、广东东南部局地特大暴雨（250-300毫米），最大小时降雨量20-50毫米、局地可超70毫米，伴有雷暴大风；南海大部海域、台湾海峡有6-8级风、阵风9-10级，广东东部等地雨势猛烈，华东华南果产区需防范暴雨渍涝与大风。 广东/福建/浙江/江西/湖南果产区 新浪财经（中央气象台）" style="--acc:var(--s9)"><a class="n-title" href="https://finance.sina.com.cn/wm/2026-09-02/doc-iniqkzme7870164.shtml" target="_blank" rel="noopener noreferrer">中央气象台9月2日继续发布台风蓝色+暴雨黄色预警：双台风&quot;沙德尔&quot;&quot;科罗旺&quot;共舞，江南华南大到暴雨、局地特大暴雨（250-300毫米）</a><p class="n-sum">新浪财经9月2日转中央气象台：中央气象台9月2日10时继续发布暴雨黄色预警和台风蓝色预警，受第18号台风&quot;沙德尔&quot;与第24号台风&quot;科罗旺&quot;共同影响，预计9月2日14时至3日14时广东东部、台湾岛、福建大部、浙江南部和北部、湖南东部、江西中南部等地有大到暴雨，其中福建东部、浙江东南部、台湾岛南部、江西南部部分地区有大暴雨，福建东南部、广东东南部局地特大暴雨（250-300毫米），最大小时降雨量20-50毫米、局地可超70毫米，伴有雷暴大风；南海大部海域、台湾海峡有6-8级风、阵风9-10级，广东东部等地雨势猛烈，华东华南果产区需防范暴雨渍涝与大风。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">广东/福建/浙江/江西/湖南果产区</span><span>新浪财经（中央气象台）</span><span>·</span><span>9月2日</span><a class="n-link" href="https://finance.sina.com.cn/wm/2026-09-02/doc-iniqkzme7870164.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-02 18:20 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

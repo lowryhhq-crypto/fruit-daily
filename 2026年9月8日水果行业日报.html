@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.08</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.08</b> 星期二</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">7</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">0</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">9月8日周二，全国果市行情稳中走强：农业农村部监测「农产品批发价格200指数」116.83、较昨日升0.25点，重点监测6种水果均价6.65元/公斤、较昨日升2.0%，菠萝、巨峰葡萄等涨幅居前，中秋备货全面启动带动节前果价回暖。产区端，四川猕猴桃主产区（蒲江/都江堰/苍溪）集中上市，成都市场蒲江红心小果9.8元/斤、大果11.8元/斤，大果地头价7-8元/斤、统果5-5.5元/斤较去年涨约1元，全省种植面积稳定76万亩、产量今年将首次突破60万吨，都江堰猕猴桃已首发哈萨克斯坦并在阿拉木图筹建海外仓覆盖中亚五国、东南亚订单同步推进。出口端，甘肃苹果走「鲜果直供+果汁出口」双线出海，前7月苹果出口3.2亿元(+12.1%)、苹果汁出口2.8亿元(+13.6%)。进口端，广西凭祥放大全国最大榴莲进口口岸优势，上半年口岸进口榴莲34.8万吨、货值109.7亿元，正推动产业从通道集散向通关/电商/加工/文旅全链条升级。企业端，诺普信9月7日公告旗下爱莓庄集团等三家控股公司因蓝莓新品种涉嫌侵权被云南美鸣农业起诉、合计涉诉约1021.80万元，昆明中院已立案排期，公司称将积极应诉、预计无重大影响。电商端，京东生鲜「金秋好礼」9月8日零点起部分爆款低至6.5折，产地直采时令水果等生鲜礼盒成中秋消费新主流。气象端，中央气象台预计9月8-10日青海、甘肃、宁夏、陕西、四川盆地等地有较强降雨、局地大到暴雨，西北地区东南部等地降温4-6℃、局地8-10℃，正值陕西、甘肃苹果及四川猕猴桃采收上市期，需防范降雨降温对采收贮藏的影响。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="诺普信公告：下属爱莓庄集团等三控股公司被诉侵害蓝莓植物新品种权——云南美鸣农业索赔合计约1021.80万元，昆明中院已立案排期开庭 新浪财经9月7日转诺普信（002215）公告：公司下属控股公司云南甄富莓农业、爱莓庄农业集团（曾用名光筑农业集团）、光筑（云南）农业近日收到云南省昆明市中级人民法院送达的《传票》，涉一起侵害植物新品种权纠纷，截至公告披露日一审阶段已立案、已排期开庭。原告云南美鸣农业诉称，三被告未经许可在其经营场所内擅自生产、繁殖并种植其蓝莓新品种，请求判令立即停止侵害植物新品种权的行为，并连带赔偿经济损失507.76万元、惩罚性赔偿507.76万元、维权合理开支约6.28万元，合计涉诉金额约1021.80万元。诺普信表示对原告全部诉讼主张不予认可，已委托专业律师团队积极应诉，预计本次诉讼不会对日常生产经营产生重大影响，对公司本期及期后损益的影响存在不确定性、以最终生效判决为准。爱莓庄（imberri）为诺普信旗下蓝莓品牌及经营主体（本司重点追踪企业，与煜谦蓝莓业务有合作）。 诺普信/爱莓庄(imberri) 新浪财经（转诺普信公告）" style="--acc:var(--s1)"><a class="n-title" href="https://finance.sina.cn/2026-09-07/detail-iniqzhfs6370399.d.html" target="_blank" rel="noopener noreferrer">诺普信公告：下属爱莓庄集团等三控股公司被诉侵害蓝莓植物新品种权——云南美鸣农业索赔合计约1021.80万元，昆明中院已立案排期开庭</a><p class="n-sum">新浪财经9月7日转诺普信（002215）公告：公司下属控股公司云南甄富莓农业、爱莓庄农业集团（曾用名光筑农业集团）、光筑（云南）农业近日收到云南省昆明市中级人民法院送达的《传票》，涉一起侵害植物新品种权纠纷，截至公告披露日一审阶段已立案、已排期开庭。原告云南美鸣农业诉称，三被告未经许可在其经营场所内擅自生产、繁殖并种植其蓝莓新品种，请求判令立即停止侵害植物新品种权的行为，并连带赔偿经济损失507.76万元、惩罚性赔偿507.76万元、维权合理开支约6.28万元，合计涉诉金额约1021.80万元。诺普信表示对原告全部诉讼主张不予认可，已委托专业律师团队积极应诉，预计本次诉讼不会对日常生产经营产生重大影响，对公司本期及期后损益的影响存在不确定性、以最终生效判决为准。爱莓庄（IMBERRI）为诺普信旗下蓝莓品牌及经营主体（本司重点追踪企业，与煜谦蓝莓业务有合作）。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">诺普信/爱莓庄(IMBERRI)</span><span>新浪财经（转诺普信公告）</span><span>·</span><span>9月7日</span><a class="n-link" href="https://finance.sina.cn/2026-09-07/detail-iniqzhfs6370399.d.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="四川猕猴桃今年产量或首次突破60万吨：主产区集中上市、地头价上涨，都江堰首发哈萨克斯坦并筹建中亚海外仓 四川日报9月8日：四川猕猴桃上市，今年产量价格双增长。成都市场蒲江红心猕猴桃小果9.8元/斤、大果11.8元/斤；蒲江大果地头价7-8元/斤，不分大小统果5-5.5元/斤、较去年涨约1元。主产区为都江堰、蒲江、邛崃及广元苍溪；省农科院研究员涂美艳预估，今年全省猕猴桃种植面积稳定在76万亩，产量将首次突破60万吨。出口端，都江堰猕猴桃已首发哈萨克斯坦，并拟在哈萨克斯坦阿拉木图州规划400平方米海外仓承接仓储中转分拨、覆盖中亚五国市场、预计年底投产；越南、泰国、马来西亚等东南亚国家合作订单也正有序推进。 四川猕猴桃产区（蒲江/都江堰/苍溪） 四川日报（人民网四川频道）" style="--acc:var(--s3)"><a class="n-title" href="http://sc.people.com.cn/n2/2026/0908/c345167-41689390.html" target="_blank" rel="noopener noreferrer">四川猕猴桃今年产量或首次突破60万吨：主产区集中上市、地头价上涨，都江堰首发哈萨克斯坦并筹建中亚海外仓</a><p class="n-sum">四川日报9月8日：四川猕猴桃上市，今年产量价格双增长。成都市场蒲江红心猕猴桃小果9.8元/斤、大果11.8元/斤；蒲江大果地头价7-8元/斤，不分大小统果5-5.5元/斤、较去年涨约1元。主产区为都江堰、蒲江、邛崃及广元苍溪；省农科院研究员涂美艳预估，今年全省猕猴桃种植面积稳定在76万亩，产量将首次突破60万吨。出口端，都江堰猕猴桃已首发哈萨克斯坦，并拟在哈萨克斯坦阿拉木图州规划400平方米海外仓承接仓储中转分拨、覆盖中亚五国市场、预计年底投产；越南、泰国、马来西亚等东南亚国家合作订单也正有序推进。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">四川猕猴桃产区（蒲江/都江堰/苍溪）</span><span>四川日报（人民网四川频道）</span><span>·</span><span>9月8日</span><a class="n-link" href="http://sc.people.com.cn/n2/2026/0908/c345167-41689390.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国内" data-search="甘肃苹果出海走「鲜果直供+果汁出口」双线路径：前7月苹果出口3.2亿元(+12.1%)、苹果汁出口2.8亿元(+13.6%) 甘肃经济日报（每日甘肃网）9月7日：在天水、陇南等苹果主产区，鲜果采收包装与果汁深加工同步推进，甘肃苹果走出「鲜果直供+果汁出口」双线并行新路径。前7个月全省农产品出口19亿元、同比增长4.6%，其中苹果出口3.2亿元、同比增长12.1%，热销东南亚、欧美、中东等地；苹果汁出口2.8亿元、同比增长13.6%，浓缩苹果汁远销欧盟、rcep成员国、北美、非洲等50多个国家和地区，天水、陇南占全省果汁出口量八成以上。 甘肃苹果/浓缩苹果汁出口 甘肃经济日报（每日甘肃网）" style="--acc:var(--s4)"><a class="n-title" href="https://ts.gansudaily.com.cn/system/2026/09/07/031429951.shtml" target="_blank" rel="noopener noreferrer">甘肃苹果出海走「鲜果直供+果汁出口」双线路径：前7月苹果出口3.2亿元(+12.1%)、苹果汁出口2.8亿元(+13.6%)</a><p class="n-sum">甘肃经济日报（每日甘肃网）9月7日：在天水、陇南等苹果主产区，鲜果采收包装与果汁深加工同步推进，甘肃苹果走出「鲜果直供+果汁出口」双线并行新路径。前7个月全省农产品出口19亿元、同比增长4.6%，其中苹果出口3.2亿元、同比增长12.1%，热销东南亚、欧美、中东等地；苹果汁出口2.8亿元、同比增长13.6%，浓缩苹果汁远销欧盟、RCEP成员国、北美、非洲等50多个国家和地区，天水、陇南占全省果汁出口量八成以上。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">甘肃苹果/浓缩苹果汁出口</span><span>甘肃经济日报（每日甘肃网）</span><span>·</span><span>9月7日</span><a class="n-link" href="https://ts.gansudaily.com.cn/system/2026/09/07/031429951.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="京东生鲜「金秋好礼」9月8日零点起部分爆款低至6.5折：产地直采时令水果等硬核生鲜礼盒成中秋消费新选择 中国经济新闻网9月8日：中秋佳节将至，与往年「唯月饼论」不同，产地直采的时令水果、大闸蟹、进口海鲜及地标牛羊肉等硬核生鲜礼盒正成为走亲访友新选择。京东生鲜「金秋好礼」活动已全面启动，围绕当季尝鲜、团圆家宴、滋补养生、商务礼赠四大场景甄选百款生鲜好物，9月8日零点起部分爆款商品低至6.5折；依托覆盖全国的冷链物流与产地直采体系，深入江苏阳澄湖、辽宁大连、云南高原等核心产区进行源头包销包圆，提前锁定整片果园、渔场的当季优质产能。 京东生鲜 中国经济新闻网" style="--acc:var(--s6)"><a class="n-title" href="https://www.cet.com.cn/itpd/sm/10544796.shtml" target="_blank" rel="noopener noreferrer">京东生鲜「金秋好礼」9月8日零点起部分爆款低至6.5折：产地直采时令水果等硬核生鲜礼盒成中秋消费新选择</a><p class="n-sum">中国经济新闻网9月8日：中秋佳节将至，与往年「唯月饼论」不同，产地直采的时令水果、大闸蟹、进口海鲜及地标牛羊肉等硬核生鲜礼盒正成为走亲访友新选择。京东生鲜「金秋好礼」活动已全面启动，围绕当季尝鲜、团圆家宴、滋补养生、商务礼赠四大场景甄选百款生鲜好物，9月8日零点起部分爆款商品低至6.5折；依托覆盖全国的冷链物流与产地直采体系，深入江苏阳澄湖、辽宁大连、云南高原等核心产区进行源头包销包圆，提前锁定整片果园、渔场的当季优质产能。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">京东生鲜</span><span>中国经济新闻网</span><span>·</span><span>9月8日</span><a class="n-link" href="https://www.cet.com.cn/itpd/sm/10544796.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="农业农村部：9月8日「农产品批发价格200指数」116.83、较昨日升0.25点；6种水果均价6.65元/公斤、较昨日升2.0% 农业农村部信息中心9月8日：截至当日14时，「农产品批发价格200指数」为116.83，比昨天上升0.25个点；「菜篮子」产品批发价格指数为117.59、升0.29个点。重点监测的6种水果平均价格为6.65元/公斤，比昨天上升2.0%，菠萝、巨峰葡萄等秋令果品受中秋备货带动价格回暖，节前果市行情稳中走强。 全国农产品批发市场 农业农村部信息中心" style="--acc:var(--s7)"><a class="n-title" href="https://scs.moa.gov.cn/jcyj/202609/t20260908_6487382.htm" target="_blank" rel="noopener noreferrer">农业农村部：9月8日「农产品批发价格200指数」116.83、较昨日升0.25点；6种水果均价6.65元/公斤、较昨日升2.0%</a><p class="n-sum">农业农村部信息中心9月8日：截至当日14时，「农产品批发价格200指数」为116.83，比昨天上升0.25个点；「菜篮子」产品批发价格指数为117.59、升0.29个点。重点监测的6种水果平均价格为6.65元/公斤，比昨天上升2.0%，菠萝、巨峰葡萄等秋令果品受中秋备货带动价格回暖，节前果市行情稳中走强。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">全国农产品批发市场</span><span>农业农村部信息中心</span><span>·</span><span>9月8日</span><a class="n-link" href="https://scs.moa.gov.cn/jcyj/202609/t20260908_6487382.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国内" data-search="全国每3个进口榴莲就有1个经广西凭祥入境：凭祥拟推动榴莲产业从「通道集散」向「通关+电商+加工+文旅」全链条升级 中国新闻网（广西）9月7日：在2026年广西·凭祥中越边关旅游节新闻发布会上，凭祥市委副书记、代理市长左涛表示，当地将立足口岸区位、通关及东盟货源优势，推动榴莲产业从通道集散向集通关、电商、加工、文旅于一体的全链条升级，把榴莲从一个口岸优势做成城市ip和完整产业链。凭祥开通榴莲进口专用绿色通道、实行7×24小时预约通关、附条件提离等便利举措，口岸检测项目从450项提升至800项、检测效率提升20%以上；2026年上半年凭祥口岸进口榴莲34.8万吨、货值109.7亿元，并依托中国—东盟（凭祥）跨境电商中心集聚电商企业200余家拓展市场。 广西凭祥口岸/东盟榴莲贸易 中国新闻网（广西）" style="--acc:var(--s8)"><a class="n-title" href="http://www.gx.chinanews.com.cn/cj/cjgc/2026-09-07/detail-ihfizwvu6752752.shtml" target="_blank" rel="noopener noreferrer">全国每3个进口榴莲就有1个经广西凭祥入境：凭祥拟推动榴莲产业从「通道集散」向「通关+电商+加工+文旅」全链条升级</a><p class="n-sum">中国新闻网（广西）9月7日：在2026年广西·凭祥中越边关旅游节新闻发布会上，凭祥市委副书记、代理市长左涛表示，当地将立足口岸区位、通关及东盟货源优势，推动榴莲产业从通道集散向集通关、电商、加工、文旅于一体的全链条升级，把榴莲从一个口岸优势做成城市IP和完整产业链。凭祥开通榴莲进口专用绿色通道、实行7×24小时预约通关、附条件提离等便利举措，口岸检测项目从450项提升至800项、检测效率提升20%以上；2026年上半年凭祥口岸进口榴莲34.8万吨、货值109.7亿元，并依托中国—东盟（凭祥）跨境电商中心集聚电商企业200余家拓展市场。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">广西凭祥口岸/东盟榴莲贸易</span><span>中国新闻网（广西）</span><span>·</span><span>9月7日</span><a class="n-link" href="http://www.gx.chinanews.com.cn/cj/cjgc/2026-09-07/detail-ihfizwvu6752752.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="中央气象台9月8日天气公报：9月8-10日青海/甘肃/宁夏/陕西/四川盆地等地有较强降雨、局地大到暴雨，西北东南部等地降温4-6℃局地8-10℃ 中央气象台9月8日天气公报：受冷空气影响，9月8日至10日，青海、甘肃、宁夏、陕西、华北、四川盆地等地有小到中雨、局地大到暴雨，部分地区伴雷电或短时强降水等对流性天气；西北地区东南部、华北南部、黄淮、东北地区东部等地有4-6℃降温、局地降温8-10℃，并伴有4-5级风、阵风6-7级。预计9月8日08时至9日08时，山西南部、陕西中部、宁夏南部、甘肃东部、青海东部、四川盆地西部等地部分地区有大雨。正值陕西、甘肃苹果及四川猕猴桃等秋果采收上市期，产区需防范较强降雨与降温对采收、贮藏的影响。 青海/甘肃/宁夏/陕西/四川果产区 中央气象台（搜狐转引）" style="--acc:var(--s9)"><a class="n-title" href="https://www.sohu.com/a/1073134553_122014422" target="_blank" rel="noopener noreferrer">中央气象台9月8日天气公报：9月8-10日青海/甘肃/宁夏/陕西/四川盆地等地有较强降雨、局地大到暴雨，西北东南部等地降温4-6℃局地8-10℃</a><p class="n-sum">中央气象台9月8日天气公报：受冷空气影响，9月8日至10日，青海、甘肃、宁夏、陕西、华北、四川盆地等地有小到中雨、局地大到暴雨，部分地区伴雷电或短时强降水等对流性天气；西北地区东南部、华北南部、黄淮、东北地区东部等地有4-6℃降温、局地降温8-10℃，并伴有4-5级风、阵风6-7级。预计9月8日08时至9日08时，山西南部、陕西中部、宁夏南部、甘肃东部、青海东部、四川盆地西部等地部分地区有大雨。正值陕西、甘肃苹果及四川猕猴桃等秋果采收上市期，产区需防范较强降雨与降温对采收、贮藏的影响。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">青海/甘肃/宁夏/陕西/四川果产区</span><span>中央气象台（搜狐转引）</span><span>·</span><span>9月8日</span><a class="n-link" href="https://www.sohu.com/a/1073134553_122014422" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-09 21:21 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.09</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.09</b> 星期三</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">10</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">10</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">9</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">1</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">10</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">9月9日周三，全国果市行情平稳、中秋备货进入高峰：农业农村部监测「农产品批发价格200指数」116.87、较昨日升0.04点，重点监测6种水果均价6.61元/公斤、较昨日降0.6%，节前果价小幅波动。产区端，陕西周至猕猴桃正式进入采收季，与眉县联合划定「先检测后采收」品质红线（干物质达15%方可下树），翠香/红阳率先登场；应季国产水果扎堆上新，会理/蒙自软籽石榴、陕西大荔冬枣、秋月梨等成为中秋果篮主力，永辉超市启动双节「团圆家宴·品质严选」、Olé精品超市联合鑫荣懋启幕第三届新疆水果节，商超节礼营销全面升温。加工出口端，陕西省果业中心数据显示前7个月苹果、梨、浓缩苹果汁、猕猴桃四大出口果品结构性分化，鲜梨量额双增、整体呈鲜果提质溢价新态势。贸易端，中国—东盟水果交易中心检测实验室（崇左）正式启用，总投资约1亿元、面积5700平方米，广西口岸对东盟农食产品检测能力由450项提升至800项并建成「2小时水果检测圈」，东盟水果通关再提速。贸易端，9月8日中南签署樱桃输华议定书，南非樱桃首次获准对华出口、享受零关税准入（中国2025年进口鲜樱桃约58.69万吨/33亿美元），并带动南非樱桃生产投资与约600个就业岗位。企业端，蓝莓龙头诺普信（002215）深陷侵害植物新品种权系列诉讼，云南美鸣系累计索赔约2.74亿元、最新一单为9月8日公告（爱莓庄集团等三家控股子公司涉诉约0.1亿元），两案一审已被认定侵权、判赔679万/172万元远低于诉求，公司称蓝莓大单品占营收过半、若败诉影响或不止于赔偿额。气象端，中央气象台预计9月8-10日四川盆地西部和南部有大到暴雨、局地大暴雨，西北地区东南部、黄淮、江汉等地降温4-6℃、局地8-10℃以上，正值陕西、甘肃苹果及四川猕猴桃采收上市期，产区需防范降雨降温对采收贮藏的影响。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="蓝莓龙头诺普信深陷品种权系列诉讼：美鸣系累计索赔约2.74亿元，两案一审已被认定侵权但判赔远低于诉求，蓝莓大单品占营收过半 南方都市报（南都n视频）9月9日深度：深圳诺普信（002215.sz）与上游供应商云南美鸣农业（其控股股东为西班牙planasa、专注蓝莓育苗）因侵害植物新品种权纠纷陷入多起诉讼。最新一起为9月8日公告：下属云南甄富莓农业、爱莓庄农业集团（曾用名光筑农业集团）、光筑（云南）农业近日收到昆明市中级人民法院《传票》，美鸣指三公司未经许可在其经营场所内擅自生产、繁殖并种植其蓝莓新品种，要求停止侵害并赔偿经济损失约0.1亿元。以「侵害植物新品种权」为由，美鸣合计向诺普信旗下公司提出约2.74亿元赔偿请求：2025年3月起诉云南蓝百旺索赔0.75亿元、2025年6月起诉云南爱莓庄公司/旺悦莓/光筑云南等索赔528万元（两案一审均已认定诺普信存在侵权、但判赔仅679万元与172万元），2026年4月10日再诉砚山曼悦莓（1.17亿元）、腾冲旺悦莓（0.67亿元）。诺普信另于2024年1月以所购约320万株planasa「1545」种苗出现大面积死苗减产等质量问题反诉美鸣及planasa、合计索赔1.47亿元，一审获赔0.52亿元、尚待二审。2026上半年诺普信营收39.63亿元(+7.76%)、扣非净利7.5亿元(+10.45%)，其中「特色生鲜消费业务」收入20.7亿元、占营收过半、以蓝莓为大单品，旗下爱莓庄/迷迭蓝等品牌已进入山姆、盒马、olé、京东七鲜等高端渠道；若「侵害植物新品种行为」最终成立，影响或不止于赔偿金额层面。 诺普信/爱莓庄(imberri) 南方都市报（南都n视频）" style="--acc:var(--s1)"><a class="n-title" href="https://m.mp.oeeee.com/a/BAAFRD0000202609091662284.html" target="_blank" rel="noopener noreferrer">蓝莓龙头诺普信深陷品种权系列诉讼：美鸣系累计索赔约2.74亿元，两案一审已被认定侵权但判赔远低于诉求，蓝莓大单品占营收过半</a><p class="n-sum">南方都市报（南都N视频）9月9日深度：深圳诺普信（002215.SZ）与上游供应商云南美鸣农业（其控股股东为西班牙Planasa、专注蓝莓育苗）因侵害植物新品种权纠纷陷入多起诉讼。最新一起为9月8日公告：下属云南甄富莓农业、爱莓庄农业集团（曾用名光筑农业集团）、光筑（云南）农业近日收到昆明市中级人民法院《传票》，美鸣指三公司未经许可在其经营场所内擅自生产、繁殖并种植其蓝莓新品种，要求停止侵害并赔偿经济损失约0.1亿元。以「侵害植物新品种权」为由，美鸣合计向诺普信旗下公司提出约2.74亿元赔偿请求：2025年3月起诉云南蓝百旺索赔0.75亿元、2025年6月起诉云南爱莓庄公司/旺悦莓/光筑云南等索赔528万元（两案一审均已认定诺普信存在侵权、但判赔仅679万元与172万元），2026年4月10日再诉砚山曼悦莓（1.17亿元）、腾冲旺悦莓（0.67亿元）。诺普信另于2024年1月以所购约320万株Planasa「1545」种苗出现大面积死苗减产等质量问题反诉美鸣及Planasa、合计索赔1.47亿元，一审获赔0.52亿元、尚待二审。2026上半年诺普信营收39.63亿元(+7.76%)、扣非净利7.5亿元(+10.45%)，其中「特色生鲜消费业务」收入20.7亿元、占营收过半、以蓝莓为大单品，旗下爱莓庄/迷迭蓝等品牌已进入山姆、盒马、Olé、京东七鲜等高端渠道；若「侵害植物新品种行为」最终成立，影响或不止于赔偿金额层面。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">诺普信/爱莓庄(IMBERRI)</span><span>南方都市报（南都N视频）</span><span>·</span><span>9月9日</span><a class="n-link" href="https://m.mp.oeeee.com/a/BAAFRD0000202609091662284.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="9月国产水果扎堆上新：软籽石榴、大荔冬枣、黄金梨/秋月梨等应季鲜果进入最佳赏味期 新浪财经9月9日综合报道：9月秋风起，国产水果扎堆「上新」，会理、蒙自等产区进入丰收季。①软籽石榴——四川会理、云南蒙自所产「不用吐籽的糖」，满口鲜甜；②陕西大荔冬枣——9月是其风味最盛时，维c含量达苹果约60倍；③梨——四川广元黄金梨、山东等地秋月梨相继上市。国产应季鲜果以新鲜度与性价比成为中秋果篮主角。 会理/蒙自石榴、大荔冬枣等国产果品 新浪财经" style="--acc:var(--s1)"><a class="n-title" href="https://finance.sina.com.cn/jjxw/2026-09-09/doc-inirfcpy8668675.shtml" target="_blank" rel="noopener noreferrer">9月国产水果扎堆上新：软籽石榴、大荔冬枣、黄金梨/秋月梨等应季鲜果进入最佳赏味期</a><p class="n-sum">新浪财经9月9日综合报道：9月秋风起，国产水果扎堆「上新」，会理、蒙自等产区进入丰收季。①软籽石榴——四川会理、云南蒙自所产「不用吐籽的糖」，满口鲜甜；②陕西大荔冬枣——9月是其风味最盛时，维C含量达苹果约60倍；③梨——四川广元黄金梨、山东等地秋月梨相继上市。国产应季鲜果以新鲜度与性价比成为中秋果篮主角。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">会理/蒙自石榴、大荔冬枣等国产果品</span><span>新浪财经</span><span>·</span><span>9月9日</span><a class="n-link" href="https://finance.sina.com.cn/jjxw/2026-09-09/doc-inirfcpy8668675.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="陕西周至猕猴桃进入采收季：与眉县联合划定「品质红线」，先检测后采收、干物质达15%方可下树 陕西网9月9日：进入9月，「中国猕猴桃之乡」西安周至县正式迎来新一季猕猴桃采收期，翠香、红阳9月上中旬率先登场，徐香、金福9月底至10月上中旬、秦美/海沃德等晚熟品种10月下旬梯次上市。今年周至县与眉县联合发布通告划定采收「品质红线」：所有猕猴桃必须坚持「先检测后采收」，平均干物质含量达15%以上方可采收，农残超标果严禁采摘、采收前一个月严禁喷施化学药剂、下雨天禁止采收，并明确各品种采收时间表、严查早采，以守时成熟标准上市守护区域品牌。 周至/眉县猕猴桃产区 陕西网" style="--acc:var(--s3)"><a class="n-title" href="https://www.ishaanxi.com/c/2026/0909/3790067.shtml" target="_blank" rel="noopener noreferrer">陕西周至猕猴桃进入采收季：与眉县联合划定「品质红线」，先检测后采收、干物质达15%方可下树</a><p class="n-sum">陕西网9月9日：进入9月，「中国猕猴桃之乡」西安周至县正式迎来新一季猕猴桃采收期，翠香、红阳9月上中旬率先登场，徐香、金福9月底至10月上中旬、秦美/海沃德等晚熟品种10月下旬梯次上市。今年周至县与眉县联合发布通告划定采收「品质红线」：所有猕猴桃必须坚持「先检测后采收」，平均干物质含量达15%以上方可采收，农残超标果严禁采摘、采收前一个月严禁喷施化学药剂、下雨天禁止采收，并明确各品种采收时间表、严查早采，以守时成熟标准上市守护区域品牌。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">周至/眉县猕猴桃产区</span><span>陕西网</span><span>·</span><span>9月9日</span><a class="n-link" href="https://www.ishaanxi.com/c/2026/0909/3790067.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国内" data-search="陕西省果业中心：前7个月苹果/梨/浓缩苹果汁/猕猴桃四大出口果品结构性分化，鲜梨量额双增、整体呈鲜果提质溢价新态势 中国农科新闻网9月9日：据陕西省果业中心8月31日发布数据，今年前7个月，全省苹果、梨、浓缩苹果汁、猕猴桃4大主力出口果品呈明显结构性分化，整体呈现鲜果提质溢价的出口新态势；其中鲜梨出口实现量额双增，成为陕西出口果品中的亮眼增长点。 陕西省果业中心/陕西果品出口 中国农科新闻网" style="--acc:var(--s4)"><a class="n-title" href="http://www.nkb.com.cn/2026/0909/526760.html" target="_blank" rel="noopener noreferrer">陕西省果业中心：前7个月苹果/梨/浓缩苹果汁/猕猴桃四大出口果品结构性分化，鲜梨量额双增、整体呈鲜果提质溢价新态势</a><p class="n-sum">中国农科新闻网9月9日：据陕西省果业中心8月31日发布数据，今年前7个月，全省苹果、梨、浓缩苹果汁、猕猴桃4大主力出口果品呈明显结构性分化，整体呈现鲜果提质溢价的出口新态势；其中鲜梨出口实现量额双增，成为陕西出口果品中的亮眼增长点。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">陕西省果业中心/陕西果品出口</span><span>中国农科新闻网</span><span>·</span><span>9月9日</span><a class="n-link" href="http://www.nkb.com.cn/2026/0909/526760.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-supermarket" data-title="🏪 商超" style="--acc:var(--s5)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s5)"></span>🏪 商超</div></div><div class="seg-list"><article class="n-card" data-seg="supermarket" data-region="国内" data-search="永辉超市切入「家宴经济」：中秋国庆双节启动「团圆家宴·品质严选」，超200种节令商品同步上市 东方财富网9月9日：永辉超市启动中秋国庆双节活动，在全国门店开启「团圆家宴·品质严选」主题活动，覆盖月饼礼盒、鲜活海产、生鲜食材等全场景超200种节令商品同步上市，并以礼盒、家宴场景切入节令礼赠与家庭聚餐消费，双节营销「打法」升级。 永辉超市 东方财富网" style="--acc:var(--s5)"><a class="n-title" href="https://finance.eastmoney.com/a/202609093869204430.html" target="_blank" rel="noopener noreferrer">永辉超市切入「家宴经济」：中秋国庆双节启动「团圆家宴·品质严选」，超200种节令商品同步上市</a><p class="n-sum">东方财富网9月9日：永辉超市启动中秋国庆双节活动，在全国门店开启「团圆家宴·品质严选」主题活动，覆盖月饼礼盒、鲜活海产、生鲜食材等全场景超200种节令商品同步上市，并以礼盒、家宴场景切入节令礼赠与家庭聚餐消费，双节营销「打法」升级。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">永辉超市</span><span>东方财富网</span><span>·</span><span>9月9日</span><a class="n-link" href="https://finance.eastmoney.com/a/202609093869204430.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="supermarket" data-region="国内" data-search="olé精品超市第三届新疆水果节启幕：联合鑫荣懋源头直采西域鲜果，桃太萌元气小桃/苦豆蜜瓜等献礼中秋 新华报业网9月9日：olé精品超市联合水果龙头企业鑫荣懋集团，在广州olé天汇广场店举行「好疆果，正当食」2026新疆水果节发布会，正式启幕第三届新疆水果节。本届甄选连续九年上榜熊猫指南的桃太萌元气小桃、新疆戈壁苦豆蜜瓜、多彩恐龙蛋李等明星疆果，均自带地域稀缺属性与品质优势，并提供自由组合的定制化礼赠服务，满足中秋鲜果礼赠需求。 olé精品超市/鑫荣懋集团 新华报业网" style="--acc:var(--s5)"><a class="n-title" href="https://www.xhby.net/content/s6aa10213e4b02a27aa5a485f.html" target="_blank" rel="noopener noreferrer">Olé精品超市第三届新疆水果节启幕：联合鑫荣懋源头直采西域鲜果，桃太萌元气小桃/苦豆蜜瓜等献礼中秋</a><p class="n-sum">新华报业网9月9日：Olé精品超市联合水果龙头企业鑫荣懋集团，在广州Olé天汇广场店举行「好疆果，正当食」2026新疆水果节发布会，正式启幕第三届新疆水果节。本届甄选连续九年上榜熊猫指南的桃太萌元气小桃、新疆戈壁苦豆蜜瓜、多彩恐龙蛋李等明星疆果，均自带地域稀缺属性与品质优势，并提供自由组合的定制化礼赠服务，满足中秋鲜果礼赠需求。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">Olé精品超市/鑫荣懋集团</span><span>新华报业网</span><span>·</span><span>9月9日</span><a class="n-link" href="https://www.xhby.net/content/s6aa10213e4b02a27aa5a485f.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="农业农村部：9月9日「农产品批发价格200指数」116.87、较昨日升0.04点；6种水果均价6.61元/公斤、较昨日降0.6% 中国新闻网援引农业农村部网站9月9日消息：据农业农村部监测，9月9日「农产品批发价格200指数」为116.87，比昨天上升0.04个点；「菜篮子」产品批发价格指数为117.64，比昨天上升0.05个点。截至当日14时，重点监测的6种水果平均价格为6.61元/公斤，比昨天下降0.6%，节前果价在稳中小幅波动、中秋备货需求支撑整体行情。 全国农产品批发市场 中国新闻网（中国青年网转载）" style="--acc:var(--s7)"><a class="n-title" href="http://news.youth.cn/jsxw/202609/t20260909_16860437.htm" target="_blank" rel="noopener noreferrer">农业农村部：9月9日「农产品批发价格200指数」116.87、较昨日升0.04点；6种水果均价6.61元/公斤、较昨日降0.6%</a><p class="n-sum">中国新闻网援引农业农村部网站9月9日消息：据农业农村部监测，9月9日「农产品批发价格200指数」为116.87，比昨天上升0.04个点；「菜篮子」产品批发价格指数为117.64，比昨天上升0.05个点。截至当日14时，重点监测的6种水果平均价格为6.61元/公斤，比昨天下降0.6%，节前果价在稳中小幅波动、中秋备货需求支撑整体行情。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">全国农产品批发市场</span><span>中国新闻网（中国青年网转载）</span><span>·</span><span>9月9日</span><a class="n-link" href="http://news.youth.cn/jsxw/202609/t20260909_16860437.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="南非樱桃首次获准输华：中南签署樱桃输华议定书、享受零关税准入，中国是全球最大樱桃进口国（2025年进口58.69万吨/33亿美元） 中国网（china.org.cn）9月9日：北京时间9月8日，在第九次中南卫生与植物卫生（sps）部长级会议期间，中国海关总署署长孙梅君与南非农业部长奥坎普（aucamp）在北京共同签署南非樱桃输华议定书，南非樱桃由此首次获得中国市场准入资格，并在共享发展经济伙伴关系框架下享受零关税市场准入。中国是全球最大樱桃进口国，2025年进口鲜樱桃约58.69万吨、进口额约33亿美元；南非预计此举将刺激当地樱桃生产投资、创造约600个就业岗位。奥坎普称这是「破纪录」的——一年内中南签署的第二份市场准入议定书。此外，南非蓝莓输华议定书谈判已进入后期阶段、中方已提交议定书草案，南非力争年底前最终敲定。 南非樱桃/南非农业部/中国海关总署 中国网（china.org.cn）" style="--acc:var(--s8)"><a class="n-title" href="http://www.china.org.cn/world/Off_the_Wire/2026-09/09/content_118688053.shtml" target="_blank" rel="noopener noreferrer">南非樱桃首次获准输华：中南签署樱桃输华议定书、享受零关税准入，中国是全球最大樱桃进口国（2025年进口58.69万吨/33亿美元）</a><p class="n-sum">中国网（china.org.cn）9月9日：北京时间9月8日，在第九次中南卫生与植物卫生（SPS）部长级会议期间，中国海关总署署长孙梅君与南非农业部长奥坎普（Aucamp）在北京共同签署南非樱桃输华议定书，南非樱桃由此首次获得中国市场准入资格，并在共享发展经济伙伴关系框架下享受零关税市场准入。中国是全球最大樱桃进口国，2025年进口鲜樱桃约58.69万吨、进口额约33亿美元；南非预计此举将刺激当地樱桃生产投资、创造约600个就业岗位。奥坎普称这是「破纪录」的——一年内中南签署的第二份市场准入议定书。此外，南非蓝莓输华议定书谈判已进入后期阶段、中方已提交议定书草案，南非力争年底前最终敲定。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">南非樱桃/南非农业部/中国海关总署</span><span>中国网（china.org.cn）</span><span>·</span><span>9月9日</span><a class="n-link" href="http://www.china.org.cn/world/Off_the_Wire/2026-09/09/content_118688053.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国内" data-search="中国—东盟水果交易中心检测实验室（崇左）正式启用：总投资约1亿元、面积5700㎡，口岸检测能力450项提升至800项、建成「2小时水果检测圈」 人民网广西9月8日：中国—东盟水果交易中心检测实验室（崇左）正式启用。实验室紧邻友谊关口岸、采用「关地协同、抵边建设」模式，总投资约1亿元、面积5700平方米，配备先进仪器设备1735台（套）、设备原值超4360万元。投运后广西崇左边境口岸对东盟输华农食产品检测能力由450项提升至800项，可承接友谊关、爱店、水口等边境口岸进口水果检测业务、满足未来5-10年检测需求；南宁海关依托口岸检验检测体系建成「2小时水果检测圈」，大幅压缩检测周期，推动水果更快通关、更鲜上市，助力广西打造全国东盟水果集散地。 南宁海关/中国—东盟水果交易中心（崇左） 人民网广西" style="--acc:var(--s8)"><a class="n-title" href="http://gx.people.com.cn/n2/2026/0908/c179464-41690368.html" target="_blank" rel="noopener noreferrer">中国—东盟水果交易中心检测实验室（崇左）正式启用：总投资约1亿元、面积5700㎡，口岸检测能力450项提升至800项、建成「2小时水果检测圈」</a><p class="n-sum">人民网广西9月8日：中国—东盟水果交易中心检测实验室（崇左）正式启用。实验室紧邻友谊关口岸、采用「关地协同、抵边建设」模式，总投资约1亿元、面积5700平方米，配备先进仪器设备1735台（套）、设备原值超4360万元。投运后广西崇左边境口岸对东盟输华农食产品检测能力由450项提升至800项，可承接友谊关、爱店、水口等边境口岸进口水果检测业务、满足未来5-10年检测需求；南宁海关依托口岸检验检测体系建成「2小时水果检测圈」，大幅压缩检测周期，推动水果更快通关、更鲜上市，助力广西打造全国东盟水果集散地。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">南宁海关/中国—东盟水果交易中心（崇左）</span><span>人民网广西</span><span>·</span><span>9月8日</span><a class="n-link" href="http://gx.people.com.cn/n2/2026/0908/c179464-41690368.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="中央气象台9月9日：四川盆地西部和南部等地有大到暴雨、局地大暴雨，西北东南部/黄淮/江汉降温4-6℃、局地8-10℃以上 中央气象台9月9日天气公报（新浪财经转载）：受冷空气影响，预计9月9日08时至10日08时，四川盆地西部和南部、甘肃东部和南部、陕西西南部、云南西部等地部分地区有大到暴雨、局地大暴雨，部分地区伴短时强降水或雷暴大风；西北地区东南部、黄淮、江汉、四川盆地等地有4-6℃降温、局地降温8-10℃以上，并伴有4-5级风、阵风6-7级。此前一日四川成都、德阳等地已现局地大暴雨（100-138.3毫米）。正值陕西、甘肃苹果及四川猕猴桃等秋果采收上市期，产区需防范较强降雨与降温对采收、贮藏的影响。 四川/陕西/甘肃果产区 中央气象台（新浪财经转载）" style="--acc:var(--s9)"><a class="n-title" href="https://finance.sina.com.cn/jjxw/2026-09-09/doc-inirexfw8889153.shtml" target="_blank" rel="noopener noreferrer">中央气象台9月9日：四川盆地西部和南部等地有大到暴雨、局地大暴雨，西北东南部/黄淮/江汉降温4-6℃、局地8-10℃以上</a><p class="n-sum">中央气象台9月9日天气公报（新浪财经转载）：受冷空气影响，预计9月9日08时至10日08时，四川盆地西部和南部、甘肃东部和南部、陕西西南部、云南西部等地部分地区有大到暴雨、局地大暴雨，部分地区伴短时强降水或雷暴大风；西北地区东南部、黄淮、江汉、四川盆地等地有4-6℃降温、局地降温8-10℃以上，并伴有4-5级风、阵风6-7级。此前一日四川成都、德阳等地已现局地大暴雨（100-138.3毫米）。正值陕西、甘肃苹果及四川猕猴桃等秋果采收上市期，产区需防范较强降雨与降温对采收、贮藏的影响。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">四川/陕西/甘肃果产区</span><span>中央气象台（新浪财经转载）</span><span>·</span><span>9月9日</span><a class="n-link" href="https://finance.sina.com.cn/jjxw/2026-09-09/doc-inirexfw8889153.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-10 18:22 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

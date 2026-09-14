@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国内外头部水果企业及种植产业财报速览 · 2026年中报季</title>
+<style>
+  :root{
+    --bg:#f6f7f4; --card:#ffffff; --ink:#1a2b22; --sub:#5c6b63;
+    --line:#e4e8e2; --green:#1f7a3d; --green-bg:#e7f3ea;
+    --red:#c0392b; --red-bg:#fdecea; --amber:#b5791a; --amber-bg:#fdf3e2;
+    --blue:#2c5f8a; --blue-bg:#e9f1f8; --violet:#6b4fa0; --violet-bg:#efeaf8; --gray:#8a918d;
+    --shadow:0 1px 3px rgba(20,40,30,.06),0 4px 16px rgba(20,40,30,.05);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121613; --card:#1b211c; --ink:#e8efe9; --sub:#9aa79f;
+      --line:#2c362f; --green:#6fd08f; --green-bg:#16301f;
+      --red:#ff8f84; --red-bg:#3a1d1a; --amber:#e3b262; --amber-bg:#3a2e15;
+      --blue:#8cbce0; --blue-bg:#16283a; --violet:#b39df0; --violet-bg:#241b3a; --gray:#7d8981;
+      --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6; padding:24px 16px 60px;
+  }
+  .wrap{max-width:1020px; margin:0 auto;}
+  header{margin-bottom:24px;}
+  .kicker{color:var(--green); font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase;}
+  h1{font-size:26px; font-weight:800; margin:6px 0 6px; letter-spacing:-.01em;}
+  .meta{color:var(--sub); font-size:13px;}
+  .meta .dot{margin:0 8px; opacity:.5;}
+  .summary{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 18px; margin:18px 0 22px; font-size:14.5px;
+  }
+  .summary b{color:var(--green);}
+  .summary .tag{display:inline-block; padding:1px 9px; border-radius:20px; font-size:12px; font-weight:600; margin:0 2px;}
+  .tag.done{background:var(--green-bg); color:var(--green);}
+  .tag.pend{background:var(--amber-bg); color:var(--amber);}
+  .tag.miss{background:var(--red-bg); color:var(--red);}
+  .policy{
+    background:var(--blue-bg); border:1px solid var(--line); border-radius:12px;
+    padding:12px 16px; font-size:12.5px; color:var(--sub); margin-bottom:26px;
+  }
+  .policy b{color:var(--ink);}
+  .policy .n{display:inline-block; width:18px; height:18px; line-height:18px; text-align:center;
+    border-radius:50%; background:var(--blue); color:#fff; font-size:11px; font-weight:700; margin-right:6px;}
+  section{margin-bottom:34px;}
+  h2{font-size:19px; font-weight:800; display:flex; align-items:center; gap:9px; margin-bottom:14px; padding-bottom:9px; border-bottom:2px solid var(--line);}
+  h2 .bar{width:5px; height:20px; border-radius:3px; background:var(--green); display:inline-block;}
+  h2 .cnt{font-size:12px; color:var(--sub); font-weight:600;}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 16px 13px; display:flex; flex-direction:column; gap:8px;
+  }
+  .card .top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+  .card .name{font-weight:800; font-size:15.5px;}
+  .card .code{font-size:12px; color:var(--sub); font-weight:500;}
+  .badge{font-size:11px; font-weight:700; padding:2px 9px; border-radius:20px; white-space:nowrap;}
+  .badge.done{background:var(--green-bg); color:var(--green);}
+  .badge.pend{background:var(--amber-bg); color:var(--amber);}
+  .badge.miss{background:var(--red-bg); color:var(--red);}
+  .badge.blue{background:var(--blue-bg); color:var(--blue);}
+  .badge.violet{background:var(--violet-bg); color:var(--violet);}
+  .card .kpis{display:flex; flex-wrap:wrap; gap:6px;}
+  .kpi{
+    background:var(--bg); border:1px solid var(--line); border-radius:9px;
+    padding:4px 9px; font-size:12.5px; color:var(--sub);
+  }
+  .kpi b{color:var(--ink); font-size:13px;}
+  .kpi b.up{color:var(--green);} .kpi b.down{color:var(--red);} .kpi b.warn{color:var(--amber);}
+  .card .note{font-size:13px; color:var(--sub); flex:1;}
+  .card .note b{color:var(--ink); font-weight:600;}
+  .srcs{margin-top:2px; display:flex; flex-wrap:wrap; align-items:center; gap:4px;}
+  .s-grp{font-size:11px; font-weight:700; color:var(--gray); margin-right:2px; letter-spacing:.02em;}
+  .s-grp.off{color:var(--green);}
+  .src{
+    display:inline-flex; align-items:center; gap:4px; text-decoration:none;
+    color:var(--blue); font-size:12px; font-weight:600;
+    border:1px solid var(--line); background:var(--bg);
+    padding:2px 9px; border-radius:20px; margin:2px 2px 2px 0;
+    transition:all .15s;
+  }
+  .src:hover{background:var(--blue-bg); border-color:var(--blue);}
+  .src.off{color:var(--green); border-color:var(--green); background:var(--green-bg);}
+  .src.off:hover{background:var(--green-bg); opacity:.85;}
+  .src svg{width:10px; height:10px; flex:none;}
+  footer{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); color:var(--gray); font-size:12px;}
+  footer ul{margin:8px 0 0 18px;}
+  .legend{display:flex; flex-wrap:wrap; gap:14px; font-size:12.5px; color:var(--sub); margin-top:10px;}
+  .legend .item{display:flex; align-items:center; gap:6px;}
+  .legend .sw{width:11px; height:11px; border-radius:50%; display:inline-block;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Fruit Industry · Financial Reports</div>
+    <h1>国内外头部水果企业及种植产业财报速览</h1>
+    <div class="meta">2026年中报季 / 美股二季度财报季 · 数据截至 2026-08-31<span class="dot">·</span>每条数据均附可追溯官方链接</div>
+  </header>
+
+  <div class="summary">
+    <b>本期要点</b>：<span class="tag done">本周已发布</span><b>百果园中期业绩（8/30，营收约 50.1 亿 +14.5%、归母净利约 3400 万扭亏、门店 6709 家 +53%）</b>、<b>安德利中报（8/25-26，营收 7.16 亿 -24.45%、净利 1.23 亿 -38.71%，拟 6–8 亿收购半导体标的）</b>、<b>国投中鲁（8/27 重组获证监会注册 + 8/29 中报经营数据：主营 8.78 亿 -12.17%、国外 6.44 亿 -17.78%）</b>、<b>欢乐家中报（8/25 晚，营收 7.35 亿 -1.74%、净利 2323 万 +25.22%）</b>、<b>宏辉果蔬中报（8/28-30，营收 4.18 亿 -11.09%、净利 517 万 -25.35%，7 亿并购施美药业切入医药——8/20 曾因无披露剔除、本次回补）</b>、诺普信中报（8/19，蓝莓占营收 52.22% 首破半）、*ST田野中报（8/14）、永辉/家家悦中报与叮咚 Q2（8/20）、Dole Q2（8/10）、Zespri 年度大会（8/20，2.25 亿盘创纪录）；<span class="tag pend">即将发布</span>Mission Produce Q3（9/14 盘前，估）、Dole Q3（约 11 月上旬，未确认）、安德利半导体收购进展、Rockit 年底资本募集；<span class="tag miss">风险信号</span>国投中鲁浓缩果汁出口承压（预减净利降约 93-95%）、<b>汇源控制权大战持续</b>（回A受阻）、Del Monte Pacific 主要银行豁免 9 月前后到期（净资产缺口 US$5.9 亿）；8/26-28 上海中国国际水果展已举行（鑫荣懋、佳农、佳沛、都乐、乐淇参展）。
+  </div>
+
+  <div class="policy">
+    <b>来源层级说明</b>（数据可追溯性由高到低）：<span class="n">1</span>公司官网「Investor Relations / 投资者关系」&nbsp;<span class="n">2</span>监管/交易所官网（SEC EDGAR · 港交所披露易 HKEXnews · 巨潮资讯网 cninfo · 上交所/深交所官网 · 全国股转系统官网）&nbsp;<span class="n">3</span>证监会指定信息披露媒体全文（中国证券报 / 上海证券报）&nbsp;<span class="n">4</span>权威财经媒体（仅作交叉验证，已降级）。绿色链接=官方来源，蓝色链接=媒体解读。
+  </div>
+
+  <!-- 国内头部水果企业 -->
+  <section>
+    <h2><span class="bar"></span>🇨🇳 国内头部水果企业 <span class="cnt">3 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">百果园集团</div><div class="code">02411.HK</div></div>
+          <span class="badge done">✅ 中期业绩已发 8/30</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="up">约50.1亿 (+14.5%)</b></span>
+          <span class="kpi">归母净利 <b class="up">约3400万（扭亏）</b></span>
+          <span class="kpi">全口径门店 <b class="up">6709家 (+53%)</b></span>
+        </div>
+        <div class="note"><b>8/30 正式刊发 2026 中期业绩</b>：营收约 50.1 亿（+14.5%）、归母净利约 3400 万（上年同期亏 3.42 亿，<b>扭亏为盈</b>），大幅超出 7/24 业绩预告（收入+≥7%、净利≥2000 万）指引。全口径门店同比增 53% 至 6709 家，七星联盟合作门店贡献并表收入约 7.2 亿，般果 B2B 平台 GMV 约 14.01 亿（+22%）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.pagoda.com.cn" target="_blank">公司官网·投资者关系（pagoda.com.cn）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=ZH" target="_blank">港交所披露易 HKEXnews（搜"百果园"）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://news.bjd.com.cn/2026/08/30/11938715.shtml" target="_blank">京报网·8/30中期业绩解读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">安德利果汁</div><div class="code">02218.HK / 605198.SH</div></div>
+          <span class="badge done">✅ 中报已发 8/25-26</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2026H1营收 <b class="down">7.16亿 (−24.45%)</b></span>
+          <span class="kpi">归母净利 <b class="down">1.23亿 (−38.71%)</b></span>
+          <span class="kpi">经营现金流 <b class="down">−32%</b></span>
+        </div>
+        <div class="note"><b>8/25-26 中报披露</b>（8/24 H股董事会批准）：2026 上半年营收 7.16 亿（-24.45%）、归母净利 1.23 亿（-38.71%）、经营现金流下滑 32%，主因浓缩果汁销量与售价双降 + 人民币升值削弱出口收入。<b>拟收购宁波甬强科技部分股权并取得控制权</b>、对价初估 6–8 亿元（标的 2025 营收 2.24 亿、净亏 6695.81 万），跨界半导体互连材料领域开启第二曲线。（⚠️ "营收9.48亿/纯利2.01亿+50.3%"为 2025 中报旧数据）</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.sse.com.cn" target="_blank">上交所官网（A股 605198）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://www.cninfo.com.cn" target="_blank">巨潮资讯网（公告全文）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://finance.china.com/xiaofei/13004691/20260826/49700289.html" target="_blank">中华网财经·8/26中报+半导体收购<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">国投中鲁</div><div class="code">600962.SH</div></div>
+          <span class="badge done">✅ 重组注册获批 8/27 + 中报已发</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">H1主营收入 <b class="down">8.78亿 (−12.17%)</b></span>
+          <span class="kpi">果汁香料果糖 <b class="down">8.71亿 (−12.82%)</b></span>
+          <span class="kpi">国外收入 <b class="down">6.44亿 (−17.78%)</b></span>
+        </div>
+        <div class="note"><b>8/27 发行股份收购中国电子工程设计院 100% 股权获中国证监会同意注册</b>（重组后拟于上交所上市）；2024 年出口量约占全球浓缩苹果汁出口总额 8%、境内约中国 20%。<b>8/29 披露半年报主要经营数据</b>：主营收入合计 8.78 亿（-12.17%），其中果汁、香料及果糖 8.71 亿（-12.82%）；国内 2.35 亿（+8.05%）、国外 6.44 亿（-17.78%），浓缩果汁出口端承压明显（7/14 预减：净利降约 93-95%）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600962&orgId=gssh0600962&announcementId=1225421611&announcementTime=2026-07-14" target="_blank">巨潮资讯网·公告原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://paper.cnstock.com/html/2026-07/14/content_2243705.htm" target="_blank">中国证券报·公告全文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="http://www.ipo123.com.cn/archives/88478" target="_blank">中经互联·8/27重组注册获批<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://wap.stockstar.com/detail/AN2026082900007622" target="_blank">证券之星·8/29半年报数据<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 国内种植产业 -->
+  <section>
+    <h2><span class="bar"></span>🌱 水果种植产业 / 蓝莓产业链 <span class="cnt">2 家</span></h2>
+    <div class="grid">
+
+      
+      
+      <div class="card">
+        <div class="top">
+          <div><div class="name">诺普信</div><div class="code">002215.SZ</div></div>
+          <span class="badge done">✅ 中报已发 8/19晚</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="up">39.64亿 (+7.76%)</b></span>
+          <span class="kpi">归母净利 <b class="up">7.65亿 (+17.98%)</b></span>
+          <span class="kpi">蓝莓生鲜占 <b class="up">52.22%（首破半）</b></span>
+          <span class="kpi">Q2单季净利 <b class="down">1197万 (-43.29%)</b></span>
+        </div>
+        <div class="note"><b>8/19 晚间披露 2026 中报</b>：营收 39.64 亿（+7.76%）、归母净利 7.65 亿（+17.98%）、扣非 7.50 亿（+10.45%），连续第 5 年净利增长。<b>蓝莓（爱莓庄/特色生鲜）收入 20.70 亿占营收 52.22% 首破半、毛利率 40.31%</b>，贡献净利约 6.07 亿（约占 79%）——全球最大单体基质蓝莓产业链（云南超 5 万亩）。<b>⚠️ 隐忧</b>：Q2 单季净利骤降至 1197 万（-43.29%，蓝莓产季错配）、经营现金流 -63.98%、短期借款 32.95 亿 vs 货币资金 12.33 亿、蓝莓植物新品种权诉讼涉案超 4.1 亿（多案已上诉最高院）。农化起家、蓝莓已升为第一大主业。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.cninfo.com.cn/new/fulltextSearch?keyWord=诺普信" target="_blank">巨潮资讯网·中报全文/摘要<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.szse.cn" target="_blank">深交所官网（002215）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://wap.stockstar.com/detail/RB2026082100004892" target="_blank">证券之星·中报简析<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://finance.eastmoney.com/a/202608203847490929.html" target="_blank">东方财富<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">宏辉果蔬</div><div class="code">603336.SH</div></div>
+          <span class="badge done">✅ 中报已发 8/28-30</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="down">4.18亿 (-11.09%)</b></span>
+          <span class="kpi">归母净利 <b class="down">517万 (-25.35%)</b></span>
+          <span class="kpi">果蔬主业 <b class="down">-38.87%</b></span>
+          <span class="kpi">7亿并购施美 <b class="up">6月并表</b></span>
+        </div>
+        <div class="note"><b>2026 中报</b>（8/20 曾因当时无业绩披露被剔除，本次中报已发回补）：营收 4.18 亿（-11.09%）、归母净利 516.89 万（-25.35%）、扣非 500.74 万（-25.61%）。果蔬主业收入 2.26 亿<b>同比 -38.87%</b>、归母层面亏损约 843 万（生鲜竞争白热化+终端需求疲软）；冻肉贸易 1.11 亿（+42.63%）、速冻食品 0.20 亿（+43.54%）保持高增。6 月<b>斥 7.0 亿收购施美药业 41.128% 股份切入医药</b>，当月即贡献归母净利 1,359.67 万（利润主要来源）；新增商誉 4.07 亿、长期借款 +412.86%（5.71 亿），承载三年累计 5.16 亿扣非业绩承诺（未达 90% 现金补偿）。「并购托底、主业承压」，需跟踪施美业绩承诺兑现与商誉减值风险。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.sse.com.cn/disclosure/listedinfo/announcement/" target="_blank">上交所官网（603336）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.cninfo.com.cn/new/fulltextSearch?keyWord=宏辉果蔬" target="_blank">巨潮资讯网·中报全文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 水果深加工 / 果汁饮料 -->
+  <section>
+    <h2><span class="bar" style="background:var(--amber)"></span>🧃 水果深加工 / 果汁饮料 <span class="cnt">2 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">欢乐家</div><div class="code">300997.SZ</div></div>
+          <span class="badge done">✅ 中报已发 8/25晚</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="down">7.35亿 (−1.74%)</b></span>
+          <span class="kpi">归母净利 <b class="up">2323万 (+25.22%)</b></span>
+          <span class="kpi">经营现金流 <b class="up">6930万 (+278%)</b></span>
+        </div>
+        <div class="note">椰子汁/水果罐头；<b>8/25 晚间披露 2026 中报</b>：营收 7.35 亿（-1.74%）、归母净利 2323.08 万（+25.22%）、经营现金流净额 6930 万（+278%）；分产品椰子汁收入 3.24 亿（占 44.07%）、水果罐头 2.62 亿（占 35.68%），持续拓展零食专营渠道并推进越南、印尼椰子加工项目。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.cninfo.com.cn/new/disclosure/stock?stockCode=300997" target="_blank">巨潮资讯网（300997）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.stnn.cc/detail/6a8d83c0c3c8142abfe30345.html" target="_blank">星岛新闻·8/25中报<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">田野股份（*ST田野）</div><div class="code">920023.BJ 北交所</div></div>
+          <span class="badge done">✅ 中报提前披露 8/14</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2026H1营收 <b class="down">2.48亿 (−6.75%)</b></span>
+          <span class="kpi">归母净利 <b class="down">95.66万 (−94.16%)</b></span>
+          <span class="kpi">扣非 <b class="down">−168.17万</b></span>
+        </div>
+        <div class="note">热带果蔬制品/原料果汁供应商（客户含奈雪、蜜雪冰城、农夫山泉、可口可乐等）；<b>8/14 提前披露 2026 中报</b>（预约清单外），净利大降九成、扣非转亏。北交所上市（原田野创新）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.bse.cn" target="_blank">北交所官网（920023）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://stock.stockstar.com/AN2026081500004085.shtml" target="_blank">证券之星·中报速递<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 海外头部水果企业 -->
+  <section>
+    <h2><span class="bar"></span>🌍 海外头部水果企业 <span class="cnt">8 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Del Monte Corporation</div><div class="code">NYSE: DMC（原 FDP）</div></div>
+          <span class="badge done">✅ Q2 已发 7/29</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">营收 <b class="up">$12.2亿 (+3%)</b></span>
+          <span class="kpi">调整后EPS <b class="down">$0.72 (预期$1.10)</b></span>
+          <span class="kpi">GAAP净利 <b>$2120万</b></span>
+        </div>
+        <div class="note">二季报（截至 6/26，7/29 发布）：营收超预期但 EPS 大幅不及（调整后 EPS $0.72 vs 预期 $1.10、GAAP 净利 $21.2M -62.6%）；已并入 Del Monte Foods（本卡即涵盖原 Fresh Del Monte 及 Del Monte Foods 品牌运营），全年指引维持（调整后 EBITDA $2.3–2.4 亿）。窗口期（8/17–8/24）<b>无新 8-K</b>；Q2 股息 $0.30/股 9/4 派发。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://investorrelations.freshdelmonte.com/news/news-details/2026/Del-Monte-Corporation-Reports-Second-Quarter-Earnings-for-Fiscal-2026/default.aspx" target="_blank">公司 IR·Q2财报新闻稿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.investing.com/news/transcripts/earnings-call-transcript-del-monte-posts-q2-2026-sales-beat-eps-miss-93CH-4821144" target="_blank">Investing.com·电话会纪要<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Mission Produce</div><div class="code">NASDAQ: AVO</div></div>
+          <span class="badge miss">⚠️ Q2 已发 6/8 · 亏损</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">净利 <b class="down">−$720万</b></span>
+          <span class="kpi">营收 <b class="down">$2.909亿 (−24%)</b></span>
+          <span class="kpi">销量 <b class="up">+15%</b></span>
+          <span class="kpi">下半年指引 <b class="up">$8400–8800万</b></span>
+        </div>
+        <div class="note">财季截至 4/30、6/8 披露：牛油果均价同比跌 36%（销量 +15%）致营收降 24%，GAAP 净亏 $720 万（含 Calavo 交易顾问费 $640 万）；5/28 已完成对 Calavo 的收购（约 $266M 现金+换股，总对价约 $4.3 亿），下半年调整后 EBITDA 指引 $8400–8800 万（Q3 $2800–3200 万），18 个月内协同 ≥$2500 万/年。窗口期无新披露；<b>Q3 FY2026 财报约 9/14 盘前（多数渠道估、未官方确认）</b>，10/8 纽约 Investor Day（新 CEO John Pawlowski 接任）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.sec.gov/edgar/browse/?CIK=0001802974" target="_blank">SEC EDGAR·公司全部文件<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://investor.missionproduce.com" target="_blank">公司 IR（investor.missionproduce.com）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.nasdaq.com/articles/mission-produce-q2-earnings-miss-estimates-pricing-pressures" target="_blank">Nasdaq<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Calavo Growers</div><div class="code">NYSE: CVGW（已并入 Mission）</div></div>
+          <span class="badge done">✅ 最后一季独立财报 5/28</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">净利 <b>−$19.1万</b></span>
+          <span class="kpi">调整后EPS <b>$0.33</b></span>
+          <span class="kpi">营收 <b>$3.314亿</b></span>
+        </div>
+        <div class="note">5/28 发布 Q2 财报并同日完成被 Mission Produce 收购（现金约 $2.66 亿+换股），股票当日停牌并提交 Form 25-NSE 退市文件、<b>6/8 完成退市</b>；现为 Mission 全资子公司，<b>不再有独立公开财报</b>（相关进度看 Mission Q3 与 10/8 Investor Day）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.sec.gov/edgar/browse/?CIK=0001133470" target="_blank">SEC EDGAR·公司全部文件<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://archive.fast-edgar.com/20260608/AA22722CB22252Z2222B22OCDPITJ222A282/exh991avoq22026earningsrel.htm" target="_blank">SEC 归档·Q2财报原文（8-K附件）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Dole plc</div><div class="code">NYSE: DOLE</div></div>
+          <span class="badge done">✅ Q2 已发 8/10</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">Q2营收 <b class="up">$25.0亿 (+2.9%)</b></span>
+          <span class="kpi">调整后EBITDA <b class="down">$116.8M (−14.8%)</b></span>
+          <span class="kpi">调整后EPS <b class="down">$0.46 (预期$0.50)</b></span>
+        </div>
+        <div class="note">8/10（周一）美东盘前发布 Q2 2026（SEC 8-K 同步归档）：营收 $25.0 亿 (+2.9%、LFL +1.7%)、调整后 EBITDA $116.8M (−14.8%)、调整后稀释 EPS $0.46（不及一致预期约 $0.50–0.51），股价当日跌 8.1%。Fresh Fruit 板块 EBITDA $50.3M <b>−30.9%</b>（水果采购/海运燃油/菠萝种植成本上升，管理层预计 Q3/Q4 边际改善）；DFP-Americas & ROW +33.8%（奇异果/牛油果/樱桃放量，本季亮点）。FY2026 指引维持调整后 EBITDA 约 $4 亿、capex 约 $1 亿。8/10 新闻稿另确认季度股息 $0.085/股（9/16 登记、10/7 支付），H1 回购额度剩余约 $85.4M。<b>Q2 后已完成厄瓜多尔港口出售（约 $95M）并收购瑞典 Greenfood Fresh Produce</b>；窗口期（8/17–8/24）无新 8-K/10-Q，下一份 Q3 财报约 11 月上旬（未官方确认）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1857475/000185747526000074/dole-20260810.htm" target="_blank">SEC 归档·Q2财报原文（8-K）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/edgar/browse/?CIK=0001857475" target="_blank">SEC EDGAR·公司全部文件<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.doleplc.com/investors" target="_blank">公司 IR（doleplc.com/investors）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Del Monte Pacific</div><div class="code">SGX: D03（新加坡）</div></div>
+          <span class="badge done">✅ FY2026 扭亏 6/26</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">FY2026营收 <b class="up">US$8.96亿 (+13.5%)</b></span>
+          <span class="kpi">净利 <b class="up">US$4840万（扭亏）</b></span>
+        </div>
+        <div class="note">全球 Del Monte 品牌主要运营主体之一（与美股 DMC 分属不同实体）；FY2025 剥离美国子公司（Chapter 11 破产）后 FY2026 扭亏为盈（6/26 发布，但 Q4 净利 -76.9%）。<b>⚠️ 净资产缺口 US$5.9 亿、流动负债超流动资产 US$787M、期末现金仅 US$8M</b>，SGX 曾质询持续经营、7/8 已聘外部重组顾问；<b>主要银行豁免 9 月前后到期</b>（仅一家豁免至 2027/9），窗口期无新公告。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://links.sgx.com/1.0.0/corporate-announcements/WXKFM69ZOLBM91EJ" target="_blank">SGX 公告·FY2026业绩<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://mb.com.ph/2026/06/26/del-monte-earnings-bounce-back-as-us-divestment-bears-fruit" target="_blank">Manila Bulletin<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">T&G Global</div><div class="code">NZX: TGG（新西兰）</div></div>
+          <span class="badge done">✅ 2026中期 8/7</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2026H1营收 <b class="up">NZ$5.723亿 (+2.6%)</b></span>
+          <span class="kpi">营业利润 <b class="up">NZ$1160万 (+30.3%)</b></span>
+          <span class="kpi">报告期净亏 <b class="down">NZ$3050万</b></span>
+        </div>
+        <div class="note">8/7 发布 2026 中期业绩：苹果业务营收 NZ$5.509 亿、营业利润 NZ$5450 万（+15.2%），<b>ENVY™ 苹果亚洲旺销（中国 +26% / 越南 +34% / 泰国 +10%）</b>；整体净亏 NZ$3050 万系出售 T&G Fresh 业务产生 NZ$3440 万减值（计入终止经营）。FY2025 全年已扭亏（税后净利 NZ$1600 万）。窗口期无新披露；<b>NZCC 对 J&amp;P Turner 收购 T&amp;G Fresh 决定日 8/26</b>（NZCC 官网日程），Fiji/太平洋岛国业务出售预计 9/1 完成。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://announcements.nzx.com/announcement/477455" target="_blank">NZX 公告·2026中期业绩<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://tandg.global/premium-apple-demand-underpins-positive-tg-global-result/" target="_blank">T&G 官网<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.freshfruitportal.com/news/2026/03/02/tg-financial-results/" target="_blank">FreshFruitPortal<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Zespri 佳沛</div><div class="code">新西兰奇异果合作社</div></div>
+          <span class="badge done">✅ 2025/26产季 5/20</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">果品销售额 <b class="up">NZ$59亿（创纪录）</b></span>
+          <span class="kpi">税后净利 <b class="up">NZ$2.801亿（约翻倍）</b></span>
+          <span class="kpi">发货 <b>2.48亿箱</b></span>
+        </div>
+        <div class="note">全球奇异果出口龙头（合作社、非上市，但每年 5 月发布官方年度业绩）。<b>8/20 年度大会如期举行</b>，随后发布 <b>2026 产季首次完整产量预测：创纪录的 2.25 亿盘新西兰采收量</b>（多数品类每公顷回报预计超 2025 年纪录，Green 与 Green Organic 除外）。最新官方财报仍为 5/20 的 2025/26 年报（果品销售额 NZ$59 亿创纪录、税后净利 NZ$2.801 亿约翻倍、发货 2.48 亿箱）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.zespri.com/en-NZ/publications/newsroomdetail/2025-26-financial-results" target="_blank">Zespri 官网·年度业绩<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.freshplaza.com/oceania/article/9839574/zespri-reports-nz-5-9-billion-in-fruit-sales-for-2025-26-season/" target="_blank">FreshPlaza<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">乐淇苹果 Rockit Global</div><div class="code">新西兰 · 未上市</div></div>
+          <span class="badge violet">未上市 · 披露口径</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中国营业额占比 <b class="up">&gt;50%</b></span>
+          <span class="kpi">2026果农回报 <b class="up">NZ$1.25/管</b></span>
+          <span class="kpi">2027目标 <b class="up">1.50–1.55纽币</b></span>
+        </div>
+        <div class="note">全球首款迷你苹果，中国市场贡献全球营业额超 50%（进口苹果细分约占新西兰对华份额三分之一）；2026 新季 3 月启动，5 月签约顶流明星<b>王一博</b>为全球品牌代言（史上最大营销），8/26-28 上海中国国际水果展亮相。执行「提升果农回报三年计划」走出 2025 供过于求低谷（上年每管仅 63–65 分、净亏约 0.45 纽币），<b>2026 果农回报预测 NZ$1.25/管</b>、2027 目标 1.50–1.55 纽币，并计划 2026 年底进行一轮<b>资本募集</b>。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.rockitapple.com" target="_blank">Rockit 官网<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://asiafruitchina.net/31666.html" target="_blank">亚洲水果·新季+营销<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.sohu.com/a/1068883067_120823584" target="_blank">搜狐·8/28水果展亮相<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 商超 / 生鲜零售 / 供应链 -->
+  <section>
+    <h2><span class="bar" style="background:var(--blue)"></span>🏪 商超 / 生鲜零售 / 供应链 <span class="cnt">3 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">永辉超市</div><div class="code">601933.SH</div></div>
+          <span class="badge done">✅ 2026中报 扭亏 8/20</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="down">237.91亿 (−20.56%)</b></span>
+          <span class="kpi">归母净利 <b class="up">2.53亿（扭亏）</b></span>
+          <span class="kpi">扣非 <b class="up">0.39亿（扭亏）</b></span>
+        </div>
+        <div class="note">全国连锁商超、生鲜水果为重要品类；2026 中报 <b>8/20 盘后发布</b>：营收 237.91 亿（-20.56%）、归母净利 2.53 亿（上年同期 -2.41 亿，扭亏 +4.94 亿）、扣非 0.39 亿（上年同期 -8.02 亿）。「关店瘦身 + 学胖东来调改」减收增利：上半年关店近 400 家、331 家完成调改，毛利率 22.52%（+1.7pct）；<b>食品用品收入占比 49.77% 首超生鲜及加工（46.44%）</b>；线上销售额 48.68 亿、占 19.35%，自有品牌 25.33 亿、占 10.07%。扭亏含政府补助/资产处置/公允价值等非经常损益，但扣非亦明显改善。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.cninfo.com.cn" target="_blank">巨潮资讯网（601933 公告）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://finance.eastmoney.com/a/202608213849104974.html" target="_blank">东方财富·中报净利2.53亿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.nbd.com.cn/articles/2026-08-20/4548689.html" target="_blank">每日经济新闻·关店调改扭亏<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">家家悦</div><div class="code">603708.SH</div></div>
+          <span class="badge done">✅ 2026中报 +1.77% 8/20</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="down">89.66亿 (−0.46%)</b></span>
+          <span class="kpi">归母净利 <b class="up">1.86亿 (+1.77%)</b></span>
+          <span class="kpi">生鲜收入 <b class="up">+4.94%</b></span>
+        </div>
+        <div class="note">山东商超龙头；2026 中报 <b>8/20 发布</b>：营业总收入 89.66 亿（-0.46%）、归母净利 1.86 亿（+1.77%、连续两年增长）、扣非 1.77 亿（-2.38%）；经营现金流净额 11.15 亿（+15.79%）、毛利率 24.18%（+0.18pct）。<b>生鲜收入 +4.94%、生鲜毛利率提升 0.99pct</b>；综合超市收入 +2.89%、省外收入 +5.98%，自有品牌及定制占比 17.09%。拟每 10 股派现 1.60 元（约 9906 万，待股东会审议）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.cninfo.com.cn" target="_blank">巨潮资讯网（603708 公告）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.sohu.com/a/1065740114_122014422" target="_blank">搜狐·营收89.66亿净利1.86亿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">叮咚买菜</div><div class="code">DDL（美股中概）</div></div>
+          <span class="badge done">✅ 2026Q2 连续10季盈利 8/20</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">Q2营收 <b class="up">64.87亿 (+8.6%)</b></span>
+          <span class="kpi">GAAP净利 <b class="up">2.72亿 (+153.5%)</b></span>
+          <span class="kpi">GMV <b class="up">72.65亿 (+11.8%)</b></span>
+        </div>
+        <div class="note">前置仓生鲜电商、水果为重要品类；Q2 财报 <b>8/20 美东盘前发布</b>：营收 64.87 亿（+8.6%，中国业务 64.14 亿 +8.3%、海外 7320 万 +36.2%）、GAAP 净利 2.72 亿（+153.5%、连续第十个季度盈利）、Non-GAAP 净利 2.81 亿（+120.2%）。<b>口径提示</b>：因与美团交易将相关长期资产划为待售资产停止计提折旧摊销，增厚本季净利约 1.99 亿，剔除后经营 GAAP 净利约 0.73 亿。GMV 72.65 亿（+11.8%）、毛利率 29.6%（+0.8pct）、履约费用率 18.6%（-3.1pct）；上海月均订单频次破 5 次，新拓盐城/淮安/衢州/丽水，8/15 合肥三仓同开。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=ddl&type=10-Q" target="_blank">SEC EDGAR（叮咚买菜 10-Q）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.yilantop.com/news/103352" target="_blank">亿欧·Q2营收64.9亿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="http://stock.stockstar.com/IG2026082200007453.shtml" target="_blank">证券之星·净利2.72亿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 未上市巨头（招股书/披露口径） -->
+  <section>
+    <h2><span class="bar" style="background:var(--violet)"></span>🏢 未上市巨头 · 数据来自招股书/披露 <span class="cnt">4 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">鲜丰水果股份有限公司</div><div class="code">未上市 · A股上市已搁浅</div></div>
+          <span class="badge violet">📋 IPO辅导口径</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">门店 <b class="up">2290家 (2023)</b></span>
+          <span class="kpi">销售规模 <b>约59.85亿 (2023)</b></span>
+          <span class="kpi">红杉持股 <b>9.05%</b></span>
+        </div>
+        <div class="note">杭州水果连锁龙头（含鲜丰水果/阿K果园子/水果码头等品牌），与百果园竞逐<b>"水果零售第一股"</b>。2019/12 中信证券辅导 → 2021/1 终止 → 2021/2 改由中信建投重启辅导；<b>⚠️ 但自 2024/8 实控人股权被法院冻结超 3 亿（PE 基金到期清算退出所致）后，上市计划已搁浅</b>（2026 年初多家媒体确认，窗口期无新进展）。<b>⚠️ 无官方定期财报</b>，最新完整数据为 2023 年口径（销售规模约 59.85 亿、门店 2290 家）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.citics.com/newsite/tzgg/ipoqyfdgg/202001/P020200113586635491747.pdf" target="_blank">中信证券·辅导备案公告(PDF)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://m.jrj.com.cn/madapter/stock/2021/02/28084432039255.shtml" target="_blank">金融界·重启IPO<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://finance.eastmoney.com/a/202103021826090072.html" target="_blank">东方财富·辅导进程<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">汇源集团（北京汇源）</div><div class="code">未上市 · 港股退市/重整中</div></div>
+          <span class="badge violet">📋 重整披露口径</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2024营收 <b>24.75亿</b></span>
+          <span class="kpi">2024扣非净利 <b>3.30亿</b></span>
+          <span class="kpi">2023营收 <b class="up">27.45亿 (+135.9%)</b></span>
+        </div>
+        <div class="note">果汁龙头，2021 年港交所退市（原 01886.HK）；2022/6 法院批准重整、文盛资产入局（持北京汇源 60% 股权），承诺 3–5 年推动回 A。<b>⚠️ 2025–2026 文盛与汇源集团爆发控制权大战</b>：8/8 *ST国中(600187)公告确认诉讼，河北汇源（北京汇源 100% 股东）诉诸暨文盛汇确认 2022《增资协议》已终止（应缴 16 亿仅实付 7.5 亿），索赔 <b>9.14 亿</b>，法院已准予保全<b>冻结文盛汇所持北京汇源 60% 股权</b>（至 2029/7）；8/10 国中水务回应将积极跟进诉讼、维护股东权益（案件未开庭，对本期利润影响不确定）；<b>8/11–8/14 控制权大战升级</b>：8/11 诸暨文盛汇召集北京汇源临时股东会，提出罢免董事长鞠新艳及以资本公积弥补亏损议案，8/14 北京汇源官方公众号发布《异议函》称会议不具合法性、号召职工抵制，国中水务回应尽力维护上市公司权益（以上均非上市公司正式公告）；汇源集团另推新品牌<b>"咱家果源"</b>（8/1 宣传片登陆央视 CCTV-4）欲重造汇源，市场现"双汇源"对峙，回 A 上市受阻。数据为重整期间披露（2023 营收 27.45 亿/扣非净利 3.93 亿、2024 营收 24.75 亿/扣非净利 3.30 亿），无官方定期财报。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://app.cnstock.com/zzb/zgzqb/html/2026-08/08/nw.D110000zgzqb_20260808_1-B032.htm" target="_blank">中国证券报·8/8诉讼公告全文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">权威媒体</span>
+          <a class="src" href="https://www.stcn.com/article/detail/3601216.html" target="_blank">证券时报·粤民投与文盛和解、回A有望<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.stcn.com/article/detail/3606338.html" target="_blank">证券时报·"两个汇源"正面对垒<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://finance.china.com/xiaofei/13004691/20260804/49653843.html" target="_blank">中国网财经·股权冻结/重造汇源<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">鑫荣懋果业科技集团</div><div class="code">未上市 · 冲刺港股IPO中</div></div>
+          <span class="badge violet">📋 IPO披露口径</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2024营收 <b class="up">突破200亿</b></span>
+          <span class="kpi">2025前9月净利 <b class="up">约2.45亿</b></span>
+          <span class="kpi">净利率 <b class="warn">1–2%</b></span>
+        </div>
+        <div class="note">国内最大水果供应链企业之一，服务山姆 / Costco / 永辉 / 百果园等<b>超1万家商超</b>。2026/3 联想控股公告推进其赴港上市，估值约<b>50亿</b>；对赌 2027/9/30 前完成申报、2027/12/31 前上市。净利：2023年2.66亿、2024年3.08–3.09亿。将参展 8/26–28 上海中国国际水果展。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.legendholdings.com.cn" target="_blank">联想控股官网·投资者关系<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=ZH" target="_blank">港交所披露易·联想控股(03396)公告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://finance.eastmoney.com/a/202604023692684418.html" target="_blank">东方财富·冲击上市<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.jiemian.com/article/14111189.html" target="_blank">界面新闻<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">佳农食品控股（"香蕉大王"）</div><div class="code">未上市 · 两冲A股</div></div>
+          <span class="badge violet">📋 招股书口径（较旧）</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2018营收 <b>56.06亿</b></span>
+          <span class="kpi">2018净利 <b>1.45亿</b></span>
+          <span class="kpi">2020销售额 <b>65亿</b></span>
+        </div>
+        <div class="note">香蕉进口量 2016–2019 连续四年全国第一，佳沛奇异果在华第二大经销商。2019、2023 两次冲击 A 股（拟上交所主板）。<b>⚠️ 无官方定期财报</b>，最新完整数据为 2018 招股书口径；2023/10 起在上海证监局辅导备案。将携四款全球首秀新品参展 8/26–28 上海中国国际水果展。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.htsec.com/jfimg/colimg/upload/20240117/1705477937140006990.pdf" target="_blank">海通证券·上市辅导进展报告(PDF)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://static.cdsb.com/micropub/Articles/202310/dff4de2b777c4f22fbc2eba1c3ba5cfc.html" target="_blank">成都商报·IPO观察<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 即将披露日历 -->
+  <section>
+    <h2><span class="bar"></span>📅 未来披露日历 <span class="cnt">待跟踪</span></h2>
+    <div class="grid">
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Dole plc · Q2 2026</div><div class="code">NYSE: DOLE</div></div>
+          <span class="badge done">✅ 已发 8/10</span>
+        </div>
+        <div class="note">8/10 盘前发布（SEC 8-K）：营收 $25.0 亿（+2.9%）、调整后 EBITDA $116.8M（−14.8%）、调整后 EPS $0.46 不及预期、股价跌 8.1%；FY2026 指引维持调整后 EBITDA 约 $4 亿。Fresh Fruit 成本压力仍在，管理层预计 Q3/Q4 边际改善；下一份 Q3 财报约 11 月上旬（未官方确认）。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Mission Produce · Q3 FY2026</div><div class="code">NASDAQ: AVO</div></div>
+          <span class="badge pend">9/14 盘前（估）</span>
+        </div>
+        <div class="note">Q3 财报多数渠道估 9/14 盘前（未获官方确认）；收购 Calavo 后 10/8 在纽约举办 Investor Day（新 CEO John Pawlowski 接任）。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">安德利果汁 · 2026中报</div><div class="code">02218.HK / 605198.SH</div></div>
+          <span class="badge done">✅ 已发 8/25-26</span>
+        </div>
+        <div class="note">8/24 H股董事会批准、8/25-26 披露：营收 7.16 亿（-24.45%）、净利 1.23 亿（-38.71%）；另拟收购宁波甬强科技股权（对价初估 6-8 亿，半导体互连材料），进展待后续公告。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">百果园集团 · 2026中期业绩</div><div class="code">02411.HK</div></div>
+          <span class="badge done">✅ 已发 8/30</span>
+        </div>
+        <div class="note">正式中期业绩 8/30 刊发：营收约 50.1 亿（+14.5%）、归母净利约 3400 万扭亏、全口径门店 6709 家（+53%），超业绩预告指引。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">果汁/深加工 · 中报</div><div class="code">300997 / 600962</div></div>
+          <span class="badge done">✅ 均已发</span>
+        </div>
+        <div class="note">欢乐家 8/25 晚、国投中鲁 8/29（经营数据）均已披露；诺普信 8/19 晚、*ST田野 8/14 已发。本轮中报季全部出齐。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">中国国际水果展 · 8/26–28 上海</div><div class="code">新国际博览中心</div></div>
+          <span class="badge done">✅ 已举行 8/26-28</span>
+        </div>
+        <div class="note">8/26 开幕、8/28 闭幕，超 2.3 万㎡、全球 60 余国近 300 家参展商、约 2.5 万专业观众；鑫荣懋、佳农、佳沛、都乐、怡颗莓、乐淇等头部品牌参展，现场发布《中国水果消费行为与趋势洞察报告》。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">缅甸香蕉检疫新规 · 9/1 生效</div><div class="code">海关总署公告 2026年第109号</div></div>
+          <span class="badge pend">9/1</span>
+        </div>
+        <div class="note">7/28 发布、9/1 生效，取代 2022 年 49 号公告；只允许开花 10–11 周内青香蕉输华、需注册果园+包装厂溯源、禁止过熟黄蕉——影响缅甸香蕉进口。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">海外节点 · T&G / Zespri</div><div class="code">NZX · NZ</div></div>
+          <span class="badge pend">9/1 待交割</span>
+        </div>
+        <div class="note">Zespri 年度大会 8/20 已举行并发布 2026 产季产量预测（2.25 亿盘创纪录）；NZCC 对 J&amp;P Turner 收购 T&amp;G Fresh 决定日 8/26 已过；Bidfood 太平洋岛国业务交割预计 9/1。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Dole 股息 · 9/16 登记 / 10/7 支付</div><div class="code">NYSE: DOLE</div></div>
+          <span class="badge pend">9/16</span>
+        </div>
+        <div class="note">Q2 季度股息 $0.085/股（8/7 董事会宣告），9/16 登记、10/7 支付。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">国内节点 · 重组/收购</div><div class="code">600962 / 605198</div></div>
+          <span class="badge pend">待公告</span>
+        </div>
+        <div class="note">国投中鲁 发行股份收购电子院 100% 重组已获证监会注册，待实施发行并推进上交所上市；安德利 拟收购宁波甬强科技股权（对价初估 6-8 亿，半导体互连材料）进展待公告。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Rockit 乐淇 · 资本募集</div><div class="code">新西兰 · 未上市</div></div>
+          <span class="badge pend">2026 年底</span>
+        </div>
+        <div class="note">计划 2026 年底进行一轮资本募集支撑产能扩张；2027 产季果农回报目标 1.50-1.55 纽币/管。</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="legend">
+    <span class="item"><span class="sw" style="background:var(--green)"></span>已发布 / 利好</span>
+    <span class="item"><span class="sw" style="background:var(--amber)"></span>即将发布 / 需关注</span>
+    <span class="item"><span class="sw" style="background:var(--red)"></span>亏损 / 风险信号</span>
+    <span class="item"><span class="sw" style="background:var(--violet)"></span>未上市 · 招股书/披露口径</span>
+        <span class="item"><span class="sw" style="background:var(--green)"></span>绿色链接=官方来源</span>
+    <span class="item"><span class="sw" style="background:var(--blue)"></span>蓝色链接=媒体解读</span>
+  </div>
+
+  <footer>
+    数据来源层级：公司官网 Investor Relations / 投资者关系 → 监管与交易所官网（SEC EDGAR · 港交所披露易 · 巨潮资讯网 · 上交所/深交所 · 全国股转系统官网）→ 证监会指定披露媒体全文（中国证券报 / 上海证券报）→ 权威财经媒体（交叉验证）。
+    <ul>
+      <li>所有业绩均为公司披露的<b>业绩预告 / 正式财报</b>数据，未经审计的预告以公司正式半年报为准。</li>
+      <li>海外企业财年口径不一：Del Monte/Mission/Calavo 为各自 FY2026 季度。</li>
+      <li>按「主业=水果」甄别头部企业，已剔除好想你（红枣零食）、农夫山泉/中国食品（饮料，果汁占比&lt;15%）、冠农/中基健康（棉花/番茄酱）等<b>非水果主业</b>公司；大型商超/生鲜零售<b>永辉、家家悦、叮咚买菜</b>按用户要求保留单列板块（2026 中报均已披露）；已退市无财报的洪九果品、海升果汁及被私有化的 SunOpta 等亦不收录。<b>宏辉果蔬</b>（8/20 曾因当时无业绩披露而剔除）8/28-30 已披露 2026 中报（含 7 亿并购施美药业），本次回补进种植板块。</li>
+      <li>已剔除好想你（红枣零食）、农夫山泉/中国食品（饮料）、冠农/中基健康（棉花/番茄酱）等非水果主业及无定期财报的公司；乐淇苹果 Rockit、Summerfruit、绿叶水果等未上市/私有企业无定期财报，有经营披露的已按特征归入对应板块（如 Rockit→海外），其余动态以日报为准。</li>
+      <li>未上市企业（鑫荣懋、佳农）无定期财报，数据为<b>联想控股港交所公告 / 招股书 / 监管辅导备案</b>口径，年份已在卡片标注。</li>
+      <li>本页面由 AI 于 2026-08-31 汇总，仅供信息参考，不构成投资建议。</li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.08.20</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.08.20</b> 星期四</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">14</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">13</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">12</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">2</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">13</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">榴莲价格"彻底崩了"再上热搜，今日全国多地商超、社区水果店零售价低至19.9元/斤、批发价跌破15元/斤，个别品种从100多元跌至14元，东南亚产区丰产放量叠加进口通道扩容是降价主因，商家称价格已接近触底、下周或现反弹。价格端，农业农村部8月20日重点监测6种水果均价6.83元/公斤、较昨日回升0.7%，阳光玫瑰葡萄今年普遍跌至个位数、个别品种低至1元/斤，但精品果仍坚挺。产地端，陕西洛川早熟苹果全面开卖，预计总产122.69万吨、早中熟已销约6万吨，70mm红嘎啦收购价3.5-4.8元/斤；甘肃庆阳8000亩早熟苹果丰收。企业端，佳沛发布2026产季预测创纪录2.25亿箱、红果每公顷收益增超50%，汇源四川内江50亿果蔬产业园灌装车间即将投产，京东生鲜启动中秋应季水果促销。贸易与外交端，王毅8月19日起访问韩国、印尼并主持中印尼"2+2"机制会议，泉州口岸首个进境水果指定监管场地获批、将依托东南亚航线扩容航空生鲜进口通道。天气端，南海热带低压20日5时40分在海南文昌登陆，华南20-22日有大到暴雨、海南岛局地累计300-400毫米，海南、广东、广西火龙果等产区需防范。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="汇源四川内江50亿果蔬产业园灌装车间即将投产：规划6条果汁灌装线、配套25万吨智慧冷库 中国轻工机械协会8月19日转饮料产业链之窗报道：汇源集团四川果蔬加工智慧冷链产业园（位于内江经开区，用地668亩、总投资约50亿元）果汁智能化灌装车间进入设备调试阶段、即将投产；园区整体规划果蔬深加工产业园、果蔬仓储物流交易中心、25万吨级智慧冷库三大板块，共规划6条果汁灌装生产线，目前1条建成投用、3条正在调试、剩余2条即将安装。 汇源集团 中国轻工机械协会（饮料产业链之窗）" style="--acc:var(--s1)"><a class="n-title" href="http://clima.org.cn/news/show-18822.html" target="_blank" rel="noopener noreferrer">汇源四川内江50亿果蔬产业园灌装车间即将投产：规划6条果汁灌装线、配套25万吨智慧冷库</a><p class="n-sum">中国轻工机械协会8月19日转饮料产业链之窗报道：汇源集团四川果蔬加工智慧冷链产业园（位于内江经开区，用地668亩、总投资约50亿元）果汁智能化灌装车间进入设备调试阶段、即将投产；园区整体规划果蔬深加工产业园、果蔬仓储物流交易中心、25万吨级智慧冷库三大板块，共规划6条果汁灌装生产线，目前1条建成投用、3条正在调试、剩余2条即将安装。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">汇源集团</span><span>中国轻工机械协会（饮料产业链之窗）</span><span>·</span><span>8月19日</span><a class="n-link" href="http://clima.org.cn/news/show-18822.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="佳沛发布2026产季预测：产量创纪录达2.25亿箱，红果每公顷收益增超50% 国际果蔬报道8月20日转佳沛官网：8月19日zespri发布2026年首个完整产量预测，预计产量达创纪录的2.25亿箱；除绿奇异果和有机绿奇异果外，所有品种每公顷平均收益预计均超过上一产季历史最高水平，其中宝石红奇异果每公顷约11.78万纽币、较上季7.83万纽币大幅增超50%，阳光金果约19.12万纽币。 佳沛 zespri 国际果蔬报道（佳沛官网）" style="--acc:var(--s2)"><a class="n-title" href="https://m.guojiguoshu.com/article/11226" target="_blank" rel="noopener noreferrer">佳沛发布2026产季预测：产量创纪录达2.25亿箱，红果每公顷收益增超50%</a><p class="n-sum">国际果蔬报道8月20日转佳沛官网：8月19日Zespri发布2026年首个完整产量预测，预计产量达创纪录的2.25亿箱；除绿奇异果和有机绿奇异果外，所有品种每公顷平均收益预计均超过上一产季历史最高水平，其中宝石红奇异果每公顷约11.78万纽币、较上季7.83万纽币大幅增超50%，阳光金果约19.12万纽币。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">佳沛 Zespri</span><span>国际果蔬报道（佳沛官网）</span><span>·</span><span>8月20日</span><a class="n-link" href="https://m.guojiguoshu.com/article/11226" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="陕西洛川早熟苹果抢鲜上市：预计总产122.69万吨，70mm红嘎啦收购价3.5-4.8元/斤 腾讯新闻8月20日转洛川宣传：以华硕、嘎啦为代表的早熟苹果陆续成熟、采摘销售全面开启；洛川县苹果营销中心介绍，今年全县苹果预计总产量122.69万吨，其中嘎啦、弘田富士等早中熟苹果约32万吨、已销售约6万吨；70mm起步红嘎啦按果品收购标准收购价每斤3.5-4.8元，早熟嘎啦已进入销售旺季，俏销华南、华东及北上广深等市场。 洛川苹果产区 腾讯新闻（洛川宣传）" style="--acc:var(--s3)"><a class="n-title" href="https://news.qq.com/rain/a/20260820A0AP0W00" target="_blank" rel="noopener noreferrer">陕西洛川早熟苹果抢鲜上市：预计总产122.69万吨，70mm红嘎啦收购价3.5-4.8元/斤</a><p class="n-sum">腾讯新闻8月20日转洛川宣传：以华硕、嘎啦为代表的早熟苹果陆续成熟、采摘销售全面开启；洛川县苹果营销中心介绍，今年全县苹果预计总产量122.69万吨，其中嘎啦、弘田富士等早中熟苹果约32万吨、已销售约6万吨；70mm起步红嘎啦按果品收购标准收购价每斤3.5-4.8元，早熟嘎啦已进入销售旺季，俏销华南、华东及北上广深等市场。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">洛川苹果产区</span><span>腾讯新闻（洛川宣传）</span><span>·</span><span>8月20日</span><a class="n-link" href="https://news.qq.com/rain/a/20260820A0AP0W00" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="甘肃庆阳宁县8000亩早熟苹果丰收：依托精细化管护亩均产量约2.5吨 每日甘肃网8月20日转央视网：初秋时节，甘肃省庆阳市宁县8000亩早熟苹果迎来丰收，果园里苹果色泽艳丽、果型饱满，果农忙着采摘、分拣、装车；依托精细化管护，基地亩均产量可达2.5吨。 甘肃庆阳苹果产区 每日甘肃网（央视网）" style="--acc:var(--s3)"><a class="n-title" href="https://gansu.gansudaily.com.cn/system/2026/08/20/031420363.shtml" target="_blank" rel="noopener noreferrer">甘肃庆阳宁县8000亩早熟苹果丰收：依托精细化管护亩均产量约2.5吨</a><p class="n-sum">每日甘肃网8月20日转央视网：初秋时节，甘肃省庆阳市宁县8000亩早熟苹果迎来丰收，果园里苹果色泽艳丽、果型饱满，果农忙着采摘、分拣、装车；依托精细化管护，基地亩均产量可达2.5吨。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">甘肃庆阳苹果产区</span><span>每日甘肃网（央视网）</span><span>·</span><span>8月20日</span><a class="n-link" href="https://gansu.gansudaily.com.cn/system/2026/08/20/031420363.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="新华指数：8月上半月火龙果集中上市、终端走货压力持续抬升 新华指数8月19日监测：8月上半月全国火龙果各主产区普遍进入夏季果集中上市高峰期，市场呈现&quot;总体供应充足、优质优价突出、地区间价格落差显著&quot;的运行特征；时令鲜果与进口品类双向分流，终端走货压力持续抬升。 火龙果主产区 中国金融信息网（新华指数）" style="--acc:var(--s3)"><a class="n-title" href="https://www.cnfin.com/zs-lb/detail/20260819/4457110_1.html" target="_blank" rel="noopener noreferrer">新华指数：8月上半月火龙果集中上市、终端走货压力持续抬升</a><p class="n-sum">新华指数8月19日监测：8月上半月全国火龙果各主产区普遍进入夏季果集中上市高峰期，市场呈现&quot;总体供应充足、优质优价突出、地区间价格落差显著&quot;的运行特征；时令鲜果与进口品类双向分流，终端走货压力持续抬升。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">火龙果主产区</span><span>中国金融信息网（新华指数）</span><span>·</span><span>8月19日</span><a class="n-link" href="https://www.cnfin.com/zs-lb/detail/20260819/4457110_1.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国内" data-search="汇源四川果蔬产业园6条果汁灌装线冲刺投产：1条建成投用、3条调试中、2条即将安装 中国轻工机械协会8月19日转饮料产业链之窗报道：汇源集团四川果蔬加工智慧冷链产业园果汁智能化灌装车间进入设备调试阶段、即将投产；园区共规划6条果汁灌装生产线，目前1条建成投用、3条正在调试、剩余2条即将安装，配套25万吨级智慧冷库及果蔬仓储物流交易中心。 汇源集团 中国轻工机械协会（饮料产业链之窗）" style="--acc:var(--s4)"><a class="n-title" href="http://clima.org.cn/news/show-18822.html" target="_blank" rel="noopener noreferrer">汇源四川果蔬产业园6条果汁灌装线冲刺投产：1条建成投用、3条调试中、2条即将安装</a><p class="n-sum">中国轻工机械协会8月19日转饮料产业链之窗报道：汇源集团四川果蔬加工智慧冷链产业园果汁智能化灌装车间进入设备调试阶段、即将投产；园区共规划6条果汁灌装生产线，目前1条建成投用、3条正在调试、剩余2条即将安装，配套25万吨级智慧冷库及果蔬仓储物流交易中心。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">汇源集团</span><span>中国轻工机械协会（饮料产业链之窗）</span><span>·</span><span>8月19日</span><a class="n-link" href="http://clima.org.cn/news/show-18822.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-supermarket" data-title="🏪 商超" style="--acc:var(--s5)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s5)"></span>🏪 商超</div></div><div class="seg-list"><article class="n-card" data-seg="supermarket" data-region="国内" data-search="永辉全国门店推新疆水果节：法兰西西梅直采上架，要求糖度16度以上、单果16克以上 央广网8月20日报道：八月新疆伽师县法兰西西梅进入成熟季，果农清晨采摘后经永辉冷链运输体系在较短时间内抵达全国门店，全国多地永辉门店同步推出第二届新疆水果节活动；主推法兰西西梅、冬枣、葡提类、哈密瓜、恐龙李、海棠果等商品并设定明确标准，其中法兰西西梅要求糖度16度以上、单果重量16克以上、达到一级品质。 永辉超市 央广网" style="--acc:var(--s5)"><a class="n-title" href="https://www.cnr.cn/tj/msljl/20260820/t20260820_527784152.shtml" target="_blank" rel="noopener noreferrer">永辉全国门店推新疆水果节：法兰西西梅直采上架，要求糖度16度以上、单果16克以上</a><p class="n-sum">央广网8月20日报道：八月新疆伽师县法兰西西梅进入成熟季，果农清晨采摘后经永辉冷链运输体系在较短时间内抵达全国门店，全国多地永辉门店同步推出第二届新疆水果节活动；主推法兰西西梅、冬枣、葡提类、哈密瓜、恐龙李、海棠果等商品并设定明确标准，其中法兰西西梅要求糖度16度以上、单果重量16克以上、达到一级品质。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">永辉超市</span><span>央广网</span><span>·</span><span>8月20日</span><a class="n-link" href="https://www.cnr.cn/tj/msljl/20260820/t20260820_527784152.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="京东生鲜8月20日启动中秋活动：部分生鲜满199减100，西梅、榴莲、软籽石榴等时令鲜果上架 挖贝网8月20日报道：8月20日京东生鲜中秋节活动正式启动，部分生鲜商品满199减100，围绕应季而食、中秋家宴、金秋送礼等消费场景，汇聚地标牛羊肉、鲜活水产、精品水果等全品类好食材；时令鲜果方面主打西梅、榴莲、突尼斯软籽石榴、阳光玫瑰葡萄等，通过产地直采和全程冷链直达消费者。 京东生鲜 挖贝网" style="--acc:var(--s6)"><a class="n-title" href="http://wabei.cn/Home/News/362140" target="_blank" rel="noopener noreferrer">京东生鲜8月20日启动中秋活动：部分生鲜满199减100，西梅、榴莲、软籽石榴等时令鲜果上架</a><p class="n-sum">挖贝网8月20日报道：8月20日京东生鲜中秋节活动正式启动，部分生鲜商品满199减100，围绕应季而食、中秋家宴、金秋送礼等消费场景，汇聚地标牛羊肉、鲜活水产、精品水果等全品类好食材；时令鲜果方面主打西梅、榴莲、突尼斯软籽石榴、阳光玫瑰葡萄等，通过产地直采和全程冷链直达消费者。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">京东生鲜</span><span>挖贝网</span><span>·</span><span>8月20日</span><a class="n-link" href="http://wabei.cn/Home/News/362140" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="19.9元一斤！榴莲价格为何&quot;崩了&quot;：批发价跌破15元，个别品种从100多元跌到14元 华商报8月20日报道：#榴莲价格彻底崩了#登上热搜引发热议，部分商超、社区水果店榴莲零售价降至19.9元一斤，批发价跌破15元，有些榴莲品种价格甚至从100多元跌到14元；报道指出7月是东南亚榴莲集中上市旺季，自那以来榴莲降价已多次引发关注，产区丰产放量与进口渠道扩容是降价主因。 榴莲市场 华商网（华商报）" style="--acc:var(--s7)"><a class="n-title" href="https://news.hsw.cn/system/2026/0820/1953249.shtml" target="_blank" rel="noopener noreferrer">19.9元一斤！榴莲价格为何&quot;崩了&quot;：批发价跌破15元，个别品种从100多元跌到14元</a><p class="n-sum">华商报8月20日报道：#榴莲价格彻底崩了#登上热搜引发热议，部分商超、社区水果店榴莲零售价降至19.9元一斤，批发价跌破15元，有些榴莲品种价格甚至从100多元跌到14元；报道指出7月是东南亚榴莲集中上市旺季，自那以来榴莲降价已多次引发关注，产区丰产放量与进口渠道扩容是降价主因。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">榴莲市场</span><span>华商网（华商报）</span><span>·</span><span>8月20日</span><a class="n-link" href="https://news.hsw.cn/system/2026/0820/1953249.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="农业农村部：8月20日6种水果均价6.83元/公斤、较昨日升0.7% 证券之星8月20日转农业农村部数据：8月20日&quot;农产品批发价格200指数&quot;为115.64、较昨日下降0.04个点，&quot;菜篮子&quot;产品批发价格指数为116.18；重点监测的6种水果平均价格为6.83元/公斤、较昨日上升0.7%。 农业农村部 证券之星（农业农村部）" style="--acc:var(--s7)"><a class="n-title" href="https://hk.stockstar.com/IG2026082000021632.shtml" target="_blank" rel="noopener noreferrer">农业农村部：8月20日6种水果均价6.83元/公斤、较昨日升0.7%</a><p class="n-sum">证券之星8月20日转农业农村部数据：8月20日&quot;农产品批发价格200指数&quot;为115.64、较昨日下降0.04个点，&quot;菜篮子&quot;产品批发价格指数为116.18；重点监测的6种水果平均价格为6.83元/公斤、较昨日上升0.7%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">农业农村部</span><span>证券之星（农业农村部）</span><span>·</span><span>8月20日</span><a class="n-link" href="https://hk.stockstar.com/IG2026082000021632.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="阳光玫瑰&quot;神话&quot;破灭：今年普遍跌至个位数，个别品种低至1元/斤 湖南日报·华声在线8月19日报道：眼下正是葡萄大量上市的时候，与前几年动不动就几十上百元一斤相比，今年葡萄价格持续探底、个别品种低至1元左右一斤，阳光玫瑰普遍跌至个位数；但市场两极分化明显，一边是大量品种价格探底，另一边精品品种价格仍坚挺、高达几十元一斤。 阳光玫瑰葡萄市场 湖南日报（华声在线）" style="--acc:var(--s7)"><a class="n-title" href="https://hunan.voc.com.cn/news/202608/33526080.html" target="_blank" rel="noopener noreferrer">阳光玫瑰&quot;神话&quot;破灭：今年普遍跌至个位数，个别品种低至1元/斤</a><p class="n-sum">湖南日报·华声在线8月19日报道：眼下正是葡萄大量上市的时候，与前几年动不动就几十上百元一斤相比，今年葡萄价格持续探底、个别品种低至1元左右一斤，阳光玫瑰普遍跌至个位数；但市场两极分化明显，一边是大量品种价格探底，另一边精品品种价格仍坚挺、高达几十元一斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">阳光玫瑰葡萄市场</span><span>湖南日报（华声在线）</span><span>·</span><span>8月19日</span><a class="n-link" href="https://hunan.voc.com.cn/news/202608/33526080.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="王毅将访问印尼：举行中印尼全面战略对话机制首次会议及外长防长&quot;2+2&quot;会议 川观新闻8月19日据外交部记者会：王毅外长将访问印尼，并举行中国印尼全面战略对话机制首次会议和中印尼外长防长&quot;2+2&quot;对话机制第二次部长级会议，同印尼重点就政治安全与防务合作、国际和地区形势等深入交换意见；中方表示愿同印尼深化命运共同体建设，加强战略沟通和团结协作。 中国-印尼关系 川观新闻（外交部记者会）" style="--acc:var(--s8)"><a class="n-title" href="https://cbgc.scol.com.cn/news/7864141" target="_blank" rel="noopener noreferrer">王毅将访问印尼：举行中印尼全面战略对话机制首次会议及外长防长&quot;2+2&quot;会议</a><p class="n-sum">川观新闻8月19日据外交部记者会：王毅外长将访问印尼，并举行中国印尼全面战略对话机制首次会议和中印尼外长防长&quot;2+2&quot;对话机制第二次部长级会议，同印尼重点就政治安全与防务合作、国际和地区形势等深入交换意见；中方表示愿同印尼深化命运共同体建设，加强战略沟通和团结协作。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">中国-印尼关系</span><span>川观新闻（外交部记者会）</span><span>·</span><span>8月19日</span><a class="n-link" href="https://cbgc.scol.com.cn/news/7864141" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国内" data-search="泉州口岸首个进境水果指定监管场地获批：依托东南亚航线搭建航空生鲜进口通道 泉州晚报8月20日报道：海关总署正式批复泉州晋江国际机场进境水果指定监管场地口岸资质，这是泉州关区首个获批的进境水果指定监管场地，标志泉州航空口岸在生鲜冷链物流领域实现突破；该场地将依托机场现有东南亚国际航线网络优势，搭建高效、便捷的航空生鲜进口通道，压缩货物通关时长、降低物流成本，丰富进口鲜果市场供给。 泉州晋江国际机场 泉州晚报" style="--acc:var(--s8)"><a class="n-title" href="https://www.qzwb.com/gb/content/2026-08/20/content_9247646.htm" target="_blank" rel="noopener noreferrer">泉州口岸首个进境水果指定监管场地获批：依托东南亚航线搭建航空生鲜进口通道</a><p class="n-sum">泉州晚报8月20日报道：海关总署正式批复泉州晋江国际机场进境水果指定监管场地口岸资质，这是泉州关区首个获批的进境水果指定监管场地，标志泉州航空口岸在生鲜冷链物流领域实现突破；该场地将依托机场现有东南亚国际航线网络优势，搭建高效、便捷的航空生鲜进口通道，压缩货物通关时长、降低物流成本，丰富进口鲜果市场供给。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">泉州晋江国际机场</span><span>泉州晚报</span><span>·</span><span>8月20日</span><a class="n-link" href="https://www.qzwb.com/gb/content/2026-08/20/content_9247646.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="南海热带低压在海南文昌登陆：华南20-22日有大到暴雨，海南岛局地累计300-400毫米 腾讯新闻8月20日转中国气象局：8月20日5时40分前后南海热带低压在海南文昌市龙楼镇沿海登陆，预计以每小时15公里速度向偏西方向移动、穿过海南岛移入北部湾海面；受其与西南季风共同影响，20-22日海南岛、广西南部、广东、福建、浙江、台湾岛等地部分地区有大到暴雨、局地大暴雨，海南岛部分地区累计降雨量可达300-400毫米，公众需防范暴雨次生灾害和大风天气，海南、广东、广西火龙果等水果产区需防范。 海南/广东/广西果产区 腾讯新闻（中国气象局）" style="--acc:var(--s9)"><a class="n-title" href="https://news.qq.com/rain/a/20260820A086T300" target="_blank" rel="noopener noreferrer">南海热带低压在海南文昌登陆：华南20-22日有大到暴雨，海南岛局地累计300-400毫米</a><p class="n-sum">腾讯新闻8月20日转中国气象局：8月20日5时40分前后南海热带低压在海南文昌市龙楼镇沿海登陆，预计以每小时15公里速度向偏西方向移动、穿过海南岛移入北部湾海面；受其与西南季风共同影响，20-22日海南岛、广西南部、广东、福建、浙江、台湾岛等地部分地区有大到暴雨、局地大暴雨，海南岛部分地区累计降雨量可达300-400毫米，公众需防范暴雨次生灾害和大风天气，海南、广东、广西火龙果等水果产区需防范。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">海南/广东/广西果产区</span><span>腾讯新闻（中国气象局）</span><span>·</span><span>8月20日</span><a class="n-link" href="https://news.qq.com/rain/a/20260820A086T300" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-08-20 18:27 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

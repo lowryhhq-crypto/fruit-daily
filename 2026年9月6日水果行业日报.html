@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.06</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.06</b> 星期日</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">8</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">6</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">2</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">9月6日，2026中国农民丰收节金秋消费季上海主场活动收官，国产秋季水果进入集中上市与中秋备货旺季：人民日报发文点赞云南昭通苹果产业从「凭经验种」转向「按市场需求种、按品牌标准管」，「昭阳红」借沪滇协作走进一线城市商超并远销东南亚、中东；电商端拼多多依托「千亿扶持」计划上线「多多丰收馆」，投入20亿流量与10亿元消费补贴开展90天长效运营。贸易端，全国首批19.6吨秘鲁香蕉经中秘共建「钱凯—上海」海运航线运抵上海洋山口岸并顺利通关，标志秘鲁鲜食香蕉在获准入后首次进入中国市场，「果篮子」进口来源持续多元化。行情端，9月6日主要批发市场果品价格平稳，济南堤口富士苹果7.00元/公斤、山竹46.00元/公斤，新季早富士在陕洛川以质论价、好统货70#以上3.70—3.80元/斤，上海市场秋月梨（4.2—6.5元/斤）、突尼斯软籽石榴礼盒（4.5—7.5元/斤）与大棚冬枣购销升温，节日礼盒备货明显增加。气象端，第24号台风「科罗旺」转向偏东方向移动、逐渐远离我国，中央气象台继续发布台风蓝色预警，福建东南部、广东中东部、广西及云南等地仍有短时强降水，需防范对闽粤等地果区的影响。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="人民日报点赞云南昭通昭阳苹果「抢先」甜：按市场需求种、按品牌标准管，「昭阳红」走进一线商超并远销海外 人民日报（中国农业科技推广网9月6日转载）报道：云南昭通昭阳区苹果产业从「凭经验种」转向「按市场需求种、按品牌标准管」；在沪滇协作牵线下，以「昭阳红」为代表的品牌进入上海市场、逐步辐射一线城市大型商超，并远销东南亚及中东市场；当地在稳住红富士基础上陆续推广「瑞雪」「秦脆」「嘎啦」等早中晚熟品种拉长上市周期，并引入智能分选线助力优果优价。 云南昭通昭阳区/昭阳红 中国农业科技推广网（转载人民日报）" style="--acc:var(--s1)"><a class="n-title" href="https://www.agricoop.cn/news/show.php?itemid=32587" target="_blank" rel="noopener noreferrer">人民日报点赞云南昭通昭阳苹果「抢先」甜：按市场需求种、按品牌标准管，「昭阳红」走进一线商超并远销海外</a><p class="n-sum">人民日报（中国农业科技推广网9月6日转载）报道：云南昭通昭阳区苹果产业从「凭经验种」转向「按市场需求种、按品牌标准管」；在沪滇协作牵线下，以「昭阳红」为代表的品牌进入上海市场、逐步辐射一线城市大型商超，并远销东南亚及中东市场；当地在稳住红富士基础上陆续推广「瑞雪」「秦脆」「嘎啦」等早中晚熟品种拉长上市周期，并引入智能分选线助力优果优价。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">云南昭通昭阳区/昭阳红</span><span>中国农业科技推广网（转载人民日报）</span><span>·</span><span>9月6日</span><a class="n-link" href="https://www.agricoop.cn/news/show.php?itemid=32587" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="亚洲国际果蔬展2026香港圆满落幕创历史新高：95个国家和地区1.6万名观众、41国760余家展商 第19届亚洲国际果蔬展（asia fruit logistica 2026）9月4日在香港亚洲国际博览馆圆满落幕，为展会史上国际化程度最高的一届：共吸引来自95个国家和地区的创纪录16,000名观众，以及来自41个国家的760多家参展商，设27个国家及地区展团，巩固其作为亚洲新鲜果蔬行业首要全球贸易平台的地位；下一届（第20届）将于2027年9月7日至9日重返香港。 亚洲国际果蔬展(afl) 成都华宇展览（转引亚洲国际果蔬展官方）" style="--acc:var(--s2)"><a class="n-title" href="https://www.huayuexpo.com/news/192927.html" target="_blank" rel="noopener noreferrer">亚洲国际果蔬展2026香港圆满落幕创历史新高：95个国家和地区1.6万名观众、41国760余家展商</a><p class="n-sum">第19届亚洲国际果蔬展（Asia Fruit Logistica 2026）9月4日在香港亚洲国际博览馆圆满落幕，为展会史上国际化程度最高的一届：共吸引来自95个国家和地区的创纪录16,000名观众，以及来自41个国家的760多家参展商，设27个国家及地区展团，巩固其作为亚洲新鲜果蔬行业首要全球贸易平台的地位；下一届（第20届）将于2027年9月7日至9日重返香港。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">亚洲国际果蔬展(AFL)</span><span>成都华宇展览（转引亚洲国际果蔬展官方）</span><span>·</span><span>9月6日</span><a class="n-link" href="https://www.huayuexpo.com/news/192927.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="陕西早富士上货量增多、成交以质论价：洛川纸袋好统货70#以上3.70-3.80元/斤 中果网9月5日产地快讯：陕西洛川产区早富士上货量一般、好货不多，一般货以质论价，纸袋早富士好统货70#以上成交价3.70-3.80元/斤，半商品价格更高；山东沂源等产区红将军上货不多、质量一般，好货有限，客商按需挑拣采购，红将军75#以上好统货2.10-2.20元/斤。 陕西洛川/山东沂源苹果产区 中果网" style="--acc:var(--s3)"><a class="n-title" href="https://www.pingguo7.cn/hq/show-htm-itemid-23632.html" target="_blank" rel="noopener noreferrer">陕西早富士上货量增多、成交以质论价：洛川纸袋好统货70#以上3.70-3.80元/斤</a><p class="n-sum">中果网9月5日产地快讯：陕西洛川产区早富士上货量一般、好货不多，一般货以质论价，纸袋早富士好统货70#以上成交价3.70-3.80元/斤，半商品价格更高；山东沂源等产区红将军上货不多、质量一般，好货有限，客商按需挑拣采购，红将军75#以上好统货2.10-2.20元/斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">陕西洛川/山东沂源苹果产区</span><span>中果网</span><span>·</span><span>9月5日</span><a class="n-link" href="https://www.pingguo7.cn/hq/show-htm-itemid-23632.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="拼多多依托「千亿扶持」上线「多多丰收馆」：投入20亿流量与10亿元消费补贴、90天长效运营 农视网9月6日：2026金秋消费季期间，拼多多依托「千亿扶持」计划上线「多多丰收馆」，投入20亿流量资源与10亿元消费补贴，开展90天长效主题运营，从流量扶持、补贴让利、商家培育、公益助农等多维度助力优质农产品上行与乡村产业数字化转型；并针对乡村振兴重点帮扶县推出覆盖店铺注册、流量倾斜、直播运营、技能培训全流程的专项扶持。 拼多多 农视网（中国农业电影电视中心）" style="--acc:var(--s6)"><a class="n-title" href="https://www.ntv.cn/content/1/741/991741805.html" target="_blank" rel="noopener noreferrer">拼多多依托「千亿扶持」上线「多多丰收馆」：投入20亿流量与10亿元消费补贴、90天长效运营</a><p class="n-sum">农视网9月6日：2026金秋消费季期间，拼多多依托「千亿扶持」计划上线「多多丰收馆」，投入20亿流量资源与10亿元消费补贴，开展90天长效主题运营，从流量扶持、补贴让利、商家培育、公益助农等多维度助力优质农产品上行与乡村产业数字化转型；并针对乡村振兴重点帮扶县推出覆盖店铺注册、流量倾斜、直播运营、技能培训全流程的专项扶持。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">拼多多</span><span>农视网（中国农业电影电视中心）</span><span>·</span><span>9月6日</span><a class="n-link" href="https://www.ntv.cn/content/1/741/991741805.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="9月6日全国主要批发市场果品价格：济南堤口富士苹果7.00元/公斤、山竹46.00元/公斤 证券之星9月6日转农业农村部信息中心数据：济南堤口果品批发发展有限责任公司当日行情，富士苹果7.00元/公斤、秦冠苹果6.00元/公斤、乔纳金苹果7.00元/公斤、鸭梨5.60元/公斤、雪梨3.60元/公斤、香梨8.00元/公斤、香蕉5.00元/公斤、猕猴桃9.00元/公斤、芒果11.00元/公斤、山竹46.00元/公斤、西瓜3.60元/公斤。 全国主要批发市场（济南堤口） 证券之星（农业农村部信息中心数据）" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026090600003204.shtml" target="_blank" rel="noopener noreferrer">9月6日全国主要批发市场果品价格：济南堤口富士苹果7.00元/公斤、山竹46.00元/公斤</a><p class="n-sum">证券之星9月6日转农业农村部信息中心数据：济南堤口果品批发发展有限责任公司当日行情，富士苹果7.00元/公斤、秦冠苹果6.00元/公斤、乔纳金苹果7.00元/公斤、鸭梨5.60元/公斤、雪梨3.60元/公斤、香梨8.00元/公斤、香蕉5.00元/公斤、猕猴桃9.00元/公斤、芒果11.00元/公斤、山竹46.00元/公斤、西瓜3.60元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">全国主要批发市场（济南堤口）</span><span>证券之星（农业农村部信息中心数据）</span><span>·</span><span>9月6日</span><a class="n-link" href="https://futures.stockstar.com/IG2026090600003204.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="本周上海果品批发参考行情：秋月梨4.2-6.5元/斤大量到货、突尼斯软籽石榴礼盒需求旺、大棚冬枣7-15元/斤 上海果品批发参考行情（9月5日发布）：新季早批秋月梨大量到货、果越大价越高，批发4.2-6.5元/斤；突尼斯软籽石榴4.5-7.5元/斤、大果礼盒需求旺盛、本周持续升温；大棚冬枣通货7-10元/斤、精品12-15元/斤，露天冬枣后续到货后价格预计回落；新季嘎啦苹果3.0-4.8元/斤，香梨礼盒备货增加，临近中秋礼盒类果品购销两旺。 上海果品批发市场 搜狐号（上海果品批发参考行情）" style="--acc:var(--s7)"><a class="n-title" href="https://www.sohu.com/a/1072101932_121124451" target="_blank" rel="noopener noreferrer">本周上海果品批发参考行情：秋月梨4.2-6.5元/斤大量到货、突尼斯软籽石榴礼盒需求旺、大棚冬枣7-15元/斤</a><p class="n-sum">上海果品批发参考行情（9月5日发布）：新季早批秋月梨大量到货、果越大价越高，批发4.2-6.5元/斤；突尼斯软籽石榴4.5-7.5元/斤、大果礼盒需求旺盛、本周持续升温；大棚冬枣通货7-10元/斤、精品12-15元/斤，露天冬枣后续到货后价格预计回落；新季嘎啦苹果3.0-4.8元/斤，香梨礼盒备货增加，临近中秋礼盒类果品购销两旺。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">上海果品批发市场</span><span>搜狐号（上海果品批发参考行情）</span><span>·</span><span>9月5日</span><a class="n-link" href="https://www.sohu.com/a/1072101932_121124451" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="全国首批19.6吨秘鲁香蕉经「钱凯—上海」航线抵沪：秘鲁鲜食香蕉获准入后首次进入中国市场 中国经济网9月6日：上海海关多措并举助力秘鲁香蕉抢「鲜」入境，全国首批19.6吨秘鲁鲜食香蕉经中秘共建「一带一路」标杆项目「钱凯—上海」海运航线运抵上海洋山口岸，在洋山海关查验监管下顺利通关，标志着秘鲁香蕉在2025年12月获得检疫准入后首次进入中国市场；洋山海关提前对接进口企业、开辟进口水果绿色通道，在筑牢安全防线前提下最大程度压缩通关时长。 秘鲁香蕉/上海海关 中国经济网（上海海关）" style="--acc:var(--s8)"><a class="n-title" href="http://www.ce.cn/xwzx/gnsz/gdxw/202609/t20260906_3196685.shtml" target="_blank" rel="noopener noreferrer">全国首批19.6吨秘鲁香蕉经「钱凯—上海」航线抵沪：秘鲁鲜食香蕉获准入后首次进入中国市场</a><p class="n-sum">中国经济网9月6日：上海海关多措并举助力秘鲁香蕉抢「鲜」入境，全国首批19.6吨秘鲁鲜食香蕉经中秘共建「一带一路」标杆项目「钱凯—上海」海运航线运抵上海洋山口岸，在洋山海关查验监管下顺利通关，标志着秘鲁香蕉在2025年12月获得检疫准入后首次进入中国市场；洋山海关提前对接进口企业、开辟进口水果绿色通道，在筑牢安全防线前提下最大程度压缩通关时长。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">秘鲁香蕉/上海海关</span><span>中国经济网（上海海关）</span><span>·</span><span>9月6日</span><a class="n-link" href="http://www.ce.cn/xwzx/gnsz/gdxw/202609/t20260906_3196685.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="台风「科罗旺」向偏东方向移动、逐渐远离我国：台风蓝色预警持续，闽粤桂滇等地有短时强降水 中央气象台9月6日06时继续发布台风蓝色预警：第24号台风「科罗旺」（热带风暴级）中心位于琉球群岛那霸东南方向约185公里的洋面上，将以每小时10-15公里的速度向偏东方向移动、强度变化不大；东海、钓鱼岛附近海域、台湾以东洋面及浙江沿海有6-7级大风、阵风8-9级。同时发布强对流天气预报：福建东南部、广东中部和东部、广西中东部、云南西南部和中部等地有短时强降水，局地小时雨量可达50毫米以上，相关果产区需防范强降水可能引发的山洪及地质灾害。 福建/广东/广西/云南产区 腾讯新闻（中央气象台）" style="--acc:var(--s9)"><a class="n-title" href="https://news.qq.com/rain/a/20260906A04VXZ00" target="_blank" rel="noopener noreferrer">台风「科罗旺」向偏东方向移动、逐渐远离我国：台风蓝色预警持续，闽粤桂滇等地有短时强降水</a><p class="n-sum">中央气象台9月6日06时继续发布台风蓝色预警：第24号台风「科罗旺」（热带风暴级）中心位于琉球群岛那霸东南方向约185公里的洋面上，将以每小时10-15公里的速度向偏东方向移动、强度变化不大；东海、钓鱼岛附近海域、台湾以东洋面及浙江沿海有6-7级大风、阵风8-9级。同时发布强对流天气预报：福建东南部、广东中部和东部、广西中东部、云南西南部和中部等地有短时强降水，局地小时雨量可达50毫米以上，相关果产区需防范强降水可能引发的山洪及地质灾害。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">福建/广东/广西/云南产区</span><span>腾讯新闻（中央气象台）</span><span>·</span><span>9月6日</span><a class="n-link" href="https://news.qq.com/rain/a/20260906A04VXZ00" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-06 17:36 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.05</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.05</b> 星期六</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">8</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">6</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">2</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">9月5日，随着2026亚洲国际果蔬展（香港）9月4日收官，行业焦点转向中秋市场：「2026年中国农民丰收节金秋消费季」在上海启动，淘宝天猫加码「产地优选计划」拟打造100个破亿新产地，抖音电商「美好丰收节」以千万级补贴与流量扶持眉县猕猴桃、会理石榴等时令秋果，盒马同步推出「走遍新疆」金秋水果消费节拉动产地直采；新西兰乐淇苹果则携手全球代言人王一博启动大型中秋营销，主攻节日送礼场景。行情端，9月5日全国主要批发市场富士苹果价格分化明显、北京新发地7.60元/公斤，新季早富士、嘎啦陆续上市以质论价；葡萄市场出现「巨峰售价反超阳光玫瑰」的价格倒挂与品质洗牌，通货果与精品果价差拉大。贸易端，临近中秋进口水果备货提速，上海西郊国际农产品交易中心榴莲、山竹、火龙果、泰国香水椰畅销，海关总署数据显示今年前7个月我国进口农产品9041亿元、同比增长7.4%，「果篮子」持续扩容。气象端，第24号台风「科罗旺」向偏南方向移动、不登陆我国，但东海出现3-5.8米大浪到巨浪区，浙江、福建、广东、江西等地仍有中到大雨、局地暴雨，闽粤果产区需防范持续降雨渍涝。</div></section>
+
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="乐淇苹果rockit携手全球代言人王一博启动大型中秋营销，深化中国送礼场景布局 9月4日，新西兰迷你苹果品牌乐淇（rockit）宣布携手全球品牌代言人王一博正式启动大型中秋整合营销活动，持续深化品牌合作；据发布信息，活动将贯穿整个中秋档期，推出全新传播素材与中秋限定产品，覆盖社交媒体、数字平台、零售终端及线下体验等多渠道，强化乐淇在中国市场中秋送礼场景中的品牌关联度。 乐淇苹果(rockit) 新浪新闻（乐淇rockit新闻稿转载）" style="--acc:var(--s2)"><a class="n-title" href="https://k.sina.com.cn/article_7259938596_1b0b9df2402003xl6w.html" target="_blank" rel="noopener noreferrer">乐淇苹果Rockit携手全球代言人王一博启动大型中秋营销，深化中国送礼场景布局</a><p class="n-sum">9月4日，新西兰迷你苹果品牌乐淇（Rockit）宣布携手全球品牌代言人王一博正式启动大型中秋整合营销活动，持续深化品牌合作；据发布信息，活动将贯穿整个中秋档期，推出全新传播素材与中秋限定产品，覆盖社交媒体、数字平台、零售终端及线下体验等多渠道，强化乐淇在中国市场中秋送礼场景中的品牌关联度。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">乐淇苹果(Rockit)</span><span>新浪新闻（乐淇Rockit新闻稿转载）</span><span>·</span><span>9月4日</span><a class="n-link" href="https://k.sina.com.cn/article_7259938596_1b0b9df2402003xl6w.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-supermarket" data-title="🏪 商超" style="--acc:var(--s5)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s5)"></span>🏪 商超</div></div><div class="seg-list"><article class="n-card" data-seg="supermarket" data-region="国内" data-search="盒马推出「走遍新疆」金秋水果消费节：新疆时令水果整季搬上货架、产地直连门店 中国金融信息网9月4日：在农业农村部指导下阿里巴巴多业务支持2026金秋消费季，盒马作为「金秋第一单」发货端把更多力气放在产地，推出「走遍新疆」金秋水果消费节，将新疆时令水果整季搬上货架、产地直连门店；消费者通过千问app「金秋第一单」ai入口下单，盒马等最快30分钟送达。 盒马鲜生 中国金融信息网（新华财经）" style="--acc:var(--s5)"><a class="n-title" href="https://www.cnfin.com/cmjj-lb/detail/20260904/4465516_1.html" target="_blank" rel="noopener noreferrer">盒马推出「走遍新疆」金秋水果消费节：新疆时令水果整季搬上货架、产地直连门店</a><p class="n-sum">中国金融信息网9月4日：在农业农村部指导下阿里巴巴多业务支持2026金秋消费季，盒马作为「金秋第一单」发货端把更多力气放在产地，推出「走遍新疆」金秋水果消费节，将新疆时令水果整季搬上货架、产地直连门店；消费者通过千问App「金秋第一单」AI入口下单，盒马等最快30分钟送达。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">盒马鲜生</span><span>中国金融信息网（新华财经）</span><span>·</span><span>9月4日</span><a class="n-link" href="https://www.cnfin.com/cmjj-lb/detail/20260904/4465516_1.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="「抖音美好丰收节」9月4日在沪启幕：千万级补贴与流量扶持眉县猕猴桃、会理石榴等时令鲜果 新京报9月4日：抖音电商同步启动「抖音美好丰收节」，以超级品类日、应季开吃节、产业带扶持、丰收市集四大ip活动落地千万级货品补贴与流量资源扶持，覆盖盘锦大米、眉县猕猴桃、会理石榴、中宁枸杞等全国优质物产；9月8日至17日，专属超级品类日将正式上线。 抖音电商(字节) 新京报" style="--acc:var(--s6)"><a class="n-title" href="https://www.bjnews.com.cn/detail/1788522908129499.html" target="_blank" rel="noopener noreferrer">「抖音美好丰收节」9月4日在沪启幕：千万级补贴与流量扶持眉县猕猴桃、会理石榴等时令鲜果</a><p class="n-sum">新京报9月4日：抖音电商同步启动「抖音美好丰收节」，以超级品类日、应季开吃节、产业带扶持、丰收市集四大IP活动落地千万级货品补贴与流量资源扶持，覆盖盘锦大米、眉县猕猴桃、会理石榴、中宁枸杞等全国优质物产；9月8日至17日，专属超级品类日将正式上线。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">抖音电商(字节)</span><span>新京报</span><span>·</span><span>9月4日</span><a class="n-link" href="https://www.bjnews.com.cn/detail/1788522908129499.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="淘宝「丰收节」加码「产地优选计划」：打造100个破亿新产地，助推时令果蔬产地品牌上行 新华网9月4日：2026中国农民丰收节金秋消费季期间，淘宝加码「产地优选计划」，目标打造100个破亿新产地，推动苹果、猕猴桃、石榴等产地农产品以产地直供方式加速上行，让更多原产地好物直达消费者。 阿里巴巴/淘宝天猫 新华网" style="--acc:var(--s6)"><a class="n-title" href="http://www.news.cn/tech/20260904/e50d162fe4e4411b901f91b3259aa1c2/c.html" target="_blank" rel="noopener noreferrer">淘宝「丰收节」加码「产地优选计划」：打造100个破亿新产地，助推时令果蔬产地品牌上行</a><p class="n-sum">新华网9月4日：2026中国农民丰收节金秋消费季期间，淘宝加码「产地优选计划」，目标打造100个破亿新产地，推动苹果、猕猴桃、石榴等产地农产品以产地直供方式加速上行，让更多原产地好物直达消费者。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">阿里巴巴/淘宝天猫</span><span>新华网</span><span>·</span><span>9月4日</span><a class="n-link" href="http://www.news.cn/tech/20260904/e50d162fe4e4411b901f91b3259aa1c2/c.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="9月5日全国主要批发市场富士苹果价格行情：北京新发地7.60元/公斤、京丰岳各庄8.00元/公斤 证券之星9月5日转农业农村部信息中心数据：9月5日全国主要批发市场富士苹果价格，北京新发地农副产品批发市场信息中心7.60元/公斤，北京京丰岳各庄农副产品批发市场8.00元/公斤，北京顺鑫石门国际农产品批发市场集团有限公司8.50元/公斤，北京朝阳区大洋路综合市场7.50元/公斤。 全国主要批发市场 证券之星（农业农村部信息中心数据）" style="--acc:var(--s7)"><a class="n-title" href="http://futures.stockstar.com/IG2026090500005368.shtml" target="_blank" rel="noopener noreferrer">9月5日全国主要批发市场富士苹果价格行情：北京新发地7.60元/公斤、京丰岳各庄8.00元/公斤</a><p class="n-sum">证券之星9月5日转农业农村部信息中心数据：9月5日全国主要批发市场富士苹果价格，北京新发地农副产品批发市场信息中心7.60元/公斤，北京京丰岳各庄农副产品批发市场8.00元/公斤，北京顺鑫石门国际农产品批发市场集团有限公司8.50元/公斤，北京朝阳区大洋路综合市场7.50元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">全国主要批发市场</span><span>证券之星（农业农村部信息中心数据）</span><span>·</span><span>9月5日</span><a class="n-link" href="http://futures.stockstar.com/IG2026090500005368.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="葡萄产业迎来品质洗牌：巨峰售价反超阳光玫瑰，通货与精品果价差拉大 金华日报9月5日：葡萄市场出现价格倒挂，普通巨峰零售价普遍在5～6元/斤，品质上乘的浦江精品果售价更高，而外地种植的阳光玫瑰零售价已低于巨峰；分级高、果形完整、糖度达标的精品阳光玫瑰仍维持较高售价，高端果销路稳定，网红品种光环褪去、产业迎来品质洗牌。 全国葡萄批发/零售市场 金华日报（金华新闻网）" style="--acc:var(--s7)"><a class="n-title" href="https://www.jhnews.com.cn/xw/1930163" target="_blank" rel="noopener noreferrer">葡萄产业迎来品质洗牌：巨峰售价反超阳光玫瑰，通货与精品果价差拉大</a><p class="n-sum">金华日报9月5日：葡萄市场出现价格倒挂，普通巨峰零售价普遍在5～6元/斤，品质上乘的浦江精品果售价更高，而外地种植的阳光玫瑰零售价已低于巨峰；分级高、果形完整、糖度达标的精品阳光玫瑰仍维持较高售价，高端果销路稳定，网红品种光环褪去、产业迎来品质洗牌。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">全国葡萄批发/零售市场</span><span>金华日报（金华新闻网）</span><span>·</span><span>9月5日</span><a class="n-link" href="https://www.jhnews.com.cn/xw/1930163" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="「果篮子」再扩容：临近中秋上海西郊国际进口水果畅销，前7个月我国进口农产品9041亿元、同比增7.4% 央视新闻客户端（北京日报转载）9月5日：临近中秋，上海西郊国际农产品交易中心果品经销商格外忙碌，进口水果到港当天即可分拨运往全国，榴莲、山竹、火龙果和泰国香水椰较为畅销，南美、北美、欧洲及东南亚水果加速进入中国；海关总署数据显示，今年前7个月我国进口农产品9041亿元、同比增长7.4%，上半年新增79个国家264种次农食产品准入，农食产品进口来源地已覆盖全球150多个国家和地区。 上海西郊国际/海关总署 央视新闻客户端（北京日报）" style="--acc:var(--s8)"><a class="n-title" href="http://rss2.bjd.com.cn/content/s6a9b719ae4b039a8e2f0aa40.html" target="_blank" rel="noopener noreferrer">「果篮子」再扩容：临近中秋上海西郊国际进口水果畅销，前7个月我国进口农产品9041亿元、同比增7.4%</a><p class="n-sum">央视新闻客户端（北京日报转载）9月5日：临近中秋，上海西郊国际农产品交易中心果品经销商格外忙碌，进口水果到港当天即可分拨运往全国，榴莲、山竹、火龙果和泰国香水椰较为畅销，南美、北美、欧洲及东南亚水果加速进入中国；海关总署数据显示，今年前7个月我国进口农产品9041亿元、同比增长7.4%，上半年新增79个国家264种次农食产品准入，农食产品进口来源地已覆盖全球150多个国家和地区。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">上海西郊国际/海关总署</span><span>央视新闻客户端（北京日报）</span><span>·</span><span>9月5日</span><a class="n-link" href="http://rss2.bjd.com.cn/content/s6a9b719ae4b039a8e2f0aa40.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="台风「科罗旺」影响东海海域：海浪警报发布、3-5.8米大浪到巨浪，浙闽粤赣湘等地有中到大雨 腾讯新闻（国家海洋预报台）9月5日：受第24号台风「科罗旺」影响，东海将出现3到5.8米大浪到巨浪区，中央气象台继续发布台风蓝色预警；预计今天浙江、福建、广东、江西、湖南、黑龙江、新疆等地有中到大雨、局地暴雨，其中福建南部、广东东部雨势较强，相关果产区需防范持续降雨与次生灾害。 浙江/福建/广东/江西产区 腾讯新闻（国家海洋预报台/中央气象台）" style="--acc:var(--s9)"><a class="n-title" href="https://news.qq.com/rain/a/20260905A0501J00" target="_blank" rel="noopener noreferrer">台风「科罗旺」影响东海海域：海浪警报发布、3-5.8米大浪到巨浪，浙闽粤赣湘等地有中到大雨</a><p class="n-sum">腾讯新闻（国家海洋预报台）9月5日：受第24号台风「科罗旺」影响，东海将出现3到5.8米大浪到巨浪区，中央气象台继续发布台风蓝色预警；预计今天浙江、福建、广东、江西、湖南、黑龙江、新疆等地有中到大雨、局地暴雨，其中福建南部、广东东部雨势较强，相关果产区需防范持续降雨与次生灾害。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">浙江/福建/广东/江西产区</span><span>腾讯新闻（国家海洋预报台/中央气象台）</span><span>·</span><span>9月5日</span><a class="n-link" href="https://news.qq.com/rain/a/20260905A0501J00" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-05 17:37 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

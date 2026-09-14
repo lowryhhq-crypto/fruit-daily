@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏辉果蔬 2026年中报深度分析</title>
+<style>
+  :root{
+    --bg:#f6f7f4; --card:#ffffff; --ink:#1a2b22; --sub:#5c6b63;
+    --line:#e4e8e2; --green:#1f7a3d; --green-bg:#e7f3ea;
+    --red:#c0392b; --red-bg:#fdecea; --amber:#b5791a; --amber-bg:#fdf3e2;
+    --blue:#2c5f8a; --blue-bg:#e9f1f8; --violet:#6b4fa0; --violet-bg:#efeaf8; --gray:#8a918d;
+    --shadow:0 1px 3px rgba(20,40,30,.06),0 4px 16px rgba(20,40,30,.05);
+    --radius:14px;
+    --c26:#2a78d6; --c25:#aebbc7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121613; --card:#1b211c; --ink:#e8efe9; --sub:#9aa79f;
+      --line:#2c362f; --green:#6fd08f; --green-bg:#16301f;
+      --red:#ff8f84; --red-bg:#3a1d1a; --amber:#e3b262; --amber-bg:#3a2e15;
+      --blue:#8cbce0; --blue-bg:#16283a; --violet:#b39df0; --violet-bg:#241b3a; --gray:#7d8981;
+      --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+      --c26:#3987e5; --c25:#5a6a78;
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.65; padding:24px 16px 60px;
+  }
+  .wrap{max-width:1020px; margin:0 auto;}
+  header{margin-bottom:22px;}
+  .kicker{color:var(--green); font-weight:700; font-size:13px; letter-spacing:.12em;}
+  h1{font-size:27px; font-weight:800; margin:6px 0 6px; letter-spacing:-.01em;}
+  .meta{color:var(--sub); font-size:13px;}
+  .meta .dot{margin:0 8px; opacity:.5;}
+
+  .summary{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 18px; margin:16px 0 10px; font-size:14.5px;
+  }
+  .summary b{color:var(--green);}
+  .summary .tag{display:inline-block; padding:1px 9px; border-radius:20px; font-size:12px; font-weight:600; margin:0 2px;}
+  .tag.up{background:var(--green-bg); color:var(--green);}
+  .tag.down{background:var(--red-bg); color:var(--red);}
+  .tag.warn{background:var(--amber-bg); color:var(--amber);}
+  .tag.blue{background:var(--blue-bg); color:var(--blue);}
+  .tags{margin-top:10px; display:flex; flex-wrap:wrap; gap:6px;}
+
+  section{margin:34px 0;}
+  h2{font-size:20px; font-weight:800; display:flex; align-items:center; gap:9px; margin-bottom:16px; padding-bottom:9px; border-bottom:2px solid var(--line);}
+  h2 .bar{width:5px; height:20px; border-radius:3px; background:var(--green); display:inline-block;}
+  h2 .cnt{font-size:12px; color:var(--sub); font-weight:600;}
+  h3{font-size:15px; font-weight:700; margin:0 0 12px;}
+
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px;}
+  .tile{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:14px 16px;
+  }
+  .tile .lab{font-size:12.5px; color:var(--sub); font-weight:600;}
+  .tile .val{font-size:23px; font-weight:800; margin:4px 0 2px; letter-spacing:-.01em;}
+  .tile .delta{font-size:12.5px; font-weight:700; display:inline-flex; align-items:center; gap:4px;}
+  .delta.up{color:var(--green);}
+  .delta.down{color:var(--red);}
+  .tile .sub2{font-size:11.5px; color:var(--sub); margin-top:3px;}
+
+  .chart-box{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 18px 14px; margin-top:14px;
+  }
+  .chart-cap{font-size:13px; color:var(--sub); margin:8px 2px 0;}
+  .chart-cap b{color:var(--ink);}
+  .drow{display:flex; align-items:center; gap:10px; margin:9px 0;}
+  .dlabel{width:150px; flex:none; text-align:right; font-size:13px; color:var(--sub); font-weight:600;}
+  .dtrack{position:relative; flex:1; height:22px; background:
+    linear-gradient(to right, transparent calc(50% - .5px), var(--line) 50%, transparent calc(50% + .5px));}
+  .dbar{position:absolute; top:1px; height:20px; border-radius:4px; min-width:2px;}
+  .dbar.up{background:var(--green);}
+  .dbar.down{background:var(--red);}
+  .dval{width:84px; flex:none; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums;}
+  .dval.up{color:var(--green);}
+  .dval.down{color:var(--red);}
+  .note-star{font-size:11px; color:var(--amber); font-weight:600;}
+
+  .callout{
+    background:var(--green-bg); border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px 18px; margin-top:14px; font-size:13.5px;
+  }
+  .callout b{color:var(--green);}
+  .callout .kpis{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+  .callout .kpi{background:var(--card); border:1px solid var(--line); border-radius:9px; padding:4px 10px; font-size:12.5px; color:var(--sub);}
+  .callout .kpi b{color:var(--ink); font-size:13px;}
+  .callout .kpi b.up{color:var(--green);}
+  .callout .kpi b.down{color:var(--red);}
+
+  .hbar-row{margin:10px 0;}
+  .hbar-top{display:flex; justify-content:space-between; align-items:baseline; font-size:13px; margin-bottom:4px;}
+  .hbar-top .n{font-weight:700; color:var(--ink);}
+  .hbar-top .v{font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums;}
+  .hbar-top .pct{color:var(--sub); font-weight:600;}
+  .hbar-top .chg{font-size:12px; font-weight:600;}
+  .hbar-top .chg.up{color:var(--green);} .hbar-top .chg.down{color:var(--red);} .hbar-top .chg.flat{color:var(--gray);}
+  .hbar-track{background:var(--bg); border-radius:5px; height:20px; position:relative; overflow:hidden;}
+  .hbar-fill{height:100%; border-radius:5px;}
+  .hbar-fill.c1{background:var(--c26);}
+  .hbar-fill.c2{background:var(--green);}
+  .hbar-fill.c3{background:var(--c25);}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 16px 14px; display:flex; flex-direction:column; gap:8px;
+  }
+  .card .top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+  .card .name{font-weight:800; font-size:15.5px;}
+  .card .code{font-size:12px; color:var(--sub); font-weight:500;}
+  .badge{font-size:11px; font-weight:700; padding:2px 9px; border-radius:20px; white-space:nowrap;}
+  .badge.down{background:var(--red-bg); color:var(--red);}
+  .badge.up{background:var(--green-bg); color:var(--green);}
+  .badge.warn{background:var(--amber-bg); color:var(--amber);}
+  .badge.blue{background:var(--blue-bg); color:var(--blue);}
+  .badge.violet{background:var(--violet-bg); color:var(--violet);}
+  .card .kpis{display:flex; flex-wrap:wrap; gap:6px;}
+  .kpi{background:var(--bg); border:1px solid var(--line); border-radius:9px; padding:4px 9px; font-size:12.5px; color:var(--sub);}
+  .kpi b{color:var(--ink); font-size:13px;}
+  .kpi b.up{color:var(--green);}
+  .kpi b.down{color:var(--red);}
+  .card .note{font-size:13px; color:var(--sub); flex:1;}
+  .card .note b{color:var(--ink); font-weight:600;}
+  .card ul{margin:2px 0 0 18px; font-size:13px; color:var(--sub); display:flex; flex-direction:column; gap:4px;}
+  .card ul b{color:var(--ink); font-weight:600;}
+
+  .tbl-wrap{overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow);}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:660px;}
+  th{text-align:left; padding:11px 14px; font-size:12.5px; color:var(--sub); border-bottom:2px solid var(--line); background:var(--bg);}
+  td{padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  td b{font-weight:700;}
+  .num{font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .up{color:var(--green);} .down{color:var(--red);} .warn{color:var(--amber);}
+
+  .hint{background:var(--blue-bg); border:1px solid var(--line); border-radius:12px; padding:12px 16px;
+    font-size:12.5px; color:var(--sub); margin-top:14px;}
+  .hint b{color:var(--ink);}
+
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media(max-width:720px){.two{grid-template-columns:1fr;}}
+  .poscard{border-radius:var(--radius); padding:16px 16px 14px; display:flex; flex-direction:column; gap:9px;}
+  .poscard.good{border:1px solid var(--green); background:var(--green-bg);}
+  .poscard.bad{border:1px solid var(--red); background:var(--red-bg);}
+  .poscard h3{display:flex; align-items:center; gap:8px;}
+  .poscard ul{margin:0 0 0 18px; display:flex; flex-direction:column; gap:7px; font-size:13.5px;}
+
+  .verdict{
+    background:linear-gradient(135deg,var(--green-bg),var(--blue-bg)); border:1px solid var(--line);
+    border-radius:var(--radius); padding:16px 18px; margin-top:14px; font-size:14px;
+  }
+  .verdict b{color:var(--green);}
+  .verdict .watch{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
+  .watch .k{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:3px 11px; font-size:12px; font-weight:600; color:var(--ink);}
+
+  .srcs{margin-top:14px; display:flex; flex-wrap:wrap; align-items:center; gap:4px;}
+  .s-grp{font-size:11px; font-weight:700; color:var(--gray); margin-right:2px; letter-spacing:.02em;}
+  .s-grp.off{color:var(--green);}
+  .src{
+    display:inline-flex; align-items:center; gap:4px; text-decoration:none;
+    color:var(--blue); font-size:12px; font-weight:600;
+    border:1px solid var(--line); background:var(--card);
+    padding:2px 9px; border-radius:20px; margin:2px 2px 2px 0;
+    transition:all .15s;
+  }
+  .src:hover{background:var(--blue-bg); border-color:var(--blue);}
+  .src.off{color:var(--green); border-color:var(--green); background:var(--green-bg);}
+  .src.off:hover{background:var(--green-bg); opacity:.85;}
+  .src svg{width:10px; height:10px; flex:none;}
+
+  footer{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); color:var(--gray); font-size:12px;}
+  footer b{color:var(--sub);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">HONGHUI 603336.SH · 2026 中报解读</div>
+    <h1>宏辉果蔬（Honghui）2026 年半年度报告深度分析</h1>
+    <div class="meta">上交所：603336.SH<span class="dot">·</span>财报：《2026 年半年度报告》（2026-08 披露）<span class="dot">·</span>分析整理：2026-08-30<span class="dot">·</span>单位：人民币</div>
+  </header>
+
+  <div class="summary">
+    <b>核心评价</b>：宏辉果蔬交出一份<b>"并购托底、主业承压"</b>的中报——营收 4.18 亿（-11.09%）、归母净利 516.89 万（-25.35%），传统果蔬主业收入同比 <b>-38.87%</b>、归母层面亏损约 <b>843 万</b>。6 月<b>斥 7.0 亿并购施美药业 41.128% 股份</b>切入医药赛道，当月即贡献归母净利 1,359.67 万，是本期利润主要来源。并购伴随商誉 4.07 亿、长期借款 +412.86%，并承载三年 5.16 亿的业绩承诺。
+    <div class="tags">
+      <span class="tag blue">跨行业转型并购</span>
+      <span class="tag up">利润总额 +254.71%</span>
+      <span class="tag down">果蔬主业 -38.87%</span>
+      <span class="tag warn">商誉 4.07 亿</span>
+      <span class="tag warn">长期借款 +412.86%</span>
+    </div>
+  </div>
+
+  <!-- ============ 一、整体财务表现 ============ -->
+  <section>
+    <h2><span class="bar"></span>一、整体财务表现 <span class="cnt">收入利润双降 · 施美并表贡献利润</span></h2>
+
+    <div class="tiles">
+      <div class="tile"><div class="lab">营业收入</div><div class="val">4.18亿</div><span class="delta down">▼ -11.09%</span>
+        <div class="sub2">上年同期 4.70 亿</div></div>
+      <div class="tile"><div class="lab">归母净利润</div><div class="val">516.89万</div><span class="delta down">▼ -25.35%</span>
+        <div class="sub2">果蔬主业归母亏损约 843 万</div></div>
+      <div class="tile"><div class="lab">利润总额</div><div class="val">2697.8万</div><span class="delta up">▲ +254.71%</span>
+        <div class="sub2">主要受施美药业并表影响</div></div>
+      <div class="tile"><div class="lab">扣非归母净利</div><div class="val">500.74万</div><span class="delta down">▼ -25.61%</span>
+        <div class="sub2">与归母净利基本一致</div></div>
+      <div class="tile"><div class="lab">经营现金流</div><div class="val">+9365万</div><span class="delta up">▲ +146.81%</span>
+        <div class="sub2">购货款/薪酬税费减少 + 施美</div></div>
+      <div class="tile"><div class="lab">加权ROE</div><div class="val">0.36%</div><span class="delta down">▼ -0.23pct</span>
+        <div class="sub2">上年同期 0.59%</div></div>
+    </div>
+
+    <div class="chart-box">
+      <h3>关键科目同比变动（2026 H1 vs 2025 H1）</h3>
+      <div class="drow"><div class="dlabel">利润总额</div><div class="dtrack"><div class="dbar up" data-v="254.71" title="施美药业 6 月并表影响"></div></div><div class="dval up">+254.71%</div></div>
+      <div class="drow"><div class="dlabel">经营现金流净额</div><div class="dtrack"><div class="dbar up" data-v="146.81"></div></div><div class="dval up">+146.81%</div></div>
+      <div class="drow"><div class="dlabel">归母净利润</div><div class="dtrack"><div class="dbar down" data-v="25.35"></div></div><div class="dval down">-25.35%</div></div>
+      <div class="drow"><div class="dlabel">营业收入</div><div class="dtrack"><div class="dbar down" data-v="11.09"></div></div><div class="dval down">-11.09%</div></div>
+      <div class="chart-cap">绿色 = 同比增长，红色 = 同比下降。条形长度按绝对值成比例（利润总额 +254.71% 为满幅基准）。<span class="note-star">※ 利润总额与经营现金流大增主要受施美药业 6 月并表、以及果蔬业务支付购货款/职工薪酬/税费减少影响；收入与归母净利下滑反映传统果蔬主业承压（果蔬收入 -38.87%）。</span></div>
+    </div>
+
+    <div class="callout">
+      <b>🔄 利润结构拆解</b>：本期归母净利 516.89 万中，<b>施美药业 6 月贡献归母净利 1,359.67 万</b>（其当月净利润 3,305.95 万、占上市公司合并净利润的 147.40%），由此倒算<b>果蔬等原有主业归母层面亏损约 843 万</b>。利润"增厚"主要来自并购并表，而非主业经营改善。
+      <div class="kpis">
+        <span class="kpi">归母净利 <b class="down">516.89万</b></span>
+        <span class="kpi">施美贡献 <b class="up">+1359.67万</b></span>
+        <span class="kpi">主业归母 <b class="down">≈ -843万</b></span>
+        <span class="kpi">施美 6月净利 <b class="up">3305.95万</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 二、业务结构与转型 ============ -->
+  <section>
+    <h2><span class="bar"></span>二、业务结构与转型并购 <span class="cnt">"果蔬为主 + 食品延伸 + 医药新赛道"</span></h2>
+
+    <div class="chart-box">
+      <h3>2026 H1 分业务营业收入构成</h3>
+      <div class="hbar-row">
+        <div class="hbar-top"><span class="n">果蔬（种植/采后/配送）</span><span><span class="v">2.26 亿</span> <span class="pct">占 54.0%</span> <span class="chg down">-38.87%</span></span></div>
+        <div class="hbar-track"><div class="hbar-fill c1" style="width:100%;"></div></div>
+      </div>
+      <div class="hbar-row">
+        <div class="hbar-top"><span class="n">冻肉贸易</span><span><span class="v">1.11 亿</span> <span class="pct">占 26.5%</span> <span class="chg up">+42.63%</span></span></div>
+        <div class="hbar-track"><div class="hbar-fill c2" style="width:49%;"></div></div>
+      </div>
+      <div class="hbar-row">
+        <div class="hbar-top"><span class="n">医药（施美药业·6月）</span><span><span class="v">0.51 亿</span> <span class="pct">占 12.3%</span> <span class="chg up">新增</span></span></div>
+        <div class="hbar-track"><div class="hbar-fill c3" style="width:22.7%;"></div></div>
+      </div>
+      <div class="hbar-row">
+        <div class="hbar-top"><span class="n">速冻食品（丰收哥）</span><span><span class="v">0.20 亿</span> <span class="pct">占 4.8%</span> <span class="chg up">+43.54%</span></span></div>
+        <div class="hbar-track"><div class="hbar-fill c3" style="width:8.9%;"></div></div>
+      </div>
+      <div class="hbar-row">
+        <div class="hbar-top"><span class="n">食用油（丰收哥/香家门）</span><span><span class="v">0.09 亿</span> <span class="pct">占 2.2%</span> <span class="chg up">+19.58%</span></span></div>
+        <div class="hbar-track"><div class="hbar-fill c3" style="width:4%;"></div></div>
+      </div>
+      <div class="chart-cap"><b>要点</b>：果蔬仍是收入基本盘但占比下滑，冻肉贸易与速冻食品保持高增长，医药业务为 6 月新并入（仅统计当月收入，非完整半年度口径）。</div>
+    </div>
+
+    <div class="grid" style="margin-top:14px;">
+      <div class="card">
+        <div class="top"><div><div class="name">施美药业并购</div><div class="code">2026年6月完成交割并表</div></div><span class="badge violet">切入医药赛道</span></div>
+        <div class="kpis">
+          <span class="kpi">对价 <b>7.00 亿</b></span>
+          <span class="kpi">股权 <b class="up">41.128%</b></span>
+          <span class="kpi">并表 <b>2026-06</b></span>
+        </div>
+        <div class="note">通过全资子公司<b>上海腾晖医药技术有限公司</b>以自有及自筹资金支付（本期该公司归母净利 -39.47 万）；施美专注<b>心脑血管、手性药物</b>仿制药研发生产，商业化产品含苯磺酸左氨氯地平片、培哚普利叔丁胺片等。</div>
+      </div>
+      <div class="card">
+        <div class="top"><div><div class="name">业绩承诺与补偿</div><div class="code">2026-2028</div></div><span class="badge warn">三年累计 5.16 亿</span></div>
+        <div class="kpis">
+          <span class="kpi">2026 <b class="up">≥1.56 亿</b></span>
+          <span class="kpi">2027 <b class="up">≥1.72 亿</b></span>
+          <span class="kpi">2028 <b class="up">≥1.89 亿</b></span>
+        </div>
+        <div class="note">转让方承诺三年扣非归母净利分别不低于 1.56 / 1.72 / 1.89 亿元、累计不低于 <b>5.16 亿元</b>；若承诺期内累计实现未达承诺总额的 <b>90%</b>，转让方以<b>现金</b>方式足额补偿。</div>
+      </div>
+      <div class="card">
+        <div class="top"><div><div class="name">商誉与收购负债</div><div class="code">并表代价的财务影响</div></div><span class="badge warn">商誉占归母净资产约 28%</span></div>
+        <div class="kpis">
+          <span class="kpi">商誉 <b class="warn">4.07 亿</b></span>
+          <span class="kpi">长期借款 <b class="warn">5.71 亿</b></span>
+          <span class="kpi">其他应付款 <b class="warn">1.66 亿</b></span>
+        </div>
+        <div class="note">商誉由期初 27.3 万升至 4.07 亿（溢价购买施美所致）；长期借款 +412.86%（收购银行借款）、其他应付款 1.66 亿（<b>剩余股权款未支付</b>），一年内到期非流动负债 3,340 万。</div>
+      </div>
+      <div class="card">
+        <div class="top"><div><div class="name">主业经营回顾</div><div class="code">果蔬基本盘</div></div><span class="badge down">承压显著</span></div>
+        <div class="note">果蔬生鲜赛道竞争白热化、价格波动剧烈，物流与运营成本高企、终端需求疲软，收入 -38.87% 且增收措施"未能扭转业务量下跌局面"。食品板块（速冻/食用油）销量提升但盈利水平仍承压。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 三、现金流与负债 ============ -->
+  <section>
+    <h2><span class="bar"></span>三、现金流、资产负债结构 <span class="cnt">并购重塑资产负债表</span></h2>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>项目</th><th>2026-06-30 / 2026 H1</th><th>2025-12-31 / 2025 H1</th><th>变动</th></tr>
+        <tr><td>经营活动现金流净额</td><td class="num">+9,365 万</td><td class="num">+3,794 万</td><td class="up">+146.81%，购货款/薪酬税费减少 + 施美现金流</td></tr>
+        <tr><td>投资活动现金流净额</td><td class="num">-5.35 亿</td><td class="num">-822 万</td><td class="warn">收购施美药业支付投资款所致</td></tr>
+        <tr><td>筹资活动现金流净额</td><td class="num">+4.36 亿</td><td class="num">-1,063 万</td><td class="warn">为收购施美药业股权增加银行借款</td></tr>
+        <tr><td>货币资金</td><td class="num">4.04 亿</td><td class="num">4.09 亿</td><td class="down">微降；另新增交易性金融资产 5,538 万</td></tr>
+        <tr><td>应收账款</td><td class="num">5.02 亿</td><td class="num">4.64 亿</td><td class="warn">+8.3%</td></tr>
+        <tr><td>存货</td><td class="num">1.17 亿</td><td class="num">1.58 亿</td><td class="down">-26.3%，压缩库存</td></tr>
+        <tr><td>短期借款</td><td class="num">1.37 亿</td><td class="num">1.70 亿</td><td class="down">采购旺季资金需求回落</td></tr>
+        <tr><td>长期借款</td><td class="num">5.71 亿</td><td class="num">1.11 亿</td><td class="warn">+412.86%，收购借款</td></tr>
+        <tr><td>总资产 / 归母净资产</td><td class="num">29.42 亿 / 14.34 亿</td><td class="num">17.91 亿 / 14.35 亿</td><td class="warn">总资产 +64.22%；归母净资产 -0.06%</td></tr>
+        <tr><td>少数股东权益</td><td class="num">4.39 亿</td><td class="num">211 万</td><td class="warn">施美药业其余股东权益并入</td></tr>
+      </table>
+    </div>
+    <div class="hint"><b>注</b>：按披露科目推算资产负债率约 <b>36.3%</b>（负债合计 10.69 亿 / 资产总计 29.42 亿）。商誉 4.07 亿约占归母净资产 <b>28.4%</b>，叠加业绩承诺悬顶，并购后续若未达预期存在减值压力；表内流动性尚可（货币资金 4.04 亿 + 交易性金融资产 0.55 亿），但长短期借款合计约 7.08 亿。</div>
+  </section>
+
+  <!-- ============ 四、重大事项 ============ -->
+  <section>
+    <h2><span class="bar"></span>四、重大事项与公司治理 <span class="cnt">2026 H1</span></h2>
+    <div class="grid">
+      <div class="card">
+        <div class="top"><div><div class="name">可转债提前赎回完成</div><div class="code">2025年9月</div></div><span class="badge up">财务费用 -55.30%</span></div>
+        <div class="note">发行可转债已于 2025 年 9 月提前赎回完成，本期不再认列可转债利息，财务费用同比大降，为利润改善提供部分贡献。</div>
+      </div>
+      <div class="card">
+        <div class="top"><div><div class="name">控股股东</div><div class="code">苏州申泽瑞泰</div></div><span class="badge blue">实控人：叶桃、刘扬</span></div>
+        <div class="note">公司负责人刘扬签署财务报告，控股股东苏州申泽瑞泰企业管理合伙企业（有限合伙）持有控制权。</div>
+      </div>
+      <div class="card">
+        <div class="top"><div><div class="name">利润分配</div></div><span class="badge warn">不分配</span></div>
+        <div class="note">半年度不进行利润分配、不实施公积金转增股本；募集资金使用"不适用"（主要依赖自有及自筹资金完成并购）。</div>
+      </div>
+      <div class="card">
+        <div class="top"><div><div class="name">经营风险提示</div></div><span class="badge warn">新增医药风险</span></div>
+        <div class="note">中报列示风险包括：果蔬价格波动、库存贬值滞销、经营业绩波动、<b>阶段性短期偿债</b>、新业务（医药）未达预期、规模扩大引发管理能力挑战等 7 项。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 五、展望与关注点 ============ -->
+  <section>
+    <h2><span class="bar"></span>五、下半年看点与管理层动向</h2>
+    <div class="chart-box">
+      <h3>管理层动向与下半年看点</h3>
+      <ul style="margin:0 0 0 18px; display:flex; flex-direction:column; gap:7px; font-size:13.5px;">
+        <li><b>施美药业全年并表</b>：6 月起并表，下半年将贡献完整半年度医药收入与利润，直接决定全年业绩能否兑现 1.56 亿扣非承诺的第一年目标。</li>
+        <li><b>医药协同落地</b>：完善施美治理体系，赋能研发/产能/市场拓展，构建差异化产品管线；研发投入向医药倾斜（本期研发费用 -36.5% 系果蔬研发降低）。</li>
+        <li><b>果蔬主业企稳</b>：继续强化库存周转与损耗管控、拓展新兴渠道，对冲生鲜行业下行；冻肉贸易延续高增长、速冻/食用油渠道深耕（盒马、华润万家、永旺、京东、抖音等）。</li>
+        <li><b>负债结构管理</b>：收购银行借款 5.71 亿 + 剩余股权款 1.66 亿待支付，需跟踪偿债与流动性安排。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 六、总结与风险 ============ -->
+  <section>
+    <h2><span class="bar"></span>六、总结与风险评估</h2>
+    <div class="two">
+      <div class="poscard good">
+        <h3>✅ 优势 / 积极因素</h3>
+        <ul>
+          <li><b>并购切入高景气赛道</b>：7.0 亿收购施美药业 41.128% 并控股，心脑血管仿制药业务盈利稳定，当期即贡献利润，培育第二增长曲线。</li>
+          <li><b>业绩承诺对赌</b>：三年累计 5.16 亿、未达 90% 现金补偿，短期保障并购利润底线。</li>
+          <li>冻肉贸易 +42.63%、速冻食品 +43.54%、食用油 +19.58%，食品延伸板块全线高增长。</li>
+          <li>经营现金流转强（+146.81%），存货压缩 26.3%，可转债赎回后财务费用大降。</li>
+          <li>资产负债率约 36.3%，整体杠杆水平不算高。</li>
+        </ul>
+      </div>
+      <div class="poscard bad">
+        <h3>⚠️ 风险 / 关注点</h3>
+        <ul>
+          <li><b>主业实质承压</b>：果蔬收入 -38.87%、归母层面亏损约 843 万，剔除并购后主业盈利能力明显下滑。</li>
+          <li><b>商誉减值风险</b>：商誉 4.07 亿约占归母净资产 28.4%，若施美业绩不达预期将面临减值。</li>
+          <li><b>高额业绩承诺能否兑现</b>：三年 5.16 亿（年化约 1.7 亿），对一家年净利 500 余万的公司压力巨大。</li>
+          <li><b>收购杠杆与流动性</b>：长期借款 +412.86%，其他应付款 1.66 亿剩余股权款待付，财务费用未来回升。</li>
+          <li><b>管理整合风险</b>：跨行业并购带来治理、文化、风控整合挑战，公司规模快速扩大。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict">
+      <b>综合评价</b>：宏辉果蔬以<b>"7 亿并购施美药业"</b>完成一次关键的战略跃迁，从单一果蔬商向"果蔬+食品+医药"多元平台转型，并购当月即托底了整体利润——但这也让本份中报呈现出明显的<b>"外延贡献、内生承压"</b>特征：果蔬主业收入近四成下滑，真实盈利能力与成长性需要穿透并购看。核心矛盾是<b>"施美 5.16 亿业绩承诺（对应归母净利放大 30 倍以上）能否兑现"</b>以及商誉减值风险。下半年重点跟踪施美全年并表利润、业绩承诺达成进度与收购负债的消化。
+      <div class="watch">
+        <span class="k">🔍 施美药业全年并表与业绩承诺进度</span>
+        <span class="k">🔍 果蔬主业能否企稳</span>
+        <span class="k">🔍 商誉减值与收购负债</span>
+        <span class="k">🔍 冻肉/速冻高增长持续性</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="srcs">
+    <span class="s-grp off">官方</span>
+    <a class="src off" href="https://www.sse.com.cn/disclosure/listedinfo/announcement/" target="_blank">上交所官网（宏辉果蔬《2026年半年度报告》）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    <a class="src off" href="http://www.cninfo.com.cn/" target="_blank">巨潮资讯网（定期报告全文）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    <span class="s-grp">解读</span>
+    <a class="src" href="http://www.cninfo.com.cn/new/disclosure/stock?stockCode=603336" target="_blank">巨潮·603336 公告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+  </div>
+
+  <footer>
+    <b>数据来源</b>：宏辉果蔬《2026 年半年度报告》（已对照原始 PDF 全文逐项提取并复核资产负债表、利润表、现金流量表及各分部数据）。<br>
+    本页为学习研究用途，数据以公司官方披露为准，不构成投资建议。
+  </footer>
+</div>
+
+<script>
+  // 发散式同比条形图：按 |变动值| 成比例定位（利润总额 +254.71% 为满幅基准）
+  (function(){
+    var MAX = 254.71;
+    var SIDE = 44;
+    document.querySelectorAll('.dbar').forEach(function(bar){
+      var v = Math.abs(parseFloat(bar.dataset.v));
+      var w = Math.min(v / MAX * SIDE, SIDE);
+      if (bar.dataset.v > 0){ bar.style.left = '50%'; }
+      else { bar.style.left = (50 - w) + '%'; }
+      bar.style.width = w + '%';
+      bar.style.minWidth = '2px';
+    });
+  })();
+</script>
+</body>
+</html>

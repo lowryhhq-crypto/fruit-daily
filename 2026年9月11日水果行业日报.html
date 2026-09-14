@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.11</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.11</b> 星期五</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">7</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">4</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">9月11日周五，全国果市果价明显回落：农业农村部监测「农产品批发价格200指数」117.21、较昨日升0.10点，重点监测6种水果均价6.55元/公斤、较昨日下降3.7%，秋季水果集中上市、果蔬价格同步走低。企业端，蓝莓龙头诺普信再添2000万元品种权诉讼——下属盈江旺悦莓被云南美鸣起诉、昆明中院已立案排期，美鸣系累计索赔已近3亿元。贸易端，越南对华果蔬出口紧追智利，今年上半年21.6亿美元、增长19%，在华份额升至15.8%逼近智利16.7%、年底有望升为第二大供应国；RCEP叠加中国—东盟自贸区3.0版，前8个月双边贸易5.95万亿元、增长20.6%。加工端，全球冷冻浓缩橙汁期货当周结算均价151.36美分/磅、环比涨3.23%，国内浓缩橙汁现货跌幅继续收窄、脐橙销地价涨3.51%。气象端，未来三天华西地区多阴雨、海南广东广西等地有大到暴雨，产区需防范降雨对采收贮藏的影响。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="蓝莓龙头诺普信再添2000万元品种权诉讼：下属盈江旺悦莓被诉侵害植物新品种权，昆明中院已立案排期 东方财富网9月11日：诺普信（002215.sz）9月11日公告，下属控股公司盈江县旺悦莓农业有限公司因侵害植物新品种权纠纷被云南美鸣农业有限公司起诉，昆明市中级人民法院已一审立案并排期开庭；原告要求停止侵权、销毁其保有的繁殖材料及擅自扩繁的植株，并赔偿经济损失及维权合理开支共计2000万元。盈江旺悦莓对原告诉求不予认可、将积极应诉。这是继9月8日爱莓庄集团等三公司涉诉后美鸣系再添新案，对诺普信旗下公司累计索赔已近3亿元。 诺普信/爱莓庄(imberri) 东方财富网" style="--acc:var(--s1)"><a class="n-title" href="https://finance.eastmoney.com/a/202609113871549963.html" target="_blank" rel="noopener noreferrer">蓝莓龙头诺普信再添2000万元品种权诉讼：下属盈江旺悦莓被诉侵害植物新品种权，昆明中院已立案排期</a><p class="n-sum">东方财富网9月11日：诺普信（002215.SZ）9月11日公告，下属控股公司盈江县旺悦莓农业有限公司因侵害植物新品种权纠纷被云南美鸣农业有限公司起诉，昆明市中级人民法院已一审立案并排期开庭；原告要求停止侵权、销毁其保有的繁殖材料及擅自扩繁的植株，并赔偿经济损失及维权合理开支共计2000万元。盈江旺悦莓对原告诉求不予认可、将积极应诉。这是继9月8日爱莓庄集团等三公司涉诉后美鸣系再添新案，对诺普信旗下公司累计索赔已近3亿元。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">诺普信/爱莓庄(IMBERRI)</span><span>东方财富网</span><span>·</span><span>9月11日</span><a class="n-link" href="https://finance.eastmoney.com/a/202609113871549963.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="9月11日苹果早富士行情：甘肃静宁纸袋早富士75#起步4.80-5.50元/斤，整体质量下滑、好货偏少 中果网9月11日（静宁仁大镇采集）：甘肃静宁产区纸袋早富士75#起步收购价4.80-5.50元/斤，为当前主要产区高位、好货价格稳定、一般货以质论价；静宁产区早富士整体质量有所下滑、好货偏少，西部产区早富士交易已进入后期。中秋备货期优质果与一般货价差明显。 甘肃静宁苹果产区 中果网" style="--acc:var(--s3)"><a class="n-title" href="https://www.pingguo7.cn/hq/show-htm-itemid-23673.html" target="_blank" rel="noopener noreferrer">9月11日苹果早富士行情：甘肃静宁纸袋早富士75#起步4.80-5.50元/斤，整体质量下滑、好货偏少</a><p class="n-sum">中果网9月11日（静宁仁大镇采集）：甘肃静宁产区纸袋早富士75#起步收购价4.80-5.50元/斤，为当前主要产区高位、好货价格稳定、一般货以质论价；静宁产区早富士整体质量有所下滑、好货偏少，西部产区早富士交易已进入后期。中秋备货期优质果与一般货价差明显。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">甘肃静宁苹果产区</span><span>中果网</span><span>·</span><span>9月11日</span><a class="n-link" href="https://www.pingguo7.cn/hq/show-htm-itemid-23673.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国际" data-search="新华指数：当周(9/4-10)全球冷冻浓缩橙汁期货fcoj2611均价151.36美分/磅、环比涨3.23%，国内浓缩橙汁现货跌幅继续收窄、脐橙销地价涨3.51% 新华指数9月11日发布：9月4-10日当周，全球冷冻浓缩橙汁期货合约（fcoj2611）结算均价151.36美分/磅（折合22395.85元/吨）、环比上涨3.23%（同比仍跌30.10%）；国内冷冻浓缩橙汁出厂价23437.48元/吨、环比下跌0.32%，非浓缩还原橙汁6489.93元/吨、环比跌0.82%，现货跌幅继续收窄。同期全国脐橙市场销地价环比上涨3.51%、鲜橙产地价下跌0.12%，本土柑橘产地价震荡走弱。 全球橙汁/浓缩果汁产业 新华指数（新华财经）" style="--acc:var(--s4)"><a class="n-title" href="https://www.cnfin.com/kx/detail/20260911/4468512_1.html" target="_blank" rel="noopener noreferrer">新华指数：当周(9/4-10)全球冷冻浓缩橙汁期货FCOJ2611均价151.36美分/磅、环比涨3.23%，国内浓缩橙汁现货跌幅继续收窄、脐橙销地价涨3.51%</a><p class="n-sum">新华指数9月11日发布：9月4-10日当周，全球冷冻浓缩橙汁期货合约（FCOJ2611）结算均价151.36美分/磅（折合22395.85元/吨）、环比上涨3.23%（同比仍跌30.10%）；国内冷冻浓缩橙汁出厂价23437.48元/吨、环比下跌0.32%，非浓缩还原橙汁6489.93元/吨、环比跌0.82%，现货跌幅继续收窄。同期全国脐橙市场销地价环比上涨3.51%、鲜橙产地价下跌0.12%，本土柑橘产地价震荡走弱。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">全球橙汁/浓缩果汁产业</span><span>新华指数（新华财经）</span><span>·</span><span>9月11日</span><a class="n-link" href="https://www.cnfin.com/kx/detail/20260911/4468512_1.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="农业农村部：9月11日「农产品批发价格200指数」117.21、升0.10点；6种水果均价6.55元/公斤、降3.7%，果蔬价格整体走低 金吾财讯援引农业农村部9月11日监测：「农产品批发价格200指数」为117.21、比昨天上升0.10点，「菜篮子」产品批发价格指数为118.05、比昨天上升0.12点。重点监测的6种水果平均价格为6.55元/公斤、比昨天下降3.7%，28种蔬菜平均价4.69元/公斤、比昨天下降0.2%，秋季水果集中上市带动果蔬价格整体走低。 全国农产品批发市场 农业农村部（金吾财讯）" style="--acc:var(--s7)"><a class="n-title" href="https://hk.stockstar.com/IG2026091100030072.shtml" target="_blank" rel="noopener noreferrer">农业农村部：9月11日「农产品批发价格200指数」117.21、升0.10点；6种水果均价6.55元/公斤、降3.7%，果蔬价格整体走低</a><p class="n-sum">金吾财讯援引农业农村部9月11日监测：「农产品批发价格200指数」为117.21、比昨天上升0.10点，「菜篮子」产品批发价格指数为118.05、比昨天上升0.12点。重点监测的6种水果平均价格为6.55元/公斤、比昨天下降3.7%，28种蔬菜平均价4.69元/公斤、比昨天下降0.2%，秋季水果集中上市带动果蔬价格整体走低。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">全国农产品批发市场</span><span>农业农村部（金吾财讯）</span><span>·</span><span>9月11日</span><a class="n-link" href="https://hk.stockstar.com/IG2026091100030072.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="越南对华果蔬出口紧追智利：今年上半年21.6亿美元、增长19%，在华份额升至15.8%逼近智利16.7% 国际果蔬报道9月11日：据越南媒体报道，今年1-6月越南对华果蔬出口约21.6亿美元、同比增长19%，仅次于泰国（50.8亿美元）和智利（22.8亿美元）；越南在中国果蔬市场的份额从去年同期的约13.8%升至15.8%，与排名第二的智利（16.7%）差距已不足1个百分点，按当前增速年底有望赶超智利、成为中国第二大果蔬供应国。 越南果蔬/中越贸易 国际果蔬报道" style="--acc:var(--s8)"><a class="n-title" href="https://m.guojiguoshu.com/article/11277" target="_blank" rel="noopener noreferrer">越南对华果蔬出口紧追智利：今年上半年21.6亿美元、增长19%，在华份额升至15.8%逼近智利16.7%</a><p class="n-sum">国际果蔬报道9月11日：据越南媒体报道，今年1-6月越南对华果蔬出口约21.6亿美元、同比增长19%，仅次于泰国（50.8亿美元）和智利（22.8亿美元）；越南在中国果蔬市场的份额从去年同期的约13.8%升至15.8%，与排名第二的智利（16.7%）差距已不足1个百分点，按当前增速年底有望赶超智利、成为中国第二大果蔬供应国。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">越南果蔬/中越贸易</span><span>国际果蔬报道</span><span>·</span><span>9月11日</span><a class="n-link" href="https://m.guojiguoshu.com/article/11277" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="rcep叠加中国—东盟自贸区3.0版：前8个月中国与东盟贸易总值5.95万亿元、增长20.6% 中国青年网9月10日：在厦门投洽会上，rcep与中国—东盟自贸区3.0版升级议定书的「制度叠加」效应成为焦点。今年前8个月中国与东盟贸易总值达5.95万亿元人民币、同比增长20.6%，东盟继续稳居中国第一大贸易伙伴；自贸区3.0版首次将数字经济、绿色经济、供应链互联互通纳入制度化框架，为包括水果在内的农产品贸易提供更优制度环境。 中国-东盟/rcep 中国青年网" style="--acc:var(--s8)"><a class="n-title" href="http://news.youth.cn/jsxw/202609/t20260910_16862307.htm" target="_blank" rel="noopener noreferrer">RCEP叠加中国—东盟自贸区3.0版：前8个月中国与东盟贸易总值5.95万亿元、增长20.6%</a><p class="n-sum">中国青年网9月10日：在厦门投洽会上，RCEP与中国—东盟自贸区3.0版升级议定书的「制度叠加」效应成为焦点。今年前8个月中国与东盟贸易总值达5.95万亿元人民币、同比增长20.6%，东盟继续稳居中国第一大贸易伙伴；自贸区3.0版首次将数字经济、绿色经济、供应链互联互通纳入制度化框架，为包括水果在内的农产品贸易提供更优制度环境。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">中国-东盟/RCEP</span><span>中国青年网</span><span>·</span><span>9月10日</span><a class="n-link" href="http://news.youth.cn/jsxw/202609/t20260910_16862307.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="中央气象台9月11日：未来三天华西多阴雨、海南广东广西等地有大到暴雨，需防范降雨对秋果采收影响 中央气象台9月11日天气提示：昨日四川、云南、广西等地出现较强降雨；预计未来三天华西地区多阴雨，四川、重庆、云南、青藏高原、西北地区东部等地有小到中雨、局地大雨，海南岛、广东、广西等地部分地区有大到暴雨、局地大暴雨。气象部门提示关注持续性降雨对农业生产的影响、华南南部局地强降雨需防范暴雨次生灾害。正值苹果、猕猴桃等秋果采收上市期，产区需防范降雨对采收贮藏的影响。 四川/云南/广西/海南/广东果产区 中央气象台（中国气象局）" style="--acc:var(--s9)"><a class="n-title" href="https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xzytq/202609/t20260911_8035865.html" target="_blank" rel="noopener noreferrer">中央气象台9月11日：未来三天华西多阴雨、海南广东广西等地有大到暴雨，需防范降雨对秋果采收影响</a><p class="n-sum">中央气象台9月11日天气提示：昨日四川、云南、广西等地出现较强降雨；预计未来三天华西地区多阴雨，四川、重庆、云南、青藏高原、西北地区东部等地有小到中雨、局地大雨，海南岛、广东、广西等地部分地区有大到暴雨、局地大暴雨。气象部门提示关注持续性降雨对农业生产的影响、华南南部局地强降雨需防范暴雨次生灾害。正值苹果、猕猴桃等秋果采收上市期，产区需防范降雨对采收贮藏的影响。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">四川/云南/广西/海南/广东果产区</span><span>中央气象台（中国气象局）</span><span>·</span><span>9月11日</span><a class="n-link" href="https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xzytq/202609/t20260911_8035865.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-11 17:36 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
