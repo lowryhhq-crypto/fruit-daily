@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.20</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.20</b> 星期日</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">19</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">19</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">12</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">17</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">第23届中国—东盟博览会（南宁，9月17—21日）进入展期，中国（广西）—东盟水果集散中心展区意向订单不断，东盟企业借“出口中国”品牌加速拓市——2025年广西口岸进口东盟水果货值突破400亿元、同比增长20%，进口规模占全国三分之一以上。出口与产销对接同步提速：贵州威宁苹果当季已申报出口36批次、635吨销往越南泰国；陕西果品（满洲里）推介会签订4780万元购销协议，延安志丹与俄企达成800吨苹果采购意向；修文猕猴桃开园大会完成四轮集中签约。产区方面，陕西省果业中心预判2026年苹果产量同比增长3.36%、猕猴桃增幅8.43%，优质果紧俏、普通货承压的分化行情延续。物流端，“海口—温州”定期货运航线9月19日开通，泰国树熟榴莲等鲜果经海口中转直达浙南，每周2班、单程最大载重22吨。气象方面，海南澄迈福橙产区受9月中旬持续暴雨影响出现落果、断枝与炭疽病溃疡病蔓延；印度克什米尔研究显示夏季升温每1℃苹果减产约6.10%，2025—2026年反复冰雹致局部减产50%—90%。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="毕节海关护航，威宁苹果当季已申报出口36批次635吨 贵阳海关所属毕节海关护航威宁高原苹果新季集中采收并启运东南亚市场，当季新上市威宁苹果已申报出口36批次、635吨。出口企业贵州贵茂贸易自2022年启动威宁苹果出口，目前在越南、泰国等东南亚国家很抢手，订单逐年增长。 贵州贵茂贸易 央广网" style="--acc:var(--s1)"><a class="n-title" href="https://gz.cnr.cn/yaowen/20260919/t20260919_527818277.shtml" target="_blank" rel="noopener noreferrer">毕节海关护航，威宁苹果当季已申报出口36批次635吨</a><p class="n-sum">贵阳海关所属毕节海关护航威宁高原苹果新季集中采收并启运东南亚市场，当季新上市威宁苹果已申报出口36批次、635吨。出口企业贵州贵茂贸易自2022年启动威宁苹果出口，目前在越南、泰国等东南亚国家很抢手，订单逐年增长。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">贵州贵茂贸易</span><span>央广网</span><span>·</span><span>2026.09.19</span><a class="n-link" href="https://gz.cnr.cn/yaowen/20260919/t20260919_527818277.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="湖北提前锁定阿克苏苹果2万吨订单，比去年增加两倍多 阿克苏丰庆园果品农业合作社已接到来自湖北的2万吨苹果订单，比去年增加两倍多；红旗坡集团与湖北农发销售集团、湖北交投实业等多家湖北省属重点国企签订战略合作协议，鄂州花湖机场联动顺丰冷链网络架起“阿克苏—鄂州—全国”通道。湖北今年拨付援疆专项资金3.79亿元，统筹实施援疆项目75个。 红旗坡集团 极目新闻" style="--acc:var(--s1)"><a class="n-title" href="https://www.ctdsb.net/c1476_202609/2860820.html" target="_blank" rel="noopener noreferrer">湖北提前锁定阿克苏苹果2万吨订单，比去年增加两倍多</a><p class="n-sum">阿克苏丰庆园果品农业合作社已接到来自湖北的2万吨苹果订单，比去年增加两倍多；红旗坡集团与湖北农发销售集团、湖北交投实业等多家湖北省属重点国企签订战略合作协议，鄂州花湖机场联动顺丰冷链网络架起“阿克苏—鄂州—全国”通道。湖北今年拨付援疆专项资金3.79亿元，统筹实施援疆项目75个。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">红旗坡集团</span><span>极目新闻</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://www.ctdsb.net/c1476_202609/2860820.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="东博会“桂字号”水果出圈：36家水果企业参展，广西水果产量连续8年全国第一 第23届中国—东盟博览会期间，中国（广西）—东盟水果集散中心展区集中展示50多种广西特色及东盟进口水果，现场共36家水果企业参展。2025年广西全区水果产量突破3500万吨，连续8年居全国第一；广西东云食品推介“桂蜜5号”“佳蜜2号”百香果，中秋礼盒订单激增。 广西东云食品 南方+（南方日报）" style="--acc:var(--s1)"><a class="n-title" href="https://www.nfnews.com/content/X3RvPWDZ3P.html" target="_blank" rel="noopener noreferrer">东博会“桂字号”水果出圈：36家水果企业参展，广西水果产量连续8年全国第一</a><p class="n-sum">第23届中国—东盟博览会期间，中国（广西）—东盟水果集散中心展区集中展示50多种广西特色及东盟进口水果，现场共36家水果企业参展。2025年广西全区水果产量突破3500万吨，连续8年居全国第一；广西东云食品推介“桂蜜5号”“佳蜜2号”百香果，中秋礼盒订单激增。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">广西东云食品</span><span>南方+（南方日报）</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://www.nfnews.com/content/X3RvPWDZ3P.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="马士基lanco号海上起火，欧洲青柠价格恐将上涨 9月4日，集装箱船maersk lanco号在南大西洋巴西海岸约170海里处起火，该船从巴西桑托斯港出发，载有大量青柠等水果，计划驶往摩洛哥丹吉尔港。荷兰进口商denimpex表示船上有其进口的巴西青柠，预计未来几周欧洲青柠供应承压、价格可能上涨，船东或宣布共同海损。 马士基／denimpex 国际果蔬报道" style="--acc:var(--s2)"><a class="n-title" href="https://m.guojiguoshu.com/article/11323" target="_blank" rel="noopener noreferrer">马士基Lanco号海上起火，欧洲青柠价格恐将上涨</a><p class="n-sum">9月4日，集装箱船Maersk Lanco号在南大西洋巴西海岸约170海里处起火，该船从巴西桑托斯港出发，载有大量青柠等水果，计划驶往摩洛哥丹吉尔港。荷兰进口商Denimpex表示船上有其进口的巴西青柠，预计未来几周欧洲青柠供应承压、价格可能上涨，船东或宣布共同海损。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">马士基／Denimpex</span><span>国际果蔬报道</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://m.guojiguoshu.com/article/11323" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="澳洲桃产量持续低位，对华出口份额萎缩 美国农业部（usda）《澳大利亚核果年度报告》显示，澳大利亚鲜桃和油桃产量已从疫情前的约11万吨降至6.6万吨左右，预计2026/27产季再降10%至6万吨、出口减少15%至1万吨，对华出口份额已从历史高位明显回落；维多利亚州goulburn等主产区受暖冬与土壤过湿影响。 usda 国际果蔬报道" style="--acc:var(--s2)"><a class="n-title" href="https://guojiguoshu.com/article/11292" target="_blank" rel="noopener noreferrer">澳洲桃产量持续低位，对华出口份额萎缩</a><p class="n-sum">美国农业部（USDA）《澳大利亚核果年度报告》显示，澳大利亚鲜桃和油桃产量已从疫情前的约11万吨降至6.6万吨左右，预计2026/27产季再降10%至6万吨、出口减少15%至1万吨，对华出口份额已从历史高位明显回落；维多利亚州Goulburn等主产区受暖冬与土壤过湿影响。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">USDA</span><span>国际果蔬报道</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://guojiguoshu.com/article/11292" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="陕西苹果、猕猴桃今年双双增产，苹果产量预计增3.36% 陕西省果业中心发布2026年度全省园林水果产销形势分析预判：全年园林水果总产量预计同比增长1.65%，其中苹果产量预计增长3.36%、猕猴桃增幅达8.43%、葡萄增长2.67%，鲜梨因结构性调减与灾害同比下降7.47%。生长季遭遇春季低温阴雨、夏季高温干旱及局部冰雹大风叠加，果品品质两极分化加剧。 陕西省果业中心 国际果蔬报道" style="--acc:var(--s3)"><a class="n-title" href="https://guojiguoshu.com/article/11298" target="_blank" rel="noopener noreferrer">陕西苹果、猕猴桃今年双双增产，苹果产量预计增3.36%</a><p class="n-sum">陕西省果业中心发布2026年度全省园林水果产销形势分析预判：全年园林水果总产量预计同比增长1.65%，其中苹果产量预计增长3.36%、猕猴桃增幅达8.43%、葡萄增长2.67%，鲜梨因结构性调减与灾害同比下降7.47%。生长季遭遇春季低温阴雨、夏季高温干旱及局部冰雹大风叠加，果品品质两极分化加剧。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">陕西省果业中心</span><span>国际果蔬报道</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://guojiguoshu.com/article/11298" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="2026年中国农民丰收节·修文猕猴桃开园采摘暨产销对接大会举行 9月19日，2026年中国农民丰收节·修文猕猴桃开园采摘活动暨产销对接交流大会在贵州修文举行，现场完成四轮集中签约，涵盖技术服务、订单销售、出口贸易、电商销售四大板块。修文县及猕猴桃企业与贵州大学、贵州东尧进出口、中国邮政集团修文县分公司等签约，助力十余万吨鲜果顺畅出山。 贵州东尧进出口 贵阳网" style="--acc:var(--s3)"><a class="n-title" href="https://www.gywb.cn/pages/web/2026/09/19/29cb9a9e96ab4070ab4d62779f12856e.html" target="_blank" rel="noopener noreferrer">2026年中国农民丰收节·修文猕猴桃开园采摘暨产销对接大会举行</a><p class="n-sum">9月19日，2026年中国农民丰收节·修文猕猴桃开园采摘活动暨产销对接交流大会在贵州修文举行，现场完成四轮集中签约，涵盖技术服务、订单销售、出口贸易、电商销售四大板块。修文县及猕猴桃企业与贵州大学、贵州东尧进出口、中国邮政集团修文县分公司等签约，助力十余万吨鲜果顺畅出山。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">贵州东尧进出口</span><span>贵阳网</span><span>·</span><span>2026.09.19</span><a class="n-link" href="https://www.gywb.cn/pages/web/2026/09/19/29cb9a9e96ab4070ab4d62779f12856e.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="第三届额济纳蜜瓜产业发展推介会举行，现场签采购意向与深加工协议 9月19日，第三届（2026年）额济纳蜜瓜产业发展推介会暨全网发售启动仪式举行，内蒙古众聚达商贸与额济纳旗奋强果蔬专业合作社签订商品瓜采购意向协议；内蒙古胡戈吉云农业科技与苏泊淖尔苏木伊布图嘎查集体经济组织签署蜜瓜副产品深加工合作协议。 众聚达商贸 额济纳旗人民政府网" style="--acc:var(--s3)"><a class="n-title" href="https://www.ejnq.gov.cn/art/2026/9/20/art_1870_525295.html" target="_blank" rel="noopener noreferrer">第三届额济纳蜜瓜产业发展推介会举行，现场签采购意向与深加工协议</a><p class="n-sum">9月19日，第三届（2026年）额济纳蜜瓜产业发展推介会暨全网发售启动仪式举行，内蒙古众聚达商贸与额济纳旗奋强果蔬专业合作社签订商品瓜采购意向协议；内蒙古胡戈吉云农业科技与苏泊淖尔苏木伊布图嘎查集体经济组织签署蜜瓜副产品深加工合作协议。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">众聚达商贸</span><span>额济纳旗人民政府网</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://www.ejnq.gov.cn/art/2026/9/20/art_1870_525295.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="博兴智慧葡萄产业：双节订单排到国庆，年产值突破500万元 中秋、国庆双节临近，山东滨州博兴县庞家镇优质葡萄智慧农业产业园的妮娜皇后、神秘梦境、阳光玫瑰等高端葡萄陆续上市，订单已排到国庆前后，售价每斤10元至30元，园区年产葡萄30万斤、年产值突破500万元。全县高端果蔬种植面积达1.2万亩，优质品种占比超85%。 博兴庞家镇葡萄产业园 闪电新闻" style="--acc:var(--s3)"><a class="n-title" href="https://sdxw.iqilu.com/share/YS0yMS0xNzQwNTg1Nw.html" target="_blank" rel="noopener noreferrer">博兴智慧葡萄产业：双节订单排到国庆，年产值突破500万元</a><p class="n-sum">中秋、国庆双节临近，山东滨州博兴县庞家镇优质葡萄智慧农业产业园的妮娜皇后、神秘梦境、阳光玫瑰等高端葡萄陆续上市，订单已排到国庆前后，售价每斤10元至30元，园区年产葡萄30万斤、年产值突破500万元。全县高端果蔬种植面积达1.2万亩，优质品种占比超85%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">博兴庞家镇葡萄产业园</span><span>闪电新闻</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://sdxw.iqilu.com/share/YS0yMS0xNzQwNTg1Nw.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-supermarket" data-title="🏪 商超" style="--acc:var(--s5)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s5)"></span>🏪 商超</div></div><div class="seg-list"><article class="n-card" data-seg="supermarket" data-region="国内" data-search="广州首家！永辉超市新店落地北京路 9月19日，永辉超市广州首家门店在北京路开业。永辉全国门店同期启动“团圆家宴·品质严选”活动，以20支家宴爆品贯穿双节、分波次推出240支节令商品，并举办第二届新疆水果节，法兰西西梅、冬枣、哈密瓜等应季鲜果陆续到店。 永辉超市 腾讯新闻（广州越秀发布）" style="--acc:var(--s5)"><a class="n-title" href="https://news.qq.com/rain/a/20260919A096S900" target="_blank" rel="noopener noreferrer">广州首家！永辉超市新店落地北京路</a><p class="n-sum">9月19日，永辉超市广州首家门店在北京路开业。永辉全国门店同期启动“团圆家宴·品质严选”活动，以20支家宴爆品贯穿双节、分波次推出240支节令商品，并举办第二届新疆水果节，法兰西西梅、冬枣、哈密瓜等应季鲜果陆续到店。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">永辉超市</span><span>腾讯新闻（广州越秀发布）</span><span>·</span><span>2026.09.19</span><a class="n-link" href="https://news.qq.com/rain/a/20260919A096S900" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="“海口—温州”定期货运航线开通，泰国树熟榴莲等进口鲜果直达浙南 9月19日，一架搭载泰国树熟榴莲等进口鲜果的全货机从海口美兰机场飞抵温州龙湾机场，标志“海口—温州”定期货运航线正式开通，每周计划执飞2班、单程最大载重22吨。货物可在美兰机场进境水果指定监管场地快速查验通关并中转分拨；截至9月18日，美兰机场今年累计货邮吞吐量16.8万吨、同比增长8%。 海南美兰机场 新浪新闻（看看新闻）" style="--acc:var(--s7)"><a class="n-title" href="https://k.sina.cn/article_6145283913_v16e49974902002gxee.html" target="_blank" rel="noopener noreferrer">“海口—温州”定期货运航线开通，泰国树熟榴莲等进口鲜果直达浙南</a><p class="n-sum">9月19日，一架搭载泰国树熟榴莲等进口鲜果的全货机从海口美兰机场飞抵温州龙湾机场，标志“海口—温州”定期货运航线正式开通，每周计划执飞2班、单程最大载重22吨。货物可在美兰机场进境水果指定监管场地快速查验通关并中转分拨；截至9月18日，美兰机场今年累计货邮吞吐量16.8万吨、同比增长8%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">海南美兰机场</span><span>新浪新闻（看看新闻）</span><span>·</span><span>2026.09.19</span><a class="n-link" href="https://k.sina.cn/article_6145283913_v16e49974902002gxee.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="凭祥口岸水果检测实验室投用，东盟水果形成“2小时检测圈” 中国—东盟水果交易中心检测实验室（崇左）在凭祥落成投用，实现东盟输华水果“口岸就地快检”，形成“2小时水果检测圈”。检测项目从450项增至800项，可承接友谊关、爱店、水口等边境口岸进口水果检测业务；榴莲日均检测通量从200个样品提升至400个以上，整体检测时长压缩超20%。 中国—东盟水果交易中心 广西政协报" style="--acc:var(--s7)"><a class="n-title" href="http://gxzxbxwzx.com.cn/lz/jczx/1686272046853147453.html" target="_blank" rel="noopener noreferrer">凭祥口岸水果检测实验室投用，东盟水果形成“2小时检测圈”</a><p class="n-sum">中国—东盟水果交易中心检测实验室（崇左）在凭祥落成投用，实现东盟输华水果“口岸就地快检”，形成“2小时水果检测圈”。检测项目从450项增至800项，可承接友谊关、爱店、水口等边境口岸进口水果检测业务；榴莲日均检测通量从200个样品提升至400个以上，整体检测时长压缩超20%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">中国—东盟水果交易中心</span><span>广西政协报</span><span>·</span><span>2026.09.19</span><a class="n-link" href="http://gxzxbxwzx.com.cn/lz/jczx/1686272046853147453.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="会理石榴走进河北，产地鲜果对接华北市场 9月18日，“会理石榴 走进河北”2026年会理石榴推介会在石家庄国际农产品批发交易中心举行，搭建产地鲜果面向华北市场的线下展示窗口。石家庄市交投大河集配物流有限公司表示将深化跨区域产销对接。 石家庄交投大河集配物流 燕赵晚报" style="--acc:var(--s7)"><a class="n-title" href="http://yzwb.sjzdaily.com.cn/yzwbpaper/pc/content/202609/19/content_257715.html" target="_blank" rel="noopener noreferrer">会理石榴走进河北，产地鲜果对接华北市场</a><p class="n-sum">9月18日，“会理石榴 走进河北”2026年会理石榴推介会在石家庄国际农产品批发交易中心举行，搭建产地鲜果面向华北市场的线下展示窗口。石家庄市交投大河集配物流有限公司表示将深化跨区域产销对接。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">石家庄交投大河集配物流</span><span>燕赵晚报</span><span>·</span><span>2026.09.19</span><a class="n-link" href="http://yzwb.sjzdaily.com.cn/yzwbpaper/pc/content/202609/19/content_257715.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="“出口中国”品牌效应显现，东盟企业借东博会拓展中国市场 第23届中国—东盟博览会在南宁举行，东盟多国企业抢抓“出口中国”机遇。泰国sinkha国际有限公司首次参展，希望将加工去核冷冻榴莲出口中国市场；2025年中国榴莲进口量达186.8万吨，较2022年翻番，中国已是全球最大榴莲进口国和消费国。 泰国sinkha国际 中工网（中国新闻网）" style="--acc:var(--s8)"><a class="n-title" href="https://www.workercn.cn/c/2026-09-19/8897888.shtml" target="_blank" rel="noopener noreferrer">“出口中国”品牌效应显现，东盟企业借东博会拓展中国市场</a><p class="n-sum">第23届中国—东盟博览会在南宁举行，东盟多国企业抢抓“出口中国”机遇。泰国Sinkha国际有限公司首次参展，希望将加工去核冷冻榴莲出口中国市场；2025年中国榴莲进口量达186.8万吨，较2022年翻番，中国已是全球最大榴莲进口国和消费国。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">泰国Sinkha国际</span><span>中工网（中国新闻网）</span><span>·</span><span>2026.09.19</span><a class="n-link" href="https://www.workercn.cn/c/2026-09-19/8897888.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="东博会见证跨境果香里的“双向奔赴” 9月18日第23届中国—东盟博览会进入第二个展会日，南宁国际会展中心中国（广西）—东盟水果集散中心特色主题展区客商往来穿梭、意向订单不断。2025年广西口岸进口东盟水果货值突破400亿元、同比增长20%，进口规模占全国总量三分之一以上。 中国（广西）—东盟水果集散中心 中国青年网" style="--acc:var(--s8)"><a class="n-title" href="http://news.youth.cn/jsxw/202609/t20260919_16877600.htm" target="_blank" rel="noopener noreferrer">东博会见证跨境果香里的“双向奔赴”</a><p class="n-sum">9月18日第23届中国—东盟博览会进入第二个展会日，南宁国际会展中心中国（广西）—东盟水果集散中心特色主题展区客商往来穿梭、意向订单不断。2025年广西口岸进口东盟水果货值突破400亿元、同比增长20%，进口规模占全国总量三分之一以上。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">中国（广西）—东盟水果集散中心</span><span>中国青年网</span><span>·</span><span>2026.09.19</span><a class="n-link" href="http://news.youth.cn/jsxw/202609/t20260919_16877600.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="陕西果品（满洲里）推介会签订4780万元订单，延安苹果拓展俄蒙市场 9月17日，2026陕西果品（满洲里）宣传推介会在满洲里举办，全省6市果企与满洲里口岸经销商及俄罗斯外商代表对接。陕西龙康广贸易（志丹县）与俄罗斯远东批发有限公司（llc“dv-opt”）达成800吨、货值2000万元苹果采购意向；推介会累计采购意向2530吨、总货值4780万元，销往俄罗斯、蒙古国。 陕西龙康广贸易 延安市农业农村局（市果业中心）" style="--acc:var(--s8)"><a class="n-title" href="https://nyj.yanan.gov.cn/xwzx/nydt/2101586307932233730.html" target="_blank" rel="noopener noreferrer">陕西果品（满洲里）推介会签订4780万元订单，延安苹果拓展俄蒙市场</a><p class="n-sum">9月17日，2026陕西果品（满洲里）宣传推介会在满洲里举办，全省6市果企与满洲里口岸经销商及俄罗斯外商代表对接。陕西龙康广贸易（志丹县）与俄罗斯远东批发有限公司（LLC“DV-OPT”）达成800吨、货值2000万元苹果采购意向；推介会累计采购意向2530吨、总货值4780万元，销往俄罗斯、蒙古国。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">陕西龙康广贸易</span><span>延安市农业农村局（市果业中心）</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://nyj.yanan.gov.cn/xwzx/nydt/2101586307932233730.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="陕西苹果“西行记”：青砧苹果种苗落地乌兹别克斯坦，成活率达98% 陕西照金咸恒农业科技的青砧苹果种苗“走出去”至乌兹别克斯坦锡尔河州中乌现代农业科技示范园，6000株青砧苹果种苗于2024年4月抵达，首批种苗越冬越夏综合成活率达98%。2023年该公司与青岛市农业科学研究院签订青砧苗木繁育权独占许可转让合同。 咸恒农科 三秦网" style="--acc:var(--s8)"><a class="n-title" href="https://www.sanqin.com/2026-09/20/content_20123410.html" target="_blank" rel="noopener noreferrer">陕西苹果“西行记”：青砧苹果种苗落地乌兹别克斯坦，成活率达98%</a><p class="n-sum">陕西照金咸恒农业科技的青砧苹果种苗“走出去”至乌兹别克斯坦锡尔河州中乌现代农业科技示范园，6000株青砧苹果种苗于2024年4月抵达，首批种苗越冬越夏综合成活率达98%。2023年该公司与青岛市农业科学研究院签订青砧苗木繁育权独占许可转让合同。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">咸恒农科</span><span>三秦网</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://www.sanqin.com/2026-09/20/content_20123410.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="海南澄迈福橙产区遭持续暴雨，落果断枝与病害交织 9月11日以来海南岛受热带低压残余环流和冷空气影响持续强降雨，9月14日暴雨叠加农田积水、土壤冲刷和高温高湿环境，澄迈福橙产区出现落果增加、断枝倒伏、根系裸露、炭疽病和溃疡病蔓延等风险。澄迈福橙挂果面积8500亩、产值1.36亿元，中国热科院海口站赴产区指导复产。 中国热科院海口站 中国热带农业科学院海口实验站" style="--acc:var(--s9)"><a class="n-title" href="https://www.catashes.cn/contents/33/218342.html" target="_blank" rel="noopener noreferrer">海南澄迈福橙产区遭持续暴雨，落果断枝与病害交织</a><p class="n-sum">9月11日以来海南岛受热带低压残余环流和冷空气影响持续强降雨，9月14日暴雨叠加农田积水、土壤冲刷和高温高湿环境，澄迈福橙产区出现落果增加、断枝倒伏、根系裸露、炭疽病和溃疡病蔓延等风险。澄迈福橙挂果面积8500亩、产值1.36亿元，中国热科院海口站赴产区指导复产。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">中国热科院海口站</span><span>中国热带农业科学院海口实验站</span><span>·</span><span>2026.09.20</span><a class="n-link" href="https://www.catashes.cn/contents/33/218342.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="研究：克什米尔苹果产区夏季升温每1℃减产约6.10%，冰雹两年毁五成至九成作物 9月19日发布的一项气候变化研究显示，印度克什米尔苹果产量在夏季气温每升高1℃时约减产6.10%，baramulla地区高达19.16%；2025年和2026年反复冰雹摧毁多个地区50%—90%的苹果作物，经济损失估计600亿—700亿卢比。查谟芒果经济因早期热浪和冰雹到货量下降超70%。 克什米尔果农／研究机构 kashmir media service" style="--acc:var(--s9)"><a class="n-title" href="https://kmsnews.org/kms/2026/09/19/kashmirs-apple-economy-faces-growing-threat-from-climate-change-study.html" target="_blank" rel="noopener noreferrer">研究：克什米尔苹果产区夏季升温每1℃减产约6.10%，冰雹两年毁五成至九成作物</a><p class="n-sum">9月19日发布的一项气候变化研究显示，印度克什米尔苹果产量在夏季气温每升高1℃时约减产6.10%，Baramulla地区高达19.16%；2025年和2026年反复冰雹摧毁多个地区50%—90%的苹果作物，经济损失估计600亿—700亿卢比。查谟芒果经济因早期热浪和冰雹到货量下降超70%。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">克什米尔果农／研究机构</span><span>Kashmir Media Service</span><span>·</span><span>2026.09.19</span><a class="n-link" href="https://kmsnews.org/kms/2026/09/19/kashmirs-apple-economy-faces-growing-threat-from-climate-change-study.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-20 17:36 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
