@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.23</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.23</b> 星期三</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">14</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">14</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">9</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">5</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">14</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">行情：农业农村部监测，9月23日“农产品批发价格200指数”为116.33，比昨天下降0.24个点；重点监测的6种水果平均价格6.65元/公斤，比昨天上升0.3%，菠萝、富士苹果分别涨2.2%、1.3%领涨，西瓜跌4.2%。今年中秋行情遇冷，节前5天销售额创近7年最低，水果批发商单店销售金额同比暴跌20.4%，热销排行葡萄、石榴、橘子、苹果、梨，榴莲跌出前五。企业：国投中鲁9月23日公告选举夏连鲲为董事长并变更法定代表人，公司发行股份购买中国电子工程设计院100%股份已完成过户；安德利果汁执行董事王萌9月22日以每股约20.55港元增持38万股H股，9月23日股价一度涨超10%；第四届中国猕猴桃博览会在陕西眉县举办产销对接大会，鑫荣懋、绿叶水果等现场签约1.26万吨、1.69亿元。贸易：智利9月22日正式实施与中国海关总署的鲜果出口谅解备忘录，扩大樱桃及核果包装选择、将在途冷处理扩展至所有获准输华水果并取消托盘检验证书；厄瓜多尔与中国签署鲜食蓝莓输华植物检疫要求议定书；中美正就各300亿美元对等降税框架磋商，农产品在考虑之列。气象：智利中部车厘子产区春季降雨或威胁开花坐果，专家称本轮厄尔尼诺为“强”级别且仍在加强；国内陕西9月23—30日持续阴雨，苹果着色与猕猴桃采收承压；中央气象台提示9月底前华西至黄淮、江淮持续降雨。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="国投中鲁选举夏连鲲为董事长并变更法定代表人，电子院100%股份已完成过户 国投中鲁（600962）9月23日发布第九届董事会第19次会议决议公告，会议于9月22日在北京以现场结合通讯方式召开，9名董事全部出席，审议通过《关于选举公司董事长暨变更法定代表人、发展战略与投资委员会主任委员的议案》（9票同意）。因原董事长王炜已辞职，经全体董事共同推举由董事夏连鲲召集并主持本次会议。公司发行股份购买中国电子工程设计院股份有限公司100%股份并募集配套资金的标的资产过户手续已办理完毕，王炜辞去董事长、发展战略与投资委员会主任委员及总经理职务，陈昊、张瑞莲、蔡会欣、殷实、刘玉等也分别辞去相关职务，公司同时聘任翟传明为总经理。 国投中鲁 新浪财经（公司公告）" style="--acc:var(--s1)"><a class="n-title" href="https://finance.sina.com.cn/roll/2026-09-23/doc-inistvur8715091.shtml" target="_blank" rel="noopener noreferrer">国投中鲁选举夏连鲲为董事长并变更法定代表人，电子院100%股份已完成过户</a><p class="n-sum">国投中鲁（600962）9月23日发布第九届董事会第19次会议决议公告，会议于9月22日在北京以现场结合通讯方式召开，9名董事全部出席，审议通过《关于选举公司董事长暨变更法定代表人、发展战略与投资委员会主任委员的议案》（9票同意）。因原董事长王炜已辞职，经全体董事共同推举由董事夏连鲲召集并主持本次会议。公司发行股份购买中国电子工程设计院股份有限公司100%股份并募集配套资金的标的资产过户手续已办理完毕，王炜辞去董事长、发展战略与投资委员会主任委员及总经理职务，陈昊、张瑞莲、蔡会欣、殷实、刘玉等也分别辞去相关职务，公司同时聘任翟传明为总经理。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">国投中鲁</span><span>新浪财经（公司公告）</span><span>·</span><span>2026.09.23</span><a class="n-link" href="https://finance.sina.com.cn/roll/2026-09-23/doc-inistvur8715091.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="安德利果汁执行董事王萌连续增持h股，9月23日股价一度涨超10% 安德利果汁（605198 / 02218）自愿公告显示，执行董事王萌于2026年9月22日以每股约20.55港元的平均价购入38万股公司h股；此前9月21日已通过全资拥有的弘安国际投资有限公司以每股约20.74港元增持29.45万股。增持后王萌被视为拥有约143,377,960股a股权益（占总股本43.73%）及约9,274,500股h股权益（占总股本2.83%），并表示不排除未来进一步增持。受此影响，安德利果汁9月23日盘中涨超10%，报约21.48—21.54港元。公司此前拟以现金7.93亿元累计收购甬强科技62.06%股权，形成“果汁主业+电子材料”双轮驱动。 安德利果汁 中财网（公司公告）" style="--acc:var(--s1)"><a class="n-title" href="https://www.cfi.cn/newspage.aspx?id=20260922001917" target="_blank" rel="noopener noreferrer">安德利果汁执行董事王萌连续增持H股，9月23日股价一度涨超10%</a><p class="n-sum">安德利果汁（605198 / 02218）自愿公告显示，执行董事王萌于2026年9月22日以每股约20.55港元的平均价购入38万股公司H股；此前9月21日已通过全资拥有的弘安国际投资有限公司以每股约20.74港元增持29.45万股。增持后王萌被视为拥有约143,377,960股A股权益（占总股本43.73%）及约9,274,500股H股权益（占总股本2.83%），并表示不排除未来进一步增持。受此影响，安德利果汁9月23日盘中涨超10%，报约21.48—21.54港元。公司此前拟以现金7.93亿元累计收购甬强科技62.06%股权，形成“果汁主业+电子材料”双轮驱动。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">安德利果汁</span><span>中财网（公司公告）</span><span>·</span><span>2026.09.22</span><a class="n-link" href="https://www.cfi.cn/newspage.aspx?id=20260922001917" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="新西兰bostock获韩国黄肉猕猴桃品种权，挑战佳沛单一渠道出口地位 新西兰水果企业bostock与韩国合作方签署协议，取得韩国黄肉猕猴桃品种“haegeum”（해금）在南半球的独家营销权，该品种的23年植物品种权自2026年6月起生效。这将是数十年来新西兰首次在佳沛（zespri）品牌体系之外商业化种植黄肉猕猴桃。按新西兰《1999年猕猴桃出口条例》和《1999年猕猴桃重组法》，佳沛对新西兰猕猴桃（澳大利亚除外）拥有单一出口权，bostock目前只能销往新西兰和澳大利亚约3000万消费者，其希望打开韩国、日本和中国等高端市场。新西兰猕猴桃种植者协会（nzkgi）首席执行官colin bond为单一出口制辩护，称其由种植者设立并为种植者创造价值；佳沛拒绝对此置评。 zespri（佳沛）/ bostock 亚洲水果 asiafruit（引新西兰 farmers weekly）" style="--acc:var(--s2)"><a class="n-title" href="https://asiafruitchina.net/32746.html" target="_blank" rel="noopener noreferrer">新西兰Bostock获韩国黄肉猕猴桃品种权，挑战佳沛单一渠道出口地位</a><p class="n-sum">新西兰水果企业Bostock与韩国合作方签署协议，取得韩国黄肉猕猴桃品种“Haegeum”（해금）在南半球的独家营销权，该品种的23年植物品种权自2026年6月起生效。这将是数十年来新西兰首次在佳沛（Zespri）品牌体系之外商业化种植黄肉猕猴桃。按新西兰《1999年猕猴桃出口条例》和《1999年猕猴桃重组法》，佳沛对新西兰猕猴桃（澳大利亚除外）拥有单一出口权，Bostock目前只能销往新西兰和澳大利亚约3000万消费者，其希望打开韩国、日本和中国等高端市场。新西兰猕猴桃种植者协会（NZKGI）首席执行官Colin Bond为单一出口制辩护，称其由种植者设立并为种植者创造价值；佳沛拒绝对此置评。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">Zespri（佳沛）/ Bostock</span><span>亚洲水果 Asiafruit（引新西兰 Farmers Weekly）</span><span>·</span><span>2026.09.23</span><a class="n-link" href="https://asiafruitchina.net/32746.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="第四届中国猕猴桃博览会产销对接大会在陕西眉县举办，现场签约1.26万吨、1.69亿元 9月23日，第四届中国猕猴桃博览会猕猴桃产销对接大会在国家级（眉县）猕猴桃产业园区举办。会上多家省内外重点猕猴桃供应链企业推介产品和品牌，在产销对接签约仪式上，陕西金桥果业、鹏盛达果业等8家企业与湖南绿叶水果、鑫荣懋果业等现场签约，签订外贸出口、精品商超、即食猕猴桃生产订单合计1.26万吨、金额1.69亿元。 鑫荣懋 / 绿叶水果 中国农科新闻网" style="--acc:var(--s3)"><a class="n-title" href="http://www.nkb.com.cn/2026/0923/527601.html" target="_blank" rel="noopener noreferrer">第四届中国猕猴桃博览会产销对接大会在陕西眉县举办，现场签约1.26万吨、1.69亿元</a><p class="n-sum">9月23日，第四届中国猕猴桃博览会猕猴桃产销对接大会在国家级（眉县）猕猴桃产业园区举办。会上多家省内外重点猕猴桃供应链企业推介产品和品牌，在产销对接签约仪式上，陕西金桥果业、鹏盛达果业等8家企业与湖南绿叶水果、鑫荣懋果业等现场签约，签订外贸出口、精品商超、即食猕猴桃生产订单合计1.26万吨、金额1.69亿元。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">鑫荣懋 / 绿叶水果</span><span>中国农科新闻网</span><span>·</span><span>2026.09.23</span><a class="n-link" href="http://www.nkb.com.cn/2026/0923/527601.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="佳沛发布2026中秋限定礼盒，盒马、天天果园、京东、小象超市、叮咚买菜共同揭幕 9月22日，佳沛（zespri）2026中秋限定礼盒系列在上海发布，以天坛联名设计为亮点。零售环节由佳沛与盒马、天天果园、京东、小象超市、叮咚买菜等全国重点零售客户共同揭幕，批发环节则携手华东、华北、华中、西北四大区域头部合作伙伴集中发布。报道同时披露其供应链管控：采摘前由独立实验室检测成熟度（可溶性固形物、干物质、硬度等），进入中国市场的阳光金果均为class1等级并实行size16至size36克重分级，新西兰果园通过globalg.a.p.认证，采后设施需获gfsi认证并遵循haccp原则。 zespri（佳沛） 新京报" style="--acc:var(--s6)"><a class="n-title" href="https://www.bjnews.com.cn/detail/1790048291129413.html" target="_blank" rel="noopener noreferrer">佳沛发布2026中秋限定礼盒，盒马、天天果园、京东、小象超市、叮咚买菜共同揭幕</a><p class="n-sum">9月22日，佳沛（Zespri）2026中秋限定礼盒系列在上海发布，以天坛联名设计为亮点。零售环节由佳沛与盒马、天天果园、京东、小象超市、叮咚买菜等全国重点零售客户共同揭幕，批发环节则携手华东、华北、华中、西北四大区域头部合作伙伴集中发布。报道同时披露其供应链管控：采摘前由独立实验室检测成熟度（可溶性固形物、干物质、硬度等），进入中国市场的阳光金果均为CLASS1等级并实行SIZE16至SIZE36克重分级，新西兰果园通过GLOBALG.A.P.认证，采后设施需获GFSI认证并遵循HACCP原则。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">Zespri（佳沛）</span><span>新京报</span><span>·</span><span>2026.09.22</span><a class="n-link" href="https://www.bjnews.com.cn/detail/1790048291129413.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="农业农村部：9月23日“农产品批发价格200指数”116.33，6种水果均价6.65元/公斤 据农业农村部监测，9月23日“农产品批发价格200指数”为116.33，比昨天下降0.24个点；“菜篮子”产品批发价格指数为116.90，比昨天下降0.29个点。重点监测的28种蔬菜平均价格4.53元/公斤，比昨天下降0.4%；重点监测的6种水果平均价格6.65元/公斤，比昨天上升0.3%。当日46个重点监测品种中，价格升幅前五为大带鱼、菠萝、莴笋、蒜薹和富士苹果，幅度分别为2.6%、2.2%、1.6%、1.5%和1.3%；降幅前五为西瓜、黄瓜、冬瓜、大葱和菠菜，幅度分别为4.2%、3.3%、2.8%、2.6%和2.0%。 农业农村部 农业农村部市场与信息化司" style="--acc:var(--s7)"><a class="n-title" href="https://scs.moa.gov.cn/jcyj/202609/t20260923_6488053.htm" target="_blank" rel="noopener noreferrer">农业农村部：9月23日“农产品批发价格200指数”116.33，6种水果均价6.65元/公斤</a><p class="n-sum">据农业农村部监测，9月23日“农产品批发价格200指数”为116.33，比昨天下降0.24个点；“菜篮子”产品批发价格指数为116.90，比昨天下降0.29个点。重点监测的28种蔬菜平均价格4.53元/公斤，比昨天下降0.4%；重点监测的6种水果平均价格6.65元/公斤，比昨天上升0.3%。当日46个重点监测品种中，价格升幅前五为大带鱼、菠萝、莴笋、蒜薹和富士苹果，幅度分别为2.6%、2.2%、1.6%、1.5%和1.3%；降幅前五为西瓜、黄瓜、冬瓜、大葱和菠菜，幅度分别为4.2%、3.3%、2.8%、2.6%和2.0%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">农业农村部</span><span>农业农村部市场与信息化司</span><span>·</span><span>2026.09.23</span><a class="n-link" href="https://scs.moa.gov.cn/jcyj/202609/t20260923_6488053.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="中秋水果行情再遇冷：节前5天销售额创近7年最低，批发商单店销售金额同比暴跌20.4% 报道称2026年中秋前5天水果销售额创下近7年“最冷冰点”，水果批发商单店销售金额同比暴跌20.4%，销售排行榜出现高端水果让位、平价水果上升的态势，热销水果排行依次为葡萄、石榴、橘子、苹果和梨，榴莲跌出前五。连中秋原本热销的月饼也出现销售额断崖式下跌。市场分化明显，精品果、礼盒果行情坚挺而普通通货走货缓慢、价格承压。 全国水果批发流通 搜狐（行业观察）" style="--acc:var(--s7)"><a class="n-title" href="https://www.sohu.com/a/1079630421_100205210" target="_blank" rel="noopener noreferrer">中秋水果行情再遇冷：节前5天销售额创近7年最低，批发商单店销售金额同比暴跌20.4%</a><p class="n-sum">报道称2026年中秋前5天水果销售额创下近7年“最冷冰点”，水果批发商单店销售金额同比暴跌20.4%，销售排行榜出现高端水果让位、平价水果上升的态势，热销水果排行依次为葡萄、石榴、橘子、苹果和梨，榴莲跌出前五。连中秋原本热销的月饼也出现销售额断崖式下跌。市场分化明显，精品果、礼盒果行情坚挺而普通通货走货缓慢、价格承压。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">全国水果批发流通</span><span>搜狐（行业观察）</span><span>·</span><span>2026.09.23</span><a class="n-link" href="https://www.sohu.com/a/1079630421_100205210" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="9月23日全国果蔬批发行情：富士苹果3.8元/公斤，阳光玫瑰7.5元/公斤 整合农业农村部监测与北京新发地、广州江南、河南万邦、寿光地利、邯郸南大堡、江苏凌家塘等市场数据显示，9月23日富士苹果（70—84，纸袋）批发均价3.8元/公斤（最低2.8、最高4.8），富士苹果（85以上）5.5元/公斤；国产香蕉2.35元/公斤，进口香蕉（越南、老挝）3.55元/公斤；巨峰葡萄3.25元/公斤、阳光玫瑰7.5元/公斤、妮娜皇后22.5元/公斤；徐香猕猴桃5.0元/公斤、红心猕猴桃8.75元/公斤；石榴4.25元/公斤、鸭梨1.78元/公斤、蜜桔2.3元/公斤。 全国农产品批发市场 农资与市场" style="--acc:var(--s7)"><a class="n-title" href="http://www.enongzi.com/news/details?id=493f72a8-8349-4d6b-8bfe-f82f749303ea" target="_blank" rel="noopener noreferrer">9月23日全国果蔬批发行情：富士苹果3.8元/公斤，阳光玫瑰7.5元/公斤</a><p class="n-sum">整合农业农村部监测与北京新发地、广州江南、河南万邦、寿光地利、邯郸南大堡、江苏凌家塘等市场数据显示，9月23日富士苹果（70—84，纸袋）批发均价3.8元/公斤（最低2.8、最高4.8），富士苹果（85以上）5.5元/公斤；国产香蕉2.35元/公斤，进口香蕉（越南、老挝）3.55元/公斤；巨峰葡萄3.25元/公斤、阳光玫瑰7.5元/公斤、妮娜皇后22.5元/公斤；徐香猕猴桃5.0元/公斤、红心猕猴桃8.75元/公斤；石榴4.25元/公斤、鸭梨1.78元/公斤、蜜桔2.3元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">全国农产品批发市场</span><span>农资与市场</span><span>·</span><span>2026.09.23</span><a class="n-link" href="http://www.enongzi.com/news/details?id=493f72a8-8349-4d6b-8bfe-f82f749303ea" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="智利正式实施与中国海关总署鲜果出口谅解备忘录，樱桃核果包装与冷处理规则放宽 9月22日，智利正式实施与中国海关总署（gacc）签署的谅解备忘录，以便利智利鲜果对华出口，该协议由智利农牧服务局（sag）牵头技术谈判达成。措施包括：扩大地中海实蝇管制区樱桃和核果的包装选择、将在途冷处理扩展至所有获准输华水果种类、建立与国际植物检疫标准一致的新冷处理方案，并通过取消托盘检验证书简化货物标识。智利农业部长jaime campos表示该协议提升了物流和操作效率，有助于满足中国植物检疫标准、增强智利水果在中国市场的竞争力。中国是智利第一大贸易伙伴和其鲜果出口的最大进口国。 智利农牧服务局（sag） freshplaza" style="--acc:var(--s8)"><a class="n-title" href="https://www.freshplaza.com/latin-america/article/9874312/chile-enacts-a-memorandum-of-understanding-with-china-to-facilitate-fresh-fruit-exports/" target="_blank" rel="noopener noreferrer">智利正式实施与中国海关总署鲜果出口谅解备忘录，樱桃核果包装与冷处理规则放宽</a><p class="n-sum">9月22日，智利正式实施与中国海关总署（GACC）签署的谅解备忘录，以便利智利鲜果对华出口，该协议由智利农牧服务局（SAG）牵头技术谈判达成。措施包括：扩大地中海实蝇管制区樱桃和核果的包装选择、将在途冷处理扩展至所有获准输华水果种类、建立与国际植物检疫标准一致的新冷处理方案，并通过取消托盘检验证书简化货物标识。智利农业部长Jaime Campos表示该协议提升了物流和操作效率，有助于满足中国植物检疫标准、增强智利水果在中国市场的竞争力。中国是智利第一大贸易伙伴和其鲜果出口的最大进口国。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">智利农牧服务局（SAG）</span><span>FreshPlaza</span><span>·</span><span>2026.09.22</span><a class="n-link" href="https://www.freshplaza.com/latin-america/article/9874312/chile-enacts-a-memorandum-of-understanding-with-china-to-facilitate-fresh-fruit-exports/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="厄瓜多尔与中国签署鲜食蓝莓输华植物检疫要求议定书 9月22日，厄瓜多尔agrocalidad与中国海关总署（gacc）签署鲜食蓝莓输华植物检疫要求议定书，为厄瓜多尔蓝莓进入中国市场确定了生产、包装、出口各环节须满足的条件。议定书内容包括生产场所及出口相关设施的注册与批准、作物植物检疫管理措施、检疫性有害生物的监测与控制体系，以及加工、包装、储藏、运输和检验检疫出证要求。厄方表示该议定书是市场准入流程中的“基础性阶段”，生产者、包装厂和出口商仍需完成操作与检验环节后方可开始商业发运。2026年1—6月厄瓜多尔蓝莓出口额49.5万美元，较2025年同期10.8万美元增长359%。 厄瓜多尔 agrocalidad / 中国海关总署 portalfrutícola" style="--acc:var(--s8)"><a class="n-title" href="https://www.portalfruticola.com/noticias/2026/09/22/arandano-ecuador-china/" target="_blank" rel="noopener noreferrer">厄瓜多尔与中国签署鲜食蓝莓输华植物检疫要求议定书</a><p class="n-sum">9月22日，厄瓜多尔Agrocalidad与中国海关总署（GACC）签署鲜食蓝莓输华植物检疫要求议定书，为厄瓜多尔蓝莓进入中国市场确定了生产、包装、出口各环节须满足的条件。议定书内容包括生产场所及出口相关设施的注册与批准、作物植物检疫管理措施、检疫性有害生物的监测与控制体系，以及加工、包装、储藏、运输和检验检疫出证要求。厄方表示该议定书是市场准入流程中的“基础性阶段”，生产者、包装厂和出口商仍需完成操作与检验环节后方可开始商业发运。2026年1—6月厄瓜多尔蓝莓出口额49.5万美元，较2025年同期10.8万美元增长359%。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">厄瓜多尔 Agrocalidad / 中国海关总署</span><span>PortalFrutícola</span><span>·</span><span>2026.09.22</span><a class="n-link" href="https://www.portalfruticola.com/noticias/2026/09/22/arandano-ecuador-china/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="中美正就各300亿美元对等降税框架磋商，农产品在考虑之列 据商务部此前表态及最新报道，中美双方经贸团队正就300亿美元对等降税框架安排进行磋商，争取早日落地实施。双方原则同意在贸易理事会架构下讨论同等规模产品的对等降税，规模各为300亿美元或更多，对双方商定的彼此关注产品有望适用最惠国税率甚至更低，农产品和工业品均在考虑之列。报道称中方近期持续采购美国大豆，特朗普与习近平预计于9月24—25日在华盛顿举行峰会，贸易预计是核心议题，可能公布有限经贸成果。现行部分关税及相关措施的暂停期限只到2026年11月10日。 商务部 / 中美经贸 网易（财经综合）" style="--acc:var(--s8)"><a class="n-title" href="https://www.163.com/dy/article/L6NG6Q4O05568W0A.html" target="_blank" rel="noopener noreferrer">中美正就各300亿美元对等降税框架磋商，农产品在考虑之列</a><p class="n-sum">据商务部此前表态及最新报道，中美双方经贸团队正就300亿美元对等降税框架安排进行磋商，争取早日落地实施。双方原则同意在贸易理事会架构下讨论同等规模产品的对等降税，规模各为300亿美元或更多，对双方商定的彼此关注产品有望适用最惠国税率甚至更低，农产品和工业品均在考虑之列。报道称中方近期持续采购美国大豆，特朗普与习近平预计于9月24—25日在华盛顿举行峰会，贸易预计是核心议题，可能公布有限经贸成果。现行部分关税及相关措施的暂停期限只到2026年11月10日。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">商务部 / 中美经贸</span><span>网易（财经综合）</span><span>·</span><span>2026.09.22</span><a class="n-link" href="https://www.163.com/dy/article/L6NG6Q4O05568W0A.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国际" data-search="智利中部车厘子产区春季降雨或威胁开花坐果，专家称本轮厄尔尼诺为“强”级别 智利方面警告，预报中影响中部及中南部产区的春季降雨可能损害果树开花与坐果，进而影响产量。学者指出，本次厄尔尼诺事件为“强”级别且仍在正向发展，未来数月果树进入物候阶段后将陆续形成果实，需保护花果免受高温高湿的不利组合影响，呼吁种植者持续跟踪未来数周天气演变。智利中部o&#x27;higgins、maule地区是车厘子产业核心区，9—10月正值开花坐果期、11—12月为采收期，降雨叠加高温导致的裂果是最大风险；而中国占智利车厘子出口近85%。 智利车厘子产业 el maule informa（智利）" style="--acc:var(--s9)"><a class="n-title" href="https://elmauleinforma.cl/lluvias-primaverales-podrian-danar-la-floracion-de-frutales-afectando-su-produccion/" target="_blank" rel="noopener noreferrer">智利中部车厘子产区春季降雨或威胁开花坐果，专家称本轮厄尔尼诺为“强”级别</a><p class="n-sum">智利方面警告，预报中影响中部及中南部产区的春季降雨可能损害果树开花与坐果，进而影响产量。学者指出，本次厄尔尼诺事件为“强”级别且仍在正向发展，未来数月果树进入物候阶段后将陆续形成果实，需保护花果免受高温高湿的不利组合影响，呼吁种植者持续跟踪未来数周天气演变。智利中部O&#x27;Higgins、Maule地区是车厘子产业核心区，9—10月正值开花坐果期、11—12月为采收期，降雨叠加高温导致的裂果是最大风险；而中国占智利车厘子出口近85%。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">智利车厘子产业</span><span>El Maule Informa（智利）</span><span>·</span><span>2026.09.22</span><a class="n-link" href="https://elmauleinforma.cl/lluvias-primaverales-podrian-danar-la-floracion-de-frutales-afectando-su-produccion/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="陕西9月23—30日持续阴雨：苹果成熟期寡照、猕猴桃连阴雨灾害风险较高 陕西气象9月23日发布分析，目前陕西秋粮、苹果、猕猴桃处于成熟至收获期。预计9月23—30日持续阴雨，关中、陕南连阴雨灾害风险较高：苹果成熟期阴雨寡照影响着色成熟，导致着色不均、甜度偏低，宝鸡、咸阳、渭南、铜川、延安南部等产区风险较高，果园易积水、炭疽病和灰霉病易暴发，可能诱发采前落果并加大采后贮藏腐烂风险；关中、陕南猕猴桃产区成熟期连阴雨易造成田间落果、烂果并影响采摘贮存。建议及时清园、排涝降湿，待天气转晴、果面水分晾干后分批采收。 陕西省气象局 陕西气象（新浪新闻）" style="--acc:var(--s9)"><a class="n-title" href="https://k.sina.cn/article_2513683302_95d3c36602701clvo.html" target="_blank" rel="noopener noreferrer">陕西9月23—30日持续阴雨：苹果成熟期寡照、猕猴桃连阴雨灾害风险较高</a><p class="n-sum">陕西气象9月23日发布分析，目前陕西秋粮、苹果、猕猴桃处于成熟至收获期。预计9月23—30日持续阴雨，关中、陕南连阴雨灾害风险较高：苹果成熟期阴雨寡照影响着色成熟，导致着色不均、甜度偏低，宝鸡、咸阳、渭南、铜川、延安南部等产区风险较高，果园易积水、炭疽病和灰霉病易暴发，可能诱发采前落果并加大采后贮藏腐烂风险；关中、陕南猕猴桃产区成熟期连阴雨易造成田间落果、烂果并影响采摘贮存。建议及时清园、排涝降湿，待天气转晴、果面水分晾干后分批采收。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">陕西省气象局</span><span>陕西气象（新浪新闻）</span><span>·</span><span>2026.09.23</span><a class="n-link" href="https://k.sina.cn/article_2513683302_95d3c36602701clvo.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="中央气象台9月23日重要天气提示：9月底前华西至黄淮、江淮有持续降雨 中央气象台9月23日发布重要天气提示，预计9月底前华西至黄淮、江淮有持续降雨；中秋假日期间（9月25日至27日）全国大部地区气象条件较为适宜，华西至黄淮多降雨，东北、华北北部等地有降雨和弱冷空气影响。持续阴雨对上述区域秋收作物及果园管理带来不利影响，需防范田间渍涝和病害。 中央气象台 中央气象台（新浪财经）" style="--acc:var(--s9)"><a class="n-title" href="https://finance.sina.com.cn/money/future/hyxh/2026-09-23/doc-inisvcqf1225805.shtml" target="_blank" rel="noopener noreferrer">中央气象台9月23日重要天气提示：9月底前华西至黄淮、江淮有持续降雨</a><p class="n-sum">中央气象台9月23日发布重要天气提示，预计9月底前华西至黄淮、江淮有持续降雨；中秋假日期间（9月25日至27日）全国大部地区气象条件较为适宜，华西至黄淮多降雨，东北、华北北部等地有降雨和弱冷空气影响。持续阴雨对上述区域秋收作物及果园管理带来不利影响，需防范田间渍涝和病害。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">中央气象台</span><span>中央气象台（新浪财经）</span><span>·</span><span>2026.09.23</span><a class="n-link" href="https://finance.sina.com.cn/money/future/hyxh/2026-09-23/doc-inisvcqf1225805.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-23 17:34 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
