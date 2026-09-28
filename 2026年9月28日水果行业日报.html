@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.28</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.28</b> 星期一</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">20</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">0</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">15</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">5</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">19</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">贸易面：9月28日商务部公布中美贸易理事会和“300亿对300亿”对等降税框架，中方将对约300亿美元自美进口商品降低关税，水果、蔬菜、牛肉、乳制品、小麦、玉米等均在清单内，超90%产品将免除相互加征的全部关税并享受最惠国待遇，双方还同意在贸易理事会下设立农业工作组、计划2026年底前召开首次会议；平陆运河开通中国广西南宁港至越南芹苴丐崔港集装箱直航，船舶25%运力专门配给冷藏箱，东盟水果输华冷链物流成本有望降低18%—30%。进口面：非洲零关税红利持续释放，9月22日148吨非洲鲜果经深圳湾海关放行，今年前8个月深圳海关监管非洲进口鲜果4.09万吨、货值3.31亿元，企业称每柜成本下降约2万—2.5万元；肯尼亚牛油果借零关税与中企建成铁路加速入华，5—8月对华出口376.3万公斤、货值约610万美元，同比增长63.22%。行情面：9月28日国内农副产品期货全线飘绿，苹果主力合约收报6986元/吨、下跌1.94%并逆势增仓近万手，红枣跌2.89%；批发市场柑橘、蜜柚大量上市，滕州苹果6.40元/公斤、榴莲22.00元/公斤，合肥周谷堆富士苹果10.50元/公斤，主产区柑橘价格偏弱而销地相对坚挺。气象面：中央气象台预报9月28日夜间至10月1日较强冷空气影响中东部，江南及其以北地区降温4—8℃，华西、江汉、江淮等地中到大雨、局地暴雨；第26号台风“舒力基”28日上午减弱为强台风级并趋向日本以南洋面，30日将在日本东南洋面变性为温带气旋，国庆假期不影响我国。国际面：USDA预测2026/27年度全球鲜车厘子产量增长17%至540万吨创历史新高，中国产量预计102万吨、首次突破100万吨。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="非洲零关税红利释放：148吨非洲鲜果经深圳湾海关快速放行，前8月深圳进口非洲鲜果4.09万吨 自2026年5月1日我国对53个非洲建交国全面实施零关税以来，非洲鲜果经深圳口岸进口明显提速。9月22日一批重148吨的非洲鲜果经深圳湾海关检验检疫合格后放行，销往粤港澳大湾区各大商超；今年前8个月深圳海关共检疫监管非洲进口新鲜水果4.09万吨、货值3.31亿元，其中5—8月监管进口应税非洲水果货值1.96亿元、减免关税0.25亿元。货运代理企业称，零关税后每柜进口水果成本下降约2万—2.5万元，非洲鲜果在其进口鲜果中占比较去年同期提高约10%，葡萄柚、鲜橙等品种可补齐国内冬春市场空档。 海关总署 / 搜狐" style="--acc:var(--s1)"><a class="n-title" href="https://www.sohu.com/a/1081855456_100053070" target="_blank" rel="noopener noreferrer">非洲零关税红利释放：148吨非洲鲜果经深圳湾海关快速放行，前8月深圳进口非洲鲜果4.09万吨</a><p class="n-sum">自2026年5月1日我国对53个非洲建交国全面实施零关税以来，非洲鲜果经深圳口岸进口明显提速。9月22日一批重148吨的非洲鲜果经深圳湾海关检验检疫合格后放行，销往粤港澳大湾区各大商超；今年前8个月深圳海关共检疫监管非洲进口新鲜水果4.09万吨、货值3.31亿元，其中5—8月监管进口应税非洲水果货值1.96亿元、减免关税0.25亿元。货运代理企业称，零关税后每柜进口水果成本下降约2万—2.5万元，非洲鲜果在其进口鲜果中占比较去年同期提高约10%，葡萄柚、鲜橙等品种可补齐国内冬春市场空档。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>海关总署 / 搜狐</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://www.sohu.com/a/1081855456_100053070" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="苹果期货主力合约9月28日收跌1.94%至6986元/吨 逆势增仓近万手 9月28日国内商品期货多数收跌，农副产品板块全线飘绿。苹果主力合约（苹果2701）收报6986元/吨、下跌1.94%（跌138元），结算价7124元/吨，成交量约13.3万手，持仓量147855手、较前一日增加9964手，呈逆势增仓；红枣主力合约收报7055元/吨、下跌2.89%。当日盘面18个品种上涨、40个品种下跌，生猪主力跌4.01%创合约历史新低。 金融界" style="--acc:var(--s1)"><a class="n-title" href="https://finance.jrj.com.cn/2026/09/28152858567660.shtml" target="_blank" rel="noopener noreferrer">苹果期货主力合约9月28日收跌1.94%至6986元/吨 逆势增仓近万手</a><p class="n-sum">9月28日国内商品期货多数收跌，农副产品板块全线飘绿。苹果主力合约（苹果2701）收报6986元/吨、下跌1.94%（跌138元），结算价7124元/吨，成交量约13.3万手，持仓量147855手、较前一日增加9964手，呈逆势增仓；红枣主力合约收报7055元/吨、下跌2.89%。当日盘面18个品种上涨、40个品种下跌，生猪主力跌4.01%创合约历史新低。</p><div class="n-meta"><span class="tag 国内">国内</span><span>金融界</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://finance.jrj.com.cn/2026/09/28152858567660.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="云南华宁15.6万亩柑橘进入采收高峰 海外订单持续增加，1—8月出口7.3万吨 云南玉溪华宁县15.6万亩柑橘迎来采收高峰期，在抢占中秋、国庆国内市场的同时持续开拓海外市场。邦泰农业分果厂每天加工500—600吨柑橘，价格约每公斤5.5元，主要销往俄罗斯、乌兹别克斯坦、吉尔吉斯斯坦等国；华宁世航商贸主要做外贸、目前主要出口东南亚，沃柑上市后还将出口中东国家，预计今年产量有望超过1万吨。1至8月华宁柑橘出口量达7.3万吨、交易额4.27亿元，出口价较国内平均价高约1.5元/公斤；2026年全县柑橘预计产量55万吨、产值15.5亿元。 中国（云南）国际贸易单一窗口" style="--acc:var(--s1)"><a class="n-title" href="https://singlewindow.swt.yn.gov.cn/article/30551164198711296" target="_blank" rel="noopener noreferrer">云南华宁15.6万亩柑橘进入采收高峰 海外订单持续增加，1—8月出口7.3万吨</a><p class="n-sum">云南玉溪华宁县15.6万亩柑橘迎来采收高峰期，在抢占中秋、国庆国内市场的同时持续开拓海外市场。邦泰农业分果厂每天加工500—600吨柑橘，价格约每公斤5.5元，主要销往俄罗斯、乌兹别克斯坦、吉尔吉斯斯坦等国；华宁世航商贸主要做外贸、目前主要出口东南亚，沃柑上市后还将出口中东国家，预计今年产量有望超过1万吨。1至8月华宁柑橘出口量达7.3万吨、交易额4.27亿元，出口价较国内平均价高约1.5元/公斤；2026年全县柑橘预计产量55万吨、产值15.5亿元。</p><div class="n-meta"><span class="tag 国内">国内</span><span>中国（云南）国际贸易单一窗口</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://singlewindow.swt.yn.gov.cn/article/30551164198711296" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="usda：2026/27年度全球鲜车厘子产量预计增长17%至540万吨创历史新高，中国首破100万吨 据美国农业部海外农业局（usda fas）预测，受中国、土耳其、欧盟和智利产量增加推动，2026/27年度全球鲜车厘子产量将增长17%、达到540万吨，为全球有记录以来最高水平。其中中国产量预计102万吨、同比增长约7%并首次突破100万吨，温室樱桃（含避雨棚）已占总产量40%以上；土耳其约100万吨，在上年霜冻低基数上大幅恢复；智利72.7万吨创纪录；美国31.7万吨、下降超过20%，主因太平洋西北地区霜冻、其影响超过加州产量回升。全球鲜车厘子贸易量预计增长15%以上至约90万吨，中国进口量预计增长12%至56万吨；土耳其出口量预计从6000吨激增至7万吨，美国鲜车厘子出口预计6.2万吨、下降近25%。 freshplaza 国际果蔬报道 / usda fas" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.cn/article/9877207/yu-ji-2026-27-nian-du-quan-qiu-che-li-zi-chan-liang-jiang-zeng-chang-17/" target="_blank" rel="noopener noreferrer">USDA：2026/27年度全球鲜车厘子产量预计增长17%至540万吨创历史新高，中国首破100万吨</a><p class="n-sum">据美国农业部海外农业局（USDA FAS）预测，受中国、土耳其、欧盟和智利产量增加推动，2026/27年度全球鲜车厘子产量将增长17%、达到540万吨，为全球有记录以来最高水平。其中中国产量预计102万吨、同比增长约7%并首次突破100万吨，温室樱桃（含避雨棚）已占总产量40%以上；土耳其约100万吨，在上年霜冻低基数上大幅恢复；智利72.7万吨创纪录；美国31.7万吨、下降超过20%，主因太平洋西北地区霜冻、其影响超过加州产量回升。全球鲜车厘子贸易量预计增长15%以上至约90万吨，中国进口量预计增长12%至56万吨；土耳其出口量预计从6000吨激增至7万吨，美国鲜车厘子出口预计6.2万吨、下降近25%。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>FreshPlaza 国际果蔬报道 / USDA FAS</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://www.freshplaza.cn/article/9877207/yu-ji-2026-27-nian-du-quan-qiu-che-li-zi-chan-liang-jiang-zeng-chang-17/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="四川苍溪：红心猕猴桃采收忙 供应“双节”市场 央视9月27日报道，四川苍溪红心猕猴桃进入采收季，果园里果农抓紧采摘、分拣装车，鲜果集中供应中秋、国庆“双节”市场。苍溪是红心猕猴桃核心产区，采收季内猕猴桃批量发往全国销地市场。 央视《第一时间》" style="--acc:var(--s3)"><a class="n-title" href="https://tv.cctv.com/2026/09/27/VIDEJa8ahbgUrMcgt8x4ENLg260927.shtml" target="_blank" rel="noopener noreferrer">四川苍溪：红心猕猴桃采收忙 供应“双节”市场</a><p class="n-sum">央视9月27日报道，四川苍溪红心猕猴桃进入采收季，果园里果农抓紧采摘、分拣装车，鲜果集中供应中秋、国庆“双节”市场。苍溪是红心猕猴桃核心产区，采收季内猕猴桃批量发往全国销地市场。</p><div class="n-meta"><span class="tag 国内">国内</span><span>央视《第一时间》</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://tv.cctv.com/2026/09/27/VIDEJa8ahbgUrMcgt8x4ENLg260927.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="贵州印江：万亩石山披绿 早熟柑橘国庆前上市，产地批发价1.2元/斤 贵州铜仁印江县朗溪镇依托石漠化治理发展精品水果，核心区种植面积达1.2万亩、年产水果9000余吨。梵净山金香橘、红香柚等早熟柑橘在国庆前集中上市，产地批发价1.2元/斤，国庆期间游客入园采购价2元/斤。 央视网" style="--acc:var(--s3)"><a class="n-title" href="https://city.news.cctv.com/2026/09/28/ARTIpR9b8OgLeWkAW8WGQFoy260928.shtml" target="_blank" rel="noopener noreferrer">贵州印江：万亩石山披绿 早熟柑橘国庆前上市，产地批发价1.2元/斤</a><p class="n-sum">贵州铜仁印江县朗溪镇依托石漠化治理发展精品水果，核心区种植面积达1.2万亩、年产水果9000余吨。梵净山金香橘、红香柚等早熟柑橘在国庆前集中上市，产地批发价1.2元/斤，国庆期间游客入园采购价2元/斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span>央视网</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://city.news.cctv.com/2026/09/28/ARTIpR9b8OgLeWkAW8WGQFoy260928.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-supermarket" data-title="🏪 商超" style="--acc:var(--s5)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s5)"></span>🏪 商超</div></div><div class="seg-list"><article class="n-card" data-seg="supermarket" data-region="国内" data-search="新郑各大商超货足价稳迎“双节” 重点保障生鲜果蔬不断档 新郑市各大商超提前谋划、积极备货，全面开启节前保供模式。针对“双节”消费高峰，各商超提前拓宽进货渠道、加大民生商品和节日商品备货量，重点保障生鲜果蔬、肉蛋副食等刚需物资库存充足，确保节日期间商品供应不断档、不脱销；同时优化商品结构、丰富消费品类，市场消费氛围浓厚、供销秩序井然。 新郑市人民政府" style="--acc:var(--s5)"><a class="n-title" href="https://www.xinzheng.gov.cn/pic/10272348.jhtml" target="_blank" rel="noopener noreferrer">新郑各大商超货足价稳迎“双节” 重点保障生鲜果蔬不断档</a><p class="n-sum">新郑市各大商超提前谋划、积极备货，全面开启节前保供模式。针对“双节”消费高峰，各商超提前拓宽进货渠道、加大民生商品和节日商品备货量，重点保障生鲜果蔬、肉蛋副食等刚需物资库存充足，确保节日期间商品供应不断档、不脱销；同时优化商品结构、丰富消费品类，市场消费氛围浓厚、供销秩序井然。</p><div class="n-meta"><span class="tag 国内">国内</span><span>新郑市人民政府</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://www.xinzheng.gov.cn/pic/10272348.jhtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="supermarket" data-region="国内" data-search="中秋假期兰州新区商超消费火热 水果蔬菜肉品推特价、延长营业时间 中秋到来、国庆临近，兰州新区商超商品琳琅满目、供应充足，商超内人流量明显增加。据超市负责人介绍，已提前对接全国优质供应商、建立稳定供货渠道，备足节日商品并延长营业时间，推出水果、蔬菜、肉品等特价商品满足市民节日采购需求；水产区螃蟹很受欢迎，从开门到下午6时已补货3次。 兰州新闻网" style="--acc:var(--s5)"><a class="n-title" href="https://www.lzbs.com.cn/ttnews/2026-09/28/content_506844448.htm" target="_blank" rel="noopener noreferrer">中秋假期兰州新区商超消费火热 水果蔬菜肉品推特价、延长营业时间</a><p class="n-sum">中秋到来、国庆临近，兰州新区商超商品琳琅满目、供应充足，商超内人流量明显增加。据超市负责人介绍，已提前对接全国优质供应商、建立稳定供货渠道，备足节日商品并延长营业时间，推出水果、蔬菜、肉品等特价商品满足市民节日采购需求；水产区螃蟹很受欢迎，从开门到下午6时已补货3次。</p><div class="n-meta"><span class="tag 国内">国内</span><span>兰州新闻网</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://www.lzbs.com.cn/ttnews/2026-09/28/content_506844448.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="“田间直达转运中心”助力重庆黑山谷猕猴桃产地直发，本季揽收2.8万单、出货20万斤 重庆万盛黑山谷猕猴桃种植规模超6000亩、年产量360多万斤，农户和合作社通过抖音、视频号直播、淘宝电商、社群团购等渠道接单，实现鲜果产地直发全国。申通快递打造“田间直达转运中心”一站式生鲜寄递服务，本季累计揽收订单2.8万单、鲜果出货量达20万斤，寄递业务量同比提升35%。 重庆晨报" style="--acc:var(--s6)"><a class="n-title" href="https://dsb.chinacqsb.com/news/6/2026-09-28/18821.html" target="_blank" rel="noopener noreferrer">“田间直达转运中心”助力重庆黑山谷猕猴桃产地直发，本季揽收2.8万单、出货20万斤</a><p class="n-sum">重庆万盛黑山谷猕猴桃种植规模超6000亩、年产量360多万斤，农户和合作社通过抖音、视频号直播、淘宝电商、社群团购等渠道接单，实现鲜果产地直发全国。申通快递打造“田间直达转运中心”一站式生鲜寄递服务，本季累计揽收订单2.8万单、鲜果出货量达20万斤，寄递业务量同比提升35%。</p><div class="n-meta"><span class="tag 国内">国内</span><span>重庆晨报</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://dsb.chinacqsb.com/news/6/2026-09-28/18821.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="果蔬行情每日最新报价（2026年9月28日） 9月28日全国果蔬行情日报，汇总各主产区与销地批发市场当日最新报价，涵盖苹果、柑橘类、猕猴桃、榴莲等应季及进口品种，反映中秋过后、国庆备货启动阶段的市场价格走势。 农资与市场" style="--acc:var(--s7)"><a class="n-title" href="https://www.enongzi.com/news/details?id=9101a6d3-70b0-4f49-a309-acb0c094d8c4" target="_blank" rel="noopener noreferrer">果蔬行情每日最新报价（2026年9月28日）</a><p class="n-sum">9月28日全国果蔬行情日报，汇总各主产区与销地批发市场当日最新报价，涵盖苹果、柑橘类、猕猴桃、榴莲等应季及进口品种，反映中秋过后、国庆备货启动阶段的市场价格走势。</p><div class="n-meta"><span class="tag 国内">国内</span><span>农资与市场</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://www.enongzi.com/news/details?id=9101a6d3-70b0-4f49-a309-acb0c094d8c4" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="福州市海峡果品批发市场9月28日价格：蜜桔2.50—5.30元/公斤、蜜柚3.50—6.60元/公斤 福州市供销合作社联合社发布9月28日海峡果品批发市场价格信息：蜜桔报价2.50—5.30元/公斤（产地云南），蜜柚3.50—6.60元/公斤（产地广西、广东、福建）；“进口果”栏目下菠萝（凤梨）22.00—28.00元/公斤（产地菲律宾、越南）。当日正值柑橘、蜜柚集中上市期，福州市场货源以云南早熟柑与闽桂粤蜜柚为主。 福州市供销合作社联合社" style="--acc:var(--s7)"><a class="n-title" href="https://www.fuzhou.gov.cn/fzgx/gxhz/jgxx/fzgppfscjg/202609/t20260928_5376530.htm" target="_blank" rel="noopener noreferrer">福州市海峡果品批发市场9月28日价格：蜜桔2.50—5.30元/公斤、蜜柚3.50—6.60元/公斤</a><p class="n-sum">福州市供销合作社联合社发布9月28日海峡果品批发市场价格信息：蜜桔报价2.50—5.30元/公斤（产地云南），蜜柚3.50—6.60元/公斤（产地广西、广东、福建）；“进口果”栏目下菠萝（凤梨）22.00—28.00元/公斤（产地菲律宾、越南）。当日正值柑橘、蜜柚集中上市期，福州市场货源以云南早熟柑与闽桂粤蜜柚为主。</p><div class="n-meta"><span class="tag 国内">国内</span><span>福州市供销合作社联合社</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://www.fuzhou.gov.cn/fzgx/gxhz/jgxx/fzgppfscjg/202609/t20260928_5376530.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="南通9月28日水果批发价格（通城晒价台第1295期）：国产红富士4.5—4.8元/500克、泰国榴莲30元/500克 南通市发改委“通城晒价台”第1295期发布9月28日南通农副产品物流有限公司水果批发价格：红富士苹果山东4.8元/500克、陕西4.5元/500克，青苹果山东4元/500克，金帅苹果山东4.5元/500克，橙子（赣南）2.5元/500克，泰国榴莲30元/500克。 南通市发展和改革委员会" style="--acc:var(--s7)"><a class="n-title" href="https://fgw.nantong.gov.cn/ntsfgw/tcsjt/content/db5a1ea7-f8c7-4fb5-94d3-c53e54352479.html" target="_blank" rel="noopener noreferrer">南通9月28日水果批发价格（通城晒价台第1295期）：国产红富士4.5—4.8元/500克、泰国榴莲30元/500克</a><p class="n-sum">南通市发改委“通城晒价台”第1295期发布9月28日南通农副产品物流有限公司水果批发价格：红富士苹果山东4.8元/500克、陕西4.5元/500克，青苹果山东4元/500克，金帅苹果山东4.5元/500克，橙子（赣南）2.5元/500克，泰国榴莲30元/500克。</p><div class="n-meta"><span class="tag 国内">国内</span><span>南通市发展和改革委员会</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://fgw.nantong.gov.cn/ntsfgw/tcsjt/content/db5a1ea7-f8c7-4fb5-94d3-c53e54352479.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="滕州9月28日批发价：苹果6.40元/公斤、榴莲22.00元/公斤、猕猴桃6.20元/公斤 据农业农村部信息中心，9月28日山东滕州市农副产品物流中心水果报价：苹果6.40元/公斤、榴莲22.00元/公斤、山竹15.00元/公斤、龙眼10.60元/公斤、荔枝10.00元/公斤、葡萄7.00元/公斤、火龙果6.50元/公斤、猕猴桃6.20元/公斤、石榴6.20元/公斤、柿子5.52元/公斤、梨4.30元/公斤、香蕉4.20元/公斤、菠萝3.60元/公斤。 农业农村部信息中心 / 证券之星" style="--acc:var(--s7)"><a class="n-title" href="http://futures.stockstar.com/IG2026092800013637.shtml" target="_blank" rel="noopener noreferrer">滕州9月28日批发价：苹果6.40元/公斤、榴莲22.00元/公斤、猕猴桃6.20元/公斤</a><p class="n-sum">据农业农村部信息中心，9月28日山东滕州市农副产品物流中心水果报价：苹果6.40元/公斤、榴莲22.00元/公斤、山竹15.00元/公斤、龙眼10.60元/公斤、荔枝10.00元/公斤、葡萄7.00元/公斤、火龙果6.50元/公斤、猕猴桃6.20元/公斤、石榴6.20元/公斤、柿子5.52元/公斤、梨4.30元/公斤、香蕉4.20元/公斤、菠萝3.60元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span>农业农村部信息中心 / 证券之星</span><span>·</span><span>2026.09.28</span><a class="n-link" href="http://futures.stockstar.com/IG2026092800013637.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="合肥周谷堆市场9月27日行情：富士苹果10.50元/公斤、香蕉6.25元/公斤 据农业农村部信息中心，9月27日安徽合肥周谷堆农产品批发市场水果报价：富士苹果10.50元/公斤、香蕉6.25元/公斤、芒果14.50元/公斤、酥梨3.10元/公斤、西瓜4.00元/公斤、哈密瓜6.20元/公斤。 农业农村部信息中心 / 证券之星" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026092700000612.shtml" target="_blank" rel="noopener noreferrer">合肥周谷堆市场9月27日行情：富士苹果10.50元/公斤、香蕉6.25元/公斤</a><p class="n-sum">据农业农村部信息中心，9月27日安徽合肥周谷堆农产品批发市场水果报价：富士苹果10.50元/公斤、香蕉6.25元/公斤、芒果14.50元/公斤、酥梨3.10元/公斤、西瓜4.00元/公斤、哈密瓜6.20元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span>农业农村部信息中心 / 证券之星</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://futures.stockstar.com/IG2026092700000612.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="三亚9月27日常见热带水果零售价：山竹12—13元/500克、番石榴3.5—6元/500克 三亚市发展和改革委员会9月27日上午在第一、第二、第三农贸市场、港门村市场、鸿港新贸城采报常见热带水果零售价格：山竹12—13元/500克，番石榴3.5—6元/500克，杨桃7—9元/500克，菠萝蜜5元/500克，菠萝3—5元/500克，黑美人西瓜2.5—3元/500克，青椰（带皮）7—8元/500克，红椰（去皮）10元/500克。 三亚市发展和改革委员会" style="--acc:var(--s7)"><a class="n-title" href="https://fg.sanya.gov.cn/fgwsite/jgjc/202609/04f8f5b58a8c49ed9f453203542b635a.shtml" target="_blank" rel="noopener noreferrer">三亚9月27日常见热带水果零售价：山竹12—13元/500克、番石榴3.5—6元/500克</a><p class="n-sum">三亚市发展和改革委员会9月27日上午在第一、第二、第三农贸市场、港门村市场、鸿港新贸城采报常见热带水果零售价格：山竹12—13元/500克，番石榴3.5—6元/500克，杨桃7—9元/500克，菠萝蜜5元/500克，菠萝3—5元/500克，黑美人西瓜2.5—3元/500克，青椰（带皮）7—8元/500克，红椰（去皮）10元/500克。</p><div class="n-meta"><span class="tag 国内">国内</span><span>三亚市发展和改革委员会</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://fg.sanya.gov.cn/fgwsite/jgjc/202609/04f8f5b58a8c49ed9f453203542b635a.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="商务部公布中美“300亿对300亿”对等降税框架 水果列入中方降税清单 9月28日，商务部公布中美贸易理事会和“300亿对300亿”对等降税框架有关情况。双方商定对各自规模约300亿美元（参照2024年度双边贸易额）的进口产品以对等方式降低关税，超90%的产品将免除相互加征的全部关税、享受最惠国关税待遇；中方将对农产品、个人护理用品、医疗器械、煤炭等约300亿美元自美进口商品降低关税，据美方公布的清单，中方削减77类美国产品关税，水果、蔬菜、牛肉、乳制品以及小麦、玉米、大米等谷物均在列。双方还同意在贸易理事会下设立农业工作组，讨论监管和市场准入等议题，计划2026年底前召开首次会议。 证券时报 / 商务部" style="--acc:var(--s8)"><a class="n-title" href="https://www.stcn.com/article/detail/4200407.html" target="_blank" rel="noopener noreferrer">商务部公布中美“300亿对300亿”对等降税框架 水果列入中方降税清单</a><p class="n-sum">9月28日，商务部公布中美贸易理事会和“300亿对300亿”对等降税框架有关情况。双方商定对各自规模约300亿美元（参照2024年度双边贸易额）的进口产品以对等方式降低关税，超90%的产品将免除相互加征的全部关税、享受最惠国关税待遇；中方将对农产品、个人护理用品、医疗器械、煤炭等约300亿美元自美进口商品降低关税，据美方公布的清单，中方削减77类美国产品关税，水果、蔬菜、牛肉、乳制品以及小麦、玉米、大米等谷物均在列。双方还同意在贸易理事会下设立农业工作组，讨论监管和市场准入等议题，计划2026年底前召开首次会议。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>证券时报 / 商务部</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://www.stcn.com/article/detail/4200407.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="平陆运河首航越南 东盟水果输华迎“冷链直通车”，物流成本有望降18%—30% 平陆运河开通中国广西南宁港至越南芹苴丐崔港的集装箱直航新航线，船舶25%运力专门分配给冷藏集装箱，为东盟热带水果输华提供冷链运输支撑，整体物流成本可降低18%—30%。报道同时指出，“成本缩减30%”高度依赖双边边境海关程序数字化与检验检疫标准协调（如农产品冷链清关互认）。 亚洲水果 asiafruit" style="--acc:var(--s8)"><a class="n-title" href="https://asiafruitchina.net/32767.html" target="_blank" rel="noopener noreferrer">平陆运河首航越南 东盟水果输华迎“冷链直通车”，物流成本有望降18%—30%</a><p class="n-sum">平陆运河开通中国广西南宁港至越南芹苴丐崔港的集装箱直航新航线，船舶25%运力专门分配给冷藏集装箱，为东盟热带水果输华提供冷链运输支撑，整体物流成本可降低18%—30%。报道同时指出，“成本缩减30%”高度依赖双边边境海关程序数字化与检验检疫标准协调（如农产品冷链清关互认）。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>亚洲水果 Asiafruit</span><span>·</span><span>2026.09.28</span><a class="n-link" href="https://asiafruitchina.net/32767.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="肯尼亚牛油果借零关税与中国建成铁路加速入华 5—8月对华出口货值增63.22% 借助中国自2026年5月1日起对53个非洲建交国全面实施的零关税政策，以及中企建设的蒙巴萨—内罗毕—纳瓦沙标轨铁路和纳瓦沙内陆港（纳瓦沙至蒙巴萨运输时间缩短至约9小时），肯尼亚牛油果对华出口加速。2026年5—8月中国自肯尼亚进口牛油果3,762,776公斤、货值约610万美元，同比增长63.22%；肯尼亚是继秘鲁、智利之后中国第三大牛油果供应国。纳瓦沙vertical agro集团（含sunripe）是2022年首批对华出口鲜食牛油果的肯尼亚企业之一，将中国列为增长最快的市场。 湖南省人民政府英文网 / xinhua" style="--acc:var(--s8)"><a class="n-title" href="http://enghunan.gov.cn/hneng/News/Text_News/202609/t20260928_34072969.html" target="_blank" rel="noopener noreferrer">肯尼亚牛油果借零关税与中国建成铁路加速入华 5—8月对华出口货值增63.22%</a><p class="n-sum">借助中国自2026年5月1日起对53个非洲建交国全面实施的零关税政策，以及中企建设的蒙巴萨—内罗毕—纳瓦沙标轨铁路和纳瓦沙内陆港（纳瓦沙至蒙巴萨运输时间缩短至约9小时），肯尼亚牛油果对华出口加速。2026年5—8月中国自肯尼亚进口牛油果3,762,776公斤、货值约610万美元，同比增长63.22%；肯尼亚是继秘鲁、智利之后中国第三大牛油果供应国。纳瓦沙Vertical Agro集团（含Sunripe）是2022年首批对华出口鲜食牛油果的肯尼亚企业之一，将中国列为增长最快的市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span>湖南省人民政府英文网 / Xinhua</span><span>·</span><span>2026.09.28</span><a class="n-link" href="http://enghunan.gov.cn/hneng/News/Text_News/202609/t20260928_34072969.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="中央气象台：华西至江汉江淮多降水 28日夜间起冷空气影响中东部，江南以北降温4—8℃ 中央气象台9月28日预报，9月28日夜间至10月1日较强冷空气影响中东部地区，江南及其以北地区气温下降4—8℃、内蒙古部分地区降温可达10℃左右，并伴4—6级偏北风。降雨带南压，华西、江汉、江淮以及江南北部和西部、华南西部等地有中到大雨、局地暴雨；华西部分地区与前期降雨落区重叠，持续时间长、累计雨量大。官方提示需关注大风降温、降雨对交通运输、旅游、农业生产等的不利影响；降雨也有利于缓和江苏中北部、安徽西北部、山东等地气象干旱。 中央气象台" style="--acc:var(--s9)"><a class="n-title" href="http://www.qxkp.net/gdzx/202609/t20260928_8068804.html" target="_blank" rel="noopener noreferrer">中央气象台：华西至江汉江淮多降水 28日夜间起冷空气影响中东部，江南以北降温4—8℃</a><p class="n-sum">中央气象台9月28日预报，9月28日夜间至10月1日较强冷空气影响中东部地区，江南及其以北地区气温下降4—8℃、内蒙古部分地区降温可达10℃左右，并伴4—6级偏北风。降雨带南压，华西、江汉、江淮以及江南北部和西部、华南西部等地有中到大雨、局地暴雨；华西部分地区与前期降雨落区重叠，持续时间长、累计雨量大。官方提示需关注大风降温、降雨对交通运输、旅游、农业生产等的不利影响；降雨也有利于缓和江苏中北部、安徽西北部、山东等地气象干旱。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>中央气象台</span><span>·</span><span>2026.09.28</span><a class="n-link" href="http://www.qxkp.net/gdzx/202609/t20260928_8068804.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="第26号台风“舒力基”减弱为强台风级 趋向日本以南洋面，30日变性为温带气旋 中央气象台消息，今年第26号台风“舒力基”9月28日上午由超强台风级减弱为强台风级。9月28日8时其中心位于琉球群岛那霸市偏东方向约325公里的西北太平洋洋面上（北纬26.7度、东经130.9度），中心附近最大风力15级（48米/秒）、中心最低气压945百帕，七级风圈半径200—250公里，十级风圈半径80—90公里。预计“舒力基”将以每小时15—20公里左右的速度向东偏北方向移动，逐渐趋向日本以南洋面，强度快速减弱，并将于9月30日在日本东南洋面变性为温带气旋，国庆假期不影响我国。 中国天气网 / 中央气象台" style="--acc:var(--s9)"><a class="n-title" href="http://news.weather.com.cn/2026/09/4805494.shtml" target="_blank" rel="noopener noreferrer">第26号台风“舒力基”减弱为强台风级 趋向日本以南洋面，30日变性为温带气旋</a><p class="n-sum">中央气象台消息，今年第26号台风“舒力基”9月28日上午由超强台风级减弱为强台风级。9月28日8时其中心位于琉球群岛那霸市偏东方向约325公里的西北太平洋洋面上（北纬26.7度、东经130.9度），中心附近最大风力15级（48米/秒）、中心最低气压945百帕，七级风圈半径200—250公里，十级风圈半径80—90公里。预计“舒力基”将以每小时15—20公里左右的速度向东偏北方向移动，逐渐趋向日本以南洋面，强度快速减弱，并将于9月30日在日本东南洋面变性为温带气旋，国庆假期不影响我国。</p><div class="n-meta"><span class="tag 国际">国际</span><span>中国天气网 / 中央气象台</span><span>·</span><span>2026.09.28</span><a class="n-link" href="http://news.weather.com.cn/2026/09/4805494.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-28 17:37 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
