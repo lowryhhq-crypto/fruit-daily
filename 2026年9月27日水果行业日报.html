@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.09.27</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.09.27</b> 星期日</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">10</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">4</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">贸易面：中国与秘鲁进境水果监管互认新模式首次在“钱凯—上海”海运航线试点应用——12.2吨秘鲁蓝莓采用冷处理探针监管互认，上海口岸承担全国超70%的秘鲁水果进口，单箱查验时长压缩近半天，进口蓝莓通关成本进一步下降；泰王国驻南宁总领事9月26日会见凭祥市委书记，双方合作提升友谊关口岸通关效率、保障泰国榴莲等鲜果新鲜度。行情面：中秋假期过后批发市场以价换量，9月27日各地报价分化明显——济南堤口苹果7.00元/公斤、猕猴桃9.00元/公斤、山竹46.00元/公斤，长治金鑫榴莲46.00元/公斤、蜜桔4.50元/公斤，滕州9月26日榴莲低至22.00元/公斤；9月26日中国陆运口岸进口越南榴莲305柜、泰国19柜，越南占泰越合计约94%。企业面：美国浆果巨头怡颗莓（Driscoll's）再陷食品安全诉讼——加州吹哨人指控其2022—2024年输加莓果农残超标，加拿大食品检验局（CFIA）向CBC确认多次检出联苯菊酯、异菌脲、克菌丹超限，公司否认指控。气象面：台风“舒力基”9月26日路径突然大拐弯转向东北，27日加强为强台风级（14级、955百帕）趋向日本以南、不登陆我国；中央气象台9月27日预报未来三天华西至黄淮江淮持续降雨，28—29日陕西南部等地有暴雨或大暴雨（100—120毫米），28日夜间起较强冷空气致江南及其以北降温4—8℃，陕西南部晚熟苹果、猕猴桃采收需防渍害与裂果。</div></section>
+
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="怡颗莓（driscoll&#x27;s）遭吹哨人诉讼：加拿大食品检验局确认2022—2024年多次检出输加莓果农残超限 据cbc报道，driscoll&#x27;s前美国及加拿大食品安全与法规合规经理david harada在加州提起吹哨人诉讼，指控公司2022—2024年向加拿大发运的数百万磅莓果化学残留不符合加方标准，并按公司内部估算约50%输加货量超标，还称公司2022年取消了加拿大食品安全合规追踪系统。加拿大食品检验局（cfia）向cbc确认，2022—2024年间多次抽检在加销售的driscoll&#x27;s莓果中检出联苯菊酯、异菌脲、克菌丹超限，但未导致召回；公司否认指控，称将提交证据应诉。 driscoll&#x27;s cbc news / perspecta news" style="--acc:var(--s2)"><a class="n-title" href="https://perspecta.news/story/whistleblower-alleges-millions-of-driscolls-berries-sent-to-17d6adfd-27f7-44f1-9f35-cfb27602b10d" target="_blank" rel="noopener noreferrer">怡颗莓（Driscoll&#x27;s）遭吹哨人诉讼：加拿大食品检验局确认2022—2024年多次检出输加莓果农残超限</a><p class="n-sum">据CBC报道，Driscoll&#x27;s前美国及加拿大食品安全与法规合规经理David Harada在加州提起吹哨人诉讼，指控公司2022—2024年向加拿大发运的数百万磅莓果化学残留不符合加方标准，并按公司内部估算约50%输加货量超标，还称公司2022年取消了加拿大食品安全合规追踪系统。加拿大食品检验局（CFIA）向CBC确认，2022—2024年间多次抽检在加销售的Driscoll&#x27;s莓果中检出联苯菊酯、异菌脲、克菌丹超限，但未导致召回；公司否认指控，称将提交证据应诉。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">Driscoll&#x27;s</span><span>CBC News / Perspecta News</span><span>·</span><span>2026.09.26</span><a class="n-link" href="https://perspecta.news/story/whistleblower-alleges-millions-of-driscolls-berries-sent-to-17d6adfd-27f7-44f1-9f35-cfb27602b10d" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="央视9月26日报道：山西运城靠前监管打通水果出口“最后一公里” 央视《新闻直播间》“在希望的田野上”系列9月26日播出山西运城水果出口专题，报道海关等部门以靠前监管方式服务果园与出口企业，压缩水果出口查验与放行环节，打通水果出口“最后一公里”。运城是山西苹果、梨等果品主产区，出口为其重要销售渠道。 — 央视网·新闻直播间" style="--acc:var(--s3)"><a class="n-title" href="https://tv.cctv.cn/2026/09/26/VIDEIEUB1j6HEIRDSIgVOIak260926.shtml" target="_blank" rel="noopener noreferrer">央视9月26日报道：山西运城靠前监管打通水果出口“最后一公里”</a><p class="n-sum">央视《新闻直播间》“在希望的田野上”系列9月26日播出山西运城水果出口专题，报道海关等部门以靠前监管方式服务果园与出口企业，压缩水果出口查验与放行环节，打通水果出口“最后一公里”。运城是山西苹果、梨等果品主产区，出口为其重要销售渠道。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">—</span><span>央视网·新闻直播间</span><span>·</span><span>2026.09.26</span><a class="n-link" href="https://tv.cctv.cn/2026/09/26/VIDEIEUB1j6HEIRDSIgVOIak260926.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="9月27日中国陆运口岸进口榴莲数据：越南305柜、泰国19柜，越南占泰越合计约94% 榴莲产业网9月27日发布泰国出口与中国陆运海关通关日报：9月26日中国陆运口岸进口越南榴莲305柜、泰国19柜，泰越合计324柜，越南占比约94%；同日中国陆运综合业务213柜。越南榴莲凭借南部产区进入旺季持续主导中国陆运口岸进口。 — 榴莲产业网 / 大数跨境" style="--acc:var(--s7)"><a class="n-title" href="https://www.10100.com/article/152458109" target="_blank" rel="noopener noreferrer">9月27日中国陆运口岸进口榴莲数据：越南305柜、泰国19柜，越南占泰越合计约94%</a><p class="n-sum">榴莲产业网9月27日发布泰国出口与中国陆运海关通关日报：9月26日中国陆运口岸进口越南榴莲305柜、泰国19柜，泰越合计324柜，越南占比约94%；同日中国陆运综合业务213柜。越南榴莲凭借南部产区进入旺季持续主导中国陆运口岸进口。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">—</span><span>榴莲产业网 / 大数跨境</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://www.10100.com/article/152458109" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="9月27日济南堤口果品批发市场价格：苹果7.00元/公斤、猕猴桃9.00元/公斤、山竹46.00元/公斤 农业农村部信息中心9月27日行情：济南堤口果品批发市场富士苹果7.00元/公斤、秦冠苹果6.00元/公斤、乔纳金苹果7.00元/公斤、猕猴桃9.00元/公斤、山竹46.00元/公斤。同日黄淮农产品市场苹果7.60元/公斤、猕猴桃11.00元/公斤，山东凯盛富士苹果10.00元/公斤、猕猴桃13.00元/公斤。 — 证券之星（农业农村部信息中心）" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026092700000666.shtml" target="_blank" rel="noopener noreferrer">9月27日济南堤口果品批发市场价格：苹果7.00元/公斤、猕猴桃9.00元/公斤、山竹46.00元/公斤</a><p class="n-sum">农业农村部信息中心9月27日行情：济南堤口果品批发市场富士苹果7.00元/公斤、秦冠苹果6.00元/公斤、乔纳金苹果7.00元/公斤、猕猴桃9.00元/公斤、山竹46.00元/公斤。同日黄淮农产品市场苹果7.60元/公斤、猕猴桃11.00元/公斤，山东凯盛富士苹果10.00元/公斤、猕猴桃13.00元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">—</span><span>证券之星（农业农村部信息中心）</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://futures.stockstar.com/IG2026092700000666.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="9月27日长治金鑫瓜果批发市场：榴莲46.00元/公斤、蜜桔4.50元/公斤、富士苹果7.40元/公斤 农业农村部信息中心9月27日行情：长治市金鑫瓜果批发市场榴莲46.00元/公斤、山竹28.00元/公斤、富士苹果7.40元/公斤、蜜桔4.50元/公斤、脐橙6.00元/公斤、柠檬10.00元/公斤、酥梨2.60元/公斤。同日内蒙古、宁夏等北方市场蜜桔4.40元/公斤、橙子4.50元/公斤，柑橘类整体处于低位。 — 证券之星（农业农村部信息中心）" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026092700000707.shtml" target="_blank" rel="noopener noreferrer">9月27日长治金鑫瓜果批发市场：榴莲46.00元/公斤、蜜桔4.50元/公斤、富士苹果7.40元/公斤</a><p class="n-sum">农业农村部信息中心9月27日行情：长治市金鑫瓜果批发市场榴莲46.00元/公斤、山竹28.00元/公斤、富士苹果7.40元/公斤、蜜桔4.50元/公斤、脐橙6.00元/公斤、柠檬10.00元/公斤、酥梨2.60元/公斤。同日内蒙古、宁夏等北方市场蜜桔4.40元/公斤、橙子4.50元/公斤，柑橘类整体处于低位。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">—</span><span>证券之星（农业农村部信息中心）</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://futures.stockstar.com/IG2026092700000707.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="9月26日滕州农产品物流中心行情：榴莲22.00元/公斤、苹果6.40元/公斤、猕猴桃6.20元/公斤 农业农村部信息中心9月26日行情：滕州市农副产品物流中心榴莲22.00元/公斤（明显低于北方其他市场40—46元/公斤）、苹果6.40元/公斤、猕猴桃6.20元/公斤、葡萄7.00元/公斤、石榴6.20元/公斤、樱桃14.00元/公斤。当日同批报价中苹果在多地集中于5.80—7.60元/公斤区间。 — 证券之星（农业农村部信息中心）" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026092600002508.shtml" target="_blank" rel="noopener noreferrer">9月26日滕州农产品物流中心行情：榴莲22.00元/公斤、苹果6.40元/公斤、猕猴桃6.20元/公斤</a><p class="n-sum">农业农村部信息中心9月26日行情：滕州市农副产品物流中心榴莲22.00元/公斤（明显低于北方其他市场40—46元/公斤）、苹果6.40元/公斤、猕猴桃6.20元/公斤、葡萄7.00元/公斤、石榴6.20元/公斤、樱桃14.00元/公斤。当日同批报价中苹果在多地集中于5.80—7.60元/公斤区间。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">—</span><span>证券之星（农业农村部信息中心）</span><span>·</span><span>2026.09.26</span><a class="n-link" href="https://futures.stockstar.com/IG2026092600002508.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="中秘进境水果监管互认新模式首次在“钱凯—上海”海运航线试点：12.2吨秘鲁蓝莓应用冷处理探针互认 人民财讯9月27日电，近日在秘鲁钱凯港，12.2吨新鲜蓝莓装入冷藏集装箱，搭载中远海运集运wsa5线“钱凯—上海”快航发往上海，首次试点应用进境水果冷处理探针监管互认模式。按中秘双边议定书要求，进口秘鲁蓝莓须在进境前完成15—22天冷处理并安插合格温度探针；新模式由秘鲁出口方在装箱时将探针位置及合格验证信息通过系统发送中方、中方采信秘鲁官方数据，单箱查验时长压缩近半天，降低企业综合通关成本。上海口岸承载全国超70%的秘鲁水果进口业务。 海关总署 新浪财经（人民财讯）" style="--acc:var(--s8)"><a class="n-title" href="https://finance.sina.com.cn/jjxw/2026-09-27/doc-initfxsk0289477.shtml" target="_blank" rel="noopener noreferrer">中秘进境水果监管互认新模式首次在“钱凯—上海”海运航线试点：12.2吨秘鲁蓝莓应用冷处理探针互认</a><p class="n-sum">人民财讯9月27日电，近日在秘鲁钱凯港，12.2吨新鲜蓝莓装入冷藏集装箱，搭载中远海运集运WSA5线“钱凯—上海”快航发往上海，首次试点应用进境水果冷处理探针监管互认模式。按中秘双边议定书要求，进口秘鲁蓝莓须在进境前完成15—22天冷处理并安插合格温度探针；新模式由秘鲁出口方在装箱时将探针位置及合格验证信息通过系统发送中方、中方采信秘鲁官方数据，单箱查验时长压缩近半天，降低企业综合通关成本。上海口岸承载全国超70%的秘鲁水果进口业务。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">海关总署</span><span>新浪财经（人民财讯）</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://finance.sina.com.cn/jjxw/2026-09-27/doc-initfxsk0289477.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="泰王国驻南宁总领事会见凭祥市委书记：合作提升友谊关口岸通关效率，保障泰国榴莲等鲜果新鲜度 泰王国驻南宁总领事馆9月26日发布，总领事会见广西凭祥市委书记，双方就贸易、通关与物流便利化交换意见，指出友谊关口岸作为中国与东盟陆路贸易门户作用重要，两地相关部门正开展合作提升通关效率、保障泰国农产品尤其是榴莲及其他新鲜水果的新鲜度。泰方感谢凭祥市、崇左市为泰国农产品经友谊关通关提供便利。 — 泰王国驻南宁总领事馆" style="--acc:var(--s8)"><a class="n-title" href="https://nanning.thaiembassy.org/cn/content/rtcgnng2026-09-26-2-cn?cate=5fb49c78c3cec947fe6a504b" target="_blank" rel="noopener noreferrer">泰王国驻南宁总领事会见凭祥市委书记：合作提升友谊关口岸通关效率，保障泰国榴莲等鲜果新鲜度</a><p class="n-sum">泰王国驻南宁总领事馆9月26日发布，总领事会见广西凭祥市委书记，双方就贸易、通关与物流便利化交换意见，指出友谊关口岸作为中国与东盟陆路贸易门户作用重要，两地相关部门正开展合作提升通关效率、保障泰国农产品尤其是榴莲及其他新鲜水果的新鲜度。泰方感谢凭祥市、崇左市为泰国农产品经友谊关通关提供便利。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">—</span><span>泰王国驻南宁总领事馆</span><span>·</span><span>2026.09.26</span><a class="n-link" href="https://nanning.thaiembassy.org/cn/content/rtcgnng2026-09-26-2-cn?cate=5fb49c78c3cec947fe6a504b" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="中央气象台9月27日天气公报：未来三天华西至黄淮江淮持续降雨，28—29日陕西南部等地暴雨或大暴雨，28日夜起冷空气降温4—8℃ 中央气象台9月27日发布天气公报：未来三天华西至黄淮、江淮地区多降水，陕西南部、四川东北部、重庆中北部、湖北西部和北部、河南中南部、安徽、江苏、上海、浙江北部等地有中雨、部分地区大到暴雨，局地大暴雨；9月28日08时至29日08时陕西南部、重庆北部、湖北西部、安徽西部、浙江北部、海南岛等地部分地区有暴雨或大暴雨（100—120毫米）。9月28日夜间至10月1日受较强冷空气影响，江南及其以北地区降温4—8℃、内蒙古部分地区可达10℃左右。华西部分地区与前期降雨落区重叠、持续时间长、累计雨量大，陕西南部正值晚熟苹果与猕猴桃采收期需防渍害与裂果。 中央气象台 中央气象台（新浪财经转载）" style="--acc:var(--s9)"><a class="n-title" href="https://finance.sina.com.cn/money/future/hyxh/2026-09-27/doc-initfpan3579745.shtml" target="_blank" rel="noopener noreferrer">中央气象台9月27日天气公报：未来三天华西至黄淮江淮持续降雨，28—29日陕西南部等地暴雨或大暴雨，28日夜起冷空气降温4—8℃</a><p class="n-sum">中央气象台9月27日发布天气公报：未来三天华西至黄淮、江淮地区多降水，陕西南部、四川东北部、重庆中北部、湖北西部和北部、河南中南部、安徽、江苏、上海、浙江北部等地有中雨、部分地区大到暴雨，局地大暴雨；9月28日08时至29日08时陕西南部、重庆北部、湖北西部、安徽西部、浙江北部、海南岛等地部分地区有暴雨或大暴雨（100—120毫米）。9月28日夜间至10月1日受较强冷空气影响，江南及其以北地区降温4—8℃、内蒙古部分地区可达10℃左右。华西部分地区与前期降雨落区重叠、持续时间长、累计雨量大，陕西南部正值晚熟苹果与猕猴桃采收期需防渍害与裂果。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">中央气象台</span><span>中央气象台（新浪财经转载）</span><span>·</span><span>2026.09.27</span><a class="n-link" href="https://finance.sina.com.cn/money/future/hyxh/2026-09-27/doc-initfpan3579745.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="台风“舒力基”突然大拐弯：9月27日加强为强台风级（14级、955百帕），转向东北趋向日本以南不登陆我国 光明网9月26日报道，第26号台风“舒力基”路径突然大拐弯转向东北方向移动；9月27日其加强为强台风级，中心附近最大风力14级（42米/秒）、中心气压955百帕，趋向日本以南洋面。转向后不登陆我国，对我国近海及华南水果产区无直接影响。该台风9月24日曾以西北路径移动并引发闽东猕猴桃、闽北晚熟柑橘防范。 — 光明网" style="--acc:var(--s9)"><a class="n-title" href="https://m.gmw.cn/2026-09/26/content_1304568405.htm" target="_blank" rel="noopener noreferrer">台风“舒力基”突然大拐弯：9月27日加强为强台风级（14级、955百帕），转向东北趋向日本以南不登陆我国</a><p class="n-sum">光明网9月26日报道，第26号台风“舒力基”路径突然大拐弯转向东北方向移动；9月27日其加强为强台风级，中心附近最大风力14级（42米/秒）、中心气压955百帕，趋向日本以南洋面。转向后不登陆我国，对我国近海及华南水果产区无直接影响。该台风9月24日曾以西北路径移动并引发闽东猕猴桃、闽北晚熟柑橘防范。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">—</span><span>光明网</span><span>·</span><span>2026.09.26</span><a class="n-link" href="https://m.gmw.cn/2026-09/26/content_1304568405.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-09-27 17:36 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
