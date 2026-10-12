@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.10.02</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.10.02</b> 星期五</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">14</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">1</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">6</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">13</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">国庆假期第二天，全国批发市场果盘子供应充足、价格稳中有降：北京新发地水果日均上市量1.05万吨、加权均价6.8元/公斤，进口榴莲单日最高销量约25吨、较平日翻倍；深圳海吉星水果来货量3590吨、同比上涨79%，泰国山竹与南非甜橙价格均低于去年同期；郑州万邦受气温偏高、货架期缩短影响，龙眼价格同比下调30%。苹果新季承压：10月2日甘肃、陕西少量晚富士上市交易，客商订货积极性不高，甘肃静宁半商品75#起步4.50—5.20元/斤，陕西洛川半商品70#以上3.80元/斤、统货70#起步3.10—3.20元/斤，白水产区受冰雹果大量交易拖拽下行；苹果期货10月1日三连阴、盘中刷新19个月新低。贸易端三则新动向：美国农业部借美中「30 for 30」框架拟扩大对华果蔬出口，点名番茄、葡萄、桃、浆果、坚果并计划11月初派团访华；10月1日起经港珠澳大桥供港鲜活食品通关时间由16小时延长至全天24小时，蔬果可「随采、随装、随发」；「钱凯—上海」航线前8月开行170航次、货值40.4亿元同比增33.3%，9月首批12.2吨秘鲁蓝莓试点进境水果冷处理探针监管互认。气象风险偏高：应急管理部研判10月有1—2个台风登陆或明显影响我国、强度总体偏强、主要影响华南沿海；厄尔尼诺下秘鲁蓝莓对欧到货第39周同比骤降55.9%、全季预测下调至38.2万吨；智利车厘子最早熟产区科金博提前至10月10—15日采收，但产量预计下降约50%，且果蝇疫情令部分果园无法对华出口。</div></section>
+
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="美国农业部拟借「30 for 30」框架扩大对华果蔬出口 美国农业部贸易与对外农业事务副部长 luke lindberg 表示，美中新贸易进展有望扩大美国特色农产品对华出口。美中「30 for 30」框架将关税削减与既有大豆及追加农产品采购协议挂钩，美方对华清单中约90%为农产品。usda 看好对华出口蔬菜、水果和坚果的机会，点名番茄、辣椒、黄瓜、葡萄、桃、草莓、蓝莓、杏仁、开心果和核桃；并计划11月初组织贸易代表团访华，让种植者团体与农业企业对接潜在买家，同时重新投入「协助特色作物出口商」计划以削减最大残留限量等技术与监管壁垒。 freshplaza" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.com/latin-america/article/9878786/u-s-specialty-crop-exports-target-expanded-access-to-china/" target="_blank" rel="noopener noreferrer">美国农业部拟借「30 for 30」框架扩大对华果蔬出口</a><p class="n-sum">美国农业部贸易与对外农业事务副部长 Luke Lindberg 表示，美中新贸易进展有望扩大美国特色农产品对华出口。美中「30 for 30」框架将关税削减与既有大豆及追加农产品采购协议挂钩，美方对华清单中约90%为农产品。USDA 看好对华出口蔬菜、水果和坚果的机会，点名番茄、辣椒、黄瓜、葡萄、桃、草莓、蓝莓、杏仁、开心果和核桃；并计划11月初组织贸易代表团访华，让种植者团体与农业企业对接潜在买家，同时重新投入「协助特色作物出口商」计划以削减最大残留限量等技术与监管壁垒。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>FreshPlaza</span><span>·</span><span>2026-10-01</span><a class="n-link" href="https://www.freshplaza.com/latin-america/article/9878786/u-s-specialty-crop-exports-target-expanded-access-to-china/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="usda：2026年美国酿酒葡萄减产 鲜食葡萄增产10% 美国农业部10月1日发布水果与坚果展望：2026年美国葡萄总产量预估517万吨、同比减少约1%，其中加州酿酒葡萄250万吨（同比降5%，占该州54%）、鲜食葡萄115万吨（同比增10%，占25%）、制干葡萄100万吨（持平）。同时加州鲜食葡萄因气温偏高提前约三周开园，11—12月的晚季供货量被压缩。美国苹果2026年产量预估104亿磅、同比减少6%，为2022年以来最低，宾夕法尼亚州减产58%、弗吉尼亚州减产48%；柑橘2025/26季总产530万吨、同比增6.5%，加州预计首次超过佛罗里达成为美国橙汁第一大产区。 vinetur（usda nass/ers）" style="--acc:var(--s2)"><a class="n-title" href="https://www.vinetur.com/en/20261001108045/usda-forecasts-a-smaller-2026-wine-grape-harvest.html" target="_blank" rel="noopener noreferrer">USDA：2026年美国酿酒葡萄减产 鲜食葡萄增产10%</a><p class="n-sum">美国农业部10月1日发布水果与坚果展望：2026年美国葡萄总产量预估517万吨、同比减少约1%，其中加州酿酒葡萄250万吨（同比降5%，占该州54%）、鲜食葡萄115万吨（同比增10%，占25%）、制干葡萄100万吨（持平）。同时加州鲜食葡萄因气温偏高提前约三周开园，11—12月的晚季供货量被压缩。美国苹果2026年产量预估104亿磅、同比减少6%，为2022年以来最低，宾夕法尼亚州减产58%、弗吉尼亚州减产48%；柑橘2025/26季总产530万吨、同比增6.5%，加州预计首次超过佛罗里达成为美国橙汁第一大产区。</p><div class="n-meta"><span class="tag 国际">国际</span><span>Vinetur（USDA NASS/ERS）</span><span>·</span><span>2026-10-01</span><a class="n-link" href="https://www.vinetur.com/en/20261001108045/usda-forecasts-a-smaller-2026-wine-grape-harvest.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="中果网：晚富士卸袋收尾 客商订货积极性不高 10月2日中果网行情综述显示，甘肃、陕西产区少量晚富士上市交易，采购商拿货积极性不高，价格行情略显承压，白水产区受冰雹果大量交易影响主流价格拖拽下行。甘肃静宁产区晚富士卸袋基本结束，纸袋晚富士半商品75#起步4.50—5.20元/斤，较中秋前下滑约0.30元/斤；陕西洛川纸袋晚富士半商品70#以上3.80元/斤左右、统货70#起步3.10—3.20元/斤、轻微冰雹果2.50—2.80元/斤；渭南好统货75#以上2.50元/斤左右；山东栖霞晚富士仍在卸袋上色，尚未开秤。 中果网" style="--acc:var(--s3)"><a class="n-title" href="https://www.pingguo7.cn/hq/show-htm-itemid-23793.html" target="_blank" rel="noopener noreferrer">中果网：晚富士卸袋收尾 客商订货积极性不高</a><p class="n-sum">10月2日中果网行情综述显示，甘肃、陕西产区少量晚富士上市交易，采购商拿货积极性不高，价格行情略显承压，白水产区受冰雹果大量交易影响主流价格拖拽下行。甘肃静宁产区晚富士卸袋基本结束，纸袋晚富士半商品75#起步4.50—5.20元/斤，较中秋前下滑约0.30元/斤；陕西洛川纸袋晚富士半商品70#以上3.80元/斤左右、统货70#起步3.10—3.20元/斤、轻微冰雹果2.50—2.80元/斤；渭南好统货75#以上2.50元/斤左右；山东栖霞晚富士仍在卸袋上色，尚未开秤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>中果网</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://www.pingguo7.cn/hq/show-htm-itemid-23793.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="苹果期货三连阴刷新19个月新低 丰产共识压制盘面 10月1日曲合网报道，苹果期货主力合约连续三日下跌，盘中一度跌至6765元/吨，刷新19个月新低，丰产共识成为压制盘面的核心因素。新季全国苹果套袋量同比提升，机构预估2026年全国苹果产量约4061.93万吨、同比增产8.71%（另有预估4011.68万吨、增17.18%）；截至9月23日全国主产区冷库库存17.76万吨、环比减少5.07万吨，旧季基本清库。10月新季晚熟富士进入集中下树与入库高峰，开秤价预期同比走低，优果率与实际入库量成为后市关键变量。 曲合网" style="--acc:var(--s3)"><a class="n-title" href="https://quheqihuo.com/news/202610014494093.html" target="_blank" rel="noopener noreferrer">苹果期货三连阴刷新19个月新低 丰产共识压制盘面</a><p class="n-sum">10月1日曲合网报道，苹果期货主力合约连续三日下跌，盘中一度跌至6765元/吨，刷新19个月新低，丰产共识成为压制盘面的核心因素。新季全国苹果套袋量同比提升，机构预估2026年全国苹果产量约4061.93万吨、同比增产8.71%（另有预估4011.68万吨、增17.18%）；截至9月23日全国主产区冷库库存17.76万吨、环比减少5.07万吨，旧季基本清库。10月新季晚熟富士进入集中下树与入库高峰，开秤价预期同比走低，优果率与实际入库量成为后市关键变量。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>曲合网</span><span>·</span><span>2026-10-01</span><a class="n-link" href="https://quheqihuo.com/news/202610014494093.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="哈密瓜前9月出口1.3万吨 同比增长1.9倍 哈密海关10月2日统计，2026年1—9月累计监管出口哈密瓜1.3万吨、较去年同期增长1.9倍，远销马来西亚、新加坡等东南亚国家。9月一票净重27吨的哈密瓜经哈密海关查验合格后登上冷链车发往越南，出口业务持续至10月上旬。哈密海关辖区现有注册备案出境水果果园35家、包装厂5家，海关开通属地查检绿色通道，运用「智慧海关」、检验检疫证书「云签发」和远程查检，实现即报即审、即检即放、快速出证。 中新网新疆" style="--acc:var(--s3)"><a class="n-title" href="http://www.xj.chinanews.com.cn/dizhou/2026-10-02/detail-ihfksqpy3776189.shtml" target="_blank" rel="noopener noreferrer">哈密瓜前9月出口1.3万吨 同比增长1.9倍</a><p class="n-sum">哈密海关10月2日统计，2026年1—9月累计监管出口哈密瓜1.3万吨、较去年同期增长1.9倍，远销马来西亚、新加坡等东南亚国家。9月一票净重27吨的哈密瓜经哈密海关查验合格后登上冷链车发往越南，出口业务持续至10月上旬。哈密海关辖区现有注册备案出境水果果园35家、包装厂5家，海关开通属地查检绿色通道，运用「智慧海关」、检验检疫证书「云签发」和远程查检，实现即报即审、即检即放、快速出证。</p><div class="n-meta"><span class="tag 国内">国内</span><span>中新网新疆</span><span>·</span><span>2026-10-02</span><a class="n-link" href="http://www.xj.chinanews.com.cn/dizhou/2026-10-02/detail-ihfksqpy3776189.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="中国蜜柚出口季开局良好 欧洲订单稳定、10月中起成本价走低 国际果蔬贸易商 van der lans international 的 damon duivenvoorde 表示，中国蜜柚新产季开局顺利，天气有利于开花坐果，品质与产量均好、总量与往年基本持平，产季预计持续至11月底、末班发运在第48/49周。大果（6、7、8号）供应充足，欧洲主要接收8—12号规格；第40周荷兰市场白心蜜柚8/9号每箱10—11欧元、10/11号10.50—11.50欧元、12号10—11欧元，红心蜜柚（9—12号）每箱11.50—12.00欧元。多数欧洲进口商从10月起开始进货，10月中旬起成本价将明显下降。 liping fruit（平和蜜柚出口商）、van der lans international freshplaza" style="--acc:var(--s3)"><a class="n-title" href="https://www.freshplaza.com/europe/article/9878596/chinese-pomelo-season-progressing-well-with-good-quality-and-a-stable-market/" target="_blank" rel="noopener noreferrer">中国蜜柚出口季开局良好 欧洲订单稳定、10月中起成本价走低</a><p class="n-sum">国际果蔬贸易商 Van der Lans International 的 Damon Duivenvoorde 表示，中国蜜柚新产季开局顺利，天气有利于开花坐果，品质与产量均好、总量与往年基本持平，产季预计持续至11月底、末班发运在第48/49周。大果（6、7、8号）供应充足，欧洲主要接收8—12号规格；第40周荷兰市场白心蜜柚8/9号每箱10—11欧元、10/11号10.50—11.50欧元、12号10—11欧元，红心蜜柚（9—12号）每箱11.50—12.00欧元。多数欧洲进口商从10月起开始进货，10月中旬起成本价将明显下降。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">Liping Fruit（平和蜜柚出口商）、Van der Lans International</span><span>FreshPlaza</span><span>·</span><span>2026-10-01</span><a class="n-link" href="https://www.freshplaza.com/europe/article/9878596/chinese-pomelo-season-progressing-well-with-good-quality-and-a-stable-market/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="国庆批发市场果盘子货足价稳 深圳海吉星水果来货量同比涨79% 央视财经10月1—2日报道，国庆假期全国多地农产品批发市场开启备货模式，果蔬价格稳中有降。北京新发地水果每天上市量1.05万吨、加权平均价6.8元/公斤，苹果涵盖12个产区不同品种，梨类品种多达20余种、日均销量可达30吨，进口榴莲单日最高销量约25吨、较平日增长一倍。深圳海吉星市场近期水果总来货量3590吨、同比上涨79%，除东南亚水果外美洲、大洋洲、非洲进口水果到货量持续增加；泰国山竹每箱140—150元、南非甜橙每箱230—240元，均低于去年同期的170—180元与260—270元。河南郑州万邦国际农产品物流城受气温偏高、货架期缩短影响，龙眼价格同比下调30%，软籽石榴、蜜橘、猕猴桃价格与去年同期基本持平。 央视财经（大众新闻）" style="--acc:var(--s7)"><a class="n-title" href="http://dzrb.dzng.com/general/0/NEWS3724983AVZDZTKRLDHNA" target="_blank" rel="noopener noreferrer">国庆批发市场果盘子货足价稳 深圳海吉星水果来货量同比涨79%</a><p class="n-sum">央视财经10月1—2日报道，国庆假期全国多地农产品批发市场开启备货模式，果蔬价格稳中有降。北京新发地水果每天上市量1.05万吨、加权平均价6.8元/公斤，苹果涵盖12个产区不同品种，梨类品种多达20余种、日均销量可达30吨，进口榴莲单日最高销量约25吨、较平日增长一倍。深圳海吉星市场近期水果总来货量3590吨、同比上涨79%，除东南亚水果外美洲、大洋洲、非洲进口水果到货量持续增加；泰国山竹每箱140—150元、南非甜橙每箱230—240元，均低于去年同期的170—180元与260—270元。河南郑州万邦国际农产品物流城受气温偏高、货架期缩短影响，龙眼价格同比下调30%，软籽石榴、蜜橘、猕猴桃价格与去年同期基本持平。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>央视财经（大众新闻）</span><span>·</span><span>2026-10-02</span><a class="n-link" href="http://dzrb.dzng.com/general/0/NEWS3724983AVZDZTKRLDHNA" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国际" data-search="榴莲产地出口与中国海关进口数据：9月30日越南235柜、泰国31柜 大数跨境10月1日发布的榴莲产业日报显示，9月30日越南发运235柜榴莲、泰国发运31柜，中国陆路口岸合计到货266柜；越南较前一日的289柜明显回落，泰国连续第二日回升，但总量未扩大、越南份额下降而泰国占比抬升。泰国农业部实际出口42批、626.01吨、7037万泰铢，年度累计实际出口约120.6万吨；南部产区已采收579,848吨（占预估599,372吨的96.74%），东部采收978,655.50吨（98.05%）。中国口岸通关时效方面，截至9月29日友谊关排队约1天、11柜待查、5票虫检未出。 大数跨境" style="--acc:var(--s7)"><a class="n-title" href="https://www.10100.com/article/152891450" target="_blank" rel="noopener noreferrer">榴莲产地出口与中国海关进口数据：9月30日越南235柜、泰国31柜</a><p class="n-sum">大数跨境10月1日发布的榴莲产业日报显示，9月30日越南发运235柜榴莲、泰国发运31柜，中国陆路口岸合计到货266柜；越南较前一日的289柜明显回落，泰国连续第二日回升，但总量未扩大、越南份额下降而泰国占比抬升。泰国农业部实际出口42批、626.01吨、7037万泰铢，年度累计实际出口约120.6万吨；南部产区已采收579,848吨（占预估599,372吨的96.74%），东部采收978,655.50吨（98.05%）。中国口岸通关时效方面，截至9月29日友谊关排队约1天、11柜待查、5票虫检未出。</p><div class="n-meta"><span class="tag 国际">国际</span><span>大数跨境</span><span>·</span><span>2026-10-01</span><a class="n-link" href="https://www.10100.com/article/152891450" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国内" data-search="10月1日起经港珠澳大桥供港鲜活食品延长至全天24小时通关 自2026年10月1日起，经港珠澳大桥供港鲜活食品通关时间由每天16小时延长至全天24小时，覆盖冷藏及冰鲜家禽、肉、蛋、奶以及鲜活水产和蔬果等指定鲜活食品，相关产品可依采收、运输与销售节奏错峰安排通关，「随采、随装、随发」以对接香港早市、午市、夜市的补货需求。该口岸2023年7月开放全品类内地鲜活食品供港（8小时）、2024年7月延长至16小时；港珠澳大桥海关配套「提前申报」「绿色通道」「优先查验」轮值保障24小时查验衔接。 光明网" style="--acc:var(--s8)"><a class="n-title" href="https://m.gmw.cn/2026-10/01/content_1304570727.htm" target="_blank" rel="noopener noreferrer">10月1日起经港珠澳大桥供港鲜活食品延长至全天24小时通关</a><p class="n-sum">自2026年10月1日起，经港珠澳大桥供港鲜活食品通关时间由每天16小时延长至全天24小时，覆盖冷藏及冰鲜家禽、肉、蛋、奶以及鲜活水产和蔬果等指定鲜活食品，相关产品可依采收、运输与销售节奏错峰安排通关，「随采、随装、随发」以对接香港早市、午市、夜市的补货需求。该口岸2023年7月开放全品类内地鲜活食品供港（8小时）、2024年7月延长至16小时；港珠澳大桥海关配套「提前申报」「绿色通道」「优先查验」轮值保障24小时查验衔接。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>光明网</span><span>·</span><span>2026-10-01</span><a class="n-link" href="https://m.gmw.cn/2026-10/01/content_1304570727.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="「钱凯—上海」航线前8月开行170航次 货值同比增33.3% 经济日报10月1日报道，2026年前8个月「钱凯—上海」海运航线累计开行170航次，搭载进出口货物14.1万吨、货值40.4亿元，同比分别增长13.7%和33.3%。上海口岸承载全国超70%的秘鲁水果进口业务，是连接中秘农产品贸易的关键门户。今年9月，在秘鲁钱凯港，12.2吨新鲜蓝莓被装进冷藏集装箱，搭载中远海运集运wsa5线「钱凯—上海」快航发往上海，这批蓝莓首次试点应用进境水果冷处理探针监管互认模式，预计可减少掏箱作业90%以上、单箱查验时长压缩近半天。 经济日报" style="--acc:var(--s8)"><a class="n-title" href="http://www.jingjiribao.cn/static/detail.jsp?id=686522" target="_blank" rel="noopener noreferrer">「钱凯—上海」航线前8月开行170航次 货值同比增33.3%</a><p class="n-sum">经济日报10月1日报道，2026年前8个月「钱凯—上海」海运航线累计开行170航次，搭载进出口货物14.1万吨、货值40.4亿元，同比分别增长13.7%和33.3%。上海口岸承载全国超70%的秘鲁水果进口业务，是连接中秘农产品贸易的关键门户。今年9月，在秘鲁钱凯港，12.2吨新鲜蓝莓被装进冷藏集装箱，搭载中远海运集运WSA5线「钱凯—上海」快航发往上海，这批蓝莓首次试点应用进境水果冷处理探针监管互认模式，预计可减少掏箱作业90%以上、单箱查验时长压缩近半天。</p><div class="n-meta"><span class="tag 国际">国际</span><span>经济日报</span><span>·</span><span>2026-10-01</span><a class="n-link" href="http://www.jingjiribao.cn/static/detail.jsp?id=686522" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="应急管理部：10月有1—2个台风登陆或明显影响我国 强度偏强 国家防灾减灾救灾委员会办公室、应急管理部10月2日发布10月及国庆假期全国自然灾害风险形势研判：10月份华中、华南、西南等部分地区洪涝和风雹灾害风险较高，部分中小河流可能发生超警洪水；有1—2个台风登陆或明显影响我国（常年同期登陆数仅0.5个），主要影响华南沿海、强度总体偏强；华北、东北、华东、华中、西南、西北局地森林火险等级较高，内蒙古、青海、新疆部分地区草原火险等级较高。沿海可能发生1次灾害性台风风暴潮过程和1次灾害性温带风暴潮过程。 应急管理部" style="--acc:var(--s9)"><a class="n-title" href="https://www.mem.gov.cn/xw/yjglbgzdt/202610/t20261002_718165.shtml" target="_blank" rel="noopener noreferrer">应急管理部：10月有1—2个台风登陆或明显影响我国 强度偏强</a><p class="n-sum">国家防灾减灾救灾委员会办公室、应急管理部10月2日发布10月及国庆假期全国自然灾害风险形势研判：10月份华中、华南、西南等部分地区洪涝和风雹灾害风险较高，部分中小河流可能发生超警洪水；有1—2个台风登陆或明显影响我国（常年同期登陆数仅0.5个），主要影响华南沿海、强度总体偏强；华北、东北、华东、华中、西南、西北局地森林火险等级较高，内蒙古、青海、新疆部分地区草原火险等级较高。沿海可能发生1次灾害性台风风暴潮过程和1次灾害性温带风暴潮过程。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>应急管理部</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://www.mem.gov.cn/xw/yjglbgzdt/202610/t20261002_718165.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="厄尔尼诺致秘鲁蓝莓对欧到货骤降 全季预测下调至38.2万吨 agronometrics 10月1日发布欧盟周度进口数据：秘鲁2026/27蓝莓季前段到货一度较上季同期高48%，但自第36周转弱——第39周到货1599吨，较第38周的2139吨下降25.2%、较去年同期同周下降55.9%。早势由7400余英亩新投产果园与早熟品种驱动（sekoya pop占初期发运近三分之一），至第35周秘鲁已出口约9.5万吨、同比增48%；proarándanos 已将全季预测下调至38.2万吨，并提醒厄尔尼诺高温或延续至2027年一二季度。秘鲁是中国最大蓝莓供应国，其供货收缩与到货波动将直接传导至中国市场。 agronometrics" style="--acc:var(--s9)"><a class="n-title" href="https://stories.agronometrics.com/european-union-weekly-import-data-reveals-perus-blueberry-season-shift-as-el-nino-takes-hold/" target="_blank" rel="noopener noreferrer">厄尔尼诺致秘鲁蓝莓对欧到货骤降 全季预测下调至38.2万吨</a><p class="n-sum">Agronometrics 10月1日发布欧盟周度进口数据：秘鲁2026/27蓝莓季前段到货一度较上季同期高48%，但自第36周转弱——第39周到货1599吨，较第38周的2139吨下降25.2%、较去年同期同周下降55.9%。早势由7400余英亩新投产果园与早熟品种驱动（Sekoya Pop占初期发运近三分之一），至第35周秘鲁已出口约9.5万吨、同比增48%；Proarándanos 已将全季预测下调至38.2万吨，并提醒厄尔尼诺高温或延续至2027年一二季度。秘鲁是中国最大蓝莓供应国，其供货收缩与到货波动将直接传导至中国市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>Agronometrics</span><span>·</span><span>2026-10-01</span><a class="n-link" href="https://stories.agronometrics.com/european-union-weekly-import-data-reveals-perus-blueberry-season-shift-as-el-nino-takes-hold/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="智利车厘子最早熟产区提前采收 科金博产量预计降约50% cherry times 10月2日报道，智利车厘子产季提前启动，最早熟产区科金博（coquimbo）今年有望录得有记录以来最早的采收期，咨询师兼种植者 jorge astudillo 预计最早10月10—15日开摘。但该区产量预计下降约50%、降至1000吨以下（2025/26季约1500吨），天气相关困难令表现不稳，与2023年情形相似。astudillo 称厄尔尼诺与低挂果量或带来更大果个与更高糖度，但 nimba、brooks 等品种仍面临裂果风险，后续降雨需密切关注。另据其介绍，本季果蝇疫情将令不少种植者无法对华出口，转向其他市场。 cherry times" style="--acc:var(--s9)"><a class="n-title" href="https://cherrytimes.it/en/news/cherries-coquimbo-chile-early-harvest-production-down-50-export-markets-asia" target="_blank" rel="noopener noreferrer">智利车厘子最早熟产区提前采收 科金博产量预计降约50%</a><p class="n-sum">Cherry Times 10月2日报道，智利车厘子产季提前启动，最早熟产区科金博（Coquimbo）今年有望录得有记录以来最早的采收期，咨询师兼种植者 Jorge Astudillo 预计最早10月10—15日开摘。但该区产量预计下降约50%、降至1000吨以下（2025/26季约1500吨），天气相关困难令表现不稳，与2023年情形相似。Astudillo 称厄尔尼诺与低挂果量或带来更大果个与更高糖度，但 Nimba、Brooks 等品种仍面临裂果风险，后续降雨需密切关注。另据其介绍，本季果蝇疫情将令不少种植者无法对华出口，转向其他市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>Cherry Times</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://cherrytimes.it/en/news/cherries-coquimbo-chile-early-harvest-production-down-50-export-markets-asia" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="福建国庆农事提示：10月1—2日阵雨 晚熟脐橙、蜜柚、蜜橘需防裂果落果 中国福建三农网10月1日发布国庆农事提示：10月1日至2日福建全省天气由晴转多云、多分散阵性降水，内陆地区部分有中到大雨、局部暴雨，昼夜温差显著拉大、空气湿度起伏剧烈，雨后田间果园湿度骤升。闽东晚熟脐橙、脆蜜桃处于膨大着色关键期，阵性降水易致果面积水、裂果落果，影响品相与甜度；闽西晚熟沙田柚、蜜柚处于果实增重与糖分积累关键期，雨后湿度大易致果面霉菌、花皮与烂果；闽北晚熟蜜橘、芦柑处于秋梢老熟、花芽分化与果实膨大核心期，需重点防控溃疡病、红蜘蛛与炭疽病。 中国福建三农网" style="--acc:var(--s9)"><a class="n-title" href="http://www.fujiansannong.com/info/106522" target="_blank" rel="noopener noreferrer">福建国庆农事提示：10月1—2日阵雨 晚熟脐橙、蜜柚、蜜橘需防裂果落果</a><p class="n-sum">中国福建三农网10月1日发布国庆农事提示：10月1日至2日福建全省天气由晴转多云、多分散阵性降水，内陆地区部分有中到大雨、局部暴雨，昼夜温差显著拉大、空气湿度起伏剧烈，雨后田间果园湿度骤升。闽东晚熟脐橙、脆蜜桃处于膨大着色关键期，阵性降水易致果面积水、裂果落果，影响品相与甜度；闽西晚熟沙田柚、蜜柚处于果实增重与糖分积累关键期，雨后湿度大易致果面霉菌、花皮与烂果；闽北晚熟蜜橘、芦柑处于秋梢老熟、花芽分化与果实膨大核心期，需重点防控溃疡病、红蜘蛛与炭疽病。</p><div class="n-meta"><span class="tag 国内">国内</span><span>中国福建三农网</span><span>·</span><span>2026-10-01</span><a class="n-link" href="http://www.fujiansannong.com/info/106522" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-10-02 17:35 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

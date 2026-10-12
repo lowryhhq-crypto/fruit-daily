@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.10.05</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.10.05</b> 星期一</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">9</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">9</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">5</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">4</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">9</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">国庆假期第五天，国内果市延续平稳：商务部商务大数据显示，假期前四天全国200家大型农副产品批发市场水果价格与节前（9月30日）基本持平，库存充足、消费市场平稳有序；10月5日全国主要批发市场桃子价在4.00—11.50元/公斤，秋令果供应充裕。产地端两条出海消息——江西寻乌赣南早脐橙凭脱绿库+智能分选按不同国家需求定制发货，订单同比增三成、日出货约80吨、整季预计突破7000吨，远销30多个国家；新疆叶城石榴依托援疆资金建成的深加工线，把产业链从卖鲜果延伸到石榴汁、果酒、白酒与农文旅。国际方面，全球葡萄集团首发《全球鲜食葡萄报告》，警示2017—2025年智利、秘鲁、墨西哥三国供应量增约41%而消费仅增约3%，供需缺口持续扩大；Decofrut第40周报告显示中国批发市场橙类与软柑橘仍由南非、澳大利亚供货，秘鲁牛油果对华有新到货与市场开放，智利牛油果对远东出口高于上季。国际关系侧，平陆运河全线通航引发外媒热议，为中国—东盟（含东盟水果）开辟更低成本物流通道。气象警报集中于美国加州中央谷地——10月异常高温较常年偏高10—15°F，圣华金谷地西南部周日破100°F概率超90%。</div></section>
+
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="全球鲜食葡萄报告首发：智利秘鲁墨西哥七年供应增41% 消费仅增3% 在西班牙穆尔西亚第11届国际鲜食葡萄研讨会上，全球葡萄集团（global grape group）联合秘鲁、智利、墨西哥、南非四国种植者协会首发《全球鲜食葡萄报告》。智利水果出口商协会美洲区总经理 ignacio caballero 指出，2017—2025年智利、秘鲁、墨西哥三国合计供应量增长约41%，同期消费量仅增约3%，各产地供应窗口高度重叠、集中挤占关键市场，报告警告若不把品类消费做上去，整条价值链的压力只会加剧，行业应从争夺份额转向共同做大蛋糕。中国是全球主要鲜食葡萄进口市场，供应过剩格局对进口价格与议价格局的外溢影响值得关注。 global grape group / frutas de chile produce market guide" style="--acc:var(--s2)"><a class="n-title" href="https://www.producemarketguide.com/news/global-table-grape-report-reveals-alarming-gap-between-supply-and-demand" target="_blank" rel="noopener noreferrer">全球鲜食葡萄报告首发：智利秘鲁墨西哥七年供应增41% 消费仅增3%</a><p class="n-sum">在西班牙穆尔西亚第11届国际鲜食葡萄研讨会上，全球葡萄集团（Global Grape Group）联合秘鲁、智利、墨西哥、南非四国种植者协会首发《全球鲜食葡萄报告》。智利水果出口商协会美洲区总经理 Ignacio Caballero 指出，2017—2025年智利、秘鲁、墨西哥三国合计供应量增长约41%，同期消费量仅增约3%，各产地供应窗口高度重叠、集中挤占关键市场，报告警告若不把品类消费做上去，整条价值链的压力只会加剧，行业应从争夺份额转向共同做大蛋糕。中国是全球主要鲜食葡萄进口市场，供应过剩格局对进口价格与议价格局的外溢影响值得关注。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">Global Grape Group / Frutas de Chile</span><span>Produce Market Guide</span><span>·</span><span>2026-10-04</span><a class="n-link" href="https://www.producemarketguide.com/news/global-table-grape-report-reveals-alarming-gap-between-supply-and-demand" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="decofrut第40周周报：南非澳洲柑橘占据中国批发市场 秘鲁牛油果对华有新到货与市场开放 decofrut 第40周市场报告显示，中国批发市场橙类继续由南非、澳大利亚供应，navel 与 valencia 橙均有在售，南非、澳大利亚蜜橘（软柑橘）同样出现在中国市场；秘鲁牛油果在中国有新到货与市场开放，智利牛油果对远东出口量高于上一产季，但智利软柑橘、柠檬对远东发运量均低于上季，南非柠檬对华到货与开柜数量有限。报告同期显示美国市场哈斯牛油果供应宽裕，仍以墨西哥货为主。 decofrut / 南非柑橘 / 智利水果 portalfruticola（decofrut）" style="--acc:var(--s2)"><a class="n-title" href="https://www.portalfruticola.com/noticias/2026/10/05/estado-semana-40-26/" target="_blank" rel="noopener noreferrer">Decofrut第40周周报：南非澳洲柑橘占据中国批发市场 秘鲁牛油果对华有新到货与市场开放</a><p class="n-sum">Decofrut 第40周市场报告显示，中国批发市场橙类继续由南非、澳大利亚供应，Navel 与 Valencia 橙均有在售，南非、澳大利亚蜜橘（软柑橘）同样出现在中国市场；秘鲁牛油果在中国有新到货与市场开放，智利牛油果对远东出口量高于上一产季，但智利软柑橘、柠檬对远东发运量均低于上季，南非柠檬对华到货与开柜数量有限。报告同期显示美国市场哈斯牛油果供应宽裕，仍以墨西哥货为主。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">Decofrut / 南非柑橘 / 智利水果</span><span>PortalFruticola（Decofrut）</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://www.portalfruticola.com/noticias/2026/10/05/estado-semana-40-26/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="寻乌赣南早脐橙抢鲜出海：智能分选按国定制发货 整季出口预计破7000吨 国内成熟期最早的脐橙品种赣南早脐橙在江西寻乌陆续上市，比普通脐橙早一个多月。当地云上橙柑橘科技园先把鲜果送进脱绿库物理脱绿，再上智能分选线按重量、色度、糖度精准分级，并针对不同国家对果径、糖度、色泽的要求定制化发货；今年寻乌赣南早脐橙远销白俄罗斯、哈萨克斯坦、乌兹别克斯坦和印尼、泰国、越南等30多个国家和地区，某果品出口企业订单同比增长30%，日出货量约80吨，预计整季突破7000吨。预计今年全县赣南早脐橙产量达3.5万吨、产值超2亿元。 寻乌赣南早脐橙 / 云上橙柑橘科技园 人民网江西（江西日报）" style="--acc:var(--s3)"><a class="n-title" href="http://jx.people.com.cn/n2/2026/1005/c186330-41714572.html" target="_blank" rel="noopener noreferrer">寻乌赣南早脐橙抢鲜出海：智能分选按国定制发货 整季出口预计破7000吨</a><p class="n-sum">国内成熟期最早的脐橙品种赣南早脐橙在江西寻乌陆续上市，比普通脐橙早一个多月。当地云上橙柑橘科技园先把鲜果送进脱绿库物理脱绿，再上智能分选线按重量、色度、糖度精准分级，并针对不同国家对果径、糖度、色泽的要求定制化发货；今年寻乌赣南早脐橙远销白俄罗斯、哈萨克斯坦、乌兹别克斯坦和印尼、泰国、越南等30多个国家和地区，某果品出口企业订单同比增长30%，日出货量约80吨，预计整季突破7000吨。预计今年全县赣南早脐橙产量达3.5万吨、产值超2亿元。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">寻乌赣南早脐橙 / 云上橙柑橘科技园</span><span>人民网江西（江西日报）</span><span>·</span><span>2026-10-05</span><a class="n-link" href="http://jx.people.com.cn/n2/2026/1005/c186330-41714572.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="山西大宁苹果喜迎丰收 集中供应国庆市场 央视《新闻直播间》10月5日报道，山西大宁县苹果迎来丰收，鲜果集中上市供应国庆假期市场消费。 山西大宁苹果产区 央视新闻直播间" style="--acc:var(--s3)"><a class="n-title" href="https://tv.cctv.cn/2026/10/05/VIDEMl08oRWeQJ4wt5sMypK7261005.shtml" target="_blank" rel="noopener noreferrer">山西大宁苹果喜迎丰收 集中供应国庆市场</a><p class="n-sum">央视《新闻直播间》10月5日报道，山西大宁县苹果迎来丰收，鲜果集中上市供应国庆假期市场消费。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">山西大宁苹果产区</span><span>央视新闻直播间</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://tv.cctv.cn/2026/10/05/VIDEMl08oRWeQJ4wt5sMypK7261005.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国内" data-search="新疆叶城石榴全链条增值：援疆资金建深加工线 石榴汁果酒白酒齐上 人民日报10月5日报道新疆喀什叶城县石榴全链条增值。伯西热克镇托万欧壤村红太阳林果农民专业合作社流转石榴园从最初的200亩增至1800亩、社员从18户增至50余户；去年底依托上海援疆资金500多万元建成的石榴深加工生产线投产，产出石榴汁、石榴果酒、石榴白酒等产品，鲜果只有三到五天保质期的销售压力得以化解，附加值持续提升。放眼全县，石榴种植面积8301亩、年产量2300多吨，并叠加采摘园、水上乐园、房车营地、民宿等农文旅业态。 叶城县红太阳林果农民专业合作社 人民日报（正北方网转载）" style="--acc:var(--s4)"><a class="n-title" href="https://www.northnews.cn/news/2026/1005/2526039.html" target="_blank" rel="noopener noreferrer">新疆叶城石榴全链条增值：援疆资金建深加工线 石榴汁果酒白酒齐上</a><p class="n-sum">人民日报10月5日报道新疆喀什叶城县石榴全链条增值。伯西热克镇托万欧壤村红太阳林果农民专业合作社流转石榴园从最初的200亩增至1800亩、社员从18户增至50余户；去年底依托上海援疆资金500多万元建成的石榴深加工生产线投产，产出石榴汁、石榴果酒、石榴白酒等产品，鲜果只有三到五天保质期的销售压力得以化解，附加值持续提升。放眼全县，石榴种植面积8301亩、年产量2300多吨，并叠加采摘园、水上乐园、房车营地、民宿等农文旅业态。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">叶城县红太阳林果农民专业合作社</span><span>人民日报（正北方网转载）</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://www.northnews.cn/news/2026/1005/2526039.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="商务部：国庆假期前四天全国200家农批市场水果价格与节前基本持平 商务部商务大数据显示，国庆假期前四天全国200家大型农副产品批发市场库存充足、供应充足，价格总体平稳：粮油、猪肉、牛羊肉、水果价格与节前（9月30日）基本持平，蔬菜、鸡肉价格较节前均下降0.5%，鸡蛋价格下降1.1%，全国消费市场平稳有序。 商务部 / 全国农批市场 央视新闻（光明网）" style="--acc:var(--s7)"><a class="n-title" href="https://m.gmw.cn/2026-10/05/content_1304571939.htm" target="_blank" rel="noopener noreferrer">商务部：国庆假期前四天全国200家农批市场水果价格与节前基本持平</a><p class="n-sum">商务部商务大数据显示，国庆假期前四天全国200家大型农副产品批发市场库存充足、供应充足，价格总体平稳：粮油、猪肉、牛羊肉、水果价格与节前（9月30日）基本持平，蔬菜、鸡肉价格较节前均下降0.5%，鸡蛋价格下降1.1%，全国消费市场平稳有序。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">商务部 / 全国农批市场</span><span>央视新闻（光明网）</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://m.gmw.cn/2026-10/05/content_1304571939.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="10月5日全国主要批发市场桃子价格行情：主流区间4.00—11.50元/公斤 农业农村部信息中心数据显示，10月5日全国主要批发市场桃子价格区间为4.00—11.50元/公斤。具体报价：邯郸南大堡4.00、滕州4.60、乐亭冀东5.00、新疆焉耆5.00、太原丈子头5.50、亳州6.00、无锡朝阳6.09、金昌金川7.00、新疆九鼎7.00、青岛城阳7.60、江门新会8.20、宁夏四季鲜11.50元/公斤。 全国主要批发市场 证券之星（农业农村部信息中心）" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026100500000518.shtml" target="_blank" rel="noopener noreferrer">10月5日全国主要批发市场桃子价格行情：主流区间4.00—11.50元/公斤</a><p class="n-sum">农业农村部信息中心数据显示，10月5日全国主要批发市场桃子价格区间为4.00—11.50元/公斤。具体报价：邯郸南大堡4.00、滕州4.60、乐亭冀东5.00、新疆焉耆5.00、太原丈子头5.50、亳州6.00、无锡朝阳6.09、金昌金川7.00、新疆九鼎7.00、青岛城阳7.60、江门新会8.20、宁夏四季鲜11.50元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">全国主要批发市场</span><span>证券之星（农业农村部信息中心）</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://futures.stockstar.com/IG2026100500000518.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="外媒热议平陆运河全线通航 中国—东盟水果物流通道再降成本 人民网10月4日报道，历经4年建设、新中国成立以来第一条国家层面统筹建设的通江达海大运河——平陆运河全线通航，连接广西南宁与北部湾，开辟中国西南地区通往东盟的新通道。越南《岘港报》、卡塔尔半岛电视台、沙特《经济报》、马来西亚《马来邮报》、新加坡亚洲新闻台等外媒均予报道，东盟秘书长高金洪表示运河有利于降低综合物流成本、提升区域经济竞争力。运河将内河航运与西部陆海新通道衔接，为东盟水果、大米、咖啡、水产品提供大批量、低成本物流选择，同时便利东盟产品深入中国西部市场。 平陆运河 / 中国—东盟 人民网" style="--acc:var(--s8)"><a class="n-title" href="http://world.people.com.cn/n1/2026/1004/c1002-40809211.html" target="_blank" rel="noopener noreferrer">外媒热议平陆运河全线通航 中国—东盟水果物流通道再降成本</a><p class="n-sum">人民网10月4日报道，历经4年建设、新中国成立以来第一条国家层面统筹建设的通江达海大运河——平陆运河全线通航，连接广西南宁与北部湾，开辟中国西南地区通往东盟的新通道。越南《岘港报》、卡塔尔半岛电视台、沙特《经济报》、马来西亚《马来邮报》、新加坡亚洲新闻台等外媒均予报道，东盟秘书长高金洪表示运河有利于降低综合物流成本、提升区域经济竞争力。运河将内河航运与西部陆海新通道衔接，为东盟水果、大米、咖啡、水产品提供大批量、低成本物流选择，同时便利东盟产品深入中国西部市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">平陆运河 / 中国—东盟</span><span>人民网</span><span>·</span><span>2026-10-04</span><a class="n-link" href="http://world.people.com.cn/n1/2026/1004/c1002-40809211.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国际" data-search="美国加州中央谷地10月异常高温 圣华金谷地破100°f概率超90% 美国国家气象局汉福德办公室区域天气讨论指出，加州中央谷地气温较常年偏高10—15°f，高温穹顶回归，中央谷地维持“中等至严重”高温风险，高温预警已延长至周三晚11时。刚过去的周六圣华金谷地普遍达95—99°f、局部破百（贝克斯菲尔德101°f，距2024年纪录仅差2°f）；周日高温穹顶进一步加强，圣华金谷地西南角（coalinga—taft—贝克斯菲尔德一线）达到100°f的概率超过90%，99号公路沿线为40%—80%，集合预报显示周日午后90分位最高气温从默塞德的101°f升至贝克斯菲尔德的106°f，南部谷地很可能刷新纪录；周一高温穹顶略减弱、100°f概率回落10—20个百分点，但周二将再度反弹，本周谷地多数时间维持95—99°f。加州中央谷地是柑橘、葡萄、番茄等水果主产区，10月罕见高温对采收与果实品质构成压力。 美国加州中央谷地产区 美国国家气象局汉福德办公室（nws hanford afd）" style="--acc:var(--s9)"><a class="n-title" href="https://mesonet.agron.iastate.edu/wx/afos/p.php?pil=AFDHNX&amp;e=202610040447" target="_blank" rel="noopener noreferrer">美国加州中央谷地10月异常高温 圣华金谷地破100°F概率超90%</a><p class="n-sum">美国国家气象局汉福德办公室区域天气讨论指出，加州中央谷地气温较常年偏高10—15°F，高温穹顶回归，中央谷地维持“中等至严重”高温风险，高温预警已延长至周三晚11时。刚过去的周六圣华金谷地普遍达95—99°F、局部破百（贝克斯菲尔德101°F，距2024年纪录仅差2°F）；周日高温穹顶进一步加强，圣华金谷地西南角（Coalinga—Taft—贝克斯菲尔德一线）达到100°F的概率超过90%，99号公路沿线为40%—80%，集合预报显示周日午后90分位最高气温从默塞德的101°F升至贝克斯菲尔德的106°F，南部谷地很可能刷新纪录；周一高温穹顶略减弱、100°F概率回落10—20个百分点，但周二将再度反弹，本周谷地多数时间维持95—99°F。加州中央谷地是柑橘、葡萄、番茄等水果主产区，10月罕见高温对采收与果实品质构成压力。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">美国加州中央谷地产区</span><span>美国国家气象局汉福德办公室（NWS Hanford AFD）</span><span>·</span><span>2026-10-04</span><a class="n-link" href="https://mesonet.agron.iastate.edu/wx/afos/p.php?pil=AFDHNX&amp;e=202610040447" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-10-05 19:23 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

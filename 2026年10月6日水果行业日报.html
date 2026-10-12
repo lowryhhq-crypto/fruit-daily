@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.10.06</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.10.06</b> 星期二</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">18</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">0</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">10</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">15</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">国庆假期尾声，国内果市秋令果集中放量：江苏无锡朝阳市场10月6日苹果批发价5.25元/公斤、猕猴桃5.76元/公斤、榴莲38.16元/公斤；柑橘产地价格止跌企稳但整体承压，当日橘柑类均价5.08元/公斤、蜜桔5.66元/公斤、砂糖橘8.57元/公斤，好果溢价明显。产地端晚富士收购价区域分化，甘肃静宁半商品75#起步4.50—5.20元/斤领跑，山东沂源仅1.50—2.00元/斤、整体低开；江西寻乌赣南早脐橙凭智能分选定制出海、山西大宁苹果丰产供应国庆市场。国际贸易方面，第18届西班牙Fruit Attraction于10月6日在马德里开幕，2500家企业、78国参展，“特邀进口国”聚焦中国与阿联酋；东盟水果经广西口岸加速入华，前7月进口173.35万吨、货值260.25亿元；越南10月进入榴莲对华近乎独家供应窗口。供应链端上海、宁波港拥堵延误最长两周，冲击秘鲁牛油果、蓝莓、葡萄等易腐进口。气象方面，智利北部Ovalle早熟车厘子因集中降雨、冷量不足与坐果期高温减产60%—70%，部分果园损失超80%，为下季车厘子对华供应敲响警钟。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="柑橘行情日报（10月6日）：产地止跌企稳，销地分化，好果溢价仍是主线 农资与市场10月6日柑橘日报显示，节后需求回落叠加主产区供应节奏加快，产地价格止跌企稳但整体承压，销地批发价高位震荡趋稳。当日全国均价：橘柑类5.08元/公斤（最高新疆绿珠九鼎8.00、最低河北怀来3.60），蜜桔5.66元/公斤（最高湖北鄂州蟠龙10.00、最低邯郸南大堡2.00），砂糖橘8.57元/公斤，甜橙8.43元/公斤，沃柑7.65元/公斤。 农资与市场" style="--acc:var(--s1)"><a class="n-title" href="http://www.enongzi.com/news/details?id=1ad5943e-c19a-4146-9fae-672171c61622" target="_blank" rel="noopener noreferrer">柑橘行情日报（10月6日）：产地止跌企稳，销地分化，好果溢价仍是主线</a><p class="n-sum">农资与市场10月6日柑橘日报显示，节后需求回落叠加主产区供应节奏加快，产地价格止跌企稳但整体承压，销地批发价高位震荡趋稳。当日全国均价：橘柑类5.08元/公斤（最高新疆绿珠九鼎8.00、最低河北怀来3.60），蜜桔5.66元/公斤（最高湖北鄂州蟠龙10.00、最低邯郸南大堡2.00），砂糖橘8.57元/公斤，甜橙8.43元/公斤，沃柑7.65元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>农资与市场</span><span>·</span><span>2026-10-06</span><a class="n-link" href="http://www.enongzi.com/news/details?id=1ad5943e-c19a-4146-9fae-672171c61622" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="10月6日全国主要批发市场富士苹果价格行情 10月6日全国主要批发市场富士苹果报价区域分化：山东凯盛国际农产品物流城10.00元/公斤，甘肃陇国源市场管理12.00元/公斤，陕西朱雀实业集团9.00元/公斤，甘肃定西安定马铃薯综合交易中心8.40元/公斤。 证券之星" style="--acc:var(--s1)"><a class="n-title" href="http://futures.stockstar.com/IG2026100600000576.shtml" target="_blank" rel="noopener noreferrer">10月6日全国主要批发市场富士苹果价格行情</a><p class="n-sum">10月6日全国主要批发市场富士苹果报价区域分化：山东凯盛国际农产品物流城10.00元/公斤，甘肃陇国源市场管理12.00元/公斤，陕西朱雀实业集团9.00元/公斤，甘肃定西安定马铃薯综合交易中心8.40元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span>证券之星</span><span>·</span><span>2026-10-06</span><a class="n-link" href="http://futures.stockstar.com/IG2026100600000576.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="无锡朝阳市场10月6日行情：秋令果集中到货，榴莲38.16元/公斤居首 江苏无锡朝阳农产品大市场10月6日水果批发价（元/公斤）：苹果5.25、梨2.27、葡萄6.56、石榴6.20、猕猴桃5.76、桃子5.55、橘柑4.80、柚子4.60、香蕉3.94、芒果7.24、火龙果3.92、冬枣5.76、榴莲38.16。 证券之星" style="--acc:var(--s1)"><a class="n-title" href="https://futures.stockstar.com/IG2026100600000984.shtml" target="_blank" rel="noopener noreferrer">无锡朝阳市场10月6日行情：秋令果集中到货，榴莲38.16元/公斤居首</a><p class="n-sum">江苏无锡朝阳农产品大市场10月6日水果批发价（元/公斤）：苹果5.25、梨2.27、葡萄6.56、石榴6.20、猕猴桃5.76、桃子5.55、橘柑4.80、柚子4.60、香蕉3.94、芒果7.24、火龙果3.92、冬枣5.76、榴莲38.16。</p><div class="n-meta"><span class="tag 国内">国内</span><span>证券之星</span><span>·</span><span>2026-10-06</span><a class="n-link" href="https://futures.stockstar.com/IG2026100600000984.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="秋果集中上市：苏州南环桥市场日均到货约1000吨，柿子同比跌约三成 国庆假期秋果集中入市，苏州南环桥市场时令秋果日均到货量约1000吨，柿子、秋月梨、冬枣、柑橘、软籽石榴、高原丑苹果集中入市。陕西产地柿子红方柿1.7—1.8元/斤、脆柿2.5元/斤，同比下跌约三成；秋月梨3—5元/斤、软籽石榴2.6—6元/斤、桔子1—3元/斤。市场反映今年家庭散装鲜果需求走高、礼盒订单较往年回落。 搜狐新闻" style="--acc:var(--s1)"><a class="n-title" href="https://www.sohu.com/a/1084130671_122947366" target="_blank" rel="noopener noreferrer">秋果集中上市：苏州南环桥市场日均到货约1000吨，柿子同比跌约三成</a><p class="n-sum">国庆假期秋果集中入市，苏州南环桥市场时令秋果日均到货量约1000吨，柿子、秋月梨、冬枣、柑橘、软籽石榴、高原丑苹果集中入市。陕西产地柿子红方柿1.7—1.8元/斤、脆柿2.5元/斤，同比下跌约三成；秋月梨3—5元/斤、软籽石榴2.6—6元/斤、桔子1—3元/斤。市场反映今年家庭散装鲜果需求走高、礼盒订单较往年回落。</p><div class="n-meta"><span class="tag 国内">国内</span><span>搜狐新闻</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://www.sohu.com/a/1084130671_122947366" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="fruit attraction 2026 在马德里开幕：2500家企业、78国参展，中国为“特邀进口国” 第18届西班牙国际果蔬展（fruit attraction）10月6日在马德里ifema开幕，展期至10月8日。本届汇聚78个国家2500家参展企业、展览面积16.2万平方米，预计吸引150多个国家约12.1万名专业人士；西班牙农业部长luis planas主持开幕。本届主宾产品为马铃薯，“特邀进口国”计划聚焦中国与阿联酋；意大利以322家企业、约7870平方米成为最大海外参展国。 europa press" style="--acc:var(--s2)"><a class="n-title" href="https://www.europapress.es/madrid/ifema-00444/noticia-planas-inaugura-martes-nueva-edicion-fruit-attraction-2500-empresas-78-paises-20261005165714.html" target="_blank" rel="noopener noreferrer">Fruit Attraction 2026 在马德里开幕：2500家企业、78国参展，中国为“特邀进口国”</a><p class="n-sum">第18届西班牙国际果蔬展（Fruit Attraction）10月6日在马德里IFEMA开幕，展期至10月8日。本届汇聚78个国家2500家参展企业、展览面积16.2万平方米，预计吸引150多个国家约12.1万名专业人士；西班牙农业部长Luis Planas主持开幕。本届主宾产品为马铃薯，“特邀进口国”计划聚焦中国与阿联酋；意大利以322家企业、约7870平方米成为最大海外参展国。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>Europa Press</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://www.europapress.es/madrid/ifema-00444/noticia-planas-inaugura-martes-nueva-edicion-fruit-attraction-2500-empresas-78-paises-20261005165714.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="意大利gala苹果采收收官：产量同比降约15%，果个偏小 意大利（南蒂罗尔）gala苹果采收结束，产量较上年减少约15%，主因果个偏小。特伦蒂诺谷地果园受高温影响明显，高海拔果区表现较好。wapa此前预测意大利gala减产约4%，更精确数据将在11月interpoma展会公布。 agrárunió（转引fruchtportal）" style="--acc:var(--s2)"><a class="n-title" href="https://www.agrarunio.hu/hirek/15613-aprobb-gyumolcsokkel-kisebb-termessel-zarult-a-gala-betakaritasa-olaszorszagban" target="_blank" rel="noopener noreferrer">意大利Gala苹果采收收官：产量同比降约15%，果个偏小</a><p class="n-sum">意大利（南蒂罗尔）Gala苹果采收结束，产量较上年减少约15%，主因果个偏小。特伦蒂诺谷地果园受高温影响明显，高海拔果区表现较好。WAPA此前预测意大利Gala减产约4%，更精确数据将在11月Interpoma展会公布。</p><div class="n-meta"><span class="tag 国际">国际</span><span>AgrárUnió（转引Fruchtportal）</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://www.agrarunio.hu/hirek/15613-aprobb-gyumolcsokkel-kisebb-termessel-zarult-a-gala-betakaritasa-olaszorszagban" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="加拿大bc省苹果：夏季山火后待观察果个，早熟品种偏小 加拿大不列颠哥伦比亚省苹果种植者正观察夏季山火（主要在summerland一带）后的果实膨大情况，gala等早熟品种果个偏小。受高温影响本季提前7—10天开园；ambrosia已开始采收且果个较好，需求强劲、价格与上年健康水平持平。 freshplaza" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.com/north-america/article/9879779/british-columbia-apple-growers-await-fruit-sizing-post-summer-wildfires/" target="_blank" rel="noopener noreferrer">加拿大BC省苹果：夏季山火后待观察果个，早熟品种偏小</a><p class="n-sum">加拿大不列颠哥伦比亚省苹果种植者正观察夏季山火（主要在Summerland一带）后的果实膨大情况，Gala等早熟品种果个偏小。受高温影响本季提前7—10天开园；Ambrosia已开始采收且果个较好，需求强劲、价格与上年健康水平持平。</p><div class="n-meta"><span class="tag 国际">国际</span><span>FreshPlaza</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://www.freshplaza.com/north-america/article/9879779/british-columbia-apple-growers-await-fruit-sizing-post-summer-wildfires/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="希腊hayward猕猴桃新季产量预计增约30%，欧洲价格或维持低位 希腊hayward猕猴桃新季产量预计增长约30%（阿尔塔地区因冰雹影响约增20%）。需求疲软、库存高企，欧洲猕猴桃价格预计维持低位至明年1月底或2月初。希腊正推动出口扩张，本季有望打开越南市场；报道并提到上季至亚洲航运延误严重，原估40天的运输期被拉长至75—80天。 cafef（越南）" style="--acc:var(--s2)"><a class="n-title" href="https://cafef.vn/dat-hon-sau-rieng-sieu-trai-cay-bat-ngo-rot-gia-san-luong-tang-30-sap-do-bo-viet-nam-188261005205002693.chn" target="_blank" rel="noopener noreferrer">希腊Hayward猕猴桃新季产量预计增约30%，欧洲价格或维持低位</a><p class="n-sum">希腊Hayward猕猴桃新季产量预计增长约30%（阿尔塔地区因冰雹影响约增20%）。需求疲软、库存高企，欧洲猕猴桃价格预计维持低位至明年1月底或2月初。希腊正推动出口扩张，本季有望打开越南市场；报道并提到上季至亚洲航运延误严重，原估40天的运输期被拉长至75—80天。</p><div class="n-meta"><span class="tag 国际">国际</span><span>CafeF（越南）</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://cafef.vn/dat-hon-sau-rieng-sieu-trai-cay-bat-ngo-rot-gia-san-luong-tang-30-sap-do-bo-viet-nam-188261005205002693.chn" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="晚富士优果优价、行情略显分化：甘肃静宁4.50—5.20元/斤领跑 中果网10月5日行情显示，晚富士收购价区域分化明显：甘肃静宁纸袋晚富士半商品75#起步4.50—5.20元/斤，客商订货积极；陕西洛川半商品70#以上约3.80元/斤、统货70#起步3.10—3.20元/斤；山东栖霞纸袋红将军75#起步好统货约3.00元/斤、一般统货2.20—2.30元/斤；山东沂源晚富士75#起步仅1.50—2.00元/斤，整体低开明显、客商观望、订货积极性不高。 中果网" style="--acc:var(--s3)"><a class="n-title" href="https://www.pingguo7.cn/hq/show-htm-itemid-23807.html" target="_blank" rel="noopener noreferrer">晚富士优果优价、行情略显分化：甘肃静宁4.50—5.20元/斤领跑</a><p class="n-sum">中果网10月5日行情显示，晚富士收购价区域分化明显：甘肃静宁纸袋晚富士半商品75#起步4.50—5.20元/斤，客商订货积极；陕西洛川半商品70#以上约3.80元/斤、统货70#起步3.10—3.20元/斤；山东栖霞纸袋红将军75#起步好统货约3.00元/斤、一般统货2.20—2.30元/斤；山东沂源晚富士75#起步仅1.50—2.00元/斤，整体低开明显、客商观望、订货积极性不高。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>中果网</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://www.pingguo7.cn/hq/show-htm-itemid-23807.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="江西寻乌：赣南早脐橙抢鲜上市，智能分选定制出海 央视《新闻直播间》10月5日报道，江西寻乌赣南早脐橙抢鲜上市，产区依托智能分选线按不同出口市场需求定制分级，推动赣南脐橙出海销售。 央视网" style="--acc:var(--s3)"><a class="n-title" href="https://tv.cctv.com/2026/10/05/VIDEBtChXx9W9q6G5gzsS8DV261005.shtml" target="_blank" rel="noopener noreferrer">江西寻乌：赣南早脐橙抢鲜上市，智能分选定制出海</a><p class="n-sum">央视《新闻直播间》10月5日报道，江西寻乌赣南早脐橙抢鲜上市，产区依托智能分选线按不同出口市场需求定制分级，推动赣南脐橙出海销售。</p><div class="n-meta"><span class="tag 国内">国内</span><span>央视网</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://tv.cctv.com/2026/10/05/VIDEBtChXx9W9q6G5gzsS8DV261005.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="山西大宁：苹果喜迎丰收 供应国庆市场 央视10月5日报道，山西大宁苹果进入丰收采摘季。全县种植面积2.7万亩，预计总产量约一千万斤，采摘期持续20天、十月中下旬结束；产区推行“一果一码”溯源体系，产品热销全国。 央视网" style="--acc:var(--s3)"><a class="n-title" href="https://tv.cctv.cn/2026/10/05/VIDEMl08oRWeQJ4wt5sMypK7261005.shtml" target="_blank" rel="noopener noreferrer">山西大宁：苹果喜迎丰收 供应国庆市场</a><p class="n-sum">央视10月5日报道，山西大宁苹果进入丰收采摘季。全县种植面积2.7万亩，预计总产量约一千万斤，采摘期持续20天、十月中下旬结束；产区推行“一果一码”溯源体系，产品热销全国。</p><div class="n-meta"><span class="tag 国内">国内</span><span>央视网</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://tv.cctv.cn/2026/10/05/VIDEMl08oRWeQJ4wt5sMypK7261005.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="甘肃陇南：柑橘开始采收 “一树双果”错峰上市 央视《中国三农报道》10月5日报道，甘肃陇南柑橘开始采收，产区采用“一树双果”模式实现错峰上市，拉长供应周期、提升种植效益。 央视网" style="--acc:var(--s3)"><a class="n-title" href="https://tv.cctv.com/2026/10/05/VIDES77LoKoAlnTN1VgXXbss261005.shtml" target="_blank" rel="noopener noreferrer">甘肃陇南：柑橘开始采收 “一树双果”错峰上市</a><p class="n-sum">央视《中国三农报道》10月5日报道，甘肃陇南柑橘开始采收，产区采用“一树双果”模式实现错峰上市，拉长供应周期、提升种植效益。</p><div class="n-meta"><span class="tag 国内">国内</span><span>央视网</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://tv.cctv.com/2026/10/05/VIDES77LoKoAlnTN1VgXXbss261005.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国际" data-search="上海、宁波港拥堵延误最长两周，秘鲁牛油果/蓝莓/葡萄对华出口承压 行业媒体报道，上海与宁波港出现最长两周的船舶延误，船期准班率上海仅21%、宁波34%，对牛油果、蓝莓、葡萄等易腐进口水果造成到货节奏与品质压力，秘鲁对华出口受影响尤为明显。 blueberries consulting" style="--acc:var(--s7)"><a class="n-title" href="https://blueberriesconsulting.com/en/puertos-de-shanghai-y-ningbo-enfrentan-demoras-de-hasta-dos-semanas-como-afecta-al-comercio-peruano/" target="_blank" rel="noopener noreferrer">上海、宁波港拥堵延误最长两周，秘鲁牛油果/蓝莓/葡萄对华出口承压</a><p class="n-sum">行业媒体报道，上海与宁波港出现最长两周的船舶延误，船期准班率上海仅21%、宁波34%，对牛油果、蓝莓、葡萄等易腐进口水果造成到货节奏与品质压力，秘鲁对华出口受影响尤为明显。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>Blueberries Consulting</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://blueberriesconsulting.com/en/puertos-de-shanghai-y-ningbo-enfrentan-demoras-de-hasta-dos-semanas-como-afecta-al-comercio-peruano/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="首都机场口岸24小时通关，“双节”进口生鲜迎通关高峰 北京海关所属首都机场海关实行24小时不间断保障机制，国庆假期货运口岸迎来进口鲜活产品通关高峰；9月以来已进口鲜活货物近600吨、货值超6300万元，包括泰国山竹、马来西亚榴莲等时令水果，快速进入京津冀乃至北方消费市场。同期对非零关税政策红利持续释放，截至8月底北京海关验放零关税货物307批、减税209.5万元。 中非sps合作信息网" style="--acc:var(--s7)"><a class="n-title" href="https://www.chinaafricasps.org/zh/xxdt/xwdt/856526479441989.shtml" target="_blank" rel="noopener noreferrer">首都机场口岸24小时通关，“双节”进口生鲜迎通关高峰</a><p class="n-sum">北京海关所属首都机场海关实行24小时不间断保障机制，国庆假期货运口岸迎来进口鲜活产品通关高峰；9月以来已进口鲜活货物近600吨、货值超6300万元，包括泰国山竹、马来西亚榴莲等时令水果，快速进入京津冀乃至北方消费市场。同期对非零关税政策红利持续释放，截至8月底北京海关验放零关税货物307批、减税209.5万元。</p><div class="n-meta"><span class="tag 国内">国内</span><span>中非SPS合作信息网</span><span>·</span><span>2026-10-06</span><a class="n-link" href="https://www.chinaafricasps.org/zh/xxdt/xwdt/856526479441989.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="东盟水果如何“甜”遍中国：广西口岸前7月进口东盟水果173.35万吨 人民网广西频道10月6日报道，中国—东盟水果贸易持续升温：泰国到广西钦州港海运仅3天，通关最快15秒，48小时可上餐桌。2026年1—7月广西口岸进口东盟水果173.35万吨、货值260.25亿元，同比分别增长6.83%和19.19%；凭祥友谊关承担全国约三分之一的进口榴莲通关，从友谊关到广州7小时、到北京新发地30小时。中老铁路“澜湄快线”将泰国榴莲26小时运抵昆明、48小时内分拨至30多个城市。 人民网广西频道" style="--acc:var(--s8)"><a class="n-title" href="http://gx.people.com.cn/BIG5/n2/2026/1006/c179464-41715021.html" target="_blank" rel="noopener noreferrer">东盟水果如何“甜”遍中国：广西口岸前7月进口东盟水果173.35万吨</a><p class="n-sum">人民网广西频道10月6日报道，中国—东盟水果贸易持续升温：泰国到广西钦州港海运仅3天，通关最快15秒，48小时可上餐桌。2026年1—7月广西口岸进口东盟水果173.35万吨、货值260.25亿元，同比分别增长6.83%和19.19%；凭祥友谊关承担全国约三分之一的进口榴莲通关，从友谊关到广州7小时、到北京新发地30小时。中老铁路“澜湄快线”将泰国榴莲26小时运抵昆明、48小时内分拨至30多个城市。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>人民网广西频道</span><span>·</span><span>2026-10-06</span><a class="n-link" href="http://gx.people.com.cn/BIG5/n2/2026/1006/c179464-41715021.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="越南果蔬出口前9月达74亿美元，10月进入榴莲对华“独家供应”窗口 越南媒体报道，2026年前9个月越南果蔬出口约74亿美元，同比增长约19%。9—10月越南中部高原进入榴莲采收高峰，同期其他出口国几无榴莲可采，越南成为对华鲜榴莲近乎唯一的供应方，预计10月出口维持高位；全年果蔬出口有望达95—100亿美元，榴莲预计贡献40—45亿美元（约占四成）。同时中国对农药残留、注册果园代码（puc）和包装标准的查验趋严。 西贡解放日报（英文版）" style="--acc:var(--s8)"><a class="n-title" href="https://en.sggp.org.vn/vietnams-fruit-and-vegetable-exports-reach-us74-billion-in-first-9-months-post129996.html" target="_blank" rel="noopener noreferrer">越南果蔬出口前9月达74亿美元，10月进入榴莲对华“独家供应”窗口</a><p class="n-sum">越南媒体报道，2026年前9个月越南果蔬出口约74亿美元，同比增长约19%。9—10月越南中部高原进入榴莲采收高峰，同期其他出口国几无榴莲可采，越南成为对华鲜榴莲近乎唯一的供应方，预计10月出口维持高位；全年果蔬出口有望达95—100亿美元，榴莲预计贡献40—45亿美元（约占四成）。同时中国对农药残留、注册果园代码（PUC）和包装标准的查验趋严。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>西贡解放日报（英文版）</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://en.sggp.org.vn/vietnams-fruit-and-vegetable-exports-reach-us74-billion-in-first-9-months-post129996.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国际" data-search="智利北部ovalle早熟车厘子减产60%—70%，部分果园损失超80% 智利北部产区ovalle早熟车厘子（primores）2026/27季预计减产60%—70%，部分生产者损失超过80%、甚至难以进行出口采收。原因包括数周内集中强降雨、冷量积累不足，以及坐果后高温导致根系窒息。早熟品种brooks、nimba预计10月15日前后开始商业量上市，santina受影响最重。此外中部—南部产区面临晚春降雨可能延续至10月甚至11月初、花期霜冻与裂果风险，o&#x27;higgins与maule被认为风险最高。 portalfrutícola" style="--acc:var(--s9)"><a class="n-title" href="https://www.portalfruticola.com/noticias/2026/10/05/cerezas-primores-chile-2/" target="_blank" rel="noopener noreferrer">智利北部Ovalle早熟车厘子减产60%—70%，部分果园损失超80%</a><p class="n-sum">智利北部产区Ovalle早熟车厘子（primores）2026/27季预计减产60%—70%，部分生产者损失超过80%、甚至难以进行出口采收。原因包括数周内集中强降雨、冷量积累不足，以及坐果后高温导致根系窒息。早熟品种Brooks、Nimba预计10月15日前后开始商业量上市，Santina受影响最重。此外中部—南部产区面临晚春降雨可能延续至10月甚至11月初、花期霜冻与裂果风险，O&#x27;Higgins与Maule被认为风险最高。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>PortalFrutícola</span><span>·</span><span>2026-10-05</span><a class="n-link" href="https://www.portalfruticola.com/noticias/2026/10/05/cerezas-primores-chile-2/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="中央气象台10月6日全国秋收秋种气象服务：新疆北部雨雪大风不利收获 中央气象台10月6日发布全国秋收秋种气象服务：未来三天全国秋收区大部天气晴好、适宜收获晾晒；四川南部和云南北部多小雨、部分地区中到大雨，秋收次适宜至不适宜；新疆北部部分地区有小到中雪或雨夹雪并伴大风，对成熟作物收获不利。农业农村部农情调度显示，全国秋粮已收获三成半，西南近七成、长江中下游近五成。 中央气象台" style="--acc:var(--s9)"><a class="n-title" href="https://www.sohu.com/a/1084504123_122014422" target="_blank" rel="noopener noreferrer">中央气象台10月6日全国秋收秋种气象服务：新疆北部雨雪大风不利收获</a><p class="n-sum">中央气象台10月6日发布全国秋收秋种气象服务：未来三天全国秋收区大部天气晴好、适宜收获晾晒；四川南部和云南北部多小雨、部分地区中到大雨，秋收次适宜至不适宜；新疆北部部分地区有小到中雪或雨夹雪并伴大风，对成熟作物收获不利。农业农村部农情调度显示，全国秋粮已收获三成半，西南近七成、长江中下游近五成。</p><div class="n-meta"><span class="tag 国内">国内</span><span>中央气象台</span><span>·</span><span>2026-10-06</span><a class="n-link" href="https://www.sohu.com/a/1084504123_122014422" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-10-06 17:38 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

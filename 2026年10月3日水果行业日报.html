@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.10.03</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.10.03</b> 星期六</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">10</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">国庆假期第三天，苹果新季依旧沉闷：10月3日各产区晚富士大面积上色、仅少量上市，采购商拿货积极性不高、观望明显，局部价格稳中显弱；陕西洛川纸袋晚富士半商品70#以上约3.80元/斤、统货70#起步3.10—3.20元/斤、轻微冰雹果2.50—2.80元/斤，甘肃静宁半商品75#起步4.50—5.20元/斤，山东栖霞晚富士尚未主流交易、仅有红将军尾货3.00元/斤左右，沂源爱妃75#起步3.50—4.00元/斤。柑橘类同步进入上量通道：农业农村部信息中心10月3日数据显示全国主要批发市场橘、柑价格区间在3.60—8.00元/公斤，新疆、山西、北京等销地价高，产区早柑、蜜橘地头价普遍偏低，10月中下旬集中上市后行情承压。企业端两则海外资本动作：Mission Produce 披露美国分销业务重组（关闭三处设施并裁员，遣散、加速折旧与资产退役等支出合计超千万美元），百果园集团10月2日再回购51万股H股、耗资76.24万港元。贸易与区域合作方面，《参考消息》文章指出第23届东博会（9月17—21日南宁）以「共享3.0机遇」对接中国—东盟自贸区3.0版，泰国榴莲等东盟鲜果继续借展会拓展中国市场。全球气象风险集中：厄尔尼诺令秘鲁鲜食葡萄采收提前10—15天、全球蓝莓市场10—11月预计明显趋紧，西班牙瓦伦西亚再遭冰雹致500公顷作物受损、柿子几近绝收，泰国尖竹汶榴莲园10月1日遭强风袭击大量盛果树倒伏。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="百果园集团10月2日回购51万股h股 耗资76.24万港元 百果园集团（02411.hk）于2026年10月2日在联交所回购51万股h股，回购价每股1.48至1.515港元，耗资762,440港元（约76.24万港元）。该批股份拟持作库存股份、不拟注销；本次购回占购回前已发行股份（不含库存股份）总数的0.026%。购回后公司已发行股份总数维持2,000,721,250股，其中不含库存股份的已发行股份结存1,960,026,750股，库存股份增至40,694,500股。此次回购依据2026年6月5日通过的购回授权进行，可购回股份总数为198,346,275股；购回后30日内（至2026年11月1日）暂停发行新股或出售库存股份。 百果园集团（02411.hk） 证券之星（港交所翌日披露报表）" style="--acc:var(--s1)"><a class="n-title" href="https://wap.stockstar.com/detail/IG2026100200004991" target="_blank" rel="noopener noreferrer">百果园集团10月2日回购51万股H股 耗资76.24万港元</a><p class="n-sum">百果园集团（02411.HK）于2026年10月2日在联交所回购51万股H股，回购价每股1.48至1.515港元，耗资762,440港元（约76.24万港元）。该批股份拟持作库存股份、不拟注销；本次购回占购回前已发行股份（不含库存股份）总数的0.026%。购回后公司已发行股份总数维持2,000,721,250股，其中不含库存股份的已发行股份结存1,960,026,750股，库存股份增至40,694,500股。此次回购依据2026年6月5日通过的购回授权进行，可购回股份总数为198,346,275股；购回后30日内（至2026年11月1日）暂停发行新股或出售库存股份。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">百果园集团（02411.HK）</span><span>证券之星（港交所翌日披露报表）</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://wap.stockstar.com/detail/IG2026100200004991" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="mission produce披露美国分销业务重组 相关支出超千万美元 mission produce（nasdaq: avo）披露美国分销业务重组方案：将新泽西 swedesboro 的业务并入单一设施、把达拉斯地区设施合并至得州 garland，并关闭位于佛罗里达州杰克逊维尔的原 calavo 设施，同时实施与关厂及加州部分业务整合相关的裁员。预计支出包括员工遣散及相关福利约140万美元、加速折旧约860万美元、资产退役义务约540万美元，租约终止成本暂无法确定。公司称无法对总成本作出善意估计，将在后续 sec 文件中披露最终估算。该重组方案最早于9月17日披露，是公司在2026年5月28日完成对 calavo growers 收购后整合分销网络的一环。 mission produce（avo） 经济观察网（sec 8-k）" style="--acc:var(--s2)"><a class="n-title" href="http://www.eeo.com.cn/2026/1003/1055726.shtml" target="_blank" rel="noopener noreferrer">Mission Produce披露美国分销业务重组 相关支出超千万美元</a><p class="n-sum">Mission Produce（NASDAQ: AVO）披露美国分销业务重组方案：将新泽西 Swedesboro 的业务并入单一设施、把达拉斯地区设施合并至得州 Garland，并关闭位于佛罗里达州杰克逊维尔的原 Calavo 设施，同时实施与关厂及加州部分业务整合相关的裁员。预计支出包括员工遣散及相关福利约140万美元、加速折旧约860万美元、资产退役义务约540万美元，租约终止成本暂无法确定。公司称无法对总成本作出善意估计，将在后续 SEC 文件中披露最终估算。该重组方案最早于9月17日披露，是公司在2026年5月28日完成对 Calavo Growers 收购后整合分销网络的一环。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">Mission Produce（AVO）</span><span>经济观察网（SEC 8-K）</span><span>·</span><span>2026-10-03</span><a class="n-link" href="http://www.eeo.com.cn/2026/1003/1055726.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="chiquita将亮相马德里fruit attraction 发布yelloway抗病香蕉最新进展 chiquita brands international 将于10月6—8日在马德里 ifema 举办的 fruit attraction 展会（10号馆10c11展位）展示其推动香蕉品类发展的多项举措。创新方面，公司公布 yelloway 抗病香蕉项目的最新进展，包括在菲律宾田间试验取得的积极结果，以及具备商业化品质特征的香蕉杂交品种研发推进情况。此外还包括：减少食物浪费并把更多农产品送往美欧有需要人群的可持续项目；10月整月的「small change, big difference」乳腺癌关注活动（标志性蓝色贴纸改为粉色、miss chiquita 首次由真人扮演）；以及面向零售商的购物者营销、终端陈列与商品化方案。首席营销官 marco volpi 表示展会是连接合作伙伴、推动香蕉品类增长的重要机会。 chiquita freshplaza" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.es/latin-america/article/9879532/chiquita-presenta-en-fruit-attraction-sus-avances-para-impulsar-el-futuro-de-la-banana/" target="_blank" rel="noopener noreferrer">Chiquita将亮相马德里Fruit Attraction 发布Yelloway抗病香蕉最新进展</a><p class="n-sum">Chiquita Brands International 将于10月6—8日在马德里 IFEMA 举办的 Fruit Attraction 展会（10号馆10C11展位）展示其推动香蕉品类发展的多项举措。创新方面，公司公布 Yelloway 抗病香蕉项目的最新进展，包括在菲律宾田间试验取得的积极结果，以及具备商业化品质特征的香蕉杂交品种研发推进情况。此外还包括：减少食物浪费并把更多农产品送往美欧有需要人群的可持续项目；10月整月的「Small Change, Big Difference」乳腺癌关注活动（标志性蓝色贴纸改为粉色、Miss Chiquita 首次由真人扮演）；以及面向零售商的购物者营销、终端陈列与商品化方案。首席营销官 Marco Volpi 表示展会是连接合作伙伴、推动香蕉品类增长的重要机会。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">Chiquita</span><span>FreshPlaza</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://www.freshplaza.es/latin-america/article/9879532/chiquita-presenta-en-fruit-attraction-sus-avances-para-impulsar-el-futuro-de-la-banana/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="中果网：客商观望 苹果交易沉闷 晚富士仅少量上市 中果网10月3日行情综述显示，苹果各产区晚富士大面积上色中，仅有少量上市交易，采购商拿货积极性不高、观望明显，行情疲软，局部价格稳中显弱。山东栖霞晚富士大面积卸袋上色、上货量零星，主流交易仍需等待，仅有纸袋红将军75#起步好统货3.00元/斤左右、一般统货2.20—2.30元/斤；沂源仅有维纳斯75#起步2.20—2.50元/斤、爱妃75#起步3.50—4.00元/斤。陕西洛川烟富系列片红富士少量上市、走货不快，受冰雹影响价格显乱，纸袋晚富士半商品70#以上约3.80元/斤、统货70#起步3.10—3.20元/斤、轻微冰雹果70#起步2.50—2.80元/斤；渭南晚富士好统货75#以上约2.50元/斤。山西运城临猗晚富士交易尚未开始、处于空档期，早熟富士75#以上约1.70元/斤。甘肃静宁以山上优质货源订货为主，客商积极性下滑、价格略承压，纸袋晚富士半商品75#起步4.50—5.20元/斤。 中果网" style="--acc:var(--s3)"><a class="n-title" href="https://www.pingguo7.cn/hq/show-htm-itemid-23800.html" target="_blank" rel="noopener noreferrer">中果网：客商观望 苹果交易沉闷 晚富士仅少量上市</a><p class="n-sum">中果网10月3日行情综述显示，苹果各产区晚富士大面积上色中，仅有少量上市交易，采购商拿货积极性不高、观望明显，行情疲软，局部价格稳中显弱。山东栖霞晚富士大面积卸袋上色、上货量零星，主流交易仍需等待，仅有纸袋红将军75#起步好统货3.00元/斤左右、一般统货2.20—2.30元/斤；沂源仅有维纳斯75#起步2.20—2.50元/斤、爱妃75#起步3.50—4.00元/斤。陕西洛川烟富系列片红富士少量上市、走货不快，受冰雹影响价格显乱，纸袋晚富士半商品70#以上约3.80元/斤、统货70#起步3.10—3.20元/斤、轻微冰雹果70#起步2.50—2.80元/斤；渭南晚富士好统货75#以上约2.50元/斤。山西运城临猗晚富士交易尚未开始、处于空档期，早熟富士75#以上约1.70元/斤。甘肃静宁以山上优质货源订货为主，客商积极性下滑、价格略承压，纸袋晚富士半商品75#起步4.50—5.20元/斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>中果网</span><span>·</span><span>2026-10-03</span><a class="n-link" href="https://www.pingguo7.cn/hq/show-htm-itemid-23800.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="10月3日全国主要批发市场橘、柑价格行情：销地价3.60—8.00元/公斤 农业农村部信息中心10月3日发布全国主要批发市场橘、柑价格行情（单位：元/公斤）：北京京丰岳各庄6.40、天津武清大沙河4.00、天津碧城4.40、河北怀来京西3.60、山西太原河西6.50、山西朔州大运6.00、江苏无锡朝阳4.84、亳州农产品5.00、黄淮农产品4.50、武威昊天3.80、临夏富临4.40、兰州高原夏菜5.38、新疆绿珠九鼎8.00。销地价格区间拉大至3.60—8.00元/公斤，西北与华北高价区明显高于产区地头价，反映国庆假期销区走货与产区上量节奏错配；随着10月中下旬早、中、晚熟柑橘集中上市，行情预计承压。 证券之星（农业农村部信息中心）" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026100300000492.shtml" target="_blank" rel="noopener noreferrer">10月3日全国主要批发市场橘、柑价格行情：销地价3.60—8.00元/公斤</a><p class="n-sum">农业农村部信息中心10月3日发布全国主要批发市场橘、柑价格行情（单位：元/公斤）：北京京丰岳各庄6.40、天津武清大沙河4.00、天津碧城4.40、河北怀来京西3.60、山西太原河西6.50、山西朔州大运6.00、江苏无锡朝阳4.84、亳州农产品5.00、黄淮农产品4.50、武威昊天3.80、临夏富临4.40、兰州高原夏菜5.38、新疆绿珠九鼎8.00。销地价格区间拉大至3.60—8.00元/公斤，西北与华北高价区明显高于产区地头价，反映国庆假期销区走货与产区上量节奏错配；随着10月中下旬早、中、晚熟柑橘集中上市，行情预计承压。</p><div class="n-meta"><span class="tag 国内">国内</span><span>证券之星（农业农村部信息中心）</span><span>·</span><span>2026-10-03</span><a class="n-link" href="https://futures.stockstar.com/IG2026100300000492.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="《参考消息》刊文：东博会为中国—东盟自贸区注入新动能 新华社10月2日电，《参考消息》近日刊发文章《东博会为中国—东盟自贸区注入新动能》，新华网10月3日转载。第23届中国—东盟博览会、中国—东盟商务与投资峰会于9月17—21日在广西南宁举行，以「共享3.0机遇，共创美好生活」为主题，汇聚73个国家和地区的3432家企业参展（较上届增长5.3%）、国际参展企业占比30.5%，成为率先系统对接中国—东盟自贸区3.0版的大型展会。展会突出数字经济、绿色低碳等领域合作，首次设立东盟国家需求展区并发布需求清单，以「东盟出题、中国解题」模式推动供需精准对接。文章提到泰国参展商贾图蓬·肯维尼库尔第五次参展并带来榴莲鲜果，希望进一步拓宽中国市场销路；东盟国家展区集中陈列泰国榴莲、越南咖啡、印尼燕窝等产品。 新华网（《参考消息》）" style="--acc:var(--s8)"><a class="n-title" href="http://gx.xinhuanet.com/20261003/5c8aa9f735984ba6940b873cb13c5a6b/c.html" target="_blank" rel="noopener noreferrer">《参考消息》刊文：东博会为中国—东盟自贸区注入新动能</a><p class="n-sum">新华社10月2日电，《参考消息》近日刊发文章《东博会为中国—东盟自贸区注入新动能》，新华网10月3日转载。第23届中国—东盟博览会、中国—东盟商务与投资峰会于9月17—21日在广西南宁举行，以「共享3.0机遇，共创美好生活」为主题，汇聚73个国家和地区的3432家企业参展（较上届增长5.3%）、国际参展企业占比30.5%，成为率先系统对接中国—东盟自贸区3.0版的大型展会。展会突出数字经济、绿色低碳等领域合作，首次设立东盟国家需求展区并发布需求清单，以「东盟出题、中国解题」模式推动供需精准对接。文章提到泰国参展商贾图蓬·肯维尼库尔第五次参展并带来榴莲鲜果，希望进一步拓宽中国市场销路；东盟国家展区集中陈列泰国榴莲、越南咖啡、印尼燕窝等产品。</p><div class="n-meta"><span class="tag 国际">国际</span><span>新华网（《参考消息》）</span><span>·</span><span>2026-10-03</span><a class="n-link" href="http://gx.xinhuanet.com/20261003/5c8aa9f735984ba6940b873cb13c5a6b/c.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国际" data-search="厄尔尼诺令秘鲁鲜食葡萄采收提前10—15天 产季预计提前两周结束 freshplaza 10月2日报道，fruit growers alianza 的 boris manz 表示，受厄尔尼诺带来的高温影响，秘鲁皮乌拉（piura）鲜食葡萄采收于第38周末启动、比预期提前，较常年提前10—15天，本产季预计比往年提前约两周结束。果品整体质量良好，但果个略低于常规水平。首批小批量货预计第42/43周到英国与欧洲，11月放量。品种结构上，白无籽以 sugarcrisp 打头，随后是 sweet globe 与 autumn crisp；红无籽以 allison 为主；黑无籽以 sweet favors 打头。秘鲁是中国进口葡萄的重要来源地，其产季窗口前移将改变南半球葡萄的全球供应节奏。 freshplaza" style="--acc:var(--s9)"><a class="n-title" href="https://www.freshplaza.com/latin-america/article/9878915/el-nino-has-brought-the-harvest-forward-by-10-15-days/" target="_blank" rel="noopener noreferrer">厄尔尼诺令秘鲁鲜食葡萄采收提前10—15天 产季预计提前两周结束</a><p class="n-sum">FreshPlaza 10月2日报道，Fruit Growers Alianza 的 Boris Manz 表示，受厄尔尼诺带来的高温影响，秘鲁皮乌拉（Piura）鲜食葡萄采收于第38周末启动、比预期提前，较常年提前10—15天，本产季预计比往年提前约两周结束。果品整体质量良好，但果个略低于常规水平。首批小批量货预计第42/43周到英国与欧洲，11月放量。品种结构上，白无籽以 SugarCrisp 打头，随后是 Sweet Globe 与 Autumn Crisp；红无籽以 Allison 为主；黑无籽以 Sweet Favors 打头。秘鲁是中国进口葡萄的重要来源地，其产季窗口前移将改变南半球葡萄的全球供应节奏。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>FreshPlaza</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://www.freshplaza.com/latin-america/article/9878915/el-nino-has-brought-the-harvest-forward-by-10-15-days/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="厄尔尼诺效应显现 全球蓝莓市场10—11月预计明显趋紧 freshplaza 10月2日报道，fruit freshi 的 jacco van paasschen 表示，本季海外蓝莓产季开局偏早，早期秘鲁货源集中到货，但自第35周起厄尔尼诺影响显现，可用货量显著下降并直接反映在出口数据上。欧洲市场供需尚算平衡（得益于仍有欧洲本土供应），但10月与11月预计将明显趋紧——秘鲁货量下滑叠加美国需求强劲，将持续挤压欧洲供给，南非货量无法弥补缺口。零售商对促销态度谨慎、消费者更看价格，小规格包装预计扮演更重要角色，fruit freshi 计划在马德里 fruit attraction 推出新的消费者包装。秘鲁是中国最大蓝莓供应国，其供货收缩将直接传导至中国市场。 freshplaza" style="--acc:var(--s9)"><a class="n-title" href="https://www.freshplaza.com/asia/article/9879068/blueberry-supply-and-demand-are-balanced-but-it-s-a-fine-line/" target="_blank" rel="noopener noreferrer">厄尔尼诺效应显现 全球蓝莓市场10—11月预计明显趋紧</a><p class="n-sum">FreshPlaza 10月2日报道，Fruit Freshi 的 Jacco van Paasschen 表示，本季海外蓝莓产季开局偏早，早期秘鲁货源集中到货，但自第35周起厄尔尼诺影响显现，可用货量显著下降并直接反映在出口数据上。欧洲市场供需尚算平衡（得益于仍有欧洲本土供应），但10月与11月预计将明显趋紧——秘鲁货量下滑叠加美国需求强劲，将持续挤压欧洲供给，南非货量无法弥补缺口。零售商对促销态度谨慎、消费者更看价格，小规格包装预计扮演更重要角色，Fruit Freshi 计划在马德里 Fruit Attraction 推出新的消费者包装。秘鲁是中国最大蓝莓供应国，其供货收缩将直接传导至中国市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>FreshPlaza</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://www.freshplaza.com/asia/article/9879068/blueberry-supply-and-demand-are-balanced-but-it-s-a-fine-line/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="西班牙瓦伦西亚再遭冰雹 500公顷作物受损、柿子几近绝收 onda cero 10月2日报道，西班牙瓦伦西亚自治区 la ribera alta 与 la costera 遭强冰雹袭击，约500公顷农作物受损、损失估计400万欧元。受损最重的是柿子（caqui），部分地块在主要采收期前数天减产达80%—100%，这是当地三个月内第三次严重天气事件（8月高温、9月冰雹、10月冰雹）。柑橘（橙、橘）与牛油果也遭受损害。ava-asaja 要求提供直接援助与税收措施，并敦促 agroseguro 加快定损。同一轮降雨对内陆旱区与畜牧业有利，但威胁到约15%尚未收完的水稻。西班牙是中国进口柑橘（橙、橘）的重要来源地之一，减产或推高相关对华供应成本。 onda cero（ava-asaja）" style="--acc:var(--s9)"><a class="n-title" href="https://www.ondacero.es/emisoras/comunidad-valenciana/alzira/noticias/pedrisco-deja-danos-500-hectareas-cultivos-ribera-valorados-4-millones-euros_202610026abfa8c9916cda53dca27f62.html" target="_blank" rel="noopener noreferrer">西班牙瓦伦西亚再遭冰雹 500公顷作物受损、柿子几近绝收</a><p class="n-sum">Onda Cero 10月2日报道，西班牙瓦伦西亚自治区 La Ribera Alta 与 La Costera 遭强冰雹袭击，约500公顷农作物受损、损失估计400万欧元。受损最重的是柿子（caqui），部分地块在主要采收期前数天减产达80%—100%，这是当地三个月内第三次严重天气事件（8月高温、9月冰雹、10月冰雹）。柑橘（橙、橘）与牛油果也遭受损害。AVA-ASAJA 要求提供直接援助与税收措施，并敦促 Agroseguro 加快定损。同一轮降雨对内陆旱区与畜牧业有利，但威胁到约15%尚未收完的水稻。西班牙是中国进口柑橘（橙、橘）的重要来源地之一，减产或推高相关对华供应成本。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>Onda Cero（AVA-ASAJA）</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://www.ondacero.es/emisoras/comunidad-valenciana/alzira/noticias/pedrisco-deja-danos-500-hectareas-cultivos-ribera-valorados-4-millones-euros_202610026abfa8c9916cda53dca27f62.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="泰国尖竹汶榴莲园遭强风袭击 大量盛果树倒伏 泰国媒体报道，10月1日凌晨强风伴随持续降雨袭击尖竹汶府（chanthaburi）na yai am 县 chang kham 区，整个分区受影响。榴莲园受损严重：种植者 nikhom sapphokha 约15莱（rai）果园中有13株榴莲树被吹断或连根拔起，树龄35—40年，单株产量300—400公斤、部分达700公斤，每株价值数万泰铢；另一位种植者 rattiya sapphokha 也有12—13株榴莲树倒伏，树龄约30—40年。农户称事前没有任何预警。此前连日降雨已使土壤过湿，强旋风来袭导致果树被连根拔起。尖竹汶是泰国对华榴莲出口的核心产区，盛果期大树损毁将影响后续产能。 siam focus time（泰国）" style="--acc:var(--s9)"><a class="n-title" href="https://www.siamfocustime.com/807980/" target="_blank" rel="noopener noreferrer">泰国尖竹汶榴莲园遭强风袭击 大量盛果树倒伏</a><p class="n-sum">泰国媒体报道，10月1日凌晨强风伴随持续降雨袭击尖竹汶府（Chanthaburi）Na Yai Am 县 Chang Kham 区，整个分区受影响。榴莲园受损严重：种植者 Nikhom Sapphokha 约15莱（rai）果园中有13株榴莲树被吹断或连根拔起，树龄35—40年，单株产量300—400公斤、部分达700公斤，每株价值数万泰铢；另一位种植者 Rattiya Sapphokha 也有12—13株榴莲树倒伏，树龄约30—40年。农户称事前没有任何预警。此前连日降雨已使土壤过湿，强旋风来袭导致果树被连根拔起。尖竹汶是泰国对华榴莲出口的核心产区，盛果期大树损毁将影响后续产能。</p><div class="n-meta"><span class="tag 国际">国际</span><span>Siam Focus Time（泰国）</span><span>·</span><span>2026-10-02</span><a class="n-link" href="https://www.siamfocustime.com/807980/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-10-03 18:28 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
