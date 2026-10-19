@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>进口柑橘验货台账 · 附表</title>
+<style>
+  :root{
+    --navy:#17417A; --ink:#1A1A1A; --body:#3E3E3E; --muted:#6B7280;
+    --line:#E5E8ED; --bg:#FFFFFF; --soft:#F4F7FB; --card:#FFFFFF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --navy:#7BA7DE; --ink:#E9EBEF; --body:#C3C7CE; --muted:#8B919B;
+      --line:#2A2F38; --bg:#14171C; --soft:#1B2029; --card:#1B2029;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+                "Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    font-size:16px; line-height:1.85; letter-spacing:.4px;
+    -webkit-text-size-adjust:100%;
+    padding:0 18px 56px;
+  }
+  .wrap{max-width:660px; margin:0 auto;}
+  header{padding:38px 0 22px; border-bottom:1px solid var(--line);}
+  .eyebrow{
+    font-size:12.5px; letter-spacing:2px; color:var(--navy);
+    font-weight:600; margin:0 0 10px;
+  }
+  h1{
+    margin:0 0 12px; font-size:25px; line-height:1.4; color:var(--ink);
+    font-weight:700; letter-spacing:.5px;
+  }
+  .sub{margin:0; font-size:15px; color:var(--muted); line-height:1.8;}
+  h2{
+    margin:40px 0 14px; padding-left:11px; font-size:17.5px; color:var(--ink);
+    font-weight:700; border-left:4px solid var(--navy); line-height:1.5;
+    letter-spacing:.5px;
+  }
+  p{margin:0 0 16px;}
+  a{color:var(--navy);}
+  .dl{
+    display:block; margin:14px 0 0; padding:18px 20px;
+    background:var(--navy); color:#fff !important; text-decoration:none;
+    border-radius:8px; text-align:center; font-size:17px; font-weight:700;
+    letter-spacing:1px;
+  }
+  .dl.sec{
+    background:transparent; color:var(--navy) !important;
+    border:1.5px solid var(--navy); font-size:16px; padding:15px 20px;
+  }
+  .dl small{display:block; margin-top:5px; font-size:12.5px; font-weight:400;
+            opacity:.82; letter-spacing:.3px;}
+  .dl.sec small{opacity:.72;}
+  .hint{font-size:13px; color:var(--muted); text-align:center; margin:14px 0 8px;}
+  ol.steps{margin:0 0 16px; padding-left:0; list-style:none; counter-reset:s;}
+  ol.steps li{
+    counter-increment:s; position:relative; margin:0 0 14px; padding-left:36px;
+    font-size:15.5px;
+  }
+  ol.steps li::before{
+    content:counter(s); position:absolute; left:0; top:2px;
+    width:24px; height:24px; line-height:24px; text-align:center;
+    background:var(--navy); color:#fff; border-radius:50%;
+    font-size:13px; font-weight:700;
+  }
+  ol.steps b{color:var(--ink);}
+  .fields{margin:0;}
+  .fld{
+    padding:13px 0; border-bottom:1px solid var(--line);
+  }
+  .fld:first-child{border-top:1px solid var(--line);}
+  .fld dt{
+    font-weight:700; color:var(--navy); font-size:15.5px; margin:0 0 4px;
+  }
+  .fld dd{margin:0; font-size:14.5px; line-height:1.8; color:var(--body);}
+  .fld dd .where{color:var(--muted);}
+  .tips{
+    margin:22px 0 0; padding:18px 20px; background:var(--soft);
+    border-left:3px solid var(--navy); border-radius:0 6px 6px 0;
+    font-size:14.5px; line-height:1.85;
+  }
+  .tips p{margin:0 0 11px;}
+  .tips p:last-child{margin:0;}
+  footer{
+    margin-top:48px; padding-top:22px; border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted); text-align:center; line-height:1.9;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">果市一线笔记 · 附表</p>
+    <h1>进口柑橘验货台账</h1>
+    <p class="sub">《一箱一箱翻完进口橘橙的箱标，我记下几个细节》里说的那张表。<br>
+       拆一箱、记一行。箱面印什么就填什么。</p>
+  </header>
+
+  <a class="dl" href="citrus-ledger.xlsx"
+     download="进口柑橘验货台账_40箱整理版.xlsx">
+    下载整理版 · 40 箱
+    <small>Excel，约 14 MB（里面带箱标实拍，建议连 Wi-Fi）</small>
+  </a>
+  <a class="dl sec" href="citrus-ledger-blank.xlsx"
+     download="进口柑橘验货台账_空表.xlsx">
+    下载空表
+    <small>自己拆箱的时候填，含台账页 + 字段说明页</small>
+  </a>
+  <p class="hint">点不开的话，把本页链接复制到手机浏览器里打开</p>
+
+  <h2>整理版里有什么</h2>
+  <p>40 箱进口橙，一箱一行。南非、澳洲都有。每一行记的是那一箱箱面上印的东西：产地、出口商/包装厂、品牌、品种、箱型、规格计数、等级、PUC、果园号、PHC、GGN、冷库、批次、采后药剂处理，最后一格贴那一箱的箱标照片。</p>
+  <p>里面有几处我自己也拿不准的，照实记着，没有替它圆过去。表跟着文章一起看。</p>
+
+  <h2>怎么填：拆箱时顺手拍四张</h2>
+  <ol class="steps">
+    <li><b>商业信息面整面</b>——箱子摆正了拍，别歪着拍。这张用来看整张标签的版式和印字</li>
+    <li><b>PUC / PHC 那一栏特写</b>——字小，一定要凑近。果园号、包装厂号、冷库号都在这一带</li>
+    <li><b>侧面或顶面的日期、批次</b>——装箱日期、Pack Ref、Batch 一般打在这里</li>
+    <li><b>规格计数那一栏</b>——Count / Size，比如 4/56</li>
+  </ol>
+  <p>四张照片，加一条到货日期，一箱货的可追溯信息就齐了。回到电脑上对着照片填，比对着箱子填快。</p>
+
+  <h2>字段说明</h2>
+  <p>整理版和空表是同一套列，下面这些格子都是指什么。</p>
+  <dl class="fields">
+    <div class="fld"><dt>序号</dt><dd>自己按拆箱顺序编，一行一箱。</dd></div>
+    <div class="fld"><dt>到货日期</dt><dd>货到市场那天，不是你拆箱那天。</dd></div>
+    <div class="fld"><dt>产地国家</dt><dd><span class="where">箱标 Origin。</span>一般印国家名，如 SOUTH AFRICA。</dd></div>
+    <div class="fld"><dt>出口商 / 包装厂</dt><dd><span class="where">Brand/Mark 那一带，加箱子底部的出口商全称。</span>贸易主体。同一家出口商可能对接好几家包装厂。</dd></div>
+    <div class="fld"><dt>品牌</dt><dd><span class="where">箱面印得最大的那个 logo。</span>商业品牌，未必等于出口商名。</dd></div>
+    <div class="fld"><dt>品种</dt><dd><span class="where">Variety。</span>如 Midknights、Witkrans Navelate。括号里的类型（Valencia / Navel）也记上。</dd></div>
+    <div class="fld"><dt>品类</dt><dd>橙 / 柑 / 橘 / 葡萄柚 / 柠檬，自己归类。</dd></div>
+    <div class="fld"><dt>包装箱型</dt><dd><span class="where">Pack。</span>如 A15C。</dd></div>
+    <div class="fld"><dt>计数规格</dt><dd><span class="where">Size / Count。</span>如 4/56，写清楚是每箱几个。</dd></div>
+    <div class="fld"><dt>等级</dt><dd><span class="where">Class / Cat。</span>Class 1、Class 2，或者混级时印的 COMPOSITE。</dd></div>
+    <div class="fld"><dt>PUC</dt><dd><span class="where">PUC 一栏。</span>Production Unit Code，生产单位＝农场。南非 DALRRD 注册，一个码对一家。现在也在改叫 FBO 代码。</dd></div>
+    <div class="fld"><dt>果园号</dt><dd><span class="where">Orchard / Store。</span>果园或库房的登记编号。</dd></div>
+    <div class="fld"><dt>PHC / Depot</dt><dd><span class="where">PHC / Depot 一栏。</span>Packhouse Code，在哪儿包的。</dd></div>
+    <div class="fld"><dt>GGN</dt><dd><span class="where">GGN。</span>GLOBALG.A.P. 认证编号。</dd></div>
+    <div class="fld"><dt>冷库 / 仓储</dt><dd><span class="where">Cooling Facility。</span>存在哪个库。箱面印 Cooling Facility，南非官方登记体系里叫 CCS。</dd></div>
+    <div class="fld"><dt>批次 / 日期编码</dt><dd><span class="where">Batch / Pack Ref。</span>包装批次和日期，照抄，别自己换算。</dd></div>
+    <div class="fld"><dt>采后药剂处理</dt><dd><span class="where">Treated with。</span>照抄箱面原文，别省略成分名。</dd></div>
+    <div class="fld"><dt>是否 Sunkist 贴牌</dt><dd>填 是 / 否。</dd></div>
+    <div class="fld"><dt>备注</dt><dd>开箱当时的口感、硬度、损耗、异常，趁记得赶紧写。</dd></div>
+    <div class="fld"><dt>标签图片</dt><dd>照片文件名，或者把图直接插到这一格。</dd></div>
+  </dl>
+
+  <div class="tips">
+    <p>品牌、出口商、品种这些，箱面印什么就填什么，不要自己改成中文名——回头对不上。</p>
+    <p>同一批货如果分了几箱抽检，每箱单独一行，不要合并。</p>
+    <p>拍完照当天就填。隔三天再看照片，很多当时一眼能认的东西就认不出了。</p>
+    <p>澳洲箱是另一套体系（包装厂号、包装棚号、种植者名），PUC / PHC 那几栏会空着，正常。</p>
+  </div>
+
+  <footer>
+    果市一线笔记 · 记的是市场上看得见、摸得着的东西<br>
+    表格内容请自行核对后使用
+  </footer>
+
+</div>
+</body>
+</html>

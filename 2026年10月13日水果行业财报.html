@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国内外头部水果企业及种植产业财报速览 · 2026年中报季</title>
+<style>
+  :root{
+    --bg:#f6f7f4; --card:#ffffff; --ink:#1a2b22; --sub:#5c6b63;
+    --line:#e4e8e2; --green:#1f7a3d; --green-bg:#e7f3ea;
+    --red:#c0392b; --red-bg:#fdecea; --amber:#b5791a; --amber-bg:#fdf3e2;
+    --blue:#2c5f8a; --blue-bg:#e9f1f8; --violet:#6b4fa0; --violet-bg:#efeaf8; --gray:#8a918d;
+    --shadow:0 1px 3px rgba(20,40,30,.06),0 4px 16px rgba(20,40,30,.05);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121613; --card:#1b211c; --ink:#e8efe9; --sub:#9aa79f;
+      --line:#2c362f; --green:#6fd08f; --green-bg:#16301f;
+      --red:#ff8f84; --red-bg:#3a1d1a; --amber:#e3b262; --amber-bg:#3a2e15;
+      --blue:#8cbce0; --blue-bg:#16283a; --violet:#b39df0; --violet-bg:#241b3a; --gray:#7d8981;
+      --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6; padding:24px 16px 60px;
+  }
+  .wrap{max-width:1020px; margin:0 auto;}
+  header{margin-bottom:24px;}
+  .kicker{color:var(--green); font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase;}
+  h1{font-size:26px; font-weight:800; margin:6px 0 6px; letter-spacing:-.01em;}
+  .meta{color:var(--sub); font-size:13px;}
+  .meta .dot{margin:0 8px; opacity:.5;}
+  .summary{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 18px; margin:18px 0 22px; font-size:14.5px;
+  }
+  .summary b{color:var(--green);}
+  .summary .tag{display:inline-block; padding:1px 9px; border-radius:20px; font-size:12px; font-weight:600; margin:0 2px;}
+  .tag.done{background:var(--green-bg); color:var(--green);}
+  .tag.pend{background:var(--amber-bg); color:var(--amber);}
+  .tag.miss{background:var(--red-bg); color:var(--red);}
+  .policy{
+    background:var(--blue-bg); border:1px solid var(--line); border-radius:12px;
+    padding:12px 16px; font-size:12.5px; color:var(--sub); margin-bottom:26px;
+  }
+  .policy b{color:var(--ink);}
+  .policy .n{display:inline-block; width:18px; height:18px; line-height:18px; text-align:center;
+    border-radius:50%; background:var(--blue); color:#fff; font-size:11px; font-weight:700; margin-right:6px;}
+  section{margin-bottom:34px;}
+  h2{font-size:19px; font-weight:800; display:flex; align-items:center; gap:9px; margin-bottom:14px; padding-bottom:9px; border-bottom:2px solid var(--line);}
+  h2 .bar{width:5px; height:20px; border-radius:3px; background:var(--green); display:inline-block;}
+  h2 .cnt{font-size:12px; color:var(--sub); font-weight:600;}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 16px 13px; display:flex; flex-direction:column; gap:8px;
+  }
+  .card .top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+  .card .name{font-weight:800; font-size:15.5px;}
+  .card .code{font-size:12px; color:var(--sub); font-weight:500;}
+  .badge{font-size:11px; font-weight:700; padding:2px 9px; border-radius:20px; white-space:nowrap;}
+  .badge.done{background:var(--green-bg); color:var(--green);}
+  .badge.pend{background:var(--amber-bg); color:var(--amber);}
+  .badge.miss{background:var(--red-bg); color:var(--red);}
+  .badge.blue{background:var(--blue-bg); color:var(--blue);}
+  .badge.violet{background:var(--violet-bg); color:var(--violet);}
+  .card .kpis{display:flex; flex-wrap:wrap; gap:6px;}
+  .kpi{
+    background:var(--bg); border:1px solid var(--line); border-radius:9px;
+    padding:4px 9px; font-size:12.5px; color:var(--sub);
+  }
+  .kpi b{color:var(--ink); font-size:13px;}
+  .kpi b.up{color:var(--green);} .kpi b.down{color:var(--red);} .kpi b.warn{color:var(--amber);}
+  .card .note{font-size:13px; color:var(--sub); flex:1;}
+  .card .note b{color:var(--ink); font-weight:600;}
+  .srcs{margin-top:2px; display:flex; flex-wrap:wrap; align-items:center; gap:4px;}
+  .s-grp{font-size:11px; font-weight:700; color:var(--gray); margin-right:2px; letter-spacing:.02em;}
+  .s-grp.off{color:var(--green);}
+  .src{
+    display:inline-flex; align-items:center; gap:4px; text-decoration:none;
+    color:var(--blue); font-size:12px; font-weight:600;
+    border:1px solid var(--line); background:var(--bg);
+    padding:2px 9px; border-radius:20px; margin:2px 2px 2px 0;
+    transition:all .15s;
+  }
+  .src:hover{background:var(--blue-bg); border-color:var(--blue);}
+  .src.off{color:var(--green); border-color:var(--green); background:var(--green-bg);}
+  .src.off:hover{background:var(--green-bg); opacity:.85;}
+  .src svg{width:10px; height:10px; flex:none;}
+  footer{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); color:var(--gray); font-size:12px;}
+  footer ul{margin:8px 0 0 18px;}
+  .legend{display:flex; flex-wrap:wrap; gap:14px; font-size:12.5px; color:var(--sub); margin-top:10px;}
+  .legend .item{display:flex; align-items:center; gap:6px;}
+  .legend .sw{width:11px; height:11px; border-radius:50%; display:inline-block;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Fruit Industry · Financial Reports</div>
+    <h1>国内外头部水果企业及种植产业财报速览</h1>
+    <div class="meta">2026年中报季（国内已收尾）/ A股三季报 10/21 起 · 数据截至 2026-10-13<span class="dot">·</span>每条数据均附可追溯官方链接</div>
+  </header>
+
+  <div class="summary">
+    <b>本期要点</b>：<span class="tag done">本周已发布</span><b>本期窗口 9/29–10/13（因国庆假期，10/5、10/12 两期未出），仍是「零新增定期财报、公告驱动」</b>，国内四件大事：① <b>安德利（605198）三箭齐发</b>——<b>9/30 上交所监管工作函回复正式公开</b>（标的 12.75 亿元估值、增值率 <b>354.38%</b>、预计新增商誉约 <b>5.2 亿元</b>、三年累计业绩承诺 <b>1.35 亿元</b>，业绩承诺方以股份 + 现金补偿并设质押担保）；<b>10/9 抛出 A 股回购预案 1.2–1.8 亿元</b>（价格上限 100 元/股、用于员工持股/股权激励、期限 12 个月、无需股东会审议，<b>控股股东/实控人/持股 5% 以上股东/董监高未来 3、6 个月无减持计划</b>）；<b>10/8 定档 10/21 审议三季报</b>。② <b>百果园（02411）回购一天没停</b>——<b>9 月连续 20 个交易日逐日回购、单月合计 1,980.6 万股</b>（8/31 库存股 2,037.85 万股 → 9/30 4,018.45 万股），10 月起继续每日回购，<b>截至 10/12 库存股已达 4,383.2 万股（2.19%）</b>；9/25 刊发中期报告完整版（与 8/30 业绩公告数据一致、无修订）；<b>10/12 公告定于 10/30 召开临时股东会</b>，10/27–10/30 暂停办理股东登记、过户文件须于 10/26 16:30 前送达，<b>但通告与通函截至本期仍未在披露易刊发、决议案原文未明</b>。③ <b>家家悦（603708）9/29 半年度分派落地</b>——每股 0.16 元、<b>619,108,434 股参与</b>（差异化分红）、登记日 10/12、发放日 10/13。④ <b>欢乐家（300997）询价转让实施完毕</b>——9/30 结果报告确认 <b>2.1984 亿元</b>到账。另 <b>国投中鲁（600962）9/29 债权转让公告（2026-056）</b>：控股孙公司国投航科将梧州西江机场应收工程款债权以 <b>563.23 万元</b>转让给广西资产管理有限公司（调解书确认额 592.87 万元的 95%），该债权此前已<b>全额计提减值、故预计产生积极影响</b>，10/30 前一次付清；配套融资仍未启动。<b>永辉（601933）9/30 仲裁进展（2026-075）</b>：上海一中院<b>驳回撤销申请</b>，涉及剩余股份转让价款 <b>36.39 亿元</b>。<b>海外本期唯一实打实的官方动作是 Mission Produce</b>：⑤ <b>10/8 投资者日</b>（8-K 及两份 Ex-99 附件）给出五年框架并重申 2026 财年指引，与「关厂整合、上调协同目标」的叙事一脉相承，<b>但未上调数字</b>。<span class="tag pend">动态</span><b>Zespri 佳沛 10/12「China Supply」讨论</b>：CEO Jason Te Brake 提出把中国供应规模做到 <b>7,100–8,100 公顷 / 4,500 万托盘</b>，<b>尚未作出决定、须经生产者投票、最早 2027 年落地</b>。<b>T&amp;G（新西兰）</b>与 RSE 的 NZCC 合并审查：9/23 挂出各方意见（含 T&amp;G 对问题清单的回应）、<b>10/5 交叉意见截止</b>，<b>登记册状态仍为 Open、决定日 11/5</b>。<b>地扪（Del Monte Corporation）</b>EDGAR 窗口内备案为零，唯一官方稿仍是 9/22 赞助美国糖尿病协会步行活动（无财务条款），与煜谦的鲜切合资仍停在 9/2 官宣状态；<b>Dole</b> 自 8/10 起全类型备案为零、<b>Q3 财报官方仍未定档</b>（第三方估 11/9 或 11/12，互不一致）；<b>Del Monte Pacific</b> 官网 SGX/PSE 备案清单 10 月暂无新条目、<b>经审计 FY2026 年报将推迟发布</b>，2026/8–11「阶段二：谈判与执行」正处窗口期。<b>鑫荣懋</b> IPO 辅导进展静默，唯一新增是 9/28 甘肃灵台县包装车间开工（灵台县政府网）；<b>佳农</b>辅导备案第十一期（2026/7/17）仍为最新；<b>鲜丰水果、宏辉果蔬、诺普信、田野股份（*ST田野）</b>窗口内均无新增公告或财报；<b>Rockit 乐淇</b>募资仍无官方时间表。<span class="tag miss">风险信号</span><b>Del Monte Pacific</b> 负权益 US$5.79 亿、净债务约 US$9.70 亿、现金仅 US$400 万，银行豁免 9 月前后陆续到期且要求<b>先注资改善负债率</b>，年报推迟本身即是信号；<b>安德利</b>跨界收购的商誉减值风险未消——标的 <b>1.46% 股权处冻结状态</b>、增值率 354.38%、商誉约 5.2 亿元，且 9/30 回复公告<b>自认收购仍待先决条件达成</b>；<b>欢乐家</b>质押由 69.20% 降至 65.80%，但⚠️<b>其中含 6/8 注销 250 万股回购股的口径影响、并非全部为解押</b>，控股股东仍是高比例质押；<b>百果园</b>回购密度极高、均价越买越高，但<b>自管渠道销售同比 -9.49%</b> 的基本面压力并未改变，且末次回购后 30 天暂止期（约至 11/11）与 10/30 股东会议案可能相互牵制；<b>汇源</b>——<b>10/13 商标侵权案一审宣判、判赔 9,700 余万元</b>（（2026）闽 01 民初 300 号），公司称拟上诉，⚠️<b>属一审、非终局</b>，且该案胜诉方为北京汇源（文盛一方），与上市公司重整后经营主体的关系需继续厘清。⚠️ <b>本期筛除一条误传</b>：有信源称「Del Monte Pacific 与 SEA Diner 的 1.56 亿美元可赎回优先股暂停协议 10/1 到期未续、10/2 股价创新低」，经核该事件实为 <b>2025 年</b>旧闻被误置于 2026 年，公司官方备案清单中亦无对应条目，<b>本报告不采信、不收录</b>。
+  </div>
+
+  <div class="policy">
+    <b>来源层级说明</b>（数据可追溯性由高到低）：<span class="n">1</span>公司官网「Investor Relations / 投资者关系」&nbsp;<span class="n">2</span>监管/交易所官网（SEC EDGAR · 港交所披露易 HKEXnews · 巨潮资讯网 cninfo · 上交所/深交所官网 · 全国股转系统官网）&nbsp;<span class="n">3</span>证监会指定信息披露媒体全文（中国证券报 / 上海证券报）&nbsp;<span class="n">4</span>权威财经媒体（仅作交叉验证，已降级）。绿色链接=官方来源，蓝色链接=媒体解读。
+  </div>
+
+  <!-- 国内头部水果企业 -->
+  <section>
+    <h2><span class="bar"></span>🇨🇳 国内头部水果企业 <span class="cnt">3 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">百果园集团</div><div class="code">02411.HK</div></div>
+          <span class="badge pend">🔔 回购一天没停 · 10/30 临时股东会</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="up">约50.1亿 (+14.5%)</b></span>
+          <span class="kpi">归母净利 <b class="up">约3400万（扭亏）</b></span>
+          <span class="kpi">全口径门店 <b class="up">6709家 (+53%)</b></span>
+        </div>
+        <div class="note"><b>8/30 正式刊发 2026 中期业绩</b>：营收约 50.08 亿（+14.5%）、归母净利 <b>3356.4 万</b>（上年同期亏 3.42 亿，<b>扭亏为盈</b>）、毛利率回升至 12.2%、经营现金流 +6056.5 万（上年同期 -2.95 亿），大幅超出 7/24 业绩预告（收入 +≥7%、净利 ≥2000 万）指引。全口径门店同比增 53% 至 6709 家（其中水果零售门店 4758 家、同比净增 372 家；七星联盟合作门店 1951 家，贡献并表收入约 7.2 亿），般果 B2B 平台 GMV 约 14.01 亿（+21.9%）。<b>⚠️ 自管渠道（线下门店+线上）销售总额 51.69 亿、同比 -9.49%</b>，传统主业承压、增长主要来自合作门店与 B2B 增量。<b>9 月动态（密集回购）</b>：<b>9/3–9/30 连续 20 个交易日逐日回购、一天没停</b>，10/5 呈交的月报表逐笔列示——9/3 100 万股（1.36 港元）、9/4 150 万、9/7 115.25 万、9/8 30.8 万、9/9 92 万、9/10 103 万、9/11 78 万、9/14 111 万、9/15 150 万、9/16 141.55 万、9/17 82 万、9/18 88 万、9/21 104 万、9/22 176 万、9/23 157 万、9/24 88 万、9/25 36 万、9/28 100 万、9/29 40 万、9/30 38 万——<b>9 月单月合计回购 1,980.6 万股</b>（最可靠口径：8/31 库存股 2,037.85 万股 → 9/30 4,018.45 万股），回购价从月初 1.36 港元一路买到月末 1.50 港元上下。另 <b>9/25 同日刊发 2026 中期报告（完整版）</b>，与 8/30 业绩公告数据一致、无修订。<b>【本期延续 · 国庆假期一天没停】9/29–10/12 共 9 个交易日逐日回购</b>：<b>9/29 40 万股（1.4835）、9/30 38 万股（1.4961）、10/2 51 万股（1.4950）、10/5 53 万股（1.5379）、10/6 5.35 万股（1.5486）、10/7 33 万股（1.5545）、10/8 76.75 万股（1.5815）、10/9 12.65 万股（1.6258）、10/12 133 万股（1.6430）</b>——<b>九日合计 442.75 万股、约 693.99 万港元</b>，其中 <b>10/12 单日 133 万股为窗口内最大</b>；回购均价自 9/29 的 <b>1.4835 港元一路抬到 10/12 的 1.6430 港元（+10.7%）</b>，<b>「越买越贵」比 9 月更陡</b>。截至 10/12，<b>库存股增至 4,383.2 万股（占总股本 20.0072 亿股的 2.19%）</b>、已发行股份（不含库存股）降至 <b>19.5689 亿股</b>，总股本维持 20.0072 亿股；回购股份全部持作库存股、不注销。<b>【新节点】10/12 公告：拟于 10 月 30 日（周五）召开临时股东会</b>，10/27–10/30 暂停办理股东登记（过户文件须于 10/26 16:30 前送达 H 股过户登记处）。<b>⚠️ 截至 10/13，该临时股东会的通告/通函尚未在披露易挂出，决议案原文未明</b>；据公司 <b>8/28 关连交易公告</b>，公司明言「<b>将于临时股东会上寻求独立股东批准借款协议 III</b>」——即向关连附属公司 深圳百果园商业管理有限公司（本公司持股 51.02%）<b>提供本金上限人民币 1.1 亿元贷款</b>，期限至 2029/10/31、固定年利率 3.2%（一年期 LPR 3.0% + 20 基点），执行董事兼副董事长<b>田锡秋持股 33.67%</b>、其为该公司董事，故其联系人<b>恒旺须于股东会回避表决</b>；连同借款协议 I（1.8 亿元）与 II（0.7 亿元），<b>公司向该公司提供的贷款本金上限合计人民币 3.6 亿元</b>。<b>⚠️ 该对应关系为据 8/28 公告「将于临时股东会寻求批准」与 10/12「10/30 召开临时股东会」两处表述推得，10/12 公告本身未列议案；最终以将刊发的股东会通函为准。</b>另注意末次回购后有 30 天暂止期（约至 11/11）不得发行新股或出售、转让库存股，若 10/30 股东会涉及股份发行，实际落地须待暂止期结束——<b>此点须紧盯</b>。<b>⚠️ 读法</b>：中报刚扭亏即自 9 月起连续逾一个月逐日回购、节假日照买，属典型「用募资托股价 + 缩股本抬 EPS」，但<b>自管渠道销售同比 -9.49% 的基本面压力并未因回购改变</b>；回购均价一路走高，也说明抛压不小。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.pagoda.com.cn" target="_blank">公司官网·投资者关系（pagoda.com.cn）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1005/2026100502112_c.pdf" target="_blank">港交所·10/5 截至 2026 年 9 月 30 日证券变动月报表（逐笔列示 9 月 20 个交易日回购）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092901202_c.pdf" target="_blank">港交所·9/29 翌日披露报表（回购 40 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0930/2026093002214_c.pdf" target="_blank">港交所·9/30 翌日披露报表（回购 38 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1002/2026100203110_c.pdf" target="_blank">港交所·10/2 翌日披露报表（回购 51 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1005/2026100502090_c.pdf" target="_blank">港交所·10/5 翌日披露报表（回购 53 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1006/2026100601436_c.pdf" target="_blank">港交所·10/6 翌日披露报表（回购 5.35 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1007/2026100701666_c.pdf" target="_blank">港交所·10/7 翌日披露报表（回购 33 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1008/2026100800792_c.pdf" target="_blank">港交所·10/8 翌日披露报表（回购 76.75 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1009/2026100900590_c.pdf" target="_blank">港交所·10/9 翌日披露报表（回购 12.65 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1012/2026101200684_c.pdf" target="_blank">港交所·10/12 翌日披露报表（回购 133 万股，库存股升至 4,383.2 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1012/2026101200343_c.pdf" target="_blank">港交所·10/12《暂停办理股东登记》公告（定 10/30 召开临时股东会）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092500382_c.pdf" target="_blank">港交所·9/25 2026 中期报告（完整版）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082804111_c.pdf" target="_blank">港交所·8/28 关连交易公告（借款协议 III，上限 1.1 亿元，将于临时股东会寻求批准）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=ZH" target="_blank">港交所披露易 HKEXnews（搜"百果园"）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://news.bjd.com.cn/2026/08/30/11938715.shtml" target="_blank">京报网·8/30中期业绩解读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">安德利果汁</div><div class="code">02218.HK / 605198.SH</div></div>
+          <span class="badge pend">🔔 10/9 A股回购预案 1.2–1.8 亿 · 10/21 三季报</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2026H1营收 <b class="down">7.16亿 (−24.45%)</b></span>
+          <span class="kpi">归母净利 <b class="down">1.23亿 (−38.71%)</b></span>
+          <span class="kpi">收购对价 <b class="down">7.93亿现金</b></span>
+          <span class="kpi">收购比例 <b>62.0611%</b></span>
+          <span class="kpi">A股回购 <b class="up">1.2–1.8亿</b></span>
+        </div>
+        <div class="note"><b>【本周重大】9/18 董事会通过并正式签署股权购买协议</b>：拟以自有/自筹资金 <b>7.9279 亿元现金</b>（792,787,965.88 元）收购<b>宁波甬强科技 62.0611% 股权</b>（与 JIANGQI HE、QIANG YUAN 等 <b>28 名转让方</b>签署三份资产购买协议，审计评估已完成），完成后甬强成为控股子公司<b>纳入合并报表</b>。标的做集成电路电子信息互连材料（覆铜板、半固化片），2025 年营收 2.29 亿、<b>净亏 4,327 万</b>（2024 年亦亏约 4,018 万），2026 Q1 已扭亏（营收 4,326 万、净利 448 万）；评估基准日 2026/3/31 全部权益评估值 <b>12.75 亿元、增值率 354.38%</b>。业绩承诺：2026/2027/2028 净利分别达 <b>2,300 万 / 4,200 万 / 7,000 万</b>、累计 ≥<b>1.35 亿元</b>，未达标触发补偿；<b>转让价款付至共管账户、按业绩分期释放</b>。A股无需股东会审议、H股属须予披露交易（豁免股东批准），<b>仍待先决条件达成</b>。<b>⚠️ 同日收到上交所监管工作函</b>（涉及上市公司、董监高、控股股东及实控人）——<b>三个月内因同一笔跨界并购第二次收函</b>（6/15 签署框架协议时已因股价提前涨停被问询内幕信息管理与跨界风险）；<b>9/21 股价跌停报 77.29 元（-10%）</b>。<b>【本期重大一 · 9/30 上交所监管工作函回复终于公开（公告 2026-040）】</b>——针对 <b>9/18 收到的上证公函【2026】1544 号</b>（三个月内因同一笔跨界并购第二次收函），公司连同评估机构逐项回复，<b>首次官方确认了此前只能靠媒体转述的关键数字</b>：① 收益法评估值 <b>12.75 亿元</b>、较账面净资产 2.81 亿元<b>增值 99,439.83 万元、增值率 354.38%</b>，<b>收购完成后预计确认商誉约 5.2 亿元</b>（公司自列为「风险提示」第一条）；② 业绩承诺 <b>2026/2027/2028 年净利分别 2,300 万 / 4,200 万 / 7,000 万元、三年累计不低于 13,500 万元</b>，未达则补偿额 = 13,500 万 − 累计实际净利（<b>以补偿方税后股权转让价款总额为上限</b>），转让价款进<b>共管账户</b>、按年度审计结果分期释放（当年释放额 = 当年承诺净利 ÷ 13,500 万 × 总共管资金）；③ 标的实控人团队须在上市公司/标的<b>全职工作满 8 年</b>，<b>离职或退休后 10 年内不得从事同类业务</b>，违约金为标的股权总对价的 <b>20%</b>；④ <b>标的 2024、2025 连续两年亏损</b>（2025 营收 2.29 亿），<b>2026 年 1–8 月高速覆铜板收入占比仅 10.52%</b>，收入结构仍以 FR4 为主，M8/M9 高端产品 1–8 月相关收入仅 <b>373.26 万元</b>；⑤ 收益法预测甬强 2026–2030 年营收 <b>3.09 / 4.34 / 6.32 / 9.09 / 12.04 亿元</b>。公司另辩称本次 12.75 亿估值<b>低于</b>其 2023/8 增资与 2026/1 股转时的投后估值 14.90 亿（低约 16.86%），属「谨慎性」。<b>⚠️ 读法</b>：回复把风险摊开了——高溢价、高商誉、标的连亏、高端占比个位数，业绩承诺能否兑现是唯一支点，共管账户只是把补偿概率做了技术性保障。<b>【本期重大二 · 10/8 董事会通过 A 股回购预案（公告 2026-042，10/9 披露）】</b>：拟以集中竞价方式回购 A 股，<b>金额 1.2–1.8 亿元、价格上限 100 元/股</b>（＝决议前 30 个交易日均价的 150%）、用途<b>员工持股计划或股权激励</b>、期限 12 个月、<b>自有或自筹资金</b>；按上限测算回购 <b>120–180 万股、占总股本 0.37%–0.55%</b>；<b>控股股东、实控人及一致行动人、持股 5% 以上股东、董监高未来 3 个月与 6 个月内均无减持计划</b>；经三分之二以上董事出席的董事会决议即可实施，<b>无需股东会审议</b>。10/9 另披露 2026 年 9 月证券变动月报表（H 股 57,352,000 股、A 股 270,536,000 股，<b>较上月均无变动</b>）。<b>【下一节点】10/8 港交所公告：董事会定于 10 月 21 日（周三）审议截至 9 月 30 日止九个月未经审计三季度合并业绩</b>——届时将首次检验「果汁主业下滑 + 半导体收购预期」两端的实际数字。<b>⚠️ 仍需跟踪的旧风险</b>：交易对方之一丽水毓甬创投所持标的 <b>1.46% 股权处于冻结状态</b>，且交易尚需满足多项交割前置条件（决策机构审批、监管无异议等），存在终止或无法按期交割的风险。<b>中报（8/25-26）</b>：营收 7.16 亿（-24.45%）、归母净利 1.23 亿（-38.71%）、经营现金流 -32%，浓缩果汁量价双降 + 人民币升值拖累出口；公司定位「果汁主业 + 电子材料」双轮驱动，但需警惕高溢价商誉减值风险。（⚠️ "营收9.48亿/纯利2.01亿+50.3%"为 2025 中报旧数据）</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-30/1225588663.PDF" target="_blank">巨潮资讯网·9/30《关于上海证券交易所监管工作函的回复公告》（2026-040：12.75 亿估值/354.38%/商誉 5.2 亿/业绩承诺 1.35 亿）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-30/1225588659.PDF" target="_blank">巨潮资讯网·9/30 评估机构（坤信国际）对交易所问询的专项回复<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-10-09/1225596970.PDF" target="_blank">巨潮资讯网·10/9《关于以集中竞价交易方式回购公司 A 股股份预案的公告》（2026-042）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-10-09/1225596286.PDF" target="_blank">巨潮资讯网·10/9 2026 年 9 月证券变动月报表<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-10-10/1225598386.PDF" target="_blank">巨潮资讯网·10/10《董事会会议公布》（定 10/21 审议三季度业绩）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-10-01/1225589927.PDF" target="_blank">巨潮资讯网·10/1《关于召开 2026 年半年度业绩说明会的公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=605198&orgId=gshk0008259&announcementId=1225573209&announcementTime=2026-09-19" target="_blank">巨潮资讯网·9/19《关于收购宁波甬强科技有限公司控制权暨签署股权转让协议的公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-19/1225573212.PDF" target="_blank">巨潮资讯网·资产评估报告（收益法 12.75 亿）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092101022_c.pdf" target="_blank">港交所·9/21 控股股东增持 H 股自愿公告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0922/2026092200990_c.pdf" target="_blank">港交所·9/22 董事增持 H 股自愿公告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://www.sse.com.cn" target="_blank">上交所官网（A股 605198）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://finance.eastmoney.com/a/202609183878890742.html" target="_blank">东方财富·9/18 因资产收购收监管工作函<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://fund.eastmoney.com/a/202609203879436745.html" target="_blank">东方财富·354.38%增值率与两度遭监管关注<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="http://news.cnfol.com/zhengquanyaowen/20260921/32376255.shtml" target="_blank">中金在线·9/21 收函后跌停<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://finance.china.com/xiaofei/13004691/20260826/49700289.html" target="_blank">中华网财经·8/26中报+半导体收购<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">国投中鲁</div><div class="code">600962.SH</div></div>
+          <span class="badge done">✅ 电子院已过户 · 配套融资待发</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">H1主营收入 <b class="down">8.78亿 (−12.17%)</b></span>
+          <span class="kpi">果汁香料果糖 <b class="down">8.71亿 (−12.82%)</b></span>
+          <span class="kpi">国外收入 <b class="down">6.44亿 (−17.78%)</b></span>
+        </div>
+        <div class="note"><b>【本周重大】9/23 公告：电子院 100% 股份已全部过户登记至公司名下，重组进入实施完成阶段</b>（公告 2026-055）：国投集团<b>自 2026 年 9 月 22 日终止</b>对公司的《委托管理协议》；新世达壹号与国投集团的《表决权委托协议》及补充协议<b>已解除</b>；金杜律所与招商证券（独立财务顾问）均出具意见认为过户合法有效、后续事项无实质性法律障碍。同日<b>管理层大换血</b>（公告 2026-054）：原董事长/法定代表人/总经理<b>王炜辞职</b>（9/22 生效），陈昊、张瑞莲、蔡会欣及董秘殷实、财务总监刘玉一并辞职；<b>选举夏连鲲（电子院董事长、党委书记）为董事长兼法定代表人，聘任翟传明（电子院总经理）为总经理</b>，席京任副总/董秘/总法律顾问，周永刚、杨光明任副总，张松任财务总监。<b>配套融资仍未发行</b>——公司明确将在中国证监会批复有效期内<b>择机发行股份募集配套资金</b>，且「募集配套资金成功与否并不影响发行股份购买资产的实施」。<b>重组进程回顾</b>：发行股份收购电子院 100% 于 <b>8/26 获中国证监会同意注册</b>（证监许可〔2026〕2187 号）；9/14 临时股东会选举夏连鲲、翟传明为非独立董事。2024 年出口量约占全球浓缩苹果汁出口总额 8%、境内约中国 20%。<b>8/29 半年报经营数据</b>：主营收入合计 8.78 亿（-12.17%），其中果汁、香料及果糖 8.71 亿（-12.82%）；国内 2.35 亿（+8.05%）、国外 6.44 亿（-17.78%），浓缩果汁出口端承压明显（7/14 预减：净利降约 93-95%）。<b>⚠️ 注意口径</b>：电子院过户后公司主业将由浓缩果汁转为「果汁 + 工程设计」双主业，后续财报的合并口径会显著变化。<b>【本期 9/29–10/13】两则公告、均属重组收尾与报表清理，无新增融资进展</b>：① <b>9/29《关于控股孙公司债权转让的公告》（2026-056）</b>——控股孙公司<b>国投航科</b>（即原电子院体系）将持有的<b>梧州西江机场应收工程款债权</b>以 <b>563.2284 万元</b>转让给<b>广西资产管理有限公司</b>（广西金融投资集团旗下、实控人为广西国资委），为梧州仲裁委 9/10《仲裁调解书》确认债权 592.872 万元（(2026)梧仲裁字第87号）的 <b>95%</b>，约定 <b>10/30 前一次付清</b>；董事会 9/24 以 9 票同意通过，无需股东会审议。<b>⚠️ 关键读法</b>：该债权<b>此前已全额计提资产减值准备</b>，故本次转让预计对公司经营与财务状况产生<b>积极影响</b>（相当于收回现金、冲回部分损失），但公司未给出具体损益金额——<b>这是「清收应收账款」而非「处置资产换利润」</b>。② <b>9/30《关于召开 2026 年半年度业绩说明会的预告公告》</b>。截至 10/13，<b>配套融资仍未启动发行</b>，公司口径仍是「在证监会批复有效期内择机发行」。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-29/1225584423.PDF" target="_blank">巨潮资讯网·9/29《关于控股孙公司债权转让的公告》（2026-056·563.23 万元转让西江机场工程款债权）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-30/1225586607.PDF" target="_blank">巨潮资讯网·9/30《关于召开 2026 年半年度业绩说明会的预告公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://static.cninfo.com.cn/finalpage/2026-09-23/1225577687.PDF" target="_blank">巨潮资讯网·9/23《标的资产过户完成公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://static.cninfo.com.cn/finalpage/2026-09-23/1225577702.PDF" target="_blank">巨潮资讯网·9/23 选举董事长、变更法定代表人及高管<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://static.cninfo.com.cn/finalpage/2026-09-23/1225577701.PDF" target="_blank">巨潮资讯网·9/23 金杜律所过户法律意见书<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://paper.cnstock.com/html/2026-09/15/content_2268960.htm" target="_blank">中国证券报·9/15 第二次临时股东会决议公告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600962&orgId=gssh0600962&announcementId=1225421611&announcementTime=2026-07-14" target="_blank">巨潮资讯网·公告原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://paper.cnstock.com/html/2026-07/14/content_2243705.htm" target="_blank">中国证券报·公告全文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="http://www.ipo123.com.cn/archives/88478" target="_blank">中经互联·8/27重组注册获批<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://wap.stockstar.com/detail/AN2026082900007622" target="_blank">证券之星·8/29半年报数据<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 国内种植产业 -->
+  <section>
+    <h2><span class="bar"></span>🌱 水果种植产业 / 蓝莓产业链 <span class="cnt">2 家</span></h2>
+    <div class="grid">
+
+      
+      
+      <div class="card">
+        <div class="top">
+          <div><div class="name">诺普信</div><div class="code">002215.SZ</div></div>
+          <span class="badge miss">⚠️ 中报已发 8/19晚 · 诉讼升级</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="up">39.64亿 (+7.76%)</b></span>
+          <span class="kpi">归母净利 <b class="up">7.65亿 (+17.98%)</b></span>
+          <span class="kpi">蓝莓生鲜占 <b class="up">52.22%（首破半）</b></span>
+          <span class="kpi">Q2单季净利 <b class="down">1197万 (-43.29%)</b></span>
+        </div>
+        <div class="note"><b>8/19 晚间披露 2026 中报</b>：营收 39.64 亿（+7.76%）、归母净利 7.65 亿（+17.98%）、扣非 7.50 亿（+10.45%），连续第 5 年净利增长。<b>蓝莓（爱莓庄/特色生鲜）收入 20.70 亿占营收 52.22% 首破半、毛利率 40.31%</b>，贡献净利约 6.07 亿（约占 79%）——全球最大单体基质蓝莓产业链（云南超 5 万亩）。<b>⚠️ 隐忧一：Q2 单季净利骤降至 1197 万（-43.29%，蓝莓产季错配）、经营现金流 -63.98%、短期借款 32.95 亿 vs 货币资金 12.33 亿。⚠️ 隐忧二：蓝莓植物新品种权诉讼持续升级</b>——<b>9/8 公告（2026-048）</b>：云南甄富莓、爱莓庄集团、光筑（云南）农业被上游种苗商云南美鸣农业（控股股东西班牙 Planasa）起诉，涉诉 1,021.8 万；<b>9/10 晚公告（2026-049）</b>：盈江旺悦莓再被诉 2,000 万，<b>美鸣系累计索赔已近 3 亿元</b>。已判两案均被认定存在侵权情形，但判赔（679 万、172 万）远低于诉求；另有 2024/1 公司反诉美鸣种苗质量索赔 1.47 亿，双向诉讼合计涉案超 4.1 亿、多案在审或上诉最高院。<b>若终审认定侵权，或涉铲除销毁繁殖材料/植株，影响可能超出赔偿金额本身</b>（蓝莓占营收过半）。农化起家、蓝莓已升为第一大主业。<b>【本期 9/29–10/13】经巨潮全文检索无新增公告</b>（最近一份仍为 9/11《关于下属控股公司涉及诉讼的公告》），美鸣系累计索赔近 3 亿元、双向诉讼涉案超 4.1 亿的状态未变；公司亦未预告三季报披露日期。<b>⚠️ 待跟踪</b>：三季报将验证 Q2 单季净利骤降（-43.29%）是产季错配的一次性扰动还是趋势，以及蓝莓新品种权诉讼是否出现终审不利认定。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.cninfo.com.cn/new/fulltextSearch?keyWord=诺普信" target="_blank">巨潮资讯网·中报全文/摘要<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.szse.cn" target="_blank">深交所官网（002215）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://wap.stockstar.com/detail/RB2026082100004892" target="_blank">证券之星·中报简析<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://finance.eastmoney.com/a/202608203847490929.html" target="_blank">东方财富<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">宏辉果蔬</div><div class="code">603336.SH</div></div>
+          <span class="badge done">✅ 中报已发 8/28-30</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="down">4.18亿 (-11.09%)</b></span>
+          <span class="kpi">归母净利 <b class="down">517万 (-25.35%)</b></span>
+          <span class="kpi">果蔬主业 <b class="down">-38.87%</b></span>
+          <span class="kpi">7亿并购施美 <b class="up">6月并表</b></span>
+        </div>
+        <div class="note"><b>2026 中报</b>（8/20 曾因当时无业绩披露被剔除，本次中报已发回补）：营收 4.18 亿（-11.09%）、归母净利 516.89 万（-25.35%）、扣非 500.74 万（-25.61%）。果蔬主业收入 2.26 亿<b>同比 -38.87%</b>、归母层面亏损约 843 万（生鲜竞争白热化+终端需求疲软）；冻肉贸易 1.11 亿（+42.63%）、速冻食品 0.20 亿（+43.54%）保持高增。6 月<b>斥 7.0 亿收购施美药业 41.128% 股份切入医药</b>，当月即贡献归母净利 1,359.67 万（利润主要来源）；新增商誉 4.07 亿、长期借款 +412.86%（5.71 亿），承载三年累计 5.16 亿扣非业绩承诺（未达 90% 现金补偿）。「并购托底、主业承压」，需跟踪施美业绩承诺兑现与商誉减值风险。<b>9/16 公告</b>：披露参加广东辖区上市公司投资者集体接待日暨召开 2026 年半年度业绩说明会的情况。<b>【本期 9/29–10/13】无新增公告</b>（巨潮全文检索为零，最近一份仍为 9/16 投资者集体接待日公告）。⚠️ 重点看 10 月下旬三季报：<b>施美药业 41.128% 能否兑现三年累计 5.16 亿扣非承诺</b>，以及 4.07 亿商誉减值测试——果蔬主业已亏、利润全靠并购标的支撑。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-16/1225565308.PDF" target="_blank">巨潮资讯网·9/16《参加广东辖区投资者集体接待日暨半年度业绩说明会情况公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sse.com.cn/disclosure/listedinfo/announcement/" target="_blank">上交所官网（603336）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.cninfo.com.cn/new/fulltextSearch?keyWord=宏辉果蔬" target="_blank">巨潮资讯网·中报全文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 水果深加工 / 果汁饮料 -->
+  <section>
+    <h2><span class="bar" style="background:var(--amber)"></span>🧃 水果深加工 / 果汁饮料 <span class="cnt">2 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">欢乐家</div><div class="code">300997.SZ</div></div>
+          <span class="badge pend">🔔 询价转让已实施完毕 2.1984 亿 · 控股股东仍高比例质押</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="down">7.35亿 (−1.74%)</b></span>
+          <span class="kpi">归母净利 <b class="up">2323万 (+25.22%)</b></span>
+          <span class="kpi">经营现金流 <b class="up">6930万 (+278%)</b></span>
+        </div>
+        <div class="note">椰子汁/水果罐头；<b>8/25 晚间披露 2026 中报</b>：营收 7.35 亿（-1.74%）、归母净利 2323.08 万（+25.22%）、经营现金流净额 6930 万（+278%）；分产品椰子汁收入 3.24 亿（占 44.07%）、水果罐头 2.62 亿（占 35.68%），持续拓展零食专营渠道并推进越南、印尼椰子加工项目。<b>9/1 董事会密集公告加码椰子全产业链</b>：① 越南全资子公司拟以 <b>20 亿越南盾（约 51.63 万元）</b>收购 <b>GIA GIA 公司 100% 股权</b>（椰子原料销售贸易、具对华出口资质，2026 年 1–7 月营收 8,416 万、净利 92.2 万，完成后纳入合并报表）；② 香港子公司<b>增资 700 万美元</b>，其中 500 万美元投印尼椰子加工项目、200 万美元增资马来进出口公司。<b>椰子汁已是第一大业务</b>（2026H1 占 50.42%、毛利率 36.76%），水果罐头占比降至约 33%，主业重心持续由水果罐头转向椰子。<b>⚠️ 9/16 公告（2026-090）</b>：控股股东广东豪兴投资质押 <b>620 万股</b>（占其所持 2.76%、公司总股本 1.43%），质押起始日 9/15，质权人为义乌市棒杰小额贷款股份有限公司，<b>用途为为他人融资担保</b>（公司说明与生产经营无关）；另 <b>9/18 公告</b>（关于股东部分股份解除质押及股份质押）：豪兴投资、朱文湛<b>部分解除质押后再合计质押 290 万股</b>（占总股本 0.67%），用途为关联方融资担保。另 9/15 参加 2026 年广东辖区投资者集体接待日暨中报业绩说明会。<b>【本周重大】控股股东询价转让 3.80% 股份</b>：<b>9/22 披露询价转让计划书</b>——控股股东<b>豪兴投资拟转让 16,528,992 股</b>（占总股本 <b>3.80%</b>，剔除回购股份后 3.95%；占其所持股份 7.35%），原因为「自身资金需求」，受让方锁定 6 个月；<b>9/23 定价 13.30 元/股</b>，共 <b>21 家</b>机构报价、有效认购 16,949,000 股，初步确定 <b>20 名</b>机构投资者受让全部 16,528,992 股。同日<b>欢乐家（香港）国际控股增资 700 万美元完成工商登记</b>，注册资本由 3,800 万美元增至 4,500 万美元（对应此前印尼椰子加工与马来进出口项目）。<b>⚠️ 质押仍在累积</b>：9/21 豪兴投资再质押 <b>510 万股</b>（占其持股 2.27%，质权人义乌市浪莎小额贷款，用途为关联方融资担保）；累计质押 2.0397 亿股，占控股股东及一致行动人持股 <b>67.38%</b>、总股本 <b>46.89%</b>，未来一年内到期质押对应融资余额 <b>5.094 亿元</b>——「一边询价转让、一边高比例质押」，需关注控股股东资金链。<b>【本期 9/29–10/13 · 询价转让全部落地】</b><b>9/30《股东询价转让结果报告书》（2026-097）确认实施完毕</b>：豪兴投资按 <b>13.30 元/股</b>实际转让 <b>16,528,992 股</b>（占公司总股本 434,973,475 股的 <b>3.80%</b>，剔除回购专户 16,773,430 股后为 <b>3.95%</b>），<b>交易金额 219,835,593.60 元（约 2.1984 亿元）</b>，受让方六个月内不得转让；转让后豪兴持股由 225,016,193 股（51.73%）降至 <b>208,487,201 股（47.93%）</b>。中信证券同日出具核查报告。<b>⚠️ 口径提醒</b>：公告中「控股股东及一致行动人由 <b>69.20% 降至 65.80%</b>」<b>并非全部来自本次转让</b>——其中还含 2026/6/8 注销 250 万股已回购股份使总股本由 437,473,475 股减至 434,973,475 股的摊薄效应，权益变动日登记为「2026 年 6 月 8 日、2026 年 9 月 29 日」两段。<b>质押侧转为净减压</b>：<b>10/12 公告（2026-098）</b>豪兴投资 10/9 解除质押 <b>170 万股</b>（质权人国民信托），解除后控股股东及一致行动人<b>合计质押 196,970,000 股，占其持股 68.82%、总股本 45.28%</b>（此前为 2.0397 亿股 / 67.38% / 46.89%）；另 9/29 另有一笔解押。⚠️ 单看比例仍是「七成持股被质押」，且豪兴一家质押率高达 <b>70.17%</b>，减持套现 2.2 亿后质押并未同步大幅下降，<b>控股股东资金链仍是本卡第一风险点</b>。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-30/1225590167.PDF" target="_blank">巨潮资讯网·9/30《股东询价转让结果报告书》（2026-097·实施完毕 2.1984 亿元，69.20%→65.80%）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-30/1225590168.PDF" target="_blank">巨潮资讯网·9/30 中信证券关于询价转让的核查报告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-10-12/1225600858.PDF" target="_blank">巨潮资讯网·10/12《关于股东部分股份解除质押的公告》（2026-098·累计质押降至 1.9697 亿股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-29/1225586585.PDF" target="_blank">巨潮资讯网·9/29《关于股东部分股份解除质押的公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://static.cninfo.com.cn/finalpage/2026-09-22/1225576684.PDF" target="_blank">巨潮资讯网·9/22《股东询价转让计划书》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://static.cninfo.com.cn/finalpage/2026-09-23/1225578393.PDF" target="_blank">巨潮资讯网·9/23《询价转让定价情况提示性公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://static.cninfo.com.cn/finalpage/2026-09-23/1225578893.PDF" target="_blank">巨潮资讯网·9/23 全资企业完成注册资本变更登记<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://static.cninfo.com.cn/finalpage/2026-09-21/1225574064.PDF" target="_blank">巨潮资讯网·9/21《关于股东部分股份质押的公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-16/1225567349.PDF" target="_blank">巨潮资讯网·9/16《关于股东部分股份质押的公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-18/1225571235.PDF" target="_blank">巨潮资讯网·9/18《关于股东部分股份解除质押及股份质押的公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://www.cninfo.com.cn/new/disclosure/stock?stockCode=300997" target="_blank">巨潮资讯网（300997）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.stnn.cc/detail/6a8d83c0c3c8142abfe30345.html" target="_blank">星岛新闻·8/25中报<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">田野股份（*ST田野）</div><div class="code">920023.BJ 北交所</div></div>
+          <span class="badge done">✅ 中报提前披露 8/14</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2026H1营收 <b class="down">2.48亿 (−6.75%)</b></span>
+          <span class="kpi">归母净利 <b class="down">95.66万 (−94.16%)</b></span>
+          <span class="kpi">扣非 <b class="down">−168.17万</b></span>
+        </div>
+        <div class="note">热带果蔬制品/原料果汁供应商（客户含奈雪、蜜雪冰城、农夫山泉、可口可乐等）；<b>8/14 提前披露 2026 中报</b>（预约清单外），净利大降九成、扣非转亏。北交所上市（原田野创新）。<b>【本期 9/29–10/13】经巨潮全文检索（含北交所公告）无新增公告</b>，最新一份仍为 9/4 国海证券关于田野创新的持续督导相关文件；<b>*ST 与退市风险提示状态未变</b>。⚠️ 公司已处风险警示状态，10 月下旬三季报是判断其能否保住上市地位的关键节点。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.bse.cn" target="_blank">北交所官网（920023）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://stock.stockstar.com/AN2026081500004085.shtml" target="_blank">证券之星·中报速递<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 海外头部水果企业 -->
+  <section>
+    <h2><span class="bar"></span>🌍 海外头部水果企业 <span class="cnt">7 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Del Monte Corporation（地扪集团）</div><div class="code">NYSE: DMC（原 FDP）</div></div>
+          <span class="badge done">✅ Q2 已发 7/29</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">营收 <b class="up">$12.2亿 (+3%)</b></span>
+          <span class="kpi">调整后EPS <b class="down">$0.72 (预期$1.10)</b></span>
+          <span class="kpi">GAAP净利 <b>$2120万</b></span>
+        </div>
+        <div class="note">二季报（截至 6/26，7/29 发布）：营收超预期但 EPS 大幅不及（调整后 EPS $0.72 vs 预期 $1.10、GAAP 净利 $21.2M -62.6%）；已并入 Del Monte Foods（本卡即涵盖原 Fresh Del Monte 及 Del Monte Foods 品牌运营），全年指引维持（调整后 EBITDA $2.3–2.4 亿）。<b>9/2 于香港亚洲国际果蔬展官宣与煜谦集团（Riverking，上海）成立合资企业，拓展中国鲜切水果市场</b>（整合地扪品牌/鲜切技术与煜谦的本土采购、分销网络与冷链资源）；Q2 股息 $0.30/股 9/4 派发。<b>【本期 9/29–10/13】零财务披露</b>：SEC EDGAR <b>备案数为零</b>（最近一份仍为 9/9 Form 4）；公司 IR 新闻稿列表经 RSS 核验，<b>最新一条仍是 9/22 赞助美国糖尿病协会（ADA）匹兹堡 Step Out Walk</b> 的公益稿（无财务条款）。<b>与煜谦（Riverking，上海）的鲜切水果合资仍停在 9/2 官宣状态</b>，窗口内无任何新进展公告——该合资是本期唯一与中国市场直接相关的跟踪点。下一份财报为 FY2026 Q3（财年截至 4/30 的下一季，业绩期至 10 月底），按惯例约 11 月上旬，<b>官方尚未定档</b>。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://investorrelations.freshdelmonte.com/news/news-details/2026/Del-Monte-Corporation-Reports-Second-Quarter-Earnings-for-Fiscal-2026/default.aspx" target="_blank">公司 IR·Q2财报新闻稿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://investorrelations.freshdelmonte.com/news/news-details/2026/Del-Monte-Proudly-Announces-Sponsorship-of-American-Diabetes-Associations-Step-Out-Walk-in-Pittsburgh/default.aspx" target="_blank">公司 IR·9/22 ADA 赞助新闻稿（窗口内唯一官方稿）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://data.sec.gov/submissions/CIK0001047340.json" target="_blank">SEC EDGAR·DMC 全部备案（窗口内为零）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.investing.com/news/transcripts/earnings-call-transcript-del-monte-posts-q2-2026-sales-beat-eps-miss-93CH-4821144" target="_blank">Investing.com·电话会纪要<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.freshplaza.cn/article/9869188/del-monteyu-riverkingzai-zhong-guo-cheng-li-xian-qie-shui-guo-he-zi-qi-ye/" target="_blank">FreshPlaza中文·9/2与煜谦合资<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Mission Produce</div><div class="code">NASDAQ: AVO</div></div>
+          <span class="badge done">✅ 10/8 投资者日 · 五年目标出炉</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">Q3营收 <b class="up">$4.50亿 (+26%)</b></span>
+          <span class="kpi">调整后EBITDA <b class="up">$3240万（超指引上限）</b></span>
+          <span class="kpi">GAAP净亏 <b class="down">−$650万</b></span>
+          <span class="kpi">协同目标 <b class="up">上调至 &gt;$3000万</b></span>
+        </div>
+        <div class="note"><b>9/8 盘后发布 Q3 FY2026（业绩期至 7/30），为 5/28 并表 Calavo 后的首个季度</b>：营收 <b>$4.50 亿（+26%）</b>、牛油果销量约 2.53 亿磅（+38%，含 Calavo 贡献）、均价 -9% 至 $1.58/磅；调整后 EBITDA <b>$3,240 万（超出 $2,800–3,200 万指引上限）</b>、调整后净利 $1,500 万（$0.18/股，去年同期 $0.26）；<b>GAAP 净亏 $650 万</b>（-$0.08/股），含 Calavo 并购相关税前费用 $2,540 万，毛利率 -270bps 至 9.9%。分部：营销分销 $4.143 亿 / adj EBITDA $2,470 万；国际种植 $4,580 万 / $760 万；<b>Prepared Foods（新分部：鲜切/牛油果酱）$1,550 万 / $20 万</b>；蓝莓 $540 万 / -$10 万。<b>年化协同目标由 ≥$2,500 万上调至 &gt;$3,000 万</b>。Q4 指引 adj EBITDA $5,200–5,500 万，下半年重申 $8,400–8,800 万；秘鲁本季可出口产量 1.2–1.3 亿磅（上季 1.05 亿）。现金 $4,710 万、长期债务约 $4.003 亿。<b>Calavo 已并入本卡、不再单列</b>（其并入前最后一期独立季报：营收 $3.314 亿、净亏 $19.1 万、调整后 EPS $0.33，6/8 完成退市）。<b>【本周新增】9/16 递交 8-K（事件日 9/11，Item 2.05 退出/处置成本）——并表 Calavo 后首次关厂整合</b>：① 新泽西 Swedesboro 两处合并为一处；② 达拉斯地区厂区合并至德州 Garland 一处；③ <b>关闭 Calavo 位于佛罗里达州杰克逊维尔（Jacksonville）的工厂</b>，并实施与关厂及加州业务整合相关的裁员。预计费用：遣散及相关福利约 <b>$140 万</b>、加速折旧约 <b>$860 万</b>、资产弃置义务约 <b>$540 万</b>，租约终止费用尚无法估计；公司称无力善意估计费用总额区间，将在后续 SEC 文件中披露。下次节点 <b>10/8 纽约 Investor Day</b>（总裁兼 CEO John Pawlowski 在业绩稿中点名，具体议程待官方公布）。<b>【本周】窗口内无新 8-K，但执行董事长家族信托连续减持</b>——<b>9/23 备案</b>（成交 9/21）：Barnard GT Trust 卖出 <b>54,332 股 @$13.01</b>、Shelly R. Barnard GT Trust 卖出 <b>57,026 股 @$13.01</b>；<b>9/25 备案</b>（成交 9/24）：两者再分别卖出 <b>10,391 股 / 11,255 股 @$13.00</b>。<b>窗口内合计减持 133,004 股、约 173 万美元</b>，成交价全程落在 $13 一线；此前 9/21 备案（成交 9/18）已先卖 35,562 股（$12.54–13.00），其中 <b>Barnard Properties LLC 已清仓至 0 股</b>，Barnard 个人直接持股降至 28.75 万股。执行董事长在 Q3 超预期、股价站上 $13 后连续兑现，<b>与公司「关厂整合 + 上调协同目标」的叙事构成反差</b>。<b>【本期重大 · 10/8 纽约投资者日】公司首次系统公布五年目标与 2035 年愿景</b>（8-K Ex-99.1/99.2 已归档）：① 有机销售<b>中个位数（mid-single-digit）增长</b>（快于所服务市场）；② 五年内<b>利润率扩张约 300bps</b>（组合优化 + Calavo 协同 + SG&amp;A 杠杆 + 资产利用率提升）；③ 调整后净利<b>转化为自由现金流的比例 &gt;90%</b>；④ <b>净杠杆（总债务减现金）降至 1.5× 调整后 EBITDA 以下</b>，并择机回购（现有 $1 亿授权）。据此预计五年内<b>有机调整后 EBITDA 高个位数增长</b>，叠加纪律性并购与回购，长期目标为<b>股东年化回报高个位数至两位数</b>；<b>2035 年愿景＝销售额翻倍、调整后 EBITDA 增至三倍</b>。整合进展：已统一供应池、<b>「关闭 Temecula 工厂」（原文 closed the Temecula operation）</b>、确立未来美国分销网络，下一步推进网络与系统切换、随后整合墨西哥包装与 Prepared Foods；芒果被点名为「资本效率更高的下一个鲜品平台」。<b>重申</b>下半年调整后 EBITDA $8,400–8,800 万（Q4 $5,200–5,500 万）与秘鲁可出口量 1.2–1.3 亿磅（Q4 6,700–7,700 万磅）。<b>⚠️ 读法</b>：投资者日<b>未上调 FY2026 指引</b>，且管理层明确 Calavo 协同对 FY2026 Q4 仅「小幅贡献」、全部年化协同（&gt;$3,000 万）要等交割后 18 个月内兑现——「长期框架清晰、近期兑现有限」，叠加执行董事长家族信托窗口内仍在小幅减持，需分开看。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1802974/000180297426000042/exh991avoq32026earningsrel.htm" target="_blank">SEC 8-K Ex-99.1·Q3 业绩新闻稿原文（9/8）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1802974/000180297426000042/avo-20260908.htm" target="_blank">SEC 8-K 正文（Item 2.02）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1802974/000119312526393058/d162936d8k.htm" target="_blank">SEC 8-K 正文（Item 2.05 关厂，9/16 递交）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1802974/000182580326000009/wk-form4_1790199597.xml" target="_blank">SEC Form 4·9/23 备案（成交 9/21 减持 11.14 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1802974/000182580326000010/wk-form4_1790366666.xml" target="_blank">SEC Form 4·9/25 备案（成交 9/24 再减持 2.16 万股）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1802974/000180297426000046/avo-20261008.htm" target="_blank">SEC 8-K 正文·10/8 投资者日（Item 7.01/8.01）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1802974/000180297426000046/investordaypr.htm" target="_blank">SEC 8-K Ex-99.1·投资者日新闻稿（五年目标/2035 愿景/重申指引）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1802974/000180297426000046/missionproduce_investord.htm" target="_blank">SEC 8-K Ex-99.2·投资者日演示全文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/edgar/browse/?CIK=0001802974" target="_blank">SEC EDGAR·公司全部文件<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://investors.missionproduce.com/news-releases" target="_blank">公司 IR（investors.missionproduce.com·新闻稿）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.nasdaq.com/articles/avo-q3-earnings-beat-farming-strength-and-calavo-contribution" target="_blank">Nasdaq·Q3 超预期（Calavo 贡献）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.fool.com/earnings/call-transcripts/2026/09/09/mission-produce-avo-q3-2026-earnings-call-transcript/" target="_blank">Motley Fool·Q3 电话会全文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Dole plc</div><div class="code">NYSE: DOLE</div></div>
+          <span class="badge done">✅ Q2 已发 8/10</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">Q2营收 <b class="up">$25.0亿 (+2.9%)</b></span>
+          <span class="kpi">调整后EBITDA <b class="down">$116.8M (−14.8%)</b></span>
+          <span class="kpi">调整后EPS <b class="down">$0.46 (预期$0.50)</b></span>
+        </div>
+        <div class="note">8/10（周一）美东盘前发布 Q2 2026（SEC 8-K 同步归档）：营收 $25.0 亿 (+2.9%、LFL +1.7%)、调整后 EBITDA $116.8M (−14.8%)、调整后稀释 EPS $0.46（不及一致预期约 $0.50–0.51），股价当日跌 8.1%。Fresh Fruit 板块 EBITDA $50.3M <b>−30.9%</b>（水果采购/海运燃油/菠萝种植成本上升，管理层预计 Q3/Q4 边际改善）；DFP-Americas & ROW +33.8%（奇异果/牛油果/樱桃放量，本季亮点）。FY2026 指引维持调整后 EBITDA 约 $4 亿、capex 约 $1 亿。8/10 新闻稿另确认季度股息 $0.085/股（9/16 登记、10/7 支付），H1 回购额度剩余约 $85.4M。<b>Q2 后已完成厄瓜多尔港口出售（约 $95M）并收购瑞典 Greenfood Fresh Produce</b>。<b>【本期 9/29–10/13】SEC 备案为零</b>（最近一份 8-K 为 6/12），<b>9/16 登记、10/7 已支付的 Q2 股息 $0.085/股为执行事项、非新公告</b>；<b>Q3 FY2026 财报日截至 10/13 仍无官方定档</b>——公司 IR 站内「Schedules Third Quarter…」排期稿的各命名变体经逐一探测<b>均为 404</b>（对照 Q2 排期稿为 200），网传的 11/9、11/12、11/16 全部来自第三方数据商估算且互相冲突，<b>不可当定档写</b>。一致预期 EPS 约 $0.31。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.sec.gov/Archives/edgar/data/1857475/000185747526000074/dole-20260810.htm" target="_blank">SEC 归档·Q2财报原文（8-K）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.sec.gov/edgar/browse/?CIK=0001857475" target="_blank">SEC EDGAR·公司全部文件<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.doleplc.com/investors" target="_blank">公司 IR（doleplc.com/investors）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Del Monte Pacific</div><div class="code">SGX: D03（新加坡）</div></div>
+          <span class="badge pend">⏳ 债务重组未落定 · 年报/AGM 已获批延期</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">Q1营收 <b class="up">US$2.221亿 (+9%)</b></span>
+          <span class="kpi">净利 <b class="up">US$1610万（近 3 倍）</b></span>
+          <span class="kpi">毛利率 <b class="up">33.7% (+120bps)</b></span>
+        </div>
+        <div class="note">全球 Del Monte 品牌主要运营主体之一（与美股 DMC 分属不同实体）。<b>9/9 发布 Q1 FY2027（截至 7 月）：营收 US$2.221 亿（+9%）、净利 US$1,610 万（去年同期 $550 万，近 3 倍）、毛利率 33.7%（+120bps）、EBITDA US$4,930 万（+25.7%）、经营现金流 US$5,760 万</b>；国际销售 $1.18 亿（+21.4%，鲜菠萝 +20.3%/包装品 +23.3%/NFC 果汁），菲律宾市场 US$8,260 万（本币 +2.2%、美元口径 -6.9% 受比索贬值拖累）。<b>⚠️ 同步宣布启动债务重组</b>：与主要债权人磋商（目标 2–3 个月完成）、继续探索资产处置，<b>负权益 US$5.79 亿、总负债约 US$12 亿</b>，负权益消除前不派息（源于 FY2025 美国业务 US$7.03 亿减值）；公司预计 FY2027 仍盈利。主要银行豁免 9 月前后到期（仅一家延至 2027/9）为核心风险节点。<b>重组框架（SGX 官方文件《Group Capital and Financial Recovery Plan》）</b>：纳入重组债务规模约 <b>US$12 亿</b>、横跨四个实体层级，采取「整体磋商」而非分别双边谈判；三阶段时间表——<b>阶段一</b>框架对齐（2026 年 7 月前）、<b>阶段二</b>谈判与执行（2026 年 8–11 月）、<b>阶段三</b>再融资与解决（2027 年，以 DMPI 信贷额度全面再融资为「关键节点」）；DMPI FY2026 营业利润 US$1.536 亿（+43%）、净利 US$1.031 亿（+37%）。<b>9/10 业绩电话会</b>：管理层称磋商「建设性」、<b>未收到任何加速到期或强制执行通知</b>，预计 2–3 个月内与贷款人形成更确定方案；<b>银行要求先注入权益以改善负债率</b>，其后才谈整体资本结构与再融资，债务转股被提及但非银行首选；可能在 <b>DMPI 层面融资/发股</b>；DMPI 混合证券与永续证券纳入整体方案。<b>【本周新增】9/17 SGX 公告：AGM 与年报、可持续发展报告获批延期</b>——<b>菲律宾 SEC 9/15 经全体委员会议决议批准</b>年报申报延期；SGX 8/3 表示不反对将 <b>FY2026 年度股东大会推迟至最迟 2026/12/22</b>、可持续发展报告最迟 2026/11/30 发布。理由：<b>持续经营评估需多家独立融资方出具书面的过渡性融资安排，其内部审批不受公司控制</b>，且与主要融资对手方的磋商<b>「未如往年年度到期展期那样推进」</b>，导致审计证据无法按期取得；同时 DMFHL 审计依赖第三方估值工作。董事会称在重组谈判仍敏感且未完成时召开 AGM，无法向股东作实质性披露。<b>→ 意味着 FY2026 经审计财报将进一步推迟</b>。<b>【本期 9/29–10/13】零新披露</b>：公司官网「News and Filings」汇总的 SGX / 菲交所（PSE）备案清单，2026 年最新一条<b>仍是 9/17 的 AGM 与年报延期公告</b>，10 月暂无任何新条目；财报日历页 FY2026 AGM 仍标 <b>TBA</b>。按重组方案三阶段时间表，<b>2026 年 8–11 月的「阶段二：谈判与执行」正是窗口期所处位置</b>，<b>关键节点是 10–11 月内能否与贷款人形成更确定的过渡性融资安排</b>（负权益 US$5.79 亿、净债务 US$9.70 亿、现金仅约 US$400 万；负权益消除前不派息）。<b>⚠️ 甄别提示</b>：近日流传的「与 SEA Diner 的 1.56 亿美元可赎回优先股暂停协议 10/1 到期未续、10/2 股价 -11.76% 创 52 周新低」经核<b>系 2025 年 10 月的旧事被误置到 2026 年</b>（当时背景是 2025 年中的违约通知与 PSE 停牌），<b>本期不采信、不收录</b>。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.delmontepacific.com/hubfs/pdf/DMPL%20MDA%201QFY2027_May%201%20to%20July%2031%202026_FINAL.pdf" target="_blank">公司官网·1Q FY2027 MDA 原文（9/9）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.delmontepacific.com/hubfs/pdf/DMPL%201Q%20FY2027%20Presentation%20FINAL.pdf" target="_blank">公司官网·1Q FY2027 业绩演示<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://links.sgx.com/1.0.0/corporate-announcements/EX79QXWKP9R5VTGF/91ca8b5f8106842f53cf0991e0ead05dcb369ba7e0fe40e538214d7043546621" target="_blank">SGX 公告·9/17 获批 AGM 与年报延期<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://links.sgx.com/1.0.0/corporate-announcements/WXKFM69ZOLBM91EJ" target="_blank">SGX 公告·FY2026 全年（$703M 减值背景）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://businessmirror.com.ph/2026/09/10/del-monte-pacific-fiscal-q1-profit-surges-as-sales-rise/" target="_blank">BusinessMirror·9/10 Q1 业绩<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://bworldonline.com/corporate/2026/09/11/776160/dmpl-opens-creditor-talks-as-restructuring-advances/" target="_blank">BusinessWorld·9/11 启动债权人谈判<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://mb.com.ph/2026/09/10/del-monte-pacific-plans-more-asset-sales-to-erase-capital-deficit" target="_blank">Manila Bulletin·拟继续处置资产<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">T&G Global</div><div class="code">NZX: TGG（新西兰）</div></div>
+          <span class="badge pend">⏳ T&G Fresh 待 NZCC 裁决（11/5）</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2026H1营收 <b class="up">NZ$5.723亿 (+2.6%)</b></span>
+          <span class="kpi">营业利润 <b class="up">NZ$1160万 (+30.3%)</b></span>
+          <span class="kpi">报告期净亏 <b class="down">NZ$3050万</b></span>
+        </div>
+        <div class="note">8/7 发布 2026 中期业绩：苹果业务营收 NZ$5.509 亿、营业利润 NZ$5450 万（+15.2%），<b>ENVY™ 苹果亚洲旺销（中国 +26% / 越南 +34% / 泰国 +10%）</b>；整体净亏 NZ$3050 万系出售 T&G Fresh 业务产生 NZ$3440 万减值（计入终止经营）。FY2025 全年已扭亏（税后净利 NZ$1600 万）。<b>Fiji/太平洋岛国业务出售已于 9/1 完成交割</b>（NZX #478975）。新西兰本土 T&G Fresh 出售须经 NZCC 批准：<b>9/10 正式发布 Statement of Issues</b>——委员会表示「目前不认为」该收购不会实质减少竞争，担忧合并后全国「全服务」批发商由 3 家减至 2 家、削弱种植者议价能力（关注番茄/黄瓜/西葫芦/樱桃）；意见提交 9/23、交叉提交 10/5，<b>最终决定 11/5</b>（原定 8/26 推迟；Statement of Issues 非最终决定，不代表将否决）。<b>【本期 9/29–10/13】NZX 侧确认零公告</b>——TGG 2026 年公告全量枚举后，<b>最新一条仍是 9/1「完成斐济及太平洋岛屿业务出售」（#478975）</b>，9/2 以来在 NZX 无任何新披露。NZCC 侧两个程序节点均在本期窗口内：<b>① 9/23 各方意见截止</b>——<b>T&amp;G Fresh 针对 Statement of Issues 的书面意见已公开挂出</b>（委员会此前"documents 为空"的状态已更新）；<b>② 10/5 交叉意见截止</b>。截至 10/13，<b>案件 PRJ0049183 状态仍为 Open、未出决定</b>，<b>最终决定日 11/5</b>（SoI 非最终决定，不代表将否决）。<b>→ 本期 T&amp;G 无新增财务信息，唯一看点是 11/5 的 NZCC 决定；若被否决，T&amp;G Fresh 出售交易与已计入的减值处理都需重新评估。</b></div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.nzx.com/announcements/477455" target="_blank">NZX 公告·2026中期业绩（#477455）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://tandg.global/premium-apple-demand-underpins-positive-tg-global-result/" target="_blank">T&G 官网<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.comcom.govt.nz/case-register/case-register-entries/j-and-p-turner-limited-turners-and-growers-fresh-limited/" target="_blank">NZCC 案件登记册 PRJ0049183（状态 Open·决定日 11/5）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.comcom.govt.nz/assets/Documents/timeline/TG-Fresh-Submission-in-response-to-the-Statement-of-Issues-23-September-2026.pdf" target="_blank">NZCC·T&amp;G Fresh 对 Statement of Issues 的意见书（9/23 提交）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.comcom.govt.nz/news-and-media/news-and-events/2026/statement-of-issues-released-for-jpt-to-acquire-t-and-g-fresh/" target="_blank">NZCC 新闻稿·发布 Statement of Issues<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.nzx.com/companies/TGG/announcements" target="_blank">NZX·TGG 全部公告（9/2 起为零，最新仍为 9/1）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.freshfruitportal.com/news/2026/03/02/tg-financial-results/" target="_blank">FreshFruitPortal<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Zespri 佳沛</div><div class="code">新西兰奇异果合作社</div></div>
+          <span class="badge done">✅ 2025/26产季 5/20</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">果品销售额 <b class="up">NZ$59亿（创纪录）</b></span>
+          <span class="kpi">税后净利 <b class="up">NZ$2.801亿（约翻倍）</b></span>
+          <span class="kpi">发货 <b>2.48亿箱</b></span>
+        </div>
+        <div class="note">全球奇异果出口龙头（合作社、非上市，但每年 5 月发布官方年度业绩）。<b>8/20 年度大会如期举行</b>，随后发布 <b>2026 产季首次完整产量预测：创纪录的 2.25 亿盘新西兰采收量</b>（多数品类每公顷回报预计超 2025 年纪录，Green 与 Green Organic 除外）。最新官方财报仍为 5/20 的 2025/26 年报（果品销售额 NZ$59 亿创纪录、税后净利 NZ$2.801 亿约翻倍、发货 2.48 亿箱）。<b>【补录·此前各期漏收】9 月《Kiwiflier》（KF-486）宣布派发特别股息</b>：<b>每股普通股 20 分</b>，<b>记录日 2026/9/4 17:00、派发日 2026/9/11</b>（均为 9 月上旬，落在本期窗口之前，故明确标注日期备查），性质为 <b>special unimputed taxable dividend（不含 imputation credits）</b>，仅普通股股东可享、Class B 股东依章程不派。资金来源为 2026 年 LaS（Loyalty as Shares）与 DaS（Dividends as Shares）两项股本计划<b>净募集 NZ$5,640 万</b>，其中 <b>NZ$3,900 万用于本次派发</b>、约 NZ$1,740 万留存以支撑资本要求（对应董事会 6 月批准的资本框架，目标约为预测全球净果销售额的 2%）；<b>该特别股息替代了 2026 年的股份回购</b>。同期刊物另给出 <b>2026 产季首次完整预测：产量 2.25 亿盘（创纪录）</b>，除 Green 与 Organic Green 外<b>各品类每公顷回报均预计超过去年纪录</b>。<b>【本期 9/29–10/13 · 唯一实质动态】10/12 报出：佳沛正与新西兰种植者讨论「中国供应（China Supply）」模式</b>——CEO <b>Jason Te Brake</b> 向 NZ Herald 表示正评估两条路径：① 继续<b>纯新西兰供应</b>与其竞争；② 建立<b>严格管控的中国供应采购模式</b>（类比现行的 Zespri Global Supply 从意大利、希腊采购）。背景是中国国产 G3 种植面积估 <b>7,100–8,100 公顷</b>、年产约 <b>4,500 万托盘</b>，销售期可延至次年 3 月，与新西兰季末（10–11 月）<b>正面冲突</b>。管理层<b>明确表示「尚未做出任何决定」</b>，任何方案<b>须经生产者投票</b>，且投票<b>最早要到 2027 年</b>才可能提上日程（2021 年同类投票仅 70.5% 支持、未达 75% 门槛）。<b>⚠️ 口径提示</b>：这是<b>战略讨论、不是决策</b>，且佳沛为合作社、无公开定期财报；同期中国市场的中秋营销（「举勺挖金月」第四年，9/11 直播触达 877.6 万、四城地标线下参与超 1 万人）属品牌活动，与财务无关。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.zespri.com/en-NZ/publications/newsroomdetail/2025-26-financial-results" target="_blank">Zespri 官网·年度业绩<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www.zespri.com/content/dam/zespri/nz/publications/Kiwiflier/kiwiflier-2026/KF-486.pdf" target="_blank">Zespri 官方刊物 Kiwiflier KF-486（9 月号·特别股息 + 2026 产季预测）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.fruitnet.com/asiafruit/zespri-considers-chinese-g3-production-to-counter-illegal-competition/272965.article" target="_blank">Asiafruit·10/12 佳沛评估中国供应模式<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.freshplaza.cn/article/9857279/zespri-zhong-xin-kao-lu-cong-zhong-guo-cai-gou-mi-hou-tao/" target="_blank">FreshPlaza中文·重新考虑从中国采购猕猴桃<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.freshplaza.com/oceania/article/9839574/zespri-reports-nz-5-9-billion-in-fruit-sales-for-2025-26-season/" target="_blank">FreshPlaza<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">乐淇苹果 Rockit Global</div><div class="code">新西兰 · 未上市</div></div>
+          <span class="badge violet">未上市 · 披露口径</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中国营业额占比 <b class="up">&gt;50%</b></span>
+          <span class="kpi">2026果农回报 <b class="up">NZ$1.25/管</b></span>
+          <span class="kpi">2027目标 <b class="up">1.50–1.55纽币</b></span>
+        </div>
+        <div class="note">全球首款迷你苹果，中国市场贡献全球营业额超 50%（进口苹果细分约占新西兰对华份额三分之一）；2026 新季 3 月启动，5 月签约顶流明星<b>王一博</b>为全球品牌代言（史上最大营销），8/26-28 上海中国国际水果展亮相。执行「提升果农回报三年计划」走出 2025 供过于求低谷（上年每管仅 63–65 分、净亏约 0.45 纽币），<b>2026 果农回报预测 NZ$1.25/管</b>、2027 目标 1.50–1.55 纽币，并计划 2026 年底进行一轮<b>资本募集</b>。<b>【本期 9/29–10/13】仍未发现任何资本募集、增资或股权变动消息</b>——官网新闻页窗口内无带日期的中国区或融资动态，<b>2026 年底那轮募资仍无官方时间表</b>（最近一次公开表态仍是 CEO Grant McBeath 2026/5 的「计划晚些时候启动」，属窗口外）；中国区最近动作是 <b>9/4 收官的中秋整合营销</b>（王一博代言、China GT 展期三天售出约 30 万颗），同样在窗口之外。⚠️ 无官方定期财报，本卡数据为经营披露口径。背景风险（窗口外）：合资果园 Rākete Orchards LP 已进入清算、债权人约 NZ$1,200 万；私募股东为 Pioneer Capital、Oriens Capital、Punchbowl Investments。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.rockitapple.com" target="_blank">Rockit 官网<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://asiafruitchina.net/31666.html" target="_blank">亚洲水果·新季+营销<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.sohu.com/a/1068883067_120823584" target="_blank">搜狐·8/28水果展亮相<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 商超 / 生鲜零售 / 供应链 -->
+  <section>
+    <h2><span class="bar" style="background:var(--blue)"></span>🏪 商超 / 生鲜零售 / 供应链 <span class="cnt">3 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">永辉超市</div><div class="code">601933.SH</div></div>
+          <span class="badge done">✅ 2026中报 扭亏 8/20</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="down">237.91亿 (−20.56%)</b></span>
+          <span class="kpi">归母净利 <b class="up">2.53亿（扭亏）</b></span>
+          <span class="kpi">扣非 <b class="up">0.39亿（扭亏）</b></span>
+        </div>
+        <div class="note">全国连锁商超、生鲜水果为重要品类；2026 中报 <b>8/20 盘后发布</b>：营收 237.91 亿（-20.56%）、归母净利 2.53 亿（上年同期 -2.41 亿，扭亏 +4.94 亿）、扣非 0.39 亿（上年同期 -8.02 亿）。「关店瘦身 + 学胖东来调改」减收增利：上半年关店近 400 家、331 家完成调改，毛利率 22.52%（+1.7pct）；<b>食品用品收入占比 49.77% 首超生鲜及加工（46.44%）</b>；线上销售额 48.68 亿、占 19.35%，自有品牌 25.33 亿、占 10.07%。扭亏含政府补助/资产处置/公允价值等非经常损益，但扣非亦明显改善。<b>9 月动态</b>：9/17 公司披露广州调改进展——广州首家全健康场景调改店<b>北京路店 9/19 正式开业</b>，9/30 天河合生汇店（广州第十家）试营业，CEO 王守诚称北京路店是全国调改第二阶段华南布局的重要节点。<b>资本运作（9/5–9/8 集中披露）</b>：定增（向特定对象发行 A 股）推进中——<b>9/5 调整发行数量上限</b>并更新募集说明书（修订稿）、<b>回复上交所审核问询函</b>（中信证券保荐、安永华明审计报告同步更新）；<b>9/8 第三次临时股东会通过延长定增决议有效期及相关授权</b>。定增能否落地是后续偿债与调改资金的关键变量。<b>【本期 9/29–10/13】唯一公告是 9/30《关于仲裁案件的进展公告》（2026-075）</b>——大连御锦贸易有限公司请求撤销仲裁裁决的申请，已被<b>上海市第一中级人民法院裁定驳回（终审）</b>；其另提的<b>不予执行仲裁裁决案仍在审查中</b>。涉案为<b>剩余股份转让价款 3,639,089,070.93 元（约 36.39 亿元）及违约金</b>。<b>→ 读法</b>：驳回撤销申请意味着原仲裁裁决对永辉有利的效力进一步稳固，但<b>真正的回收要看「不予执行」审查结果与后续执行进度</b>，且该笔款项长期挂账、回收周期与最终到账比例仍高度不确定，<b>不宜直接计为利润</b>。定增审核进度本期未见新披露。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-30/1225587592.PDF" target="_blank">巨潮资讯网·9/30《关于仲裁案件的进展公告》（撤销申请被裁定驳回）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-05/1225549288.PDF" target="_blank">巨潮资讯网·9/5《关于调整向特定对象发行A股股票发行数量上限的公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-05/1225549277.PDF" target="_blank">巨潮资讯网·9/5《审核问询函的回复》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-08/1225551821.PDF" target="_blank">巨潮资讯网·9/8 第三次临时股东会决议公告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://finance.eastmoney.com/a/202608213849104974.html" target="_blank">东方财富·中报净利2.53亿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.nbd.com.cn/articles/2026-08-20/4548689.html" target="_blank">每日经济新闻·关店调改扭亏<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">家家悦</div><div class="code">603708.SH</div></div>
+          <span class="badge done">✅ 2026中报 +1.77% 8/20</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">中报营收 <b class="down">89.66亿 (−0.46%)</b></span>
+          <span class="kpi">归母净利 <b class="up">1.86亿 (+1.77%)</b></span>
+          <span class="kpi">生鲜收入 <b class="up">+4.94%</b></span>
+        </div>
+        <div class="note">山东商超龙头；2026 中报 <b>8/20 发布</b>：营业总收入 89.66 亿（-0.46%）、归母净利 1.86 亿（+1.77%、连续两年增长）、扣非 1.77 亿（-2.38%）；经营现金流净额 11.15 亿（+15.79%）、毛利率 24.18%（+0.18pct）。<b>生鲜收入 +4.94%、生鲜毛利率提升 0.99pct</b>；综合超市收入 +2.89%、省外收入 +5.98%，自有品牌及定制占比 17.09%。拟每 10 股派现 1.60 元（约 9906 万）。<b>9 月动态</b>：<b>9/7 临时股东会四项议案全部通过</b>（含 2026 年半年度利润分配方案、调整回购专户股份用途并注销暨减少注册资本、修订公司章程等，出席股份占 74.5853%）；<b>注销回购股份 1,923.02 万股</b>（公告 2026-035，总股本由 6.383 亿股降至 6.191 亿股，债权人可自公告起 45 日内申报债权），资产负债率约 79.68%。<b>【本期 9/29–10/13 · 半年度权益分派落地】</b><b>9/29《2026 年半年度权益分派实施公告》</b>：以现有总股本扣除回购专户股份后的 <b>619,108,434 股</b>为基数（总股本 638,338,675 股、回购专户 19,230,241 股不参与，属<b>差异化分红</b>），<b>每股派现 0.16 元（含税）</b>，合计派发约 <b>9,906 万元</b>；<b>股权登记日 10/12、除权除息日与现金发放日均为 10/13</b>。同日东兴证券出具差异化权益分派特殊除权除息事项的核查意见。这是对 8/20 中报「拟每 10 股派 1.60 元」方案的执行落地，<b>属执行事项而非新增基本面信息</b>。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-29/1225584820.PDF" target="_blank">巨潮资讯网·9/29《2026 年半年度权益分派实施公告》（每股 0.16 元，登记日 10/12）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-29/1225584811.PDF" target="_blank">巨潮资讯网·9/29 东兴证券差异化权益分派核查意见<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-08/1225551584.PDF" target="_blank">巨潮资讯网·9/8《关于注销回购股份减少注册资本暨通知债权人的公告》<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-09-08/1225551590.PDF" target="_blank">巨潮资讯网·9/8 第一次临时股东会决议公告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.sohu.com/a/1065740114_122014422" target="_blank">搜狐·营收89.66亿净利1.86亿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">叮咚买菜</div><div class="code">DDL（美股中概）</div></div>
+          <span class="badge done">✅ 2026Q2 连续10季盈利 8/20</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">Q2营收 <b class="up">64.87亿 (+8.6%)</b></span>
+          <span class="kpi">GAAP净利 <b class="up">2.72亿 (+153.5%)</b></span>
+          <span class="kpi">GMV <b class="up">72.65亿 (+11.8%)</b></span>
+        </div>
+        <div class="note">前置仓生鲜电商、水果为重要品类；Q2 财报 <b>8/20 美东盘前发布</b>：营收 64.87 亿（+8.6%，中国业务 64.14 亿 +8.3%、海外 7320 万 +36.2%）、GAAP 净利 2.72 亿（+153.5%、连续第十个季度盈利）、Non-GAAP 净利 2.81 亿（+120.2%）。<b>口径提示</b>：因与美团交易将相关长期资产划为待售资产停止计提折旧摊销，增厚本季净利约 1.99 亿，剔除后经营 GAAP 净利约 0.73 亿。GMV 72.65 亿（+11.8%）、毛利率 29.6%（+0.8pct）、履约费用率 18.6%（-3.1pct）；上海月均订单频次破 5 次，新拓盐城/淮安/衢州/丽水，8/15 合肥三仓同开。<b>⚠️ 收购状态（被收购方，暂仍单列）</b>：美团（03690.HK）已于 2026/2/5 签约，以约 <b>US$7.17 亿</b>收购叮咚中国业务 100% 股权（海外业务交割前剥离），<b>尚待反垄断审查与叮咚股东特别大会批准、尚未交割</b>；12 个月内未交割协议可终止（美团/叮咚终止费分别为 1.5 亿/7,500 万美元）。<b>交割完成后叮咚将成为美团间接全资子公司并自动退市、业绩并入美团报表——届时本卡不再单列，只随美团披露的水果/生鲜相关部分跟踪</b>（口径同 Calavo→Mission、佳沃→联想控股）。<b>本周（9/22–9/27）无新披露，交易仍未交割</b>——<b>⚠️ 口径提醒</b>：9/18 市场监管总局听证会所涉为「美团收购北京麦芽田」，<b>与叮咚买菜无关</b>，不可写作叮咚的交易进展；截至 9/28，该收购仍处<b>反垄断审查 + 叮咚股东特别大会批准</b>阶段，未完成交割。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=ddl&type=10-Q" target="_blank">SEC EDGAR（叮咚买菜 10-Q）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://www.yilantop.com/news/103352" target="_blank">亿欧·Q2营收64.9亿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="http://stock.stockstar.com/IG2026082200007453.shtml" target="_blank">证券之星·净利2.72亿<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 未上市巨头（招股书/披露口径） -->
+  <section>
+    <h2><span class="bar" style="background:var(--violet)"></span>🏢 未上市巨头 · 数据来自招股书/披露 <span class="cnt">5 家</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">鲜丰水果股份有限公司</div><div class="code">未上市 · A股上市已搁浅</div></div>
+          <span class="badge violet">📋 IPO辅导口径</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">门店 <b class="up">2290家 (2023)</b></span>
+          <span class="kpi">销售规模 <b>约59.85亿 (2023)</b></span>
+          <span class="kpi">红杉持股 <b>9.05%</b></span>
+        </div>
+        <div class="note">杭州水果连锁龙头（含鲜丰水果/阿K果园子/水果码头等品牌），与百果园竞逐<b>"水果零售第一股"</b>。2019/12 中信证券辅导 → 2021/1 终止 → 2021/2 改由中信建投重启辅导；<b>⚠️ 但自 2024/8 实控人股权被法院冻结超 3 亿（PE 基金到期清算退出所致）后，上市计划已搁浅</b>（2026 年初多家媒体确认）。<b>【本期 9/29–10/13】仍无任何新动态</b>，无递表、无辅导进展、无股权解冻消息。<b>⚠️ 无官方定期财报</b>，最新完整数据为 2023 年口径（销售规模约 59.85 亿、门店 2290 家）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://www.citics.com/newsite/tzgg/ipoqyfdgg/202001/P020200113586635491747.pdf" target="_blank">中信证券·辅导备案公告(PDF)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://m.jrj.com.cn/madapter/stock/2021/02/28084432039255.shtml" target="_blank">金融界·重启IPO<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://finance.eastmoney.com/a/202103021826090072.html" target="_blank">东方财富·辅导进程<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">汇源集团（北京汇源）</div><div class="code">未上市 · 港股退市/重整中</div></div>
+          <span class="badge pend">⚖️ 10/13 商标侵权一审判赔 9,700 余万 · 拟上诉</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2024营收 <b>24.75亿</b></span>
+          <span class="kpi">2024扣非净利 <b>3.30亿</b></span>
+          <span class="kpi">2023营收 <b class="up">27.45亿 (+135.9%)</b></span>
+        </div>
+        <div class="note">果汁龙头，2021 年港交所退市（原 01886.HK）；2022/6 法院批准重整、文盛资产入局（持北京汇源 60% 股权），承诺 3–5 年推动回 A。<b>⚠️ 2025–2026 文盛与汇源集团爆发控制权大战</b>：8/8 *ST国中(600187)公告确认诉讼，河北汇源（北京汇源 100% 股东）诉诸暨文盛汇确认 2022《增资协议》已终止（应缴 16 亿仅实付 7.5 亿），索赔 <b>9.14 亿</b>，法院已准予保全<b>冻结文盛汇所持北京汇源 60% 股权</b>（至 2029/7）；8/10 国中水务回应将积极跟进诉讼、维护股东权益（案件未开庭，对本期利润影响不确定）；<b>8/11–8/14 控制权大战升级</b>：8/11 诸暨文盛汇召集北京汇源临时股东会，提出罢免董事长鞠新艳及以资本公积弥补亏损议案，8/14 北京汇源官方公众号发布《异议函》称会议不具合法性、号召职工抵制，国中水务回应尽力维护上市公司权益（以上均非上市公司正式公告）；汇源集团另推新品牌<b>"咱家果源"</b>（8/1 宣传片登陆央视 CCTV-4）欲重造汇源，市场现"双汇源"对峙，回 A 上市受阻。数据为重整期间披露（2023 营收 27.45 亿/扣非净利 3.93 亿、2024 营收 24.75 亿/扣非净利 3.30 亿），无官方定期财报。<b>【本期重大一 · 10/13「汇源」商标侵权案一审宣判】</b>福建省福州市中级人民法院【案号（2026）闽01民初300号】一审判决支持原告<b>北京汇源食品饮料有限公司</b>：① 判令<b>北京汇源集团开封有限公司</b>、<b>北京汇源生物科技有限公司</b>立即停止在企业名称中使用「汇源」字号、停止生产销售涉案侵权产品、并在《中国市场监管报》刊登澄清声明；② 两公司<b>连带赔偿经济损失及维权合理开支共计 9,700 余万元</b>；③ <b>河北汇源食品饮料有限公司</b>（开封汇源一人股东）因未能举证证明财产独立，<b>承担连带责任</b>。法院查明北京汇源 2023 年重整后曾授权涉事企业代工，<b>但自 2025/1/1 起已终止全部商标使用授权</b>，涉事企业仍超范围使用。这是<b>文盛资产与汇源集团「两个汇源」控制权之争的司法延伸</b>。<b>⚠️ 两点必须写清</b>：<b>① 是一审、非终局</b>——汇源集团方面已回应<b>将提起上诉</b>，判决尚未生效；<b>② 胜诉方是「北京汇源」（文盛一方）</b>，不要误读成整个汇源体系获赔。<b>【本期重大二 · 10/8 *ST国中（600187，原国中水务）四则公告】</b>其中最关键的《股票被实施退市风险警示及其他风险警示相关事项的进展公告》<b>官方确认</b>：<b>① 诸暨文盛汇所持北京汇源 60% 股权仍被法院轮候冻结、相关案件尚未开庭审理；② 公司「仍未取得北京汇源当期完整及可靠的财务信息」；③ 公司股票自 2026/5/6 起被实施退市风险警示及其他风险警示（2025 年报触及退市指标 + 内控被出具无法表示意见），「若 2026 年度未消除上述情形，股票将可能被终止上市」</b>。同日另三则为实控人及其一致行动人、董事长及部分董监高增持计划时间过半的进展公告，以及控股股东一致行动人部分股份解押后再次质押。<b>→ 读法</b>：商标案一审胜诉对北京汇源是利好，但<b>汇源资产回 A 的最大障碍仍是 60% 股权被冻结 + 上市公司拿不到其财务信息</b>，国中水务自身的退市风险时钟并未因判决而停摆。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="http://static.cninfo.com.cn/finalpage/2026-10-08/1225595357.PDF" target="_blank">巨潮资讯网·10/8 *ST国中《股票被实施退市风险警示及其他风险警示相关事项的进展公告》（北京汇源 60% 股权轮候冻结、仍未取得财务信息）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="http://app.cnstock.com/zzb/zgzqb/html/2026-08/08/nw.D110000zgzqb_20260808_1-B032.htm" target="_blank">中国证券报·8/8诉讼公告全文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">权威媒体</span>
+          <a class="src" href="https://m.21jingji.com/article/20261013/herald/9c1918ed49f6231493c3e9c7fb6491a5.html" target="_blank">21世纪经济报道·10/13 商标侵权案一审判赔 9,700 余万<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.bbtnews.com.cn/2026/1013/607775.shtml" target="_blank">北京商报·10/13「汇源」商标侵权案一审落槌<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.163.com/dy/article/L94HSMKH0534A4SC.html" target="_blank">网易财经·10/13 汇源集团回应将上诉<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.stcn.com/article/detail/3601216.html" target="_blank">证券时报·粤民投与文盛和解、回A有望<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.stcn.com/article/detail/3606338.html" target="_blank">证券时报·"两个汇源"正面对垒<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://finance.china.com/xiaofei/13004691/20260804/49653843.html" target="_blank">中国网财经·股权冻结/重造汇源<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">佳沃集团 Joyvio</div><div class="code">联想控股(03396)旗下 · 高端水果为核心</div></div>
+          <span class="badge violet">📊 2026中报 · 集团合并口径</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2026H1营收 <b class="up">174.14亿 · 同比+9%</b></span>
+          <span class="kpi">2026H1归母净利 <b class="warn">亏2.26亿</b></span>
+        </div>
+        <div class="note">联想控股(03396)旗下农业食品平台，以<b>高端水果为核心</b>（佳沃水果）：全国最大水果供应链鑫荣懋（正冲刺港股IPO，见其单独卡）+ 佳沃蓝莓等品牌果品。本卡财务为集团<b>合并口径</b>（2026中报）。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.legendholdings.com.cn" target="_blank">联想控股官网·投资者关系<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">权威媒体</span>
+          <a class="src" href="https://www.guandian.cn/article/20260828/593699.html" target="_blank">观点网·联想控股2026中期业绩(佳沃收入174.14亿/亏2.26亿)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">鑫荣懋果业科技集团</div><div class="code">未上市 · 冲刺港股IPO中</div></div>
+          <span class="badge violet">📋 IPO披露口径</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2024营收 <b class="up">突破200亿</b></span>
+          <span class="kpi">2025前9月净利 <b class="up">约2.45亿</b></span>
+          <span class="kpi">净利率 <b class="warn">1–2%</b></span>
+        </div>
+        <div class="note">国内最大水果供应链企业之一，服务山姆 / Costco / 永辉 / 百果园等<b>超1万家商超</b>。2026/3 联想控股公告推进其赴港上市，估值约<b>50亿</b>；对赌 2027/9/30 前完成申报、2027/12/31 前上市。净利：2023年2.66亿、2024年3.08–3.09亿。<b>【本期 9/29–10/13】上市进度：无任何新消息</b>——披露易与中文财经源均未见递表、招股书或估值对赌的新进展，<b>最新可查的官方口径仍是 2026/3/10 联想控股(03396)公告</b>：鑫荣懋须在 <b>2027/9/30 前完成合格上市申报、2027/12/31 前挂牌</b>，否则佳沃可要求管理层按<b>整体估值 50 亿元回购其 1.80 亿股</b>——即<b>真正的压力点在 2027 年，不在本期</b>。窗口内仅一条经营类动态：<b>9/28 公司在甘肃灵台县优德隆现代农业果园基地举行数智化苹果包装车间揭牌投产</b>（含智能分选与数字化溯源，由灵台县政府网 9/30 发布），属产能与产地布局动作、非资本事件。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.legendholdings.com.cn" target="_blank">联想控股官网·投资者关系<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src off" href="https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=ZH" target="_blank">港交所披露易·联想控股(03396)公告<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://finance.eastmoney.com/a/202604023692684418.html" target="_blank">东方财富·冲击上市<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.jiemian.com/article/14111189.html" target="_blank">界面新闻<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.guandian.cn/article/20260828/593699.html" target="_blank">联想控股2026中报(8/28)·佳沃板块<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <a class="src" href="https://www.lingtai.gov.cn/zwdt/xzdt/art/2026/art_8bb1d43a7a8c4c6ab31806c7890a989c.html" target="_blank">灵台县政府网·9/30 鑫荣懋数智化苹果包装车间揭牌投产（9/28）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">佳农食品控股（"香蕉大王"）</div><div class="code">未上市 · 两冲A股</div></div>
+          <span class="badge violet">📋 招股书口径（较旧）</span>
+        </div>
+        <div class="kpis">
+          <span class="kpi">2018营收 <b>56.06亿</b></span>
+          <span class="kpi">2018净利 <b>1.45亿</b></span>
+          <span class="kpi">2020销售额 <b>65亿</b></span>
+        </div>
+        <div class="note">香蕉进口量 2016–2019 连续四年全国第一，佳沛奇异果在华第二大经销商。2019、2023 两次冲击 A 股（拟上交所主板）。<b>⚠️ 无官方定期财报</b>，最新完整数据为 2018 招股书口径；2023/10 起在上海证监局辅导备案。<b>【本期 9/29–10/13】辅导进度无更新</b>——上海证监局公示的辅导工作进展报告<b>最新一期仍为第十一期（2026/7/17）</b>，第十二期（约 10 月中下旬）窗口内未见刊发；<b>窗口内无任何 IPO 实质进展</b>。</div>
+        <div class="srcs">
+          <span class="s-grp off">官方</span>
+          <a class="src off" href="https://www.htsec.com/jfimg/colimg/upload/20240117/1705477937140006990.pdf" target="_blank">海通证券·上市辅导进展报告(PDF)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <span class="s-grp">解读</span>
+          <a class="src" href="https://static.cdsb.com/micropub/Articles/202310/dff4de2b777c4f22fbc2eba1c3ba5cfc.html" target="_blank">成都商报·IPO观察<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 即将披露日历 -->
+  <section>
+    <h2><span class="bar"></span>📅 未来披露日历 <span class="cnt">待跟踪</span></h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Mission Produce · Investor Day 已开</div><div class="code">NASDAQ: AVO</div></div>
+          <span class="badge done">✅ 10/8 投资者日已举行</span>
+        </div>
+        <div class="note">Q3 FY2026 已于 <b>9/8 美股盘后发布</b>（营收 $4.50 亿 +26%、调整后 EBITDA $3,240 万超指引上限、协同目标上调至 &gt;$3,000 万，详见海外板块 Mission 卡）；<b>10/8 纽约投资者日已如期举行</b>，8-K（Item 7.01/8.01）+ Ex-99.1 新闻稿 + Ex-99.2 演示已归档：公布<b>五年目标</b>（有机销售中个位数增长、利润率 +约 300bps、调整后净利转自由现金流 &gt;90%、净杠杆降至 1.5× 以下）与 <b>2035 年愿景（销售额翻倍、调整后 EBITDA 增三倍）</b>，并<b>重申</b> FY2026 下半年调整后 EBITDA $8,400–8,800 万。⚠️ 投资者日<b>未上调</b> FY2026 指引、协同对 Q4 仅「小幅贡献」。<b>下一节点</b>：<b>Q4 FY2026 财报约 12 月中（官方尚未定档）</b>。</div>
+      </div>
+
+
+
+
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">T&G Global · Fresh出售待裁决</div><div class="code">NZX: TGG</div></div>
+          <span class="badge pend">最终决定 11/5</span>
+        </div>
+        <div class="note">新西兰本土 T&amp;G Fresh 出售（NZX 公告 #478975）：<b>NZCC 已于 9/10 正式发布 Statement of Issues</b>，对 J&amp;P Turner 收购表示疑虑（担忧全国「全服务」批发商由 3 家减至 2 家、削弱种植者议价）；意见提交 9/23、交叉意见 10/5 截止，<b>最终决定 11/5</b>（原定 8/26 推迟；SoI 非最终决定）。<b>9/23 各方意见已公开挂出（含 T&amp;G Fresh 的意见书）、10/5 交叉意见截止</b>；截至 10/13 <b>案件状态仍为 Open、未出决定</b>，<b>决定日 11/5</b>。NZX 侧 9/2 起零公告（最新一条仍为 9/1 完成斐济及太平洋岛屿业务出售）。<b>→ 11/5 是本板块唯一决定性节点</b>：若 NZCC 否决，T&amp;G Fresh 出售交易需重做，已计入终止经营的 NZ$3,440 万减值处理也要重新评估。</div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Dole 股息 · 10/7 已支付</div><div class="code">NYSE: DOLE</div></div>
+          <span class="badge done">✅ 已完成 10/7 支付</span>
+        </div>
+        <div class="note">Q2 季度股息 $0.085/股（8/7 董事会宣告），<b>9/16 股权登记、10/7 已支付完毕</b>——属执行事项、非新公告。下一笔股息要看 Q3 财报同步宣告。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Del Monte Pacific · FY2026 年报 / AGM</div><div class="code">SGX: D03</div></div>
+          <span class="badge pend">⏳ 延期至 12/22</span>
+        </div>
+        <div class="note">9/17 SGX 公告：菲 SEC 9/15 批准、SGX 同意 <b>AGM 最迟 2026/12/22</b>、年报与可持续发展报告最迟 2026/11/30；<b>经审计 FY2026 财报将推迟发布</b>，关键变量仍是与主要融资方的磋商能否落定（详见海外板块 DMP 卡）。<b>本期（9/29–10/13）无新披露</b>——公司官网 SGX/PSE 备案清单 10 月暂无新条目，财报日历页 AGM 仍标 TBA；<b>按重组时间表，2026/8–11 的「阶段二：谈判与执行」正处窗口期</b>，10–11 月能否形成确定的过渡性融资安排是年报能否按期出的前置条件。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">安德利 · 三季报 + A 股回购</div><div class="code">605198.SH / 02218.HK</div></div>
+          <span class="badge pend">🔔 10/21 审议三季报</span>
+        </div>
+        <div class="note"><b>10/8 港交所《董事会会议公布》：定于 2026 年 10 月 21 日（周三）审议截至 9 月 30 日止九个月未经审计三季度合并业绩</b>——这将是电子材料收购签约、果汁主业承压两件事同时摆上台面的第一份报表。<b>10/9 另披露 A 股回购预案（2026-042）</b>：1.2–1.8 亿元、价格上限 100 元/股、用于员工持股/股权激励、期限 12 个月、无需股东会审议；控股股东/实控人/持股 5% 以上股东/董监高未来 3、6 个月无减持计划。<b>9/30 已公开上交所监管工作函回复（2026-040）</b>：12.75 亿估值、增值率 354.38%、预计商誉约 5.2 亿、三年累计业绩承诺 1.35 亿元。⚠️ 收购仍待先决条件达成，标的 1.46% 股权处冻结状态。</div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">百果园 · 临时股东会</div><div class="code">02411.HK</div></div>
+          <span class="badge pend">🔔 10/30 召开 · 通函未刊发</span>
+        </div>
+        <div class="note"><b>10/12《暂停办理股东登记》公告：定于 2026 年 10 月 30 日（周五）召开临时股东会</b>，10/27–10/30 暂停办理股东登记，过户文件须于 <b>10/26 16:30</b> 前送达香港中央证券登记有限公司。<b>⚠️ 截至 10/13，股东会通告与通函均未在披露易刊发，决议案原文未明</b>；据公司 8/28 关连交易公告，公司将<b>于临时股东会寻求独立股东批准借款协议 III</b>——向关连附属公司深圳百果园商业管理有限公司（本公司持股 51.02%）提供本金上限 <b>1.1 亿元</b>贷款，期限至 2029/10/31、固定年利率 3.2%，执行董事田锡秋持股 33.67%、其联系人<b>恒旺须回避表决</b>；连同借款协议 I（1.8 亿）与 II（0.7 亿），合计上限 <b>3.6 亿元</b>。<b>⚠️ 此为两处公告表述的对应推断，10/12 公告本身未列议案。</b>⚠️ 公司自 9/3 起连续 20 个交易日 + 10 月至今每个交易日回购，<b>末次回购后 30 天暂止期约至 11/11</b>，若股东会涉及股份发行须待暂止期结束。</div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">国投中鲁 · 配套融资</div><div class="code">600962.SH</div></div>
+          <span class="badge pend">⏳ 配套融资尚未启动</span>
+        </div>
+        <div class="note"><b>重组主体已落定（9/23 电子院 100% 股份过户完成、同日换帅），唯一未落地的环节是配套融资发行</b>——公司口径为「在证监会批复有效期内择机发行」，<b>截至 10/13 尚未启动</b>，本期（9/29–10/13）无任何融资进展公告。合并口径上，过户后主业已由「浓缩果汁」变为「果汁 + 工程设计」双主业，<b>下一份定期报告（三季报）将是并表后的首个完整季度，关注口径与商誉确认</b>；本期唯一新增是 9/29 债权转让公告（2026-056，详见国内头部板块国投中鲁卡片）。</div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div><div class="name">A 股三季报季 · 10 月下旬</div><div class="code">本报告覆盖的 A 股公司</div></div>
+          <span class="badge pend">📅 10/21 起密集披露</span>
+        </div>
+        <div class="note"><b>本报告覆盖的 A 股水果公司本期均无新增定期财报</b>（窗口 9/29–10/13 内零业绩披露），三季报集中在 10 月下旬：<b>安德利已定档 10/21 审议</b>；<b>诺普信自述预约披露日为 10/29</b>（据其 8/21 投资者关系活动记录表）；宏辉果蔬、永辉超市、家家悦、欢乐家、国投中鲁、*ST田野的预约日期窗口内未逐一确认，按 A 股规则应在 <b>10/31 前</b>披露完毕。⚠️ 三季报是本期多个悬念的集中检验点：诺普信 Q2 单季净利骤降是否延续、宏辉果蔬施美药业业绩承诺首年成色、永辉调改与定增进度、欢乐家椰子业务对水果罐头的替代节奏。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Dole · Q3 FY2026 财报</div><div class="code">NYSE: DOLE</div></div>
+          <span class="badge pend">⏳ 官方仍未定档</span>
+        </div>
+        <div class="note"><b>窗口期（9/29–10/13）EDGAR 零新 filing</b>——8-K/10-Q 均无，公司投资者关系页亦未挂出 Q3 业绩发布预告。按公司往年节奏（Q2 于 8 月发布）<b>下一份 Q3 财报预计落在 11 月</b>，但<b>截至 10/13 官方未宣布具体日期</b>：官网财报页的 "Schedules Third Quarter 2026 Earnings" 类路径探测全部 404（对照 Q2 同类路径返回 200），说明公告尚未挂出；EarningsWhispers 估 11/9 盘前、Barron's/TradingView 估 11/12、Zacks 估 11/12，<b>三者互不一致、均为第三方推算</b>。一致预期 EPS 约 $0.31。⚠️ 关注点：鲜果部门定价与成本传导、欧洲沙拉业务剥离后的口径可比性。</div>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><div class="name">Rockit 乐淇 · 资本募集</div><div class="code">新西兰 · 未上市</div></div>
+          <span class="badge pend">⏳ 暂无官方时间表</span>
+        </div>
+        <div class="note">计划 2026 年底进行一轮资本募集支撑产能扩张；2027 产季果农回报目标 1.50-1.55 纽币/管。<b>窗口内（9/29–10/13）无任何融资/股权变动消息</b>，官网新闻页与行业媒体条目均为营销、人事与产季向，该轮募资<b>仍无官方时间表</b>；公司亦未上市、无强制披露义务，后续只能靠官方新闻稿或新西兰行业媒体捕捉。</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="legend">
+    <span class="item"><span class="sw" style="background:var(--green)"></span>已发布 / 利好</span>
+    <span class="item"><span class="sw" style="background:var(--amber)"></span>即将发布 / 需关注</span>
+    <span class="item"><span class="sw" style="background:var(--red)"></span>亏损 / 风险信号</span>
+    <span class="item"><span class="sw" style="background:var(--violet)"></span>未上市 · 招股书/披露口径</span>
+        <span class="item"><span class="sw" style="background:var(--green)"></span>绿色链接=官方来源</span>
+    <span class="item"><span class="sw" style="background:var(--blue)"></span>蓝色链接=媒体解读</span>
+  </div>
+
+  <footer>
+    数据来源层级：公司官网 Investor Relations / 投资者关系 → 监管与交易所官网（SEC EDGAR · 港交所披露易 · 巨潮资讯网 · 上交所/深交所 · 全国股转系统官网）→ 证监会指定披露媒体全文（中国证券报 / 上海证券报）→ 权威财经媒体（交叉验证）。
+    <ul>
+      <li>所有业绩均为公司披露的<b>业绩预告 / 正式财报</b>数据，未经审计的预告以公司正式半年报为准。</li>
+      <li>海外企业财年口径不一：Del Monte Corporation / Mission Produce 为各自 FY2026 季度；Calavo 已并入 Mission、不再单独披露。</li>
+      <li>按「主业=水果」甄别头部企业，已剔除好想你（红枣零食）、农夫山泉/中国食品（饮料，果汁占比&lt;15%）、冠农/中基健康（棉花/番茄酱）等<b>非水果主业</b>公司；大型商超/生鲜零售<b>永辉、家家悦、叮咚买菜</b>按用户要求保留单列板块（2026 中报均已披露）；已退市无财报的洪九果品、海升果汁及被私有化的 SunOpta 等亦不收录。<b>宏辉果蔬</b>（8/20 曾因当时无业绩披露而剔除）8/28-30 已披露 2026 中报（含 7 亿并购施美药业），本次回补进种植板块。</li>
+      <li>已剔除好想你（红枣零食）、农夫山泉/中国食品（饮料）、冠农/中基健康（棉花/番茄酱）等非水果主业及无定期财报的公司；乐淇苹果 Rockit、Summerfruit、绿叶水果等未上市/私有企业无定期财报，有经营披露的已按特征归入对应板块（如 Rockit→海外），其余动态以日报为准。</li>
+      <li>冷冻果蔬巨头（2026-09-07 起列为动态跟踪）：Greenyard（欧洲果蔬龙头，2025/9 私有化退市）、Driscoll's（美国浆果合作社）、Wawona Frozen Foods（美国冷冻水果，家族企业）等<b>均无公开定期财报、不设结果卡</b>，行业动态以日报为准；Calavo Growers 已于 5/28 并入 Mission Produce（见海外板块 Mission 卡）。</li>
+      <li>未上市企业（鑫荣懋、佳农）无定期财报，数据为<b>联想控股港交所公告 / 招股书 / 监管辅导备案</b>口径，年份已在卡片标注。</li>
+      <li>本页面由 AI 于 2026-10-13 汇总，仅供信息参考，不构成投资建议。</li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>

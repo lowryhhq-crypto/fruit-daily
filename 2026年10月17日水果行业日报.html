@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.10.17</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.10.17</b> 星期六</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">18</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">17</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">12</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">6</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">14</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">10月17日国内苹果市场继续承压：新季晚富士丰产叠加节后需求偏弱，苹果期货主力本周累计下跌13.01%，10月16日收5998元/吨；山东栖霞受降雨影响交易清淡，80#一二级2.70-3.00元/斤，农业农村部监测6种水果均价6.66元/公斤持平。资本层面，国投中鲁完成重大资产重组后拟更名“国投电子”、注册资本增至8.11亿元，浓缩果蔬汁保留为其他主业；安德利果汁披露7.93亿元收购甬强科技62.06%股权，形成“果汁+半导体材料”双主业。进口端，智利早熟樱桃遭异常降雨，利马里河谷Brooks/Nimba裂果率高达80%，首批空运量减少、商业窗口缩短；越南猫山王榴莲因供应紧张，产地价8月以来上涨20%-30%，中国需求仍在增加。物流与渠道方面，平陆运河通航满月带动北部湾生鲜冷链园区20万吨冷库投用，中远海运“车厘子快航”首次挂靠大连，京东生鲜启动智利AG2车厘子预售。气象方面，台风“蔷琵”10月17日加强为台风级、未来5天对我国海区无影响，新疆阜康霜冻影响蓝莓草莓设施生产，印度石榴产区干旱导致出口级果短缺。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="国投中鲁拟更名“国投电子”：注册资本增至8.11亿元，保留浓缩果蔬汁业务 国投中鲁10月17日公告，10月16日董事会全票通过更名议案：中文名拟变更为“国投电子产业集团股份有限公司”，证券简称改为“国投电子”，注册资本由2.62亿元增至8.11亿元。公司9月已完成收购中国电子工程设计院资产过户，电子院2025年营收占比79.93%，形成“电子信息服务+浓缩果蔬汁”双主业，原有果汁业务保持稳定运营。 国投中鲁 新浪财经" style="--acc:var(--s1)"><a class="n-title" href="https://finance.sina.cn/2026-10-17/detail-inivmyfe1572608.d.html" target="_blank" rel="noopener noreferrer">国投中鲁拟更名“国投电子”：注册资本增至8.11亿元，保留浓缩果蔬汁业务</a><p class="n-sum">国投中鲁10月17日公告，10月16日董事会全票通过更名议案：中文名拟变更为“国投电子产业集团股份有限公司”，证券简称改为“国投电子”，注册资本由2.62亿元增至8.11亿元。公司9月已完成收购中国电子工程设计院资产过户，电子院2025年营收占比79.93%，形成“电子信息服务+浓缩果蔬汁”双主业，原有果汁业务保持稳定运营。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">国投中鲁</span><span>新浪财经</span><span>·</span><span>2026-10-17</span><a class="n-link" href="https://finance.sina.cn/2026-10-17/detail-inivmyfe1572608.d.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="苹果期货主力周内跌13.01%，10月16日收5998元/吨 受新季丰产与节后需求偏弱共振，苹果期货主力ap701本周（10月12-16日）累计下跌13.01%，10月16日收5998元/吨、单日跌3.32%，持仓量增至16.95万手。截至10月9日全国主产区冷库库存9.35万吨、环比减少4.09万吨，走货偏慢，西部果农自行入库增多。 郑商所/苹果产区 曲合网" style="--acc:var(--s1)"><a class="n-title" href="https://m.quheqihuo.com/news/202610174496594.html" target="_blank" rel="noopener noreferrer">苹果期货主力周内跌13.01%，10月16日收5998元/吨</a><p class="n-sum">受新季丰产与节后需求偏弱共振，苹果期货主力AP701本周（10月12-16日）累计下跌13.01%，10月16日收5998元/吨、单日跌3.32%，持仓量增至16.95万手。截至10月9日全国主产区冷库库存9.35万吨、环比减少4.09万吨，走货偏慢，西部果农自行入库增多。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">郑商所/苹果产区</span><span>曲合网</span><span>·</span><span>2026-10-17</span><a class="n-link" href="https://m.quheqihuo.com/news/202610174496594.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="山东产区降雨致苹果交易受阻，栖霞80#一二级2.70-3.00元/斤 10月17日中果网报道，山东栖霞产区受降雨影响上货不多、交易清淡，纸袋晚富士80#起步一二级2.70-3.00元/斤、统货2.00-2.50元/斤，价格稳定；西部产区客商挑拣高性价比货源，果农有序入库，行情稳定。 栖霞苹果 中果网" style="--acc:var(--s1)"><a class="n-title" href="https://www.pingguo7.cn/hq/show-htm-itemid-23884.html" target="_blank" rel="noopener noreferrer">山东产区降雨致苹果交易受阻，栖霞80#一二级2.70-3.00元/斤</a><p class="n-sum">10月17日中果网报道，山东栖霞产区受降雨影响上货不多、交易清淡，纸袋晚富士80#起步一二级2.70-3.00元/斤、统货2.00-2.50元/斤，价格稳定；西部产区客商挑拣高性价比货源，果农有序入库，行情稳定。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">栖霞苹果</span><span>中果网</span><span>·</span><span>2026-10-17</span><a class="n-link" href="https://www.pingguo7.cn/hq/show-htm-itemid-23884.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="农业农村部：10月16日6种水果均价6.66元/公斤，环比持平 农业农村部监测显示，10月16日“农产品批发价格200指数”为112.88，比前一天下降0.44点；“菜篮子”产品批发价格指数112.75。重点监测的6种水果平均价格6.66元/公斤，与前一天持平；46个鲜活农产品中巨峰葡萄降幅居前，达1.6%。 农业农村部 农业农村部" style="--acc:var(--s1)"><a class="n-title" href="https://scs.moa.gov.cn/jcyj/202610/t20261016_6488662.htm" target="_blank" rel="noopener noreferrer">农业农村部：10月16日6种水果均价6.66元/公斤，环比持平</a><p class="n-sum">农业农村部监测显示，10月16日“农产品批发价格200指数”为112.88，比前一天下降0.44点；“菜篮子”产品批发价格指数112.75。重点监测的6种水果平均价格6.66元/公斤，与前一天持平；46个鲜活农产品中巨峰葡萄降幅居前，达1.6%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">农业农村部</span><span>农业农村部</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://scs.moa.gov.cn/jcyj/202610/t20261016_6488662.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="越南猫山王榴莲缺货，采购佣金升至近5%，对华出口8月同比增62% 10月16日freshplaza报道，越南猫山王进入季末、货源紧张，贸易商向代收商支付近5%的采购佣金，远高于ri6的2000越南盾/公斤；dak lak不利天气导致5%-10%果实出现品质问题，日收购量从8月的7-10吨降至半吨。中国需求增加而马来西亚主季结束，越南8月对华榴莲出口额达9.56亿美元、同比增长62%，产地价8月至9月中旬上涨20%-30%。 越南榴莲 freshplaza" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.com/oceania/article/9883686/musang-king-durian-shortages-drive-up-prices-in-vietnam/" target="_blank" rel="noopener noreferrer">越南猫山王榴莲缺货，采购佣金升至近5%，对华出口8月同比增62%</a><p class="n-sum">10月16日FreshPlaza报道，越南猫山王进入季末、货源紧张，贸易商向代收商支付近5%的采购佣金，远高于Ri6的2000越南盾/公斤；Dak Lak不利天气导致5%-10%果实出现品质问题，日收购量从8月的7-10吨降至半吨。中国需求增加而马来西亚主季结束，越南8月对华榴莲出口额达9.56亿美元、同比增长62%，产地价8月至9月中旬上涨20%-30%。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">越南榴莲</span><span>FreshPlaza</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://www.freshplaza.com/oceania/article/9883686/musang-king-durian-shortages-drive-up-prices-in-vietnam/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="南非柑橘对欧季收官：物流延误叠加运费高企，“从未经历这样的年份” 10月16日freshplaza报道，南非本季最后一批葡萄柚和valencia midnight橙正运往欧洲。进口商rhino fresh表示，本季货量持平但利润下滑，除运费上涨外还遭遇物流延误，“从未经历过这样异常的一年”。 南非柑橘/capespan freshplaza" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.com/africa/article/9883194/i-ve-never-experienced-a-year-like-this-before/" target="_blank" rel="noopener noreferrer">南非柑橘对欧季收官：物流延误叠加运费高企，“从未经历这样的年份”</a><p class="n-sum">10月16日FreshPlaza报道，南非本季最后一批葡萄柚和Valencia Midnight橙正运往欧洲。进口商Rhino Fresh表示，本季货量持平但利润下滑，除运费上涨外还遭遇物流延误，“从未经历过这样异常的一年”。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">南非柑橘/Capespan</span><span>FreshPlaza</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://www.freshplaza.com/africa/article/9883194/i-ve-never-experienced-a-year-like-this-before/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国际" data-search="智利早熟樱桃遭异常降雨：利马里河谷brooks/nimba裂果率达80% 亚洲水果10月17日报道，受异常降雨影响，智利科金博大区奥瓦列附近利马里河谷的早熟樱桃生产遭受严重冲击。对水分更敏感的brooks和nimba品种约80%出现裂果，rainier、glenred、lapins、santina等品种裂果率相对较低；过多水分导致裂果风险加剧，果农已进入高度戒备。 智利樱桃/asoex 亚洲水果" style="--acc:var(--s3)"><a class="n-title" href="https://asiafruitchina.net/32853.html" target="_blank" rel="noopener noreferrer">智利早熟樱桃遭异常降雨：利马里河谷Brooks/Nimba裂果率达80%</a><p class="n-sum">亚洲水果10月17日报道，受异常降雨影响，智利科金博大区奥瓦列附近利马里河谷的早熟樱桃生产遭受严重冲击。对水分更敏感的Brooks和Nimba品种约80%出现裂果，Rainier、Glenred、Lapins、Santina等品种裂果率相对较低；过多水分导致裂果风险加剧，果农已进入高度戒备。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">智利樱桃/ASOEX</span><span>亚洲水果</span><span>·</span><span>2026-10-17</span><a class="n-link" href="https://asiafruitchina.net/32853.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国际" data-search="全球蓝莓供应偏紧：秘鲁下调出口预期，智利新果上市前价格难降 10月16日freshplaza全球蓝莓市场报告显示，欧洲多国供应紧张、价格高企；秘鲁因厄尔尼诺影响下调蓝莓出口预期，未来数周发货量减少；南非产季开局良好，预计秘鲁供应减少将支撑价格。荷兰进口商称，在智利蓝莓上市前市场难有明显变化，11月下旬至12月初可能更加紧张。 秘鲁蓝莓/智利蓝莓 freshplaza" style="--acc:var(--s3)"><a class="n-title" href="https://www.freshplaza.com/asia/article/9883254/global-market-overview-blueberries/" target="_blank" rel="noopener noreferrer">全球蓝莓供应偏紧：秘鲁下调出口预期，智利新果上市前价格难降</a><p class="n-sum">10月16日FreshPlaza全球蓝莓市场报告显示，欧洲多国供应紧张、价格高企；秘鲁因厄尔尼诺影响下调蓝莓出口预期，未来数周发货量减少；南非产季开局良好，预计秘鲁供应减少将支撑价格。荷兰进口商称，在智利蓝莓上市前市场难有明显变化，11月下旬至12月初可能更加紧张。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">秘鲁蓝莓/智利蓝莓</span><span>FreshPlaza</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://www.freshplaza.com/asia/article/9883254/global-market-overview-blueberries/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国内" data-search="国投中鲁重组后拟更名“国投电子”，浓缩果蔬汁保留为其他主业 国投中鲁10月17日披露，拟将证券简称变更为“国投电子”、注册资本增至8.11亿元。公司已完成中国电子工程设计院资产过户，电子院2025年营收占比79.93%；重组后形成电子信息服务与浓缩果蔬汁双主业，原有果汁业务保持稳定运营。 国投中鲁 新浪财经" style="--acc:var(--s4)"><a class="n-title" href="https://finance.sina.cn/2026-10-17/detail-inivmyfe1572608.d.html" target="_blank" rel="noopener noreferrer">国投中鲁重组后拟更名“国投电子”，浓缩果蔬汁保留为其他主业</a><p class="n-sum">国投中鲁10月17日披露，拟将证券简称变更为“国投电子”、注册资本增至8.11亿元。公司已完成中国电子工程设计院资产过户，电子院2025年营收占比79.93%；重组后形成电子信息服务与浓缩果蔬汁双主业，原有果汁业务保持稳定运营。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">国投中鲁</span><span>新浪财经</span><span>·</span><span>2026-10-17</span><a class="n-link" href="https://finance.sina.cn/2026-10-17/detail-inivmyfe1572608.d.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="processing" data-region="国内" data-search="安德利果汁7.93亿元收购甬强科技62.06%股权，构建“果汁+半导体材料”双主业 安德利果汁10月16日披露投资者关系活动记录表：公司以现金792,787,965.88元收购宁波甬强科技62.0611%股权并取得控制权，切入集成电路电子信息领域，形成“果汁主业稳盘+新兴产业增量”的双轮驱动格局。本次收购为其在浓缩果汁主业之外布局高端覆铜板等电子材料赛道。 安德利果汁 证券之星" style="--acc:var(--s4)"><a class="n-title" href="https://wap.stockstar.com/detail/AN2026101600040999" target="_blank" rel="noopener noreferrer">安德利果汁7.93亿元收购甬强科技62.06%股权，构建“果汁+半导体材料”双主业</a><p class="n-sum">安德利果汁10月16日披露投资者关系活动记录表：公司以现金792,787,965.88元收购宁波甬强科技62.0611%股权并取得控制权，切入集成电路电子信息领域，形成“果汁主业稳盘+新兴产业增量”的双轮驱动格局。本次收购为其在浓缩果汁主业之外布局高端覆铜板等电子材料赛道。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">安德利果汁</span><span>证券之星</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://wap.stockstar.com/detail/AN2026101600040999" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-supermarket" data-title="🏪 商超" style="--acc:var(--s5)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s5)"></span>🏪 商超</div></div><div class="seg-list"><article class="n-card" data-seg="supermarket" data-region="国内" data-search="孟连国产牛油果首车发往山姆，本产季集配中心预计供货6000吨 10月15日，中国孟连牛油果集配中心发往山姆会员店的首车正式发车，孟连国产牛油果正式进入山姆渠道，后续全国山姆门店将陆续上架。集配中心辐射7万亩规模化种植基地，本产季预计供货6000吨；孟连已替代约15%的进口牛油果份额，产品覆盖全国28个省级行政区。 山姆/孟连牛油果 云南网" style="--acc:var(--s5)"><a class="n-title" href="http://society.yunnan.cn/system/2026/10/16/034175566.shtml" target="_blank" rel="noopener noreferrer">孟连国产牛油果首车发往山姆，本产季集配中心预计供货6000吨</a><p class="n-sum">10月15日，中国孟连牛油果集配中心发往山姆会员店的首车正式发车，孟连国产牛油果正式进入山姆渠道，后续全国山姆门店将陆续上架。集配中心辐射7万亩规模化种植基地，本产季预计供货6000吨；孟连已替代约15%的进口牛油果份额，产品覆盖全国28个省级行政区。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">山姆/孟连牛油果</span><span>云南网</span><span>·</span><span>2026-10-16</span><a class="n-link" href="http://society.yunnan.cn/system/2026/10/16/034175566.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="京东生鲜启动智利ag2车厘子预售，首批空运预计10月23日抵华 10月16日freshfruitportal报道，京东生鲜启动2026/27产季首批智利ag2车厘子预售，主规格要求2j及以上，首批空运货预计10月23日左右抵达中国。首批品种为global ag培育的早熟ag2，京东采销团队在产季前深入智利产区与出口商建立直采合作。 京东 freshfruitportal" style="--acc:var(--s6)"><a class="n-title" href="https://www.freshfruitportal.com/news/2026/10/16/chilean-cherry-presale/" target="_blank" rel="noopener noreferrer">京东生鲜启动智利AG2车厘子预售，首批空运预计10月23日抵华</a><p class="n-sum">10月16日FreshFruitPortal报道，京东生鲜启动2026/27产季首批智利AG2车厘子预售，主规格要求2J及以上，首批空运货预计10月23日左右抵达中国。首批品种为Global AG培育的早熟AG2，京东采销团队在产季前深入智利产区与出口商建立直采合作。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">京东</span><span>FreshFruitPortal</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://www.freshfruitportal.com/news/2026/10/16/chilean-cherry-presale/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="平陆运河通航满月：北部湾生鲜冷链园区20万吨冷库投用，东盟水果转向加工增值 10月16日平陆运河建成通航满月，广西北部湾国际生鲜冷链园区已建成20万吨级冷库及水产品仓库、跨境电商仓、物流中心等设施，是运河出海口唯一国家级骨干冷链物流基地。园区集散东盟进口榴莲、芒果、椰子等热带水果，并引进榴莲果肉加工、芒果初加工等项目，推动从“过境仓储”向“加工增值”升级。 北部湾国际生鲜冷链园区 南方财经/21世纪经济报道" style="--acc:var(--s7)"><a class="n-title" href="https://www.sfccn.com/2026/10-16/0MMDE0MDVfMjI3MjM0MA.html" target="_blank" rel="noopener noreferrer">平陆运河通航满月：北部湾生鲜冷链园区20万吨冷库投用，东盟水果转向加工增值</a><p class="n-sum">10月16日平陆运河建成通航满月，广西北部湾国际生鲜冷链园区已建成20万吨级冷库及水产品仓库、跨境电商仓、物流中心等设施，是运河出海口唯一国家级骨干冷链物流基地。园区集散东盟进口榴莲、芒果、椰子等热带水果，并引进榴莲果肉加工、芒果初加工等项目，推动从“过境仓储”向“加工增值”升级。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">北部湾国际生鲜冷链园区</span><span>南方财经/21世纪经济报道</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://www.sfccn.com/2026/10-16/0MMDE0MDVfMjI3MjM0MA.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="中远海运“车厘子快航”首次挂靠大连，12月26日预计抵达 10月16日中远海运集运宣布，“车厘子快航”首次将大连纳入直挂网络：首航预计11月30日从智利圣安东尼奥出发，12月26日抵达大连，全程约26天。整船冷箱抵达后可通过冷藏班列、冷链拖车分拨至沈阳、长春、哈尔滨等东北城市，东北进口商不再依赖南方口岸中转。 中远海运 中远海运集运" style="--acc:var(--s7)"><a class="n-title" href="https://lines.coscoshipping.com/home/News/detail/17921397032013324998/50000000000000232?id=50000000000000232" target="_blank" rel="noopener noreferrer">中远海运“车厘子快航”首次挂靠大连，12月26日预计抵达</a><p class="n-sum">10月16日中远海运集运宣布，“车厘子快航”首次将大连纳入直挂网络：首航预计11月30日从智利圣安东尼奥出发，12月26日抵达大连，全程约26天。整船冷箱抵达后可通过冷藏班列、冷链拖车分拨至沈阳、长春、哈尔滨等东北城市，东北进口商不再依赖南方口岸中转。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">中远海运</span><span>中远海运集运</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://lines.coscoshipping.com/home/News/detail/17921397032013324998/50000000000000232?id=50000000000000232" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="中美拟议降税清单覆盖多种农产品，大豆仍保留约13%关税 10月16日彭博社报道，中国国企已预订至少20船、约130万吨美国大豆，主要在12月至明年3月装船；美国农业部本周确认对华销售80万吨大豆。9月元首峰会后中美公布拟议降税清单，中方将下调包括小麦、玉米在内的多种美国农产品关税，但大豆仍未列入，输华美豆仍须缴纳约13%的关税。 中美贸易 联合早报" style="--acc:var(--s8)"><a class="n-title" href="https://www.zaobao.com/news/china/story20261016-9849783" target="_blank" rel="noopener noreferrer">中美拟议降税清单覆盖多种农产品，大豆仍保留约13%关税</a><p class="n-sum">10月16日彭博社报道，中国国企已预订至少20船、约130万吨美国大豆，主要在12月至明年3月装船；美国农业部本周确认对华销售80万吨大豆。9月元首峰会后中美公布拟议降税清单，中方将下调包括小麦、玉米在内的多种美国农产品关税，但大豆仍未列入，输华美豆仍须缴纳约13%的关税。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">中美贸易</span><span>联合早报</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://www.zaobao.com/news/china/story20261016-9849783" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="新疆阜康发布霜冻蓝色预警，蓝莓草莓设施产区最低-3℃至-10℃ 阜康市气象台10月14日19时发布大风、霜冻蓝色预警，10月15日至17日阜康大部出现不同程度霜冻，局地气温降至-3℃至-10℃。当地蓝莓、草莓设施园区预计今年产量约20吨，本次降温主要影响蓝莓花芽分化和草莓果实膨大，农技人员逐棚指导压膜、盖被、控水控肥和检修供暖。 阜康设施农业 中新网新疆" style="--acc:var(--s9)"><a class="n-title" href="http://www.xj.chinanews.com.cn/dizhou/2026-10-17/detail-ihfmazyc5531578.shtml" target="_blank" rel="noopener noreferrer">新疆阜康发布霜冻蓝色预警，蓝莓草莓设施产区最低-3℃至-10℃</a><p class="n-sum">阜康市气象台10月14日19时发布大风、霜冻蓝色预警，10月15日至17日阜康大部出现不同程度霜冻，局地气温降至-3℃至-10℃。当地蓝莓、草莓设施园区预计今年产量约20吨，本次降温主要影响蓝莓花芽分化和草莓果实膨大，农技人员逐棚指导压膜、盖被、控水控肥和检修供暖。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">阜康设施农业</span><span>中新网新疆</span><span>·</span><span>2026-10-17</span><a class="n-link" href="http://www.xj.chinanews.com.cn/dizhou/2026-10-17/detail-ihfmazyc5531578.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="台风“蔷琵”10月17日加强为台风级，未来5天对我国海区无影响 中央气象台消息，今年第30号台风“蔷琵”10月17日凌晨由强热带风暴级加强为台风级；17日5时中心位于关岛塞班东南方向约530公里，中心附近最大风力12级（35米/秒），最低气压970百帕。预计其将以每小时20-25公里向西北偏西移动、继续增强，未来5天对我国海区无影响，21-22日路径存在较大不确定性。 中央气象台 央广网" style="--acc:var(--s9)"><a class="n-title" href="https://news.cnr.cn/native/gd/kx/20261017/t20261017_527844468.shtml" target="_blank" rel="noopener noreferrer">台风“蔷琵”10月17日加强为台风级，未来5天对我国海区无影响</a><p class="n-sum">中央气象台消息，今年第30号台风“蔷琵”10月17日凌晨由强热带风暴级加强为台风级；17日5时中心位于关岛塞班东南方向约530公里，中心附近最大风力12级（35米/秒），最低气压970百帕。预计其将以每小时20-25公里向西北偏西移动、继续增强，未来5天对我国海区无影响，21-22日路径存在较大不确定性。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">中央气象台</span><span>央广网</span><span>·</span><span>2026-10-17</span><a class="n-link" href="https://news.cnr.cn/native/gd/kx/20261017/t20261017_527844468.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="印度石榴产区干旱：果实偏小、糖度下降，出口级货源短缺 10月16日freshplaza报道，印度石榴主产区干旱和水胁迫影响果实品质，果个不均、brix糖度低于去年，细菌性疫病和红蜘蛛加重问题，出口商难以收购符合海外买家规格的货源。部分产区因降雨表现较好，但高温少雨地区质量不稳定；预计第46周起质量才会改善。 印度石榴 freshplaza" style="--acc:var(--s9)"><a class="n-title" href="https://www.freshplaza.com/oceania/article/9883843/drought-leaves-indian-pomegranate-exporters-short-of-suitable-fruit/" target="_blank" rel="noopener noreferrer">印度石榴产区干旱：果实偏小、糖度下降，出口级货源短缺</a><p class="n-sum">10月16日FreshPlaza报道，印度石榴主产区干旱和水胁迫影响果实品质，果个不均、Brix糖度低于去年，细菌性疫病和红蜘蛛加重问题，出口商难以收购符合海外买家规格的货源。部分产区因降雨表现较好，但高温少雨地区质量不稳定；预计第46周起质量才会改善。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">印度石榴</span><span>FreshPlaza</span><span>·</span><span>2026-10-16</span><a class="n-link" href="https://www.freshplaza.com/oceania/article/9883843/drought-leaves-indian-pomegranate-exporters-short-of-suitable-fruit/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-10-19 09:22 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
