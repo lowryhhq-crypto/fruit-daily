@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.10.19</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.10.19</b> 星期一</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">13</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">12</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">10</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">11</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">今日主线：智利2026/27产季首票空运车厘子10月18日抵沪，出口量预估同比增约16%，但早熟果受降雨影响推迟5—10天；汇源集团宣布与“汇源”品牌切割、启用“咱家果源”，品牌与重整纠纷升级。国内新季苹果丰产压力延续，大连70余万吨苹果进入采收高峰、80mm以上红富士收购价约4元/公斤，庆阳苹果大会同日启幕。贸易端，前三季度中国—东盟贸易6.84万亿元、增22.7%，友谊关口岸前三季度进口榴莲73.9万吨、占全国三分之一以上。气象端，辽宁发布寒潮和霜冻预警、19日晨山区局部-5至-1℃，超强台风“蔷琵”21日前对我国海区无影响，印度桑格利葡萄产区缺水。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="智利2026/27产季首票空运车厘子10月18日抵沪，出口量预估同比增约16% 10月18日6时42分，国内首票智利2026年产季车厘子随东航物流旗下中货航ck224航班飞抵上海浦东机场，由东航冷链提供进口保障。据usda与智利水果出口商协会10月13日预测，本产季智利车厘子总产量约72.7万吨、出口总量约66.7万吨，同比增约16%；受降雨影响早熟品种采摘普遍推迟5—10天，首批海运柜预计11月中下旬到港。 东航物流、京东生鲜 新京报" style="--acc:var(--s1)"><a class="n-title" href="https://www.bjnews.com.cn/detail/1792293017129831.html" target="_blank" rel="noopener noreferrer">智利2026/27产季首票空运车厘子10月18日抵沪，出口量预估同比增约16%</a><p class="n-sum">10月18日6时42分，国内首票智利2026年产季车厘子随东航物流旗下中货航CK224航班飞抵上海浦东机场，由东航冷链提供进口保障。据USDA与智利水果出口商协会10月13日预测，本产季智利车厘子总产量约72.7万吨、出口总量约66.7万吨，同比增约16%；受降雨影响早熟品种采摘普遍推迟5—10天，首批海运柜预计11月中下旬到港。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">东航物流、京东生鲜</span><span>新京报</span><span>·</span><span>2026-10-18</span><a class="n-link" href="https://www.bjnews.com.cn/detail/1792293017129831.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="汇源集团宣布与“汇源”品牌切割，全面启用“咱家果源”品牌 北京汇源饮料食品集团10月19日发布严正声明称，重整投资人上海文盛资产尚有8.5亿元投资款未按承诺支付，已投入的7.5亿元也未按协议投入企业经营，集团已启动法律程序；集团及下属企业不再生产带“汇源”商标的果汁，转为经营自有品牌“咱家果源”。 汇源集团 天津广播" style="--acc:var(--s1)"><a class="n-title" href="https://news.qq.com/rain/a/20261019A03H2P00" target="_blank" rel="noopener noreferrer">汇源集团宣布与“汇源”品牌切割，全面启用“咱家果源”品牌</a><p class="n-sum">北京汇源饮料食品集团10月19日发布严正声明称，重整投资人上海文盛资产尚有8.5亿元投资款未按承诺支付，已投入的7.5亿元也未按协议投入企业经营，集团已启动法律程序；集团及下属企业不再生产带“汇源”商标的果汁，转为经营自有品牌“咱家果源”。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">汇源集团</span><span>天津广播</span><span>·</span><span>2026-10-19</span><a class="n-link" href="https://news.qq.com/rain/a/20261019A03H2P00" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="韩国济州“redeuhyang”柑橘裂果率连续两年超30%，10月初仍约20% 韩国农村振兴厅数据显示，济州redeuhyang柑橘农场平均裂果率2024年为38.4%、2025年为30.6%，今年10月初暂估约20%，连续两年高于15%—20%的常年水平；当局正推广温度、水分、土壤和养分管理措施以减少裂果。 济州柑橘 financial news (korea)" style="--acc:var(--s2)"><a class="n-title" href="https://en.fnnews.com/news/202610181047273866" target="_blank" rel="noopener noreferrer">韩国济州“Redeuhyang”柑橘裂果率连续两年超30%，10月初仍约20%</a><p class="n-sum">韩国农村振兴厅数据显示，济州Redeuhyang柑橘农场平均裂果率2024年为38.4%、2025年为30.6%，今年10月初暂估约20%，连续两年高于15%—20%的常年水平；当局正推广温度、水分、土壤和养分管理措施以减少裂果。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">济州柑橘</span><span>Financial News (Korea)</span><span>·</span><span>2026-10-18</span><a class="n-link" href="https://en.fnnews.com/news/202610181047273866" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="70余万吨大连苹果进入采收高峰：80mm以上红富士统货收购价约4元/公斤 10月19日报道，大连中晚熟苹果进入采收上市高峰，栽植面积超过50万亩，主栽富士、国光、寒富、嘎啦等品种；今年全国苹果预估产量约5000万吨（去年约4600万吨），80mm以上红富士统货收购价目前约4元/公斤，去年最高曾达6.2元/公斤。 大连苹果产区 央广网" style="--acc:var(--s3)"><a class="n-title" href="https://dl.cnr.cn/jdt/20261019/t20261019_527846256.shtml" target="_blank" rel="noopener noreferrer">70余万吨大连苹果进入采收高峰：80mm以上红富士统货收购价约4元/公斤</a><p class="n-sum">10月19日报道，大连中晚熟苹果进入采收上市高峰，栽植面积超过50万亩，主栽富士、国光、寒富、嘎啦等品种；今年全国苹果预估产量约5000万吨（去年约4600万吨），80mm以上红富士统货收购价目前约4元/公斤，去年最高曾达6.2元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">大连苹果产区</span><span>央广网</span><span>·</span><span>2026-10-19</span><a class="n-link" href="https://dl.cnr.cn/jdt/20261019/t20261019_527846256.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="2026中国苹果年会暨庆阳苹果大会启幕：庆阳苹果面积133万亩、全产业链产值超125亿元 10月18日，2026中国苹果年会暨庆阳苹果大会在甘肃庆阳启幕，会期至10月24日，主题为“数字赋能·智算兴果”。庆阳苹果种植面积达133万亩，全产业链产值超125亿元，产品出口13个国家。 庆阳苹果 庆阳网" style="--acc:var(--s3)"><a class="n-title" href="https://wap.qingyangwang.com.cn/content/2026-10/18/content_737657.html" target="_blank" rel="noopener noreferrer">2026中国苹果年会暨庆阳苹果大会启幕：庆阳苹果面积133万亩、全产业链产值超125亿元</a><p class="n-sum">10月18日，2026中国苹果年会暨庆阳苹果大会在甘肃庆阳启幕，会期至10月24日，主题为“数字赋能·智算兴果”。庆阳苹果种植面积达133万亩，全产业链产值超125亿元，产品出口13个国家。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">庆阳苹果</span><span>庆阳网</span><span>·</span><span>2026-10-18</span><a class="n-link" href="https://wap.qingyangwang.com.cn/content/2026-10/18/content_737657.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="云南蒙自前三季度出口石榴超6.5万吨，远销14个国家和地区 10月18日报道，今年前三季度蒙自海关共监管出口石榴超6.5万吨，远销14个国家和地区，首批应用“属地查检‘1+n’模式”的出口鲜石榴顺利放行；蒙自石榴种植面积7.7万亩，年产量稳定在22万吨以上，鲜果产值超8.8亿元。 蒙自石榴 东方财富" style="--acc:var(--s3)"><a class="n-title" href="https://qhweb.eastmoney.com/news/202610183899180026.html" target="_blank" rel="noopener noreferrer">云南蒙自前三季度出口石榴超6.5万吨，远销14个国家和地区</a><p class="n-sum">10月18日报道，今年前三季度蒙自海关共监管出口石榴超6.5万吨，远销14个国家和地区，首批应用“属地查检‘1+N’模式”的出口鲜石榴顺利放行；蒙自石榴种植面积7.7万亩，年产量稳定在22万吨以上，鲜果产值超8.8亿元。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">蒙自石榴</span><span>东方财富</span><span>·</span><span>2026-10-18</span><a class="n-link" href="https://qhweb.eastmoney.com/news/202610183899180026.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国内" data-search="汇源集团宣布与“汇源”品牌切割，全面启用“咱家果源”品牌 北京汇源饮料食品集团10月19日发布严正声明称，重整投资人上海文盛资产尚有8.5亿元投资款未按承诺支付，已投入的7.5亿元也未按协议投入企业经营，集团已启动法律程序；集团及下属企业不再生产带“汇源”商标的果汁，转为经营自有品牌“咱家果源”。 汇源集团 天津广播" style="--acc:var(--s4)"><a class="n-title" href="https://news.qq.com/rain/a/20261019A03H2P00" target="_blank" rel="noopener noreferrer">汇源集团宣布与“汇源”品牌切割，全面启用“咱家果源”品牌</a><p class="n-sum">北京汇源饮料食品集团10月19日发布严正声明称，重整投资人上海文盛资产尚有8.5亿元投资款未按承诺支付，已投入的7.5亿元也未按协议投入企业经营，集团已启动法律程序；集团及下属企业不再生产带“汇源”商标的果汁，转为经营自有品牌“咱家果源”。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">汇源集团</span><span>天津广播</span><span>·</span><span>2026-10-19</span><a class="n-link" href="https://news.qq.com/rain/a/20261019A03H2P00" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="京东生鲜完成2026产季首批空运智利车厘子履约，ag2覆盖2j至4j级 10月18日，京东生鲜10月12日开启预售的2026产季首批空运智利车厘子在沪完成履约送达；该批早熟ag2品种来自智利colchagua产区，经圣地亚哥全货机直飞上海，规格覆盖2j至4j级，全程冷链。 京东生鲜 金融界" style="--acc:var(--s6)"><a class="n-title" href="https://finance.jrj.com.cn/2026/10/18175558766530.shtml" target="_blank" rel="noopener noreferrer">京东生鲜完成2026产季首批空运智利车厘子履约，AG2覆盖2J至4J级</a><p class="n-sum">10月18日，京东生鲜10月12日开启预售的2026产季首批空运智利车厘子在沪完成履约送达；该批早熟AG2品种来自智利Colchagua产区，经圣地亚哥全货机直飞上海，规格覆盖2J至4J级，全程冷链。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">京东生鲜</span><span>金融界</span><span>·</span><span>2026-10-18</span><a class="n-link" href="https://finance.jrj.com.cn/2026/10/18175558766530.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="友谊关口岸前三季度进口榴莲73.9万吨，占全国进口量三分之一以上 10月18日报道，今年1—9月经广西凭祥友谊关口岸进口榴莲73.9万吨、货值203.3亿元，同比分别增长19%和15.8%，进口量占全国进口榴莲三分之一以上，即全国每3个进口榴莲约有1个经该口岸通关。 友谊关口岸 经济日报" style="--acc:var(--s7)"><a class="n-title" href="http://www.jingjiribao.cn/static/detail.jsp?id=690798" target="_blank" rel="noopener noreferrer">友谊关口岸前三季度进口榴莲73.9万吨，占全国进口量三分之一以上</a><p class="n-sum">10月18日报道，今年1—9月经广西凭祥友谊关口岸进口榴莲73.9万吨、货值203.3亿元，同比分别增长19%和15.8%，进口量占全国进口榴莲三分之一以上，即全国每3个进口榴莲约有1个经该口岸通关。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">友谊关口岸</span><span>经济日报</span><span>·</span><span>2026-10-18</span><a class="n-link" href="http://www.jingjiribao.cn/static/detail.jsp?id=690798" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国内" data-search="前三季度中国与东盟贸易达6.84万亿元，同比增22.7% 10月19日报道，海关数据显示今年前三季度中国与东盟贸易总值6.84万亿元，同比增长22.7%，东盟继续保持中国第一大贸易伙伴地位；同期中国对apec其他经济体进出口24.07万亿元，增长23.9%。 中国—东盟 证券时报" style="--acc:var(--s8)"><a class="n-title" href="https://stcn.com/article/detail/4224353.html" target="_blank" rel="noopener noreferrer">前三季度中国与东盟贸易达6.84万亿元，同比增22.7%</a><p class="n-sum">10月19日报道，海关数据显示今年前三季度中国与东盟贸易总值6.84万亿元，同比增长22.7%，东盟继续保持中国第一大贸易伙伴地位；同期中国对APEC其他经济体进出口24.07万亿元，增长23.9%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">中国—东盟</span><span>证券时报</span><span>·</span><span>2026-10-19</span><a class="n-link" href="https://stcn.com/article/detail/4224353.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="辽宁寒潮蓝色预警：19日晨山区局部-5至-1℃，有霜冻 辽宁省10月18日继续发布寒潮蓝色预警，预计18日16时至19日8时全省大部气温再降8—10℃；19日早晨东部、西北部最低0—3℃有霜或轻霜，山区局部-5至-1℃有霜冻，需防范对农业生产的不利影响。 辽宁果区 沈阳公共频道" style="--acc:var(--s9)"><a class="n-title" href="https://news.qq.com/rain/a/20261018A0ADSO00" target="_blank" rel="noopener noreferrer">辽宁寒潮蓝色预警：19日晨山区局部-5至-1℃，有霜冻</a><p class="n-sum">辽宁省10月18日继续发布寒潮蓝色预警，预计18日16时至19日8时全省大部气温再降8—10℃；19日早晨东部、西北部最低0—3℃有霜或轻霜，山区局部-5至-1℃有霜冻，需防范对农业生产的不利影响。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">辽宁果区</span><span>沈阳公共频道</span><span>·</span><span>2026-10-18</span><a class="n-link" href="https://news.qq.com/rain/a/20261018A0ADSO00" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="台风“蔷琵”加强为超强台风级（17级），21日前对我国海区无影响 中央气象台10月18日17时监测，今年第30号台风“蔷琵”已加强为超强台风级，中心附近最大风力17级（60米/秒）、中心最低气压920百帕，位于台湾台东市东偏南方向约2430公里的西北太平洋洋面；预计其继续向西偏北方向移动，21日前对我国海区无影响。 中央气象台 央广网" style="--acc:var(--s9)"><a class="n-title" href="https://news.cnr.cn/native/gd/20261018/t20261018_527846018.shtml" target="_blank" rel="noopener noreferrer">台风“蔷琵”加强为超强台风级（17级），21日前对我国海区无影响</a><p class="n-sum">中央气象台10月18日17时监测，今年第30号台风“蔷琵”已加强为超强台风级，中心附近最大风力17级（60米/秒）、中心最低气压920百帕，位于台湾台东市东偏南方向约2430公里的西北太平洋洋面；预计其继续向西偏北方向移动，21日前对我国海区无影响。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">中央气象台</span><span>央广网</span><span>·</span><span>2026-10-18</span><a class="n-link" href="https://news.cnr.cn/native/gd/20261018/t20261018_527846018.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="印度桑格利葡萄产区缺水，农户担心本季减产 10月18日报道，印度马哈拉施特拉邦桑格利（sangli）葡萄产区因严重缺水，农户担心本季葡萄产量受损；尽管果实发育尚可，但灌溉水源不足，当地葡萄种植面积已出现下降，农户正采用覆盖保墒等措施。 印度桑格利葡萄产区 lokmat" style="--acc:var(--s9)"><a class="n-title" href="https://www.lokmat.com/agriculture/farming-ideas/producers-fear-that-the-production-of-vineyards-in-the-sangli-belt-will-be-lost-this-year-due-to-lack-of-water-a-a999/amp/" target="_blank" rel="noopener noreferrer">印度桑格利葡萄产区缺水，农户担心本季减产</a><p class="n-sum">10月18日报道，印度马哈拉施特拉邦桑格利（Sangli）葡萄产区因严重缺水，农户担心本季葡萄产量受损；尽管果实发育尚可，但灌溉水源不足，当地葡萄种植面积已出现下降，农户正采用覆盖保墒等措施。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">印度桑格利葡萄产区</span><span>Lokmat</span><span>·</span><span>2026-10-18</span><a class="n-link" href="https://www.lokmat.com/agriculture/farming-ideas/producers-fear-that-the-production-of-vineyards-in-the-sangli-belt-will-be-lost-this-year-due-to-lack-of-water-a-a999/amp/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-10-19 09:32 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
