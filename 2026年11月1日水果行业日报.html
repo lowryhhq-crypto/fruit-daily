@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.11.01</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.11.01</b> 星期日</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">11</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">10</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">11</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">11月1日，周日国内市场以价格与供应链信息为主：中泰期货周报显示新季苹果收购价跌至历史同期偏低，山东蓬莱80#一二级3.05元/斤、陕西洛川70#起步半商品2.75元/斤，果农挺价自储或推高冷库入库量；全国主要批发市场榴莲价差明显，滕州19.70元/公斤、江苏凌家塘50元/公斤。第九届进博会进入布展冲刺，央视报道进口水果在临港按色卡控熟、榴莲须过AI无损检测（4房以上、出肉率超40%）才能上展台，上海口岸前三季度水果等农产品进口超2400亿元。贸易端，南非车厘子输华仍待海关总署完成设施核查；海关总署令第283号自今日起施行，进境水果检疫审批改为向海关申请。气象端，陕西11月1—2日陕北有霜冻、全省大部降温6℃左右；南非气象局预警“超级厄尔尼诺”将带来高温少雨，需关注对柑橘、苹果等南半球供应的后续影响。</div></section>
+
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="越南榴莲价格区域分化，湄公河三角洲thai a级94,000—96,000越盾/公斤 11月1日越南榴莲报价区域分化：湄公河三角洲thai a级94,000—96,000越盾/公斤、b级74,000—76,000，ri6 a级82,000—84,000、b级67,000—69,000；得乐thai a级94,000—98,000，嘉莱thai a级约95,000。产地反映尾季供应收窄，对华出口需求预计继续主导后市。 越南榴莲产业 越南工商报（thương hiệu &amp; công luận）" style="--acc:var(--s2)"><a class="n-title" href="https://thuonghieucongluan.com.vn/gia-sau-rieng-hom-nay-1-11-thi-truong-bien-dong-trai-chieu-a340218.html" target="_blank" rel="noopener noreferrer">越南榴莲价格区域分化，湄公河三角洲Thai A级94,000—96,000越盾/公斤</a><p class="n-sum">11月1日越南榴莲报价区域分化：湄公河三角洲Thai A级94,000—96,000越盾/公斤、B级74,000—76,000，Ri6 A级82,000—84,000、B级67,000—69,000；得乐Thai A级94,000—98,000，嘉莱Thai A级约95,000。产地反映尾季供应收窄，对华出口需求预计继续主导后市。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">越南榴莲产业</span><span>越南工商报（Thương hiệu &amp; Công luận）</span><span>·</span><span>2026-11-01</span><a class="n-link" href="https://thuonghieucongluan.com.vn/gia-sau-rieng-hom-nay-1-11-thi-truong-bien-dong-trai-chieu-a340218.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="苹果收购价跌至历史同期偏低，山东蓬莱80#一二级3.05元/斤 中泰期货11月1日周报：新季苹果收购价普遍回落，山东蓬莱80#一二级均价3.05元/斤、栖霞2.8元/斤，陕西洛川70#起步半商品2.75元/斤，甘肃静宁75#起步半商品3.45元/斤；甘肃、陕西收购近尾声，山东处于中后期，果农挺价自储或推高入库量，预计本年度苹果库存明显高于去年，柑橘等时令鲜果分流需求。 — 中泰期货/新浪财经" style="--acc:var(--s3)"><a class="n-title" href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/11/rptid/846850613067/index.phtml" target="_blank" rel="noopener noreferrer">苹果收购价跌至历史同期偏低，山东蓬莱80#一二级3.05元/斤</a><p class="n-sum">中泰期货11月1日周报：新季苹果收购价普遍回落，山东蓬莱80#一二级均价3.05元/斤、栖霞2.8元/斤，陕西洛川70#起步半商品2.75元/斤，甘肃静宁75#起步半商品3.45元/斤；甘肃、陕西收购近尾声，山东处于中后期，果农挺价自储或推高入库量，预计本年度苹果库存明显高于去年，柑橘等时令鲜果分流需求。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">—</span><span>中泰期货/新浪财经</span><span>·</span><span>2026-11-01</span><a class="n-link" href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/11/rptid/846850613067/index.phtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="中国果业品牌大会发布评估报告，“咸阳马栏红”品牌价值112.82亿元 2026第十一届中国果业品牌大会10月29日在湖北秭归举行，发布《2026年果品品牌价值评估报告》：共评估112个果品区域公用品牌，烟台苹果、库尔勒香梨、延安苹果、“咸阳马栏红”4个品牌价值超百亿元；“咸阳马栏红”达112.82亿元、蝉联全国第四，较2025年净增12.37亿元、增量全国第一，品牌收益8.44亿元居全国第三。 中国果品流通协会 咸阳日报" style="--acc:var(--s3)"><a class="n-title" href="https://epaper.sxxynews.com.cn/xyrb/20261101/html/content_20261101001007.htm" target="_blank" rel="noopener noreferrer">中国果业品牌大会发布评估报告，“咸阳马栏红”品牌价值112.82亿元</a><p class="n-sum">2026第十一届中国果业品牌大会10月29日在湖北秭归举行，发布《2026年果品品牌价值评估报告》：共评估112个果品区域公用品牌，烟台苹果、库尔勒香梨、延安苹果、“咸阳马栏红”4个品牌价值超百亿元；“咸阳马栏红”达112.82亿元、蝉联全国第四，较2025年净增12.37亿元、增量全国第一，品牌收益8.44亿元居全国第三。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">中国果品流通协会</span><span>咸阳日报</span><span>·</span><span>2026-11-01</span><a class="n-link" href="https://epaper.sxxynews.com.cn/xyrb/20261101/html/content_20261101001007.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="海南手指柠檬首次出口俄罗斯，琼海基地种植约600亩 经海口海关所属文昌海关监管，琼海盛大现代农业开发有限公司种植的手指柠檬近日顺利出口俄罗斯，为海南手指柠檬首次出口；手指柠檬学名澳洲指橙，在俄罗斯高端餐饮市场被称为“柑橘鱼子酱”，琼海是国内主产区之一，“琼海手指柠檬”已入选全国名特优新农产品名录，企业现有种植面积约600亩。 琼海盛大现代农业 香港商报" style="--acc:var(--s3)"><a class="n-title" href="https://www.hkcd.com.hk/hkcdweb/content_p/2026/10/31/content_204263.html" target="_blank" rel="noopener noreferrer">海南手指柠檬首次出口俄罗斯，琼海基地种植约600亩</a><p class="n-sum">经海口海关所属文昌海关监管，琼海盛大现代农业开发有限公司种植的手指柠檬近日顺利出口俄罗斯，为海南手指柠檬首次出口；手指柠檬学名澳洲指橙，在俄罗斯高端餐饮市场被称为“柑橘鱼子酱”，琼海是国内主产区之一，“琼海手指柠檬”已入选全国名特优新农产品名录，企业现有种植面积约600亩。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">琼海盛大现代农业</span><span>香港商报</span><span>·</span><span>2026-10-31</span><a class="n-link" href="https://www.hkcd.com.hk/hkcdweb/content_p/2026/10/31/content_204263.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="全国主要批发市场榴莲价格：滕州19.70元/公斤，江苏凌家塘50元/公斤 农业农村部信息中心10月31日全国主要批发市场榴莲行情显示，市场价差明显：滕州农副产品物流中心19.70元/公斤最低，江苏凌家塘50元/公斤最高；北京朝阳大洋路48元/公斤、新疆绿珠九鼎48元/公斤、新疆九鼎盛和45元/公斤、太原河西41元/公斤、长治金鑫40元/公斤、海口菜篮子38元/公斤、江门新会37元/公斤、无锡朝阳32.68元/公斤。 — 农业农村部信息中心/证券之星" style="--acc:var(--s7)"><a class="n-title" href="https://futures.stockstar.com/IG2026103100026226.shtml" target="_blank" rel="noopener noreferrer">全国主要批发市场榴莲价格：滕州19.70元/公斤，江苏凌家塘50元/公斤</a><p class="n-sum">农业农村部信息中心10月31日全国主要批发市场榴莲行情显示，市场价差明显：滕州农副产品物流中心19.70元/公斤最低，江苏凌家塘50元/公斤最高；北京朝阳大洋路48元/公斤、新疆绿珠九鼎48元/公斤、新疆九鼎盛和45元/公斤、太原河西41元/公斤、长治金鑫40元/公斤、海口菜篮子38元/公斤、江门新会37元/公斤、无锡朝阳32.68元/公斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">—</span><span>农业农村部信息中心/证券之星</span><span>·</span><span>2026-10-31</span><a class="n-link" href="https://futures.stockstar.com/IG2026103100026226.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="进博会进口水果“锁鲜”：秘鲁香蕉按色卡控熟，11月5日达最佳赏味期 央视网11月1日报道，第九届进博会部分进口水果在上海临港物流配送中心完成最后筛选：1200千克秘鲁有机香蕉到货时为1号色，计划11月2日进馆时调至3—4号色、11月5日开幕达到6号色最佳赏味期，依靠气体与温度精准控制成熟度；上海口岸前三季度进口水果等农产品超2400亿元、占全国两成以上，首届进博会以来已有40余国100余种水果获准入。 上海海关/进博会 央视网" style="--acc:var(--s7)"><a class="n-title" href="https://news.cctv.cn/2026/11/01/ARTIev4b9oCCjQev195l4LwK261101.shtml" target="_blank" rel="noopener noreferrer">进博会进口水果“锁鲜”：秘鲁香蕉按色卡控熟，11月5日达最佳赏味期</a><p class="n-sum">央视网11月1日报道，第九届进博会部分进口水果在上海临港物流配送中心完成最后筛选：1200千克秘鲁有机香蕉到货时为1号色，计划11月2日进馆时调至3—4号色、11月5日开幕达到6号色最佳赏味期，依靠气体与温度精准控制成熟度；上海口岸前三季度进口水果等农产品超2400亿元、占全国两成以上，首届进博会以来已有40余国100余种水果获准入。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">上海海关/进博会</span><span>央视网</span><span>·</span><span>2026-11-01</span><a class="n-link" href="https://news.cctv.cn/2026/11/01/ARTIev4b9oCCjQev195l4LwK261101.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="进博会榴莲上展台前先过ai无损检测：4房以上、出肉率超40% 央视新闻11月1日报道，进博会候选榴莲须经人工筛选与ai无损检测，达到中熟以上、4房以上、出肉率超过40%才能登上展台，最终入选比例不足20%；检测系统结合ct扫描与图像识别，可判读房数、出肉率、虫洞和烧核等指标，单果检测约8—12秒。 进博会 央视新闻" style="--acc:var(--s7)"><a class="n-title" href="https://news.cctv.com/2026/11/01/ARTIwJluoJbvwgFX9L6bl6Ku261031.shtml" target="_blank" rel="noopener noreferrer">进博会榴莲上展台前先过AI无损检测：4房以上、出肉率超40%</a><p class="n-sum">央视新闻11月1日报道，进博会候选榴莲须经人工筛选与AI无损检测，达到中熟以上、4房以上、出肉率超过40%才能登上展台，最终入选比例不足20%；检测系统结合CT扫描与图像识别，可判读房数、出肉率、虫洞和烧核等指标，单果检测约8—12秒。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">进博会</span><span>央视新闻</span><span>·</span><span>2026-11-01</span><a class="n-link" href="https://news.cctv.com/2026/11/01/ARTIwJluoJbvwgFX9L6bl6Ku261031.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="南非车厘子输华待中方完成设施核查，出口商抢早季窗口 南非农业部10月31日消息，南非车厘子对华出口仍需中国海关总署完成果园、包装厂、冷库和熏蒸设施核查；相关名单正在准备提交，gacc表示收到后将依据9月签署的出口议定书第8条进行远程合规检查。南非方面称熏蒸要求已无遗留问题，但最终熏蒸点仍在落实；2025年中国进口车厘子58.69万吨、货值33亿美元。 南非农业部/海关总署 world ports organization/freight news" style="--acc:var(--s8)"><a class="n-title" href="https://www.worldports.org/sa-cherry-exports-to-china-await-facility-checks/" target="_blank" rel="noopener noreferrer">南非车厘子输华待中方完成设施核查，出口商抢早季窗口</a><p class="n-sum">南非农业部10月31日消息，南非车厘子对华出口仍需中国海关总署完成果园、包装厂、冷库和熏蒸设施核查；相关名单正在准备提交，GACC表示收到后将依据9月签署的出口议定书第8条进行远程合规检查。南非方面称熏蒸要求已无遗留问题，但最终熏蒸点仍在落实；2025年中国进口车厘子58.69万吨、货值33亿美元。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">南非农业部/海关总署</span><span>World Ports Organization/Freight News</span><span>·</span><span>2026-10-31</span><a class="n-link" href="https://www.worldports.org/sa-cherry-exports-to-china-await-facility-checks/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国内" data-search="海关总署令第283号今日施行，进境水果检疫审批改为向海关申请 《海关总署关于修改部分规章的决定》（海关总署令第283号）自2026年11月1日起施行，对《进境水果检验检疫监督管理办法》等7部规章作出修改：进境水果检疫审批由向海关总署申请改为向海关申请；新增进境水果应从符合海关监管条件的口岸进境；经港澳中转须以集装箱原箱、原包装、原植物检疫证书进境；出境水果果园、包装厂注册登记证书有效期改为5年。 海关总署 中国政府网/海关总署" style="--acc:var(--s8)"><a class="n-title" href="https://www.gov.cn/gongbao/2026/issue_12906/202608/content_7077785.html" target="_blank" rel="noopener noreferrer">海关总署令第283号今日施行，进境水果检疫审批改为向海关申请</a><p class="n-sum">《海关总署关于修改部分规章的决定》（海关总署令第283号）自2026年11月1日起施行，对《进境水果检验检疫监督管理办法》等7部规章作出修改：进境水果检疫审批由向海关总署申请改为向海关申请；新增进境水果应从符合海关监管条件的口岸进境；经港澳中转须以集装箱原箱、原包装、原植物检疫证书进境；出境水果果园、包装厂注册登记证书有效期改为5年。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">海关总署</span><span>中国政府网/海关总署</span><span>·</span><span>2026-11-01</span><a class="n-link" href="https://www.gov.cn/gongbao/2026/issue_12906/202608/content_7077785.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国内" data-search="陕西未来3天日均气温降6℃左右，11月1—2日陕北有霜冻 陕西省气象部门10月31日预报：受冷空气影响，未来3天全省大部日平均气温下降6℃左右，陕北北部阵风6—7级；11月1日至2日陕北有霜冻，10月31日至11月1日南部局地有大雨、易造成土壤过湿。陕北正值晚熟苹果采收收尾与入库、果园清园期，需防范霜冻对未采收果实和幼树的影响。 陕西省气象局 阳光网/陕西省气象局" style="--acc:var(--s9)"><a class="n-title" href="https://www.iygw.cn/2026/1031/363937.html" target="_blank" rel="noopener noreferrer">陕西未来3天日均气温降6℃左右，11月1—2日陕北有霜冻</a><p class="n-sum">陕西省气象部门10月31日预报：受冷空气影响，未来3天全省大部日平均气温下降6℃左右，陕北北部阵风6—7级；11月1日至2日陕北有霜冻，10月31日至11月1日南部局地有大雨、易造成土壤过湿。陕北正值晚熟苹果采收收尾与入库、果园清园期，需防范霜冻对未采收果实和幼树的影响。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">陕西省气象局</span><span>阳光网/陕西省气象局</span><span>·</span><span>2026-10-31</span><a class="n-link" href="https://www.iygw.cn/2026/1031/363937.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="南非迎“超级厄尔尼诺”大考，气象局预警今夏高温少雨 南非《the national》11月1日报道，联合国官员称本轮厄尔尼诺可能跻身1950年以来最强之列，预计12月见顶；南非气象局（saws）预测2026/27夏季全国大部分地区降雨偏少、气温偏高，并可能从持续高温快速转为强雷暴，增加局地山洪、农业受损和野火风险。南非是柑橘、苹果、鲜食葡萄等对华供应的重要南半球产区。 南非气象局（saws） the national（南非）" style="--acc:var(--s9)"><a class="n-title" href="https://thenational.co.za/lifestyle/2026-11-01-scorched-crops-soaring-bills-sa-faces-super-el-nino-stress-test/" target="_blank" rel="noopener noreferrer">南非迎“超级厄尔尼诺”大考，气象局预警今夏高温少雨</a><p class="n-sum">南非《The National》11月1日报道，联合国官员称本轮厄尔尼诺可能跻身1950年以来最强之列，预计12月见顶；南非气象局（SAWS）预测2026/27夏季全国大部分地区降雨偏少、气温偏高，并可能从持续高温快速转为强雷暴，增加局地山洪、农业受损和野火风险。南非是柑橘、苹果、鲜食葡萄等对华供应的重要南半球产区。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">南非气象局（SAWS）</span><span>The National（南非）</span><span>·</span><span>2026-11-01</span><a class="n-link" href="https://thenational.co.za/lifestyle/2026-11-01-scorched-crops-soaring-bills-sa-faces-super-el-nino-stress-test/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-11-01 17:44 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>

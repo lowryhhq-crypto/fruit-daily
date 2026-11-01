@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>上海车厘子市场行情</title>
+<style>
+:root {
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb;
+  --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --rule:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#6250d6;
+  --s5:#e87ba4; --s6:#008300;
+  --good:#0ca30c; --crit:#d03b3b; --warn:#fab219;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19;
+    --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --rule:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9085e9;
+    --s5:#d55181; --s6:#008300;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19;
+  --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --rule:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9085e9;
+  --s5:#d55181; --s6:#008300;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; padding:24px 20px 64px; background:var(--page); color:var(--ink);
+  font:14px/1.7 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+}
+.wrap { max-width:1180px; margin:0 auto; }
+h1 { font-size:24px; margin:0 0 4px; letter-spacing:-.01em; }
+.sub { color:var(--ink2); margin:0 0 24px; font-size:13px; }
+h2 { font-size:17px; margin:40px 0 4px; padding-top:20px; border-top:1px solid var(--rule); }
+h2:first-of-type { border-top:none; padding-top:0; }
+.lead { color:var(--ink2); font-size:13px; margin:0 0 16px; }
+.card {
+  background:var(--surface); border:1px solid var(--rule); border-radius:10px;
+  padding:16px 18px; margin:12px 0;
+}
+.card h3 { font-size:14px; margin:0 0 2px; }
+.card .cap { color:var(--muted); font-size:12px; margin:0 0 14px; }
+.kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:16px 0 8px; }
+.kpi { background:var(--surface); border:1px solid var(--rule); border-radius:10px;
+       padding:14px 16px; min-width:0; }
+.kpi .k { font-size:12px; color:var(--muted); }
+.kpi .v { font-size:26px; font-weight:600; letter-spacing:-.02em; line-height:1.25; }
+.kpi .u { font-size:12px; color:var(--ink2); font-weight:400; margin-left:3px; }
+.kpi .sw { display:inline-block; width:9px; height:9px; border-radius:2px;
+           margin-right:6px; vertical-align:1px; }
+.kpi .dt { font-size:15px; font-weight:600; line-height:1.3; }
+.scrollhint { display:none; font-size:12px; color:var(--muted); margin:8px 0 0; }
+@media (max-width:760px) { .scrollhint { display:block; } }
+.legend { display:flex; gap:16px; font-size:12px; color:var(--ink2); margin:0 0 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; vertical-align:-1px; }
+.legend i.lk { width:20px; height:0; border-radius:0; border-top:2px solid var(--ink2); vertical-align:3px; }
+.legend i.lk.d { border-top-style:dashed; }
+.lgd { gap:8px; margin-bottom:14px; }
+.lgd span { display:inline-flex; align-items:center; cursor:pointer; user-select:none;
+            padding:4px 9px; border:1px solid var(--rule); border-radius:999px; transition:opacity .15s; }
+.lgd span:hover { border-color:var(--axis); }
+.lgd span.off { opacity:.35; text-decoration:line-through; }
+.lgd span.nob { cursor:default; color:var(--muted); }
+.lgd span.nob:hover { border-color:var(--rule); }
+td .ff { color:var(--muted); }
+.lgd i.hollow { background:var(--surface); border:2px solid var(--muted); border-radius:2px;
+                width:9px; height:9px; }
+.chartwrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.pline { width:100%; min-width:680px; height:auto; display:block; }
+/* 小箱那张图两格并排在手机上会被挡掉一半，窄屏换成上下叠的一版 */
+.pline-m { min-width:0; }
+.onlynarrow { display:none; }
+@media (max-width:760px) { .onlywide { display:none; } .onlynarrow { display:block; } }
+.chart { display:flex; align-items:flex-end; gap:2px; height:180px; border-bottom:1px solid var(--axis); padding-bottom:0; }
+.bargroup { flex:1; display:flex; flex-direction:column; justify-content:flex-end; height:100%; position:relative; cursor:default; }
+.bargroup:hover { background:rgba(128,128,128,.08); }
+.bl { flex:1; display:flex; align-items:flex-end; justify-content:center; gap:3px; position:relative; }
+.b { display:block; width:11px; border-radius:4px 4px 0 0; }
+.b1 { background:var(--s1); } .b2 { background:var(--s2); }
+.b3 { background:var(--s3); } .b4 { background:var(--s4); }
+.b.dim { background:var(--grid); }
+.bv { position:absolute; bottom:0; left:50%; transform:translateX(-50%); font-size:10px;
+      color:var(--ink2); font-weight:500; white-space:nowrap; pointer-events:none; }
+.bx { font-size:10px; color:var(--muted); text-align:center; padding:5px 0 0; white-space:nowrap;
+      transform:rotate(-45deg); transform-origin:center; height:26px; }
+table { border-collapse:collapse; width:100%; font-size:12.5px; }
+/* 单元格一律不折行：窄屏下让整张表横向滚动，好过把「10-25」拆成两行、「活跃天数」竖排。 */
+th,td { text-align:left; padding:7px 9px; border-bottom:1px solid var(--grid); white-space:nowrap; }
+thead th { color:var(--muted); font-weight:500; font-size:11.5px; border-bottom:1px solid var(--axis);
+           white-space:nowrap; }
+td.n,th.n { text-align:right; font-variant-numeric:tabular-nums; }
+/* 产季周次表：最后一列是说明文字，允许折行，否则整张表被撑得老宽 */
+.wk { font-size:12px; }
+.wk td:last-child, .wk th:last-child { white-space:normal; min-width:180px; }
+/* 手机上横着放不下，改成一行一条：周次当标题，其余各自一行并补上列名 */
+@media (max-width:760px) {
+  .wk thead { display:none; }
+  .wk tr { display:block; padding:9px 0; border-bottom:1px solid var(--grid); }
+  .wk td { display:block; border:0; padding:1px 0; white-space:normal; min-width:0; }
+  .wk td:first-child { font-weight:600; color:var(--ink); font-size:13px; }
+  .wk td:nth-child(2) { color:var(--muted); font-size:11.5px; }
+  .wk td:nth-child(3)::before, .wk td:nth-child(4)::before, .wk td:nth-child(5)::before {
+    color:var(--muted); }
+  .wk td:nth-child(3)::before { content:"到货　"; }
+  .wk td:nth-child(4)::before { content:"走量　"; }
+  .wk td:nth-child(5)::before { content:"特点　"; }
+}
+tr.dv td { border-top:1px solid var(--axis); }
+.duo { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.duo table { width:100%; }
+.duoh { font-size:12px; font-weight:600; color:var(--ink2); margin:0 0 6px; }
+@media (max-width:760px) { .duo { grid-template-columns:1fr; gap:14px; } }
+.who { margin:4px 0 14px; padding-left:17px; font-size:12.5px; line-height:1.75; color:var(--ink2); }
+.who li { margin:0 0 7px; }
+.who b { color:var(--ink); }
+.pday { margin:0 0 14px; padding:10px 12px; background:var(--page);
+        border:1px solid var(--grid); border-radius:8px; }
+.pdh { font-size:12.5px; font-weight:600; color:var(--ink); margin:0 0 6px; }
+.pdh .pds { margin-left:8px; font-weight:400; font-size:11.5px; color:var(--ink2); }
+.plist { margin:0; padding-left:17px; font-size:12.5px; line-height:1.7; color:var(--ink2); }
+.plist li { margin:0 0 4px; }
+.plist b { color:var(--ink); }
+.plist .pm { font-variant-numeric:tabular-nums; color:var(--ink); }
+.plist .pv { color:var(--muted); }
+.pown { margin:8px 0 0; padding-top:8px; border-top:1px dashed var(--grid);
+        font-size:12.5px; line-height:1.7; color:var(--ink2); }
+.pown b { color:var(--ink); }
+.pov { font-size:12px; color:var(--ink2); margin-top:2px; }
+.bsub { font-size:11px; color:var(--muted); margin-top:2px; line-height:1.35; }
+.plist-b .pm { margin:0 8px 0 8px; }
+.plist-b .pv { color:var(--ink2); }
+.plist-b .pk { margin-left:8px; color:var(--muted); font-size:11.5px; }
+th .u2 { display:block; font-size:9px; font-weight:400; color:var(--muted); line-height:1.3; }
+td.sp { width:104px; }
+td.sp svg { display:block; }
+.up { color:var(--good); } .dn { color:var(--crit); }
+.pk { display:inline-block; margin-left:6px; font-size:10px; color:var(--muted); }
+.heat { font-variant-numeric:tabular-nums; }
+.heat th.rh { font-weight:600; color:var(--ink); position:sticky; left:0; background:var(--surface); }
+.heat td.hx { text-align:center; font-size:11px; border:2px solid var(--surface); border-radius:3px; padding:6px 4px; cursor:default; }
+.heat thead th { font-size:10.5px; padding:4px 3px; text-align:center; }
+.gantt { --lw:150px; }
+.grow { display:grid; grid-template-columns:var(--lw) 1fr 58px; align-items:center; gap:8px; padding:3px 0; }
+.grow:hover { background:rgba(128,128,128,.07); }
+.gl { font-size:12px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.gt { position:relative; height:14px; background:var(--grid); border-radius:3px; }
+.gb { position:absolute; top:0; height:14px; background:var(--s1); border-radius:3px; }
+.gv { font-size:11px; color:var(--muted); text-align:right; font-variant-numeric:tabular-nums; }
+.axis { display:grid; grid-template-columns:var(--lw) 1fr 58px; gap:8px; margin-top:6px; }
+.axis .tk { display:flex; justify-content:space-between; font-size:10px; color:var(--muted); }
+.note { background:var(--surface); border-left:3px solid var(--s1); border-radius:0 8px 8px 0;
+        padding:12px 16px; margin:14px 0; font-size:13px; color:var(--ink2); }
+/* 顶部的一句话结论：整页最重要的一段，字大一号、单独挂个标签、左边一道粗色条 */
+.verdict { background:var(--surface); border:1px solid var(--rule); border-left:5px solid var(--s1);
+           border-radius:0 10px 10px 0; padding:15px 20px 17px; margin:16px 0 20px; }
+.verdict .vb { display:flex; align-items:center; gap:7px; font-size:11.5px; font-weight:600;
+               color:var(--s1); letter-spacing:.06em; margin:0 0 8px; }
+.verdict .vb::before { content:""; width:7px; height:7px; border-radius:2px; background:var(--s1); }
+.verdict p { margin:0; font-size:15px; line-height:1.85; color:var(--ink2); }
+.verdict p + p { margin-top:9px; }
+.verdict p b { color:var(--ink); font-weight:600; }
+/* 第一个换挡节点：比正文稍微突出一点就够——缩进、一道细竖线、量价两个小标签，不另起一块色 */
+.verdict .turn { margin:11px 0 12px; padding:1px 0 1px 15px; border-left:2px solid var(--axis); }
+.verdict .turn .th { font-size:11.5px; font-weight:600; color:var(--muted);
+                     letter-spacing:.05em; margin:0 0 4px; }
+.verdict .turn p + p { margin-top:2px; }
+.verdict .turn .k { display:inline-block; min-width:1.2em; font-size:12.5px; font-weight:600;
+                    color:var(--ink); margin-right:9px; }
+@media (max-width:760px) { .verdict { padding:13px 15px 15px; } .verdict p { font-size:14px; }
+  .verdict .turn { padding-left:12px; } }
+.warnbox { background:var(--surface); border-left:3px solid var(--warn); border-radius:0 8px 8px 0;
+        padding:12px 16px; margin:14px 0; font-size:12.5px; color:var(--ink2); }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media (max-width:760px) {
+  .two { grid-template-columns:1fr; }
+  body { padding:16px 14px 48px; }
+  .chart { height:150px; }
+  .grow { grid-template-columns:104px 1fr 46px; }
+}
+.house { margin:14px 0 6px; }
+.hrow { display:grid; grid-template-columns:1fr auto; column-gap:12px;
+        align-items:baseline; padding:10px 0 11px; border-top:1px solid var(--grid); }
+.hrow:first-child { border-top:0; padding-top:2px; }
+/* 公司名 / 出口商号 / 日期段各自整体换行，别让 CSE 号码或日期段从中间断掉。 */
+.hname { font-size:13.5px; color:var(--ink); display:flex; flex-wrap:wrap;
+         align-items:baseline; column-gap:7px; }
+.hname b { font-weight:600; }
+.hname .cse { font-size:11.5px; color:var(--muted); white-space:nowrap;
+              font-variant-numeric:tabular-nums; }
+.hname .rng { font-size:11.5px; color:var(--muted); white-space:nowrap;
+              font-variant-numeric:tabular-nums; }
+.hnum { font-size:13px; font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap; }
+.hnum em { font-style:normal; color:var(--ink2); margin-left:7px; font-size:12px; }
+.hbar { grid-column:1/-1; height:8px; background:var(--grid); border-radius:2px;
+        margin:7px 0 0; overflow:hidden; }
+.hbar i { display:block; height:8px; border-radius:2px; }
+.hnote { grid-column:1/-1; font-size:11.5px; color:var(--muted); margin-top:6px; }
+.chips { grid-column:1/-1; display:flex; flex-wrap:wrap; gap:5px; margin-top:7px; }
+.chip { font-size:11.5px; color:var(--ink2); background:var(--page);
+        border:1px solid var(--rule); border-radius:20px; padding:2px 9px;
+        white-space:nowrap; }
+.chip b { font-weight:600; color:var(--ink); }
+.chip em { font-style:normal; color:var(--muted); margin-left:5px;
+           font-variant-numeric:tabular-nums; }
+td.hm { color:var(--muted); font-size:12px; }
+td .sw { display:inline-block; width:9px; height:9px; border-radius:2px;
+         margin-right:7px; vertical-align:0; }
+td .un { font-style:normal; color:var(--muted); font-size:11.5px; margin-left:6px; }
+.tip { position:fixed; pointer-events:none; background:var(--ink); color:var(--page);
+       padding:7px 10px; border-radius:7px; font-size:11.5px; line-height:1.55;
+       white-space:pre-line; opacity:0; transition:opacity .1s; z-index:50; max-width:260px; }
+footer { margin-top:44px; font-size:11.5px; color:var(--muted); border-top:1px solid var(--rule); padding-top:14px; }
+
+/* ---- 打印 / 转 PDF ----
+   A4 竖版印出来只有 190mm 左右、约 700 CSS px 宽，浏览器会把上面那些
+   @media (max-width:760px) 的手机规则全打开——版式整个变样、宽图被换成
+   竖版那张、周次表拆成一行一条，这就是打印时"格式变了好多"的原因。
+   这一段把它按屏幕上的桌面版式钉回去，并处理分页和背景色。 */
+@page { size:A4 portrait; margin:12mm 11mm 13mm; }
+@media print {
+  /* 系统在深色模式下时 --page 是黑的，印出来整页黑底。打印一律走亮色。 */
+  :root, :root[data-theme="dark"], :root:where(:not([data-theme="light"])) {
+    color-scheme:light;
+    --page:#fff; --surface:#fff;
+    --ink:#000; --ink2:#3c3b38; --muted:#66655f;
+    --grid:#dcdbd4; --axis:#b3b2a7; --rule:rgba(0,0,0,.16);
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#6250d6;
+    --s5:#e87ba4; --s6:#008300;
+  }
+  html, body { background:#fff; }
+  body { padding:0; font-size:11.5px; }
+  /* 图表用的是文字以外的实色块，默认不打印背景色会被印成一片空白 */
+  * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .wrap { max-width:none; }
+  .tip, .scrollhint, .onlynarrow { display:none !important; }
+  .onlywide { display:block !important; }
+
+  /* 把手机版式钉回桌面版式 */
+  .duo, .two { grid-template-columns:1fr 1fr; gap:16px; }
+  .chart { height:170px; }
+  .grow { grid-template-columns:var(--lw) 1fr 58px; }
+  .wk thead { display:table-header-group; }
+  .wk tr { display:table-row; padding:0; border-bottom:0; }
+  /* 纸面只有 700 来 px，不能再像屏幕那样整张表横着滚，得让它折行塞进一页 */
+  .wk td { display:table-cell; border:0; border-bottom:1px solid var(--grid);
+           padding:5px 8px; white-space:normal; }
+  .wk td:first-child, .wk td:nth-child(2) { white-space:nowrap; }
+  .wk td:last-child { min-width:180px; }
+  .wk th:nth-child(1), .wk td:nth-child(1) { width:12%; }
+  .wk th:nth-child(2), .wk td:nth-child(2) { width:16%; }
+  .wk th:nth-child(3), .wk td:nth-child(3) { width:23%; }
+  .wk th:nth-child(4), .wk td:nth-child(4) { width:12%; }
+  .wk td:first-child { font-weight:400; font-size:12.5px; }
+  .wk td:nth-child(2) { color:var(--ink2); font-size:12.5px; }
+  .wk td:nth-child(3)::before, .wk td:nth-child(4)::before,
+  .wk td:nth-child(5)::before { content:none; }
+
+  /* 横向滚动的容器在纸上不会滚，只会把右边裁掉 */
+  .chartwrap { overflow:visible; }
+  .pline { min-width:0; }
+
+  /* 分页：整张卡片整块翻页，图、表、要点都不许被页码拦腰切开。
+     avoid 挂在 .chart 这种 flex 容器上，Chromium 打印时是直接忽略的——上一版就栽在这，
+     转出来的 PDF 里「每日到货 vs 销售」那张柱图被页码从中间腰断，上半截留在上一页页脚；
+     只给卡片加 avoid 也不够，纯文字的卡片会断出「上一页只剩个标题、下一页孤零零一行说明」。
+     卡片是普通 block，打印版式下量过一遍：最高的「规格 × 包装」720px，版心 1028px，
+     全部装得下一页，所以直接让每张卡片整块走。真遇到比一页还高的卡片，
+     浏览器会自己忽略这条去切，不会溢出成空白页。 */
+  .card, .gantt, .kpis, .duo, .two, .hrow, .rrow, .chart, .chartwrap,
+  .legend, li, tr { break-inside:avoid; }
+  .chartwrap { break-before:avoid; }
+  h1, h2, h3, .card h3, .card .cap, .legend, .duoh, .vb { break-after:avoid; }
+  h2 { margin:22px 0 4px; padding-top:14px; }
+  footer { margin-top:24px; }
+}
+</style></head>
+<body><div class="wrap">
+<h1>上海车厘子市场行情</h1>
+<p class="sub">2026-10-17 → 10-31 · 智利空运季前段 · 市场总量口径</p>
+
+
+<div class="verdict">
+<div class="vb">一句话结论</div>
+<p>10.17–10.23 零星试水，一周公告到货才 60 板，价格在开季最高的一段。
+10.24–10.27 空运一批接一批落地，走量 7–9 成，价格还撑得住。</p>
+
+<div class="turn">
+<div class="th">第一个换挡节点 · 第 2 周尾段到第 3 周</div>
+<p><span class="k">量</span>空运到货一天比一天密集，
+<b>单日到货顶到 69 板、出摊 76.9 板</b>，
+之后四天日均 52.3 板（+187%），走量从 7–9 成 掉到 4–5 成。</p>
+<p><span class="k">价</span><b>价格就是从这里由挺转跌的</b>：3J 从 <b>1400</b> 让到 <b>750</b>；
+到 10.31 再跌一档，六个规格三天累计跌 <b>300–450 元/箱</b>、跌幅 <b>29%–44%</b>
+（J 800→450 跌得最狠，2JD 1050→750 最抗跌）。</p>
+</div>
+
+<p>到 10.31 是 51.1 板到货、57.7 板出摊，走量回到 5 成，
+开价却还在往下探——J 从 10.28 的 800 一路报到 450、2J 从 1000 报到 650，J 是这一期最低。
+品种上 SANTINA 是绝对主力（占公告到货 28.3%），BLACK ROCK 紧随其后（21.2%）；
+NIMBA / EARLYBING / ROYAL TIOGA 等早期品种 10.24–10.27 陆续退场，到 10.31 还在报的只剩
+SANTINA / BLACK ROCK / ROYAL DAWN / BLACK PEARL / SWEET ARYANA 这 5 个品种。</p>
+
+<p>接下来预报还有 245 板（11.1 约 150 板、11.2 约 83 板）陆续落地，量还会接着往上走，最高的一天比这一期最忙的一天还多。
+渠道其实是在接的——换挡前场内每天走掉 8–14 板，之后是 26–35 板；
+麻烦的是出摊涨得更猛，从 9–19 板 涨到 58–77 板，所以成数才掉了一半，货堆在场上的速度快过消化的速度。
+按往年的规律，空运这一段全靠让价把货从场上往下压，这个量级短期还消化不掉——
+走量能回到 6 成以上，价就横在这一档；继续停在 5 成上下，就还得往下走。</p>
+</div>
+
+<h2>一、价格走势</h2>
+<p class="lead">六个主力规格：<b>J / 2J / 3J</b> 和对应的深色档 <b>JD / 2JD / 3JD</b>。
+<b>先看第一张</b>——折成元/kg，大箱小箱放进同一张图看总走势；后两张再按箱型拆开看箱价
+（换包装箱价差一倍，混在一个纵轴上没法比）。
+口径统一为<b>市场开价</b>：实心圆＝当天群里真有人报这个规格，浅色小点＝当天没人报、沿用前一天的价。
+大箱这条线从 <b>10.26</b> 画起（10.25 只孤零零一条散装报价，撑不起一段走势）；
+2×2.5KG 那种双拼箱也是 5 公斤大箱，一般只比散装贵 50–100 元/箱，已经并进来算。</p>
+
+<div class="card">
+  <h3>六个规格折成元/kg 的走势（大箱实线 · 小箱虚线）</h3>
+  <div class="legend lgd">
+    <span data-tog="J"><i style="background:var(--s1)"></i>J</span>
+    <span data-tog="2J"><i style="background:var(--s2)"></i>2J</span>
+    <span data-tog="3J"><i style="background:var(--s3)"></i>3J</span>
+    <span data-tog="JD"><i style="background:var(--s4)"></i>JD</span>
+    <span data-tog="2JD"><i style="background:var(--s5)"></i>2JD</span>
+    <span data-tog="3JD"><i style="background:var(--s6)"></i>3JD</span>
+    <span><i class="lk"></i>实线＝5KG 大箱</span>
+    <span><i class="lk d"></i>虚线＝2KG / 2.5KG 小箱</span>
+  </div>
+  <div class="chartwrap"><svg viewBox="0 0 900 440" class="pline" role="img" aria-label="六个规格折成元/kg 的开价走势，大箱实线、小箱虚线"><line x1="64" y1="394.0" x2="766" y2="394.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="398.0" text-anchor="end" font-size="11" fill="var(--muted)">50</text><line x1="64" y1="348.0" x2="766" y2="348.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="352.0" text-anchor="end" font-size="11" fill="var(--muted)">100</text><line x1="64" y1="302.0" x2="766" y2="302.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="306.0" text-anchor="end" font-size="11" fill="var(--muted)">150</text><line x1="64" y1="256.0" x2="766" y2="256.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="260.0" text-anchor="end" font-size="11" fill="var(--muted)">200</text><line x1="64" y1="210.0" x2="766" y2="210.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="214.0" text-anchor="end" font-size="11" fill="var(--muted)">250</text><line x1="64" y1="164.0" x2="766" y2="164.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="168.0" text-anchor="end" font-size="11" fill="var(--muted)">300</text><line x1="64" y1="118.0" x2="766" y2="118.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="122.0" text-anchor="end" font-size="11" fill="var(--muted)">350</text><line x1="64" y1="72.0" x2="766" y2="72.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="76.0" text-anchor="end" font-size="11" fill="var(--muted)">400</text><line x1="64" y1="26.0" x2="766" y2="26.0" stroke="var(--grid)" stroke-width="1"/><text x="54" y="30.0" text-anchor="end" font-size="11" fill="var(--muted)">450</text><text x="54" y="17" text-anchor="end" font-size="10.5" fill="var(--muted)">元/kg</text><line x1="64" y1="394" x2="766" y2="394" stroke="var(--axis)" stroke-width="1"/><text x="64.0" y="415" text-anchor="middle" font-size="11" fill="var(--muted)">10-17</text><text x="164.3" y="415" text-anchor="middle" font-size="11" fill="var(--muted)">10-19</text><text x="264.6" y="415" text-anchor="middle" font-size="11" fill="var(--muted)">10-21</text><text x="364.9" y="415" text-anchor="middle" font-size="11" fill="var(--muted)">10-23</text><text x="465.1" y="415" text-anchor="middle" font-size="11" fill="var(--muted)">10-25</text><text x="565.4" y="415" text-anchor="middle" font-size="11" fill="var(--muted)">10-27</text><text x="665.7" y="415" text-anchor="middle" font-size="11" fill="var(--muted)">10-29</text><text x="766.0" y="415" text-anchor="middle" font-size="11" fill="var(--muted)">10-31</text><g data-series="J"><line x1="515.3" y1="237.6" x2="565.4" y2="274.4" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="565.4" y1="274.4" x2="615.6" y2="292.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="615.6" y1="292.8" x2="665.7" y2="292.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="665.7" y1="292.8" x2="715.9" y2="329.6" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="715.9" y1="329.6" x2="766.0" y2="357.2" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><circle cx="515.3" cy="237.6" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="515.3" cy="237.6" r="12" fill="transparent" data-tip="J 5KG 大箱 10-26
+市场开价 1100 元/箱（当天从 900 报到 1100 元/箱）
+
+÷ 5kg = 220 元/kg"/><circle cx="565.4" cy="274.4" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="274.4" r="12" fill="transparent" data-tip="J 5KG 大箱 10-27
+市场开价 900 元/箱
+÷ 5kg = 180 元/kg"/><circle cx="615.6" cy="292.8" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="292.8" r="12" fill="transparent" data-tip="J 5KG 大箱 10-28
+市场开价 800 元/箱
+÷ 5kg = 160 元/kg"/><circle cx="665.7" cy="292.8" r="3" fill="var(--surface)" stroke="var(--s1)" stroke-width="1.6" opacity=".6"/><circle cx="665.7" cy="292.8" r="12" fill="transparent" data-tip="J 5KG 大箱 10-29
+当天没人报，沿用 10-28 的 800 元/箱
+÷ 5kg = 160 元/kg"/><circle cx="715.9" cy="329.6" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="329.6" r="12" fill="transparent" data-tip="J 5KG 大箱 10-30
+市场开价 600 元/箱（当天从 500 报到 600 元/箱）
+
+÷ 5kg = 120 元/kg"/><circle cx="766.0" cy="357.2" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="357.2" r="12" fill="transparent" data-tip="J 5KG 大箱 10-31
+市场开价 450 元/箱（当天从 450 报到 600 元/箱）
+
+÷ 5kg = 90 元/kg"/></g><g data-series="J"><line x1="114.1" y1="237.6" x2="214.4" y2="187.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="214.4" y1="187.0" x2="364.9" y2="233.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="364.9" y1="233.0" x2="415.0" y2="211.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="415.0" y1="211.8" x2="465.1" y2="233.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="465.1" y1="233.0" x2="565.4" y2="189.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="565.4" y1="189.8" x2="615.6" y2="256.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="615.6" y1="256.0" x2="665.7" y2="256.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="665.7" y1="256.0" x2="715.9" y2="302.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="715.9" y1="302.0" x2="766.0" y2="329.6" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><circle cx="114.1" cy="237.6" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="114.1" cy="237.6" r="12" fill="transparent" data-tip="J 小箱 10-18
+2.5KG 箱 550 元 ÷ 2.5kg = 220 元/kg"/><circle cx="214.4" cy="187.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="214.4" cy="187.0" r="12" fill="transparent" data-tip="J 小箱 10-20
+2KG 箱 550 元 ÷ 2kg = 275 元/kg"/><circle cx="364.9" cy="233.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.9" cy="233.0" r="12" fill="transparent" data-tip="J 小箱 10-23
+2KG 箱 500 元 ÷ 2kg = 250 元/kg
+2.5KG 箱 500 元 ÷ 2.5kg = 200 元/kg"/><circle cx="415.0" cy="211.8" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="415.0" cy="211.8" r="12" fill="transparent" data-tip="J 小箱 10-24
+2KG 箱 500 元 ÷ 2kg = 250 元/kg
+2.5KG 箱 615 元 ÷ 2.5kg = 246 元/kg"/><circle cx="465.1" cy="233.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="465.1" cy="233.0" r="12" fill="transparent" data-tip="J 小箱 10-25
+2KG 箱 450 元 ÷ 2kg = 225 元/kg"/><circle cx="565.4" cy="189.8" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="189.8" r="12" fill="transparent" data-tip="J 小箱 10-27
+2.5KG 箱 680 元 ÷ 2.5kg = 272 元/kg"/><circle cx="615.6" cy="256.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="256.0" r="12" fill="transparent" data-tip="J 小箱 10-28
+2KG 箱 400 元 ÷ 2kg = 200 元/kg"/><circle cx="665.7" cy="256.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="665.7" cy="256.0" r="12" fill="transparent" data-tip="J 小箱 10-29
+2KG 箱 400 元 ÷ 2kg = 200 元/kg"/><circle cx="715.9" cy="302.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="302.0" r="12" fill="transparent" data-tip="J 小箱 10-30
+2KG 箱 300 元 ÷ 2kg = 150 元/kg"/><circle cx="766.0" cy="329.6" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="329.6" r="12" fill="transparent" data-tip="J 小箱 10-31
+2.5KG 箱 300 元 ÷ 2.5kg = 120 元/kg"/></g><g data-series="2J"><line x1="515.3" y1="200.8" x2="565.4" y2="237.6" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="565.4" y1="237.6" x2="615.6" y2="256.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="615.6" y1="256.0" x2="665.7" y2="256.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="665.7" y1="256.0" x2="715.9" y2="320.4" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="715.9" y1="320.4" x2="766.0" y2="320.4" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><circle cx="515.3" cy="200.8" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="515.3" cy="200.8" r="12" fill="transparent" data-tip="2J 5KG 大箱 10-26
+市场开价 1300 元/箱（当天从 1100 报到 1300 元/箱）
+
+÷ 5kg = 260 元/kg"/><circle cx="565.4" cy="237.6" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="237.6" r="12" fill="transparent" data-tip="2J 5KG 大箱 10-27
+市场开价 1100 元/箱
+÷ 5kg = 220 元/kg"/><circle cx="615.6" cy="256.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="256.0" r="12" fill="transparent" data-tip="2J 5KG 大箱 10-28
+市场开价 1000 元/箱
+÷ 5kg = 200 元/kg"/><circle cx="665.7" cy="256.0" r="3" fill="var(--surface)" stroke="var(--s2)" stroke-width="1.6" opacity=".6"/><circle cx="665.7" cy="256.0" r="12" fill="transparent" data-tip="2J 5KG 大箱 10-29
+当天没人报，沿用 10-28 的 1000 元/箱
+÷ 5kg = 200 元/kg"/><circle cx="715.9" cy="320.4" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="320.4" r="12" fill="transparent" data-tip="2J 5KG 大箱 10-30
+市场开价 650 元/箱（当天从 600 报到 700 元/箱）
+
+÷ 5kg = 130 元/kg"/><circle cx="766.0" cy="320.4" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="320.4" r="12" fill="transparent" data-tip="2J 5KG 大箱 10-31
+市场开价 650 元/箱（当天从 600 报到 700 元/箱）
+
+÷ 5kg = 130 元/kg"/></g><g data-series="2J"><line x1="114.1" y1="200.8" x2="214.4" y2="141.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="214.4" y1="141.0" x2="364.9" y2="191.6" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="364.9" y1="191.6" x2="415.0" y2="165.8" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="415.0" y1="165.8" x2="565.4" y2="153.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="565.4" y1="153.0" x2="615.6" y2="210.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="615.6" y1="210.0" x2="665.7" y2="233.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="665.7" y1="233.0" x2="715.9" y2="256.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="715.9" y1="256.0" x2="766.0" y2="311.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><circle cx="114.1" cy="200.8" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="114.1" cy="200.8" r="12" fill="transparent" data-tip="2J 小箱 10-18
+2.5KG 箱 650 元 ÷ 2.5kg = 260 元/kg"/><circle cx="214.4" cy="141.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="214.4" cy="141.0" r="12" fill="transparent" data-tip="2J 小箱 10-20
+2KG 箱 650 元 ÷ 2kg = 325 元/kg"/><circle cx="364.9" cy="191.6" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.9" cy="191.6" r="12" fill="transparent" data-tip="2J 小箱 10-23
+2KG 箱 600 元 ÷ 2kg = 300 元/kg
+2.5KG 箱 600 元 ÷ 2.5kg = 240 元/kg"/><circle cx="415.0" cy="165.8" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="415.0" cy="165.8" r="12" fill="transparent" data-tip="2J 小箱 10-24
+2KG 箱 588 元 ÷ 2kg = 294 元/kg
+2.5KG 箱 755 元 ÷ 2.5kg = 302 元/kg"/><circle cx="565.4" cy="153.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="153.0" r="12" fill="transparent" data-tip="2J 小箱 10-27
+2.5KG 箱 780 元 ÷ 2.5kg = 312 元/kg"/><circle cx="615.6" cy="210.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="210.0" r="12" fill="transparent" data-tip="2J 小箱 10-28
+2KG 箱 500 元 ÷ 2kg = 250 元/kg"/><circle cx="665.7" cy="233.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="665.7" cy="233.0" r="12" fill="transparent" data-tip="2J 小箱 10-29
+2KG 箱 500 元 ÷ 2kg = 250 元/kg
+2.5KG 箱 500 元 ÷ 2.5kg = 200 元/kg"/><circle cx="715.9" cy="256.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="256.0" r="12" fill="transparent" data-tip="2J 小箱 10-30
+2KG 箱 400 元 ÷ 2kg = 200 元/kg"/><circle cx="766.0" cy="311.2" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="311.2" r="12" fill="transparent" data-tip="2J 小箱 10-31
+2.5KG 箱 350 元 ÷ 2.5kg = 140 元/kg"/></g><g data-series="3J"><line x1="515.3" y1="182.4" x2="565.4" y2="182.4" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="565.4" y1="182.4" x2="615.6" y2="219.2" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="615.6" y1="219.2" x2="665.7" y2="219.2" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="665.7" y1="219.2" x2="715.9" y2="302.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="715.9" y1="302.0" x2="766.0" y2="302.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><circle cx="515.3" cy="182.4" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="515.3" cy="182.4" r="12" fill="transparent" data-tip="3J 5KG 大箱 10-26
+市场开价 1400 元/箱
+÷ 5kg = 280 元/kg"/><circle cx="565.4" cy="182.4" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="182.4" r="12" fill="transparent" data-tip="3J 5KG 大箱 10-27
+市场开价 1400 元/箱
+÷ 5kg = 280 元/kg"/><circle cx="615.6" cy="219.2" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="219.2" r="12" fill="transparent" data-tip="3J 5KG 大箱 10-28
+市场开价 1200 元/箱
+÷ 5kg = 240 元/kg"/><circle cx="665.7" cy="219.2" r="3" fill="var(--surface)" stroke="var(--s3)" stroke-width="1.6" opacity=".6"/><circle cx="665.7" cy="219.2" r="12" fill="transparent" data-tip="3J 5KG 大箱 10-29
+当天没人报，沿用 10-28 的 1200 元/箱
+÷ 5kg = 240 元/kg"/><circle cx="715.9" cy="302.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="302.0" r="12" fill="transparent" data-tip="3J 5KG 大箱 10-30
+市场开价 750 元/箱（当天从 700 报到 800 元/箱）
+
+÷ 5kg = 150 元/kg"/><circle cx="766.0" cy="302.0" r="3" fill="var(--surface)" stroke="var(--s3)" stroke-width="1.6" opacity=".6"/><circle cx="766.0" cy="302.0" r="12" fill="transparent" data-tip="3J 5KG 大箱 10-31
+当天没人报，沿用 10-30 的 750 元/箱
+÷ 5kg = 150 元/kg"/></g><g data-series="3J"><line x1="114.1" y1="164.0" x2="214.4" y2="95.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="214.4" y1="95.0" x2="364.9" y2="147.9" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="364.9" y1="147.9" x2="415.0" y2="117.1" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="415.0" y1="117.1" x2="565.4" y2="116.2" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="565.4" y1="116.2" x2="615.6" y2="164.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="615.6" y1="164.0" x2="665.7" y2="164.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="665.7" y1="164.0" x2="766.0" y2="253.7" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><circle cx="114.1" cy="164.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="114.1" cy="164.0" r="12" fill="transparent" data-tip="3J 小箱 10-18
+2.5KG 箱 750 元 ÷ 2.5kg = 300 元/kg"/><circle cx="214.4" cy="95.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="214.4" cy="95.0" r="12" fill="transparent" data-tip="3J 小箱 10-20
+2KG 箱 750 元 ÷ 2kg = 375 元/kg"/><circle cx="364.9" cy="147.9" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.9" cy="147.9" r="12" fill="transparent" data-tip="3J 小箱 10-23
+2KG 箱 710 元 ÷ 2kg = 355 元/kg
+2.5KG 箱 700 元 ÷ 2.5kg = 280 元/kg"/><circle cx="415.0" cy="117.1" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="415.0" cy="117.1" r="12" fill="transparent" data-tip="3J 小箱 10-24
+2KG 箱 700 元 ÷ 2kg = 350 元/kg
+2.5KG 箱 880 元 ÷ 2.5kg = 352 元/kg"/><circle cx="565.4" cy="116.2" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="116.2" r="12" fill="transparent" data-tip="3J 小箱 10-27
+2.5KG 箱 880 元 ÷ 2.5kg = 352 元/kg"/><circle cx="615.6" cy="164.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="164.0" r="12" fill="transparent" data-tip="3J 小箱 10-28
+2KG 箱 600 元 ÷ 2kg = 300 元/kg"/><circle cx="665.7" cy="164.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="665.7" cy="164.0" r="12" fill="transparent" data-tip="3J 小箱 10-29
+2KG 箱 600 元 ÷ 2kg = 300 元/kg"/><circle cx="766.0" cy="253.7" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="253.7" r="12" fill="transparent" data-tip="3J 小箱 10-31
+2KG 箱 450 元 ÷ 2kg = 225 元/kg
+2.5KG 箱 450 元 ÷ 2.5kg = 180 元/kg"/></g><g data-series="JD"><line x1="515.3" y1="219.2" x2="565.4" y2="256.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="565.4" y1="256.0" x2="615.6" y2="283.6" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="615.6" y1="283.6" x2="665.7" y2="283.6" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="665.7" y1="283.6" x2="715.9" y2="329.6" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="715.9" y1="329.6" x2="766.0" y2="338.8" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><circle cx="515.3" cy="219.2" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="515.3" cy="219.2" r="12" fill="transparent" data-tip="JD 5KG 大箱 10-26
+市场开价 1200 元/箱（当天从 1000 报到 1200 元/箱）
+
+÷ 5kg = 240 元/kg"/><circle cx="565.4" cy="256.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="256.0" r="12" fill="transparent" data-tip="JD 5KG 大箱 10-27
+市场开价 1000 元/箱
+÷ 5kg = 200 元/kg"/><circle cx="615.6" cy="283.6" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="283.6" r="12" fill="transparent" data-tip="JD 5KG 大箱 10-28
+市场开价 850 元/箱
+÷ 5kg = 170 元/kg"/><circle cx="665.7" cy="283.6" r="3" fill="var(--surface)" stroke="var(--s4)" stroke-width="1.6" opacity=".6"/><circle cx="665.7" cy="283.6" r="12" fill="transparent" data-tip="JD 5KG 大箱 10-29
+当天没人报，沿用 10-28 的 850 元/箱
+÷ 5kg = 170 元/kg"/><circle cx="715.9" cy="329.6" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="329.6" r="12" fill="transparent" data-tip="JD 5KG 大箱 10-30
+市场开价 600 元/箱
+÷ 5kg = 120 元/kg"/><circle cx="766.0" cy="338.8" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="338.8" r="12" fill="transparent" data-tip="JD 5KG 大箱 10-31
+市场开价 550 元/箱（当天从 450 报到 650 元/箱）
+
+÷ 5kg = 110 元/kg"/></g><g data-series="JD"><line x1="64.0" y1="182.4" x2="114.1" y2="219.2" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="114.1" y1="219.2" x2="214.4" y2="164.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="214.4" y1="164.0" x2="364.9" y2="218.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="364.9" y1="218.0" x2="415.0" y2="213.2" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="415.0" y1="213.2" x2="465.1" y2="214.6" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="465.1" y1="214.6" x2="565.4" y2="171.4" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="565.4" y1="171.4" x2="615.6" y2="221.5" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="615.6" y1="221.5" x2="665.7" y2="221.5" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="665.7" y1="221.5" x2="766.0" y2="306.6" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><circle cx="64.0" cy="182.4" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="64.0" cy="182.4" r="12" fill="transparent" data-tip="JD 小箱 10-17
+2.5KG 箱 700 元 ÷ 2.5kg = 280 元/kg"/><circle cx="114.1" cy="219.2" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="114.1" cy="219.2" r="12" fill="transparent" data-tip="JD 小箱 10-18
+2.5KG 箱 600 元 ÷ 2.5kg = 240 元/kg"/><circle cx="214.4" cy="164.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="214.4" cy="164.0" r="12" fill="transparent" data-tip="JD 小箱 10-20
+2KG 箱 600 元 ÷ 2kg = 300 元/kg"/><circle cx="364.9" cy="218.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.9" cy="218.0" r="12" fill="transparent" data-tip="JD 小箱 10-23
+2KG 箱 525 元 ÷ 2kg = 262 元/kg
+2.5KG 箱 550 元 ÷ 2.5kg = 220 元/kg"/><circle cx="415.0" cy="213.2" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="415.0" cy="213.2" r="12" fill="transparent" data-tip="JD 小箱 10-24
+2KG 箱 450 元 ÷ 2kg = 225 元/kg
+2.5KG 箱 670 元 ÷ 2.5kg = 268 元/kg"/><circle cx="465.1" cy="214.6" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="465.1" cy="214.6" r="12" fill="transparent" data-tip="JD 小箱 10-25
+2KG 箱 500 元 ÷ 2kg = 250 元/kg
+2.5KG 箱 600 元 ÷ 2.5kg = 240 元/kg"/><circle cx="565.4" cy="171.4" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="171.4" r="12" fill="transparent" data-tip="JD 小箱 10-27
+2.5KG 箱 730 元 ÷ 2.5kg = 292 元/kg"/><circle cx="615.6" cy="221.5" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="221.5" r="12" fill="transparent" data-tip="JD 小箱 10-28
+2KG 箱 475 元 ÷ 2kg = 238 元/kg"/><circle cx="665.7" cy="221.5" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="665.7" cy="221.5" r="12" fill="transparent" data-tip="JD 小箱 10-29
+2KG 箱 475 元 ÷ 2kg = 238 元/kg"/><circle cx="766.0" cy="306.6" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="306.6" r="12" fill="transparent" data-tip="JD 小箱 10-31
+2KG 箱 300 元 ÷ 2kg = 150 元/kg
+2.5KG 箱 350 元 ÷ 2.5kg = 140 元/kg"/></g><g data-series="2JD"><line x1="515.3" y1="219.2" x2="565.4" y2="219.2" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="565.4" y1="219.2" x2="615.6" y2="246.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="615.6" y1="246.8" x2="665.7" y2="246.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="665.7" y1="246.8" x2="715.9" y2="292.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="715.9" y1="292.8" x2="766.0" y2="302.0" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><circle cx="515.3" cy="219.2" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="515.3" cy="219.2" r="12" fill="transparent" data-tip="2JD 5KG 大箱 10-26
+市场开价 1200 元/箱
+÷ 5kg = 240 元/kg"/><circle cx="565.4" cy="219.2" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="219.2" r="12" fill="transparent" data-tip="2JD 5KG 大箱 10-27
+市场开价 1200 元/箱
+÷ 5kg = 240 元/kg"/><circle cx="615.6" cy="246.8" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="246.8" r="12" fill="transparent" data-tip="2JD 5KG 大箱 10-28
+双拼箱（2×2.5KG） 1050 元/箱（当天从 900 报到 1400 元/箱）
+
+÷ 5kg = 210 元/kg"/><circle cx="665.7" cy="246.8" r="3" fill="var(--surface)" stroke="var(--s5)" stroke-width="1.6" opacity=".6"/><circle cx="665.7" cy="246.8" r="12" fill="transparent" data-tip="2JD 5KG 大箱 10-29
+当天没人报，沿用 10-28 的 1050 元/箱
+÷ 5kg = 210 元/kg"/><circle cx="715.9" cy="292.8" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="292.8" r="12" fill="transparent" data-tip="2JD 5KG 大箱 10-30
+市场开价 800 元/箱
+÷ 5kg = 160 元/kg"/><circle cx="766.0" cy="302.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="302.0" r="12" fill="transparent" data-tip="2JD 5KG 大箱 10-31
+市场开价 750 元/箱（当天从 600 报到 800 元/箱）
+
+÷ 5kg = 150 元/kg"/></g><g data-series="2JD"><line x1="64.0" y1="145.6" x2="114.1" y2="182.4" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="114.1" y1="182.4" x2="214.4" y2="118.0" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="214.4" y1="118.0" x2="364.9" y2="170.9" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="364.9" y1="170.9" x2="415.0" y2="148.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="415.0" y1="148.8" x2="465.1" y2="182.4" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="465.1" y1="182.4" x2="565.4" y2="137.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="565.4" y1="137.8" x2="615.6" y2="164.0" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="615.6" y1="164.0" x2="665.7" y2="206.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="665.7" y1="206.5" x2="715.9" y2="247.7" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="715.9" y1="247.7" x2="766.0" y2="283.6" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><circle cx="64.0" cy="145.6" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="64.0" cy="145.6" r="12" fill="transparent" data-tip="2JD 小箱 10-17
+2.5KG 箱 800 元 ÷ 2.5kg = 320 元/kg"/><circle cx="114.1" cy="182.4" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="114.1" cy="182.4" r="12" fill="transparent" data-tip="2JD 小箱 10-18
+2.5KG 箱 700 元 ÷ 2.5kg = 280 元/kg"/><circle cx="214.4" cy="118.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="214.4" cy="118.0" r="12" fill="transparent" data-tip="2JD 小箱 10-20
+2KG 箱 700 元 ÷ 2kg = 350 元/kg"/><circle cx="364.9" cy="170.9" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.9" cy="170.9" r="12" fill="transparent" data-tip="2JD 小箱 10-23
+2KG 箱 650 元 ÷ 2kg = 325 元/kg
+2.5KG 箱 650 元 ÷ 2.5kg = 260 元/kg"/><circle cx="415.0" cy="148.8" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="415.0" cy="148.8" r="12" fill="transparent" data-tip="2JD 小箱 10-24
+2KG 箱 638 元 ÷ 2kg = 319 元/kg
+2.5KG 箱 785 元 ÷ 2.5kg = 314 元/kg"/><circle cx="465.1" cy="182.4" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="465.1" cy="182.4" r="12" fill="transparent" data-tip="2JD 小箱 10-25
+2.5KG 箱 700 元 ÷ 2.5kg = 280 元/kg"/><circle cx="565.4" cy="137.8" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="137.8" r="12" fill="transparent" data-tip="2JD 小箱 10-27
+2KG 箱 650 元 ÷ 2kg = 325 元/kg
+2.5KG 箱 830 元 ÷ 2.5kg = 332 元/kg"/><circle cx="615.6" cy="164.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="164.0" r="12" fill="transparent" data-tip="2JD 小箱 10-28
+2KG 箱 600 元 ÷ 2kg = 300 元/kg"/><circle cx="665.7" cy="206.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="665.7" cy="206.5" r="12" fill="transparent" data-tip="2JD 小箱 10-29
+2KG 箱 575 元 ÷ 2kg = 288 元/kg
+2.5KG 箱 550 元 ÷ 2.5kg = 220 元/kg"/><circle cx="715.9" cy="247.7" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="247.7" r="12" fill="transparent" data-tip="2JD 小箱 10-30
+2KG 箱 418 元 ÷ 2kg = 209 元/kg"/><circle cx="766.0" cy="283.6" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="283.6" r="12" fill="transparent" data-tip="2JD 小箱 10-31
+2KG 箱 400 元 ÷ 2kg = 200 元/kg
+2.5KG 箱 350 元 ÷ 2.5kg = 140 元/kg"/></g><g data-series="3JD"><line x1="515.3" y1="164.0" x2="565.4" y2="164.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="565.4" y1="164.0" x2="615.6" y2="200.8" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="615.6" y1="200.8" x2="665.7" y2="200.8" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="665.7" y1="200.8" x2="715.9" y2="283.6" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="715.9" y1="283.6" x2="766.0" y2="283.6" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><circle cx="515.3" cy="164.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="515.3" cy="164.0" r="12" fill="transparent" data-tip="3JD 5KG 大箱 10-26
+1500 元/箱（按 3J 1400 + 100 推）
+÷ 5kg = 300 元/kg"/><circle cx="565.4" cy="164.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="164.0" r="12" fill="transparent" data-tip="3JD 5KG 大箱 10-27
+1500 元/箱（按 3J 1400 + 100 推）
+÷ 5kg = 300 元/kg"/><circle cx="615.6" cy="200.8" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="200.8" r="12" fill="transparent" data-tip="3JD 5KG 大箱 10-28
+1300 元/箱（按 3J 1200 + 100 推）
+÷ 5kg = 260 元/kg"/><circle cx="665.7" cy="200.8" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="665.7" cy="200.8" r="12" fill="transparent" data-tip="3JD 5KG 大箱 10-29
+1300 元/箱（按 3J 1200 + 100 推）
+÷ 5kg = 260 元/kg"/><circle cx="715.9" cy="283.6" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="283.6" r="12" fill="transparent" data-tip="3JD 5KG 大箱 10-30
+850 元/箱（按 3J 750 + 100 推）
+÷ 5kg = 170 元/kg"/><circle cx="766.0" cy="283.6" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="283.6" r="12" fill="transparent" data-tip="3JD 5KG 大箱 10-31
+850 元/箱（按 3J 750 + 100 推）
+÷ 5kg = 170 元/kg"/></g><g data-series="3JD"><line x1="64.0" y1="108.8" x2="114.1" y2="145.6" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="114.1" y1="145.6" x2="214.4" y2="72.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="214.4" y1="72.0" x2="364.9" y2="135.2" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="364.9" y1="135.2" x2="415.0" y2="107.9" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="415.0" y1="107.9" x2="465.1" y2="145.6" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="465.1" y1="145.6" x2="565.4" y2="103.3" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="565.4" y1="103.3" x2="615.6" y2="118.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="615.6" y1="118.0" x2="665.7" y2="165.2" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="665.7" y1="165.2" x2="715.9" y2="193.9" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><line x1="715.9" y1="193.9" x2="766.0" y2="242.2" stroke="var(--s6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".8"/><circle cx="64.0" cy="108.8" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="64.0" cy="108.8" r="12" fill="transparent" data-tip="3JD 小箱 10-17
+2.5KG 箱 900 元 ÷ 2.5kg = 360 元/kg"/><circle cx="114.1" cy="145.6" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="114.1" cy="145.6" r="12" fill="transparent" data-tip="3JD 小箱 10-18
+2.5KG 箱 800 元 ÷ 2.5kg = 320 元/kg"/><circle cx="214.4" cy="72.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="214.4" cy="72.0" r="12" fill="transparent" data-tip="3JD 小箱 10-20
+2KG 箱 800 元 ÷ 2kg = 400 元/kg"/><circle cx="364.9" cy="135.2" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.9" cy="135.2" r="12" fill="transparent" data-tip="3JD 小箱 10-23
+2KG 箱 725 元 ÷ 2kg = 362 元/kg
+2.5KG 箱 750 元 ÷ 2.5kg = 300 元/kg"/><circle cx="415.0" cy="107.9" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="415.0" cy="107.9" r="12" fill="transparent" data-tip="3JD 小箱 10-24
+2KG 箱 700 元 ÷ 2kg = 350 元/kg
+2.5KG 箱 930 元 ÷ 2.5kg = 372 元/kg"/><circle cx="465.1" cy="145.6" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="465.1" cy="145.6" r="12" fill="transparent" data-tip="3JD 小箱 10-25
+2.5KG 箱 800 元 ÷ 2.5kg = 320 元/kg"/><circle cx="565.4" cy="103.3" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="565.4" cy="103.3" r="12" fill="transparent" data-tip="3JD 小箱 10-27
+2KG 箱 720 元 ÷ 2kg = 360 元/kg
+2.5KG 箱 930 元 ÷ 2.5kg = 372 元/kg"/><circle cx="615.6" cy="118.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="615.6" cy="118.0" r="12" fill="transparent" data-tip="3JD 小箱 10-28
+2KG 箱 700 元 ÷ 2kg = 350 元/kg"/><circle cx="665.7" cy="165.2" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="665.7" cy="165.2" r="12" fill="transparent" data-tip="3JD 小箱 10-29
+2KG 箱 675 元 ÷ 2kg = 338 元/kg
+2.5KG 箱 650 元 ÷ 2.5kg = 260 元/kg"/><circle cx="715.9" cy="193.9" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="715.9" cy="193.9" r="12" fill="transparent" data-tip="3JD 小箱 10-30
+2KG 箱 535 元 ÷ 2kg = 268 元/kg"/><circle cx="766.0" cy="242.2" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="766.0" cy="242.2" r="12" fill="transparent" data-tip="3JD 小箱 10-31
+2KG 箱 500 元 ÷ 2kg = 250 元/kg
+2.5KG 箱 450 元 ÷ 2.5kg = 180 元/kg"/></g><line x1="773.0" y1="388.0" x2="785.0" y2="388.0" stroke="var(--s1)" stroke-width="2.4"/><line x1="771.0" y1="357.2" x2="771.0" y2="388.0" stroke="var(--s1)" stroke-width="1" opacity=".5"/><text x="792.0" y="392.0" font-size="11.5" font-weight="600" fill="var(--s1)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">J 90</text><line x1="773.0" y1="357.0" x2="785.0" y2="357.0" stroke="var(--s1)" stroke-width="2.4" stroke-dasharray="4 3"/><line x1="771.0" y1="329.6" x2="771.0" y2="357.0" stroke="var(--s1)" stroke-width="1" opacity=".5"/><text x="792.0" y="361.0" font-size="11.5" font-weight="600" fill="var(--s1)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">J 120</text><line x1="773.0" y1="341.5" x2="785.0" y2="341.5" stroke="var(--s2)" stroke-width="2.4"/><line x1="771.0" y1="320.4" x2="771.0" y2="341.5" stroke="var(--s2)" stroke-width="1" opacity=".5"/><text x="792.0" y="345.5" font-size="11.5" font-weight="600" fill="var(--s2)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2J 130</text><line x1="773.0" y1="326.0" x2="785.0" y2="326.0" stroke="var(--s2)" stroke-width="2.4" stroke-dasharray="4 3"/><line x1="771.0" y1="311.2" x2="771.0" y2="326.0" stroke="var(--s2)" stroke-width="1" opacity=".5"/><text x="792.0" y="330.0" font-size="11.5" font-weight="600" fill="var(--s2)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2J 140</text><line x1="773.0" y1="279.5" x2="785.0" y2="279.5" stroke="var(--s3)" stroke-width="2.4"/><line x1="771.0" y1="302.0" x2="771.0" y2="279.5" stroke="var(--s3)" stroke-width="1" opacity=".5"/><text x="792.0" y="283.5" font-size="11.5" font-weight="600" fill="var(--s3)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3J 150</text><line x1="773.0" y1="222.6" x2="785.0" y2="222.6" stroke="var(--s3)" stroke-width="2.4" stroke-dasharray="4 3"/><line x1="771.0" y1="253.7" x2="771.0" y2="222.6" stroke="var(--s3)" stroke-width="1" opacity=".5"/><text x="792.0" y="226.6" font-size="11.5" font-weight="600" fill="var(--s3)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3J 202</text><line x1="773.0" y1="372.5" x2="785.0" y2="372.5" stroke="var(--s4)" stroke-width="2.4"/><line x1="771.0" y1="338.8" x2="771.0" y2="372.5" stroke="var(--s4)" stroke-width="1" opacity=".5"/><text x="792.0" y="376.5" font-size="11.5" font-weight="600" fill="var(--s4)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">JD 110</text><line x1="773.0" y1="310.5" x2="785.0" y2="310.5" stroke="var(--s4)" stroke-width="2.4" stroke-dasharray="4 3"/><line x1="771.0" y1="306.6" x2="771.0" y2="310.5" stroke="var(--s4)" stroke-width="1" opacity=".5"/><text x="792.0" y="314.5" font-size="11.5" font-weight="600" fill="var(--s4)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">JD 145</text><line x1="773.0" y1="295.0" x2="785.0" y2="295.0" stroke="var(--s5)" stroke-width="2.4"/><line x1="771.0" y1="302.0" x2="771.0" y2="295.0" stroke="var(--s5)" stroke-width="1" opacity=".5"/><text x="792.0" y="299.0" font-size="11.5" font-weight="600" fill="var(--s5)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2JD 150</text><line x1="773.0" y1="248.5" x2="785.0" y2="248.5" stroke="var(--s5)" stroke-width="2.4" stroke-dasharray="4 3"/><line x1="771.0" y1="283.6" x2="771.0" y2="248.5" stroke="var(--s5)" stroke-width="1" opacity=".5"/><text x="792.0" y="252.5" font-size="11.5" font-weight="600" fill="var(--s5)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2JD 170</text><line x1="773.0" y1="264.0" x2="785.0" y2="264.0" stroke="var(--s6)" stroke-width="2.4"/><line x1="771.0" y1="283.6" x2="771.0" y2="264.0" stroke="var(--s6)" stroke-width="1" opacity=".5"/><text x="792.0" y="268.0" font-size="11.5" font-weight="600" fill="var(--s6)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3JD 170</text><line x1="773.0" y1="207.1" x2="785.0" y2="207.1" stroke="var(--s6)" stroke-width="2.4" stroke-dasharray="4 3"/><line x1="771.0" y1="242.2" x2="771.0" y2="207.1" stroke="var(--s6)" stroke-width="1" opacity=".5"/><text x="792.0" y="211.1" font-size="11.5" font-weight="600" fill="var(--s6)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3JD 215</text></svg></div>
+  <p class="scrollhint">↔ 手机上可以左右滑动看完整曲线</p>
+  <p class="cap">元/kg ＝ 箱价 ÷ 每箱公斤数：5KG 散装和 2×2.5KG 双拼都按 5kg 算，
+  2.5KG 箱按 2.5kg、2KG 箱按 2kg；同一天两个小箱包装都有人报就取中位。
+  <b>同一个规格的小箱天生比大箱贵一截</b>（装得少、分装的钱照摊），所以实线和虚线不会重合——
+  <b>看走势各看各的那条，比高低要拿同一种箱子比</b>。</p>
+  <ul class="who">
+    <li><b>元/kg 全线往下：</b>从 10-26 算到 10-31，J 220→90、JD 240→110、2J 260→130、3J 280→150、3JD 300→170、2JD 240→150——J 跌得最狠（59%），2JD 相对抗跌（38%）。六个规格一起跌，<b>不是哪个规格单独出问题，是整批货一起松</b>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>六个主力规格的大箱价格走势（元/箱）</h3>
+  <div class="legend lgd">
+    <span data-tog="J"><i style="background:var(--s1)"></i>J</span>
+    <span data-tog="2J"><i style="background:var(--s2)"></i>2J</span>
+    <span data-tog="3J"><i style="background:var(--s3)"></i>3J</span>
+    <span data-tog="JD"><i style="background:var(--s4)"></i>JD</span>
+    <span data-tog="2JD"><i style="background:var(--s5)"></i>2JD</span>
+    <span data-tog="3JD"><i style="background:var(--s6)"></i>3JD</span>
+  </div>
+  <div class="chartwrap"><svg viewBox="0 0 900 430" class="pline" role="img" aria-label="J / JD / 2J / 2JD / 3J / 3JD 大箱价格走势"><line x1="62" y1="384.0" x2="796" y2="384.0" stroke="var(--grid)" stroke-width="1"/><text x="52" y="388.0" text-anchor="end" font-size="11" fill="var(--muted)">300</text><line x1="62" y1="328.6" x2="796" y2="328.6" stroke="var(--grid)" stroke-width="1"/><text x="52" y="332.6" text-anchor="end" font-size="11" fill="var(--muted)">500</text><line x1="62" y1="273.2" x2="796" y2="273.2" stroke="var(--grid)" stroke-width="1"/><text x="52" y="277.2" text-anchor="end" font-size="11" fill="var(--muted)">700</text><line x1="62" y1="217.8" x2="796" y2="217.8" stroke="var(--grid)" stroke-width="1"/><text x="52" y="221.8" text-anchor="end" font-size="11" fill="var(--muted)">900</text><line x1="62" y1="162.5" x2="796" y2="162.5" stroke="var(--grid)" stroke-width="1"/><text x="52" y="166.5" text-anchor="end" font-size="11" fill="var(--muted)">1100</text><line x1="62" y1="107.1" x2="796" y2="107.1" stroke="var(--grid)" stroke-width="1"/><text x="52" y="111.1" text-anchor="end" font-size="11" fill="var(--muted)">1300</text><line x1="62" y1="51.7" x2="796" y2="51.7" stroke="var(--grid)" stroke-width="1"/><text x="52" y="55.7" text-anchor="end" font-size="11" fill="var(--muted)">1500</text><text x="62.0" y="406" text-anchor="middle" font-size="11" fill="var(--muted)">10-26</text><text x="208.8" y="406" text-anchor="middle" font-size="11" fill="var(--muted)">10-27</text><text x="355.6" y="406" text-anchor="middle" font-size="11" fill="var(--muted)">10-28</text><text x="502.4" y="406" text-anchor="middle" font-size="11" fill="var(--muted)">10-29</text><text x="649.2" y="406" text-anchor="middle" font-size="11" fill="var(--muted)">10-30</text><text x="796.0" y="406" text-anchor="middle" font-size="11" fill="var(--muted)">10-31</text><line x1="62" y1="384" x2="796" y2="384" stroke="var(--axis)" stroke-width="1"/><g data-series="J"><line x1="62.0" y1="162.5" x2="208.8" y2="217.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="208.8" y1="217.8" x2="355.6" y2="245.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="355.6" y1="245.5" x2="502.4" y2="245.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="502.4" y1="245.5" x2="649.2" y2="300.9" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="649.2" y1="300.9" x2="796.0" y2="342.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><circle cx="62.0" cy="162.5" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="62.0" cy="162.5" r="13" fill="transparent" data-tip="J 大箱 10-26
+市场开价 1100 元/箱（当天从 900 报到 1100 元/箱）
+3 条报价"/><circle cx="208.8" cy="217.8" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="208.8" cy="217.8" r="13" fill="transparent" data-tip="J 大箱 10-27
+市场开价 900 元/箱1 条报价"/><circle cx="355.6" cy="245.5" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="355.6" cy="245.5" r="13" fill="transparent" data-tip="J 大箱 10-28
+市场开价 800 元/箱1 条报价"/><circle cx="502.4" cy="245.5" r="3" fill="var(--surface)" stroke="var(--s1)" stroke-width="1.6" opacity=".55"/><circle cx="502.4" cy="245.5" r="13" fill="transparent" data-tip="J 大箱 10-29
+当天没人报这个规格，沿用 10-28 的 800 元/箱"/><circle cx="649.2" cy="300.9" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="649.2" cy="300.9" r="13" fill="transparent" data-tip="J 大箱 10-30
+市场开价 600 元/箱（当天从 500 报到 600 元/箱）
+5 条报价"/><circle cx="796.0" cy="342.5" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="796.0" cy="342.5" r="13" fill="transparent" data-tip="J 大箱 10-31
+市场开价 450 元/箱（当天从 450 报到 600 元/箱）
+3 条报价"/></g><g data-series="2J"><line x1="62.0" y1="107.1" x2="208.8" y2="162.5" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="208.8" y1="162.5" x2="355.6" y2="190.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="355.6" y1="190.2" x2="502.4" y2="190.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="502.4" y1="190.2" x2="649.2" y2="287.1" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="649.2" y1="287.1" x2="796.0" y2="287.1" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><circle cx="62.0" cy="107.1" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="62.0" cy="107.1" r="13" fill="transparent" data-tip="2J 大箱 10-26
+市场开价 1300 元/箱（当天从 1100 报到 1300 元/箱）
+3 条报价"/><circle cx="208.8" cy="162.5" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="208.8" cy="162.5" r="13" fill="transparent" data-tip="2J 大箱 10-27
+市场开价 1100 元/箱1 条报价"/><circle cx="355.6" cy="190.2" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="355.6" cy="190.2" r="13" fill="transparent" data-tip="2J 大箱 10-28
+市场开价 1000 元/箱3 条报价"/><circle cx="502.4" cy="190.2" r="3" fill="var(--surface)" stroke="var(--s2)" stroke-width="1.6" opacity=".55"/><circle cx="502.4" cy="190.2" r="13" fill="transparent" data-tip="2J 大箱 10-29
+当天没人报这个规格，沿用 10-28 的 1000 元/箱"/><circle cx="649.2" cy="287.1" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="649.2" cy="287.1" r="13" fill="transparent" data-tip="2J 大箱 10-30
+市场开价 650 元/箱（当天从 600 报到 700 元/箱）
+2 条报价"/><circle cx="796.0" cy="287.1" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="796.0" cy="287.1" r="13" fill="transparent" data-tip="2J 大箱 10-31
+市场开价 650 元/箱（当天从 600 报到 700 元/箱）
+4 条报价"/></g><g data-series="3J"><line x1="62.0" y1="79.4" x2="208.8" y2="79.4" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="208.8" y1="79.4" x2="355.6" y2="134.8" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="355.6" y1="134.8" x2="502.4" y2="134.8" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="502.4" y1="134.8" x2="649.2" y2="259.4" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="649.2" y1="259.4" x2="796.0" y2="259.4" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><circle cx="62.0" cy="79.4" r="4.5" fill="var(--s3)" stroke="var(--surface)" stroke-width="2"/><circle cx="62.0" cy="79.4" r="13" fill="transparent" data-tip="3J 大箱 10-26
+市场开价 1400 元/箱1 条报价"/><circle cx="208.8" cy="79.4" r="4.5" fill="var(--s3)" stroke="var(--surface)" stroke-width="2"/><circle cx="208.8" cy="79.4" r="13" fill="transparent" data-tip="3J 大箱 10-27
+市场开价 1400 元/箱4 条报价"/><circle cx="355.6" cy="134.8" r="4.5" fill="var(--s3)" stroke="var(--surface)" stroke-width="2"/><circle cx="355.6" cy="134.8" r="13" fill="transparent" data-tip="3J 大箱 10-28
+市场开价 1200 元/箱1 条报价"/><circle cx="502.4" cy="134.8" r="3" fill="var(--surface)" stroke="var(--s3)" stroke-width="1.6" opacity=".55"/><circle cx="502.4" cy="134.8" r="13" fill="transparent" data-tip="3J 大箱 10-29
+当天没人报这个规格，沿用 10-28 的 1200 元/箱"/><circle cx="649.2" cy="259.4" r="4.5" fill="var(--s3)" stroke="var(--surface)" stroke-width="2"/><circle cx="649.2" cy="259.4" r="13" fill="transparent" data-tip="3J 大箱 10-30
+市场开价 750 元/箱（当天从 700 报到 800 元/箱）
+2 条报价"/><circle cx="796.0" cy="259.4" r="3" fill="var(--surface)" stroke="var(--s3)" stroke-width="1.6" opacity=".55"/><circle cx="796.0" cy="259.4" r="13" fill="transparent" data-tip="3J 大箱 10-31
+当天没人报这个规格，沿用 10-30 的 750 元/箱
+之后这个规格就没再报价，线到此为止"/></g><g data-series="JD"><line x1="62.0" y1="134.8" x2="208.8" y2="190.2" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="208.8" y1="190.2" x2="355.6" y2="231.7" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="355.6" y1="231.7" x2="502.4" y2="231.7" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="502.4" y1="231.7" x2="649.2" y2="300.9" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="649.2" y1="300.9" x2="796.0" y2="314.8" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><circle cx="62.0" cy="134.8" r="4.5" fill="var(--s4)" stroke="var(--surface)" stroke-width="2"/><circle cx="62.0" cy="134.8" r="13" fill="transparent" data-tip="JD 大箱 10-26
+市场开价 1200 元/箱（当天从 1000 报到 1200 元/箱）
+3 条报价"/><circle cx="208.8" cy="190.2" r="4.5" fill="var(--s4)" stroke="var(--surface)" stroke-width="2"/><circle cx="208.8" cy="190.2" r="13" fill="transparent" data-tip="JD 大箱 10-27
+市场开价 1000 元/箱1 条报价"/><circle cx="355.6" cy="231.7" r="4.5" fill="var(--s4)" stroke="var(--surface)" stroke-width="2"/><circle cx="355.6" cy="231.7" r="13" fill="transparent" data-tip="JD 大箱 10-28
+市场开价 850 元/箱1 条报价"/><circle cx="502.4" cy="231.7" r="3" fill="var(--surface)" stroke="var(--s4)" stroke-width="1.6" opacity=".55"/><circle cx="502.4" cy="231.7" r="13" fill="transparent" data-tip="JD 大箱 10-29
+当天没人报这个规格，沿用 10-28 的 850 元/箱"/><circle cx="649.2" cy="300.9" r="4.5" fill="var(--s4)" stroke="var(--surface)" stroke-width="2"/><circle cx="649.2" cy="300.9" r="13" fill="transparent" data-tip="JD 大箱 10-30
+市场开价 600 元/箱2 条报价"/><circle cx="796.0" cy="314.8" r="4.5" fill="var(--s4)" stroke="var(--surface)" stroke-width="2"/><circle cx="796.0" cy="314.8" r="13" fill="transparent" data-tip="JD 大箱 10-31
+市场开价 550 元/箱（当天从 450 报到 650 元/箱）
+4 条报价"/></g><g data-series="2JD"><line x1="62.0" y1="134.8" x2="208.8" y2="134.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="208.8" y1="134.8" x2="355.6" y2="176.3" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="355.6" y1="176.3" x2="502.4" y2="176.3" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="502.4" y1="176.3" x2="649.2" y2="245.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".65"/><line x1="649.2" y1="245.5" x2="796.0" y2="259.4" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><circle cx="62.0" cy="134.8" r="4.5" fill="var(--s5)" stroke="var(--surface)" stroke-width="2"/><circle cx="62.0" cy="134.8" r="13" fill="transparent" data-tip="2JD 大箱 10-26
+市场开价 1200 元/箱1 条报价"/><circle cx="208.8" cy="134.8" r="4.5" fill="var(--s5)" stroke="var(--surface)" stroke-width="2"/><circle cx="208.8" cy="134.8" r="13" fill="transparent" data-tip="2JD 大箱 10-27
+市场开价 1200 元/箱2 条报价"/><circle cx="355.6" cy="176.3" r="4.5" fill="var(--s5)" stroke="var(--surface)" stroke-width="2"/><circle cx="355.6" cy="176.3" r="13" fill="transparent" data-tip="2JD 大箱 10-28
+双拼箱（2×2.5KG 装一箱）开价 1050 元/箱（当天从 900 报到 1400 元/箱）
+8 条报价"/><circle cx="502.4" cy="176.3" r="3" fill="var(--surface)" stroke="var(--s5)" stroke-width="1.6" opacity=".55"/><circle cx="502.4" cy="176.3" r="13" fill="transparent" data-tip="2JD 大箱 10-29
+当天没人报这个规格，沿用 10-28 的 1050 元/箱"/><circle cx="649.2" cy="245.5" r="4.5" fill="var(--s5)" stroke="var(--surface)" stroke-width="2"/><circle cx="649.2" cy="245.5" r="13" fill="transparent" data-tip="2JD 大箱 10-30
+市场开价 800 元/箱2 条报价"/><circle cx="796.0" cy="259.4" r="4.5" fill="var(--s5)" stroke="var(--surface)" stroke-width="2"/><circle cx="796.0" cy="259.4" r="13" fill="transparent" data-tip="2JD 大箱 10-31
+市场开价 750 元/箱（当天从 600 报到 800 元/箱）
+6 条报价"/></g><g data-series="3JD"><line x1="62.0" y1="51.7" x2="208.8" y2="51.7" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="208.8" y1="51.7" x2="355.6" y2="107.1" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="355.6" y1="107.1" x2="502.4" y2="107.1" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="502.4" y1="107.1" x2="649.2" y2="231.7" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="649.2" y1="231.7" x2="796.0" y2="231.7" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><circle cx="62.0" cy="51.7" r="4.5" fill="var(--s6)" stroke="var(--surface)" stroke-width="2"/><circle cx="62.0" cy="51.7" r="13" fill="transparent" data-tip="3JD 大箱 10-26
+1500 元/箱（3J 1400 + 100）"/><circle cx="208.8" cy="51.7" r="4.5" fill="var(--s6)" stroke="var(--surface)" stroke-width="2"/><circle cx="208.8" cy="51.7" r="13" fill="transparent" data-tip="3JD 大箱 10-27
+1500 元/箱（3J 1400 + 100）"/><circle cx="355.6" cy="107.1" r="4.5" fill="var(--s6)" stroke="var(--surface)" stroke-width="2"/><circle cx="355.6" cy="107.1" r="13" fill="transparent" data-tip="3JD 大箱 10-28
+1300 元/箱（3J 1200 + 100）"/><circle cx="502.4" cy="107.1" r="4.5" fill="var(--s6)" stroke="var(--surface)" stroke-width="2"/><circle cx="502.4" cy="107.1" r="13" fill="transparent" data-tip="3JD 大箱 10-29
+1300 元/箱（3J 1200 + 100）"/><circle cx="649.2" cy="231.7" r="4.5" fill="var(--s6)" stroke="var(--surface)" stroke-width="2"/><circle cx="649.2" cy="231.7" r="13" fill="transparent" data-tip="3JD 大箱 10-30
+850 元/箱（3J 750 + 100）"/><circle cx="796.0" cy="231.7" r="4.5" fill="var(--s6)" stroke="var(--surface)" stroke-width="2"/><circle cx="796.0" cy="231.7" r="13" fill="transparent" data-tip="3JD 大箱 10-31
+850 元/箱（3J 750 + 100）"/></g><text x="808.0" y="342.5" font-size="11.5" font-weight="600" fill="var(--s1)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">J 450</text><line x1="801.0" y1="287.1" x2="804.0" y2="287.4" stroke="var(--s2)" stroke-width="1" opacity=".5"/><text x="808.0" y="291.4" font-size="11.5" font-weight="600" fill="var(--s2)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2J 650</text><text x="808.0" y="259.4" font-size="11.5" font-weight="600" fill="var(--s3)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3J 750</text><text x="808.0" y="314.8" font-size="11.5" font-weight="600" fill="var(--s4)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">JD 550</text><line x1="801.0" y1="259.4" x2="804.0" y2="271.4" stroke="var(--s5)" stroke-width="1" opacity=".5"/><text x="808.0" y="275.4" font-size="11.5" font-weight="600" fill="var(--s5)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2JD 750</text><text x="808.0" y="231.7" font-size="11.5" font-weight="600" fill="var(--s6)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3JD 850</text></svg></div>
+  <p class="scrollhint">↔ 手机上可以左右滑动看完整曲线</p>
+  <ul class="who">
+    <li><b>规格走得快：</b>5KG 报走的 19 票里，2JD 出现得最多（11 票），最大的单票 10-30 走了 8 板；JD/3JD 各 9 票、2J/3J 各 6 票、J 4 票、XL 2 票（10-28 那一票就走了 7 板）。</li>
+    <li><b>牌子走得快：</b>SAN FRANCISCO 18.5 板（单票：10-30 走 8 板、10-30 走 5-6 板、10-31 走 3 板 等）；GENERICA 13.5 板（单票：10-28 走七板、10-28 走六七板）；LUCKY 8 板（单票：10-27 走 3 板、10-31 走 3 板、10-31 走 2 板）。</li>
+    <li><b>价格高低（同规格横向比，全程）：</b>大箱这边没有谁明显更硬，排第一的 SANTINA 也就在中位附近（22 次里 6 次高、4 次低，其余持平）；<b>ROYAL DAWN 最软</b>——13 次里 8 次低于中位，中位低 <b>9.1%</b>（最低一次 10.31 JD 450（中位 650），低 31%）。带牌子的报价太少（能比的只有个位数），牌子层面分不出高下。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>小箱 2KG / 2.5KG：全部规格的报价走势（元/箱）</h3>
+  <p class="cap">小箱箱价只有大箱一半上下，混进上面那张图会把「今天只报了小箱」读成腰斩，所以单开一张。
+  纵轴就是<b>元/箱</b>，2.5KG 比 2KG 高是箱子大，不是货贵——要比单价看 tooltip 里折的元/kg。</p>
+  <div class="legend">
+    <span><i style="background:var(--s1)"></i>J</span>
+    <span><i style="background:var(--s2)"></i>2J</span>
+    <span><i style="background:var(--s3)"></i>3J</span>
+    <span><i style="background:var(--s4)"></i>JD</span>
+    <span><i style="background:var(--s5)"></i>2JD</span>
+    <span><i style="background:var(--s6)"></i>3JD</span>
+    <span><i style="background:var(--surface);border:2px solid var(--s6);border-radius:50%"></i>3JD 推算（3J+50）</span>
+  </div>
+  <div class="chartwrap onlywide"><svg viewBox="0 0 940 448" class="pline" role="img" aria-label="2KG 与 2.5KG 小箱六个规格的开价走势（元/箱）"><line x1="56" y1="402.0" x2="416" y2="402.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="406.0" text-anchor="end" font-size="11" fill="var(--muted)">200</text><line x1="56" y1="359.0" x2="416" y2="359.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="363.0" text-anchor="end" font-size="11" fill="var(--muted)">300</text><line x1="56" y1="316.0" x2="416" y2="316.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="320.0" text-anchor="end" font-size="11" fill="var(--muted)">400</text><line x1="56" y1="273.0" x2="416" y2="273.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="277.0" text-anchor="end" font-size="11" fill="var(--muted)">500</text><line x1="56" y1="230.0" x2="416" y2="230.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="234.0" text-anchor="end" font-size="11" fill="var(--muted)">600</text><line x1="56" y1="187.0" x2="416" y2="187.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="191.0" text-anchor="end" font-size="11" fill="var(--muted)">700</text><line x1="56" y1="144.0" x2="416" y2="144.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="148.0" text-anchor="end" font-size="11" fill="var(--muted)">800</text><line x1="56" y1="101.0" x2="416" y2="101.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="105.0" text-anchor="end" font-size="11" fill="var(--muted)">900</text><line x1="56" y1="58.0" x2="416" y2="58.0" stroke="var(--grid)" stroke-width="1"/><text x="46" y="62.0" text-anchor="end" font-size="11" fill="var(--muted)">1000</text><text x="46" y="48" text-anchor="end" font-size="10.5" fill="var(--muted)">元/箱</text><text x="56" y="34" font-size="12" font-weight="600" fill="var(--ink)">2KG 箱（每箱 2 公斤）</text><line x1="56" y1="402" x2="416" y2="402" stroke="var(--axis)" stroke-width="1"/><text x="56.0" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-17</text><text x="107.4" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-19</text><text x="158.9" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-21</text><text x="210.3" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-23</text><text x="261.7" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-25</text><text x="313.1" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-27</text><text x="364.6" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-29</text><text x="416.0" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-31</text><g data-k="2KG-J"><line x1="133.1" y1="251.5" x2="210.3" y2="273.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="210.3" y1="273.0" x2="236.0" y2="273.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="236.0" y1="273.0" x2="261.7" y2="294.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="261.7" y1="294.5" x2="338.9" y2="316.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="338.9" y1="316.0" x2="364.6" y2="316.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="364.6" y1="316.0" x2="390.3" y2="359.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><circle cx="133.1" cy="251.5" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="133.1" cy="251.5" r="12" fill="transparent" data-tip="2KG 箱 J · 10-20
+开价 550 元/箱
+折 275 元/kg · 1 条报价"/><circle cx="210.3" cy="273.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="210.3" cy="273.0" r="12" fill="transparent" data-tip="2KG 箱 J · 10-23
+开价 500 元/箱
+折 250 元/kg · 3 条报价"/><circle cx="236.0" cy="273.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="236.0" cy="273.0" r="12" fill="transparent" data-tip="2KG 箱 J · 10-24
+开价 500 元/箱
+（当天从 400 报到 550 元/箱）
+折 250 元/kg · 3 条报价"/><circle cx="261.7" cy="294.5" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="261.7" cy="294.5" r="12" fill="transparent" data-tip="2KG 箱 J · 10-25
+开价 450 元/箱
+折 225 元/kg · 3 条报价"/><circle cx="338.9" cy="316.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="338.9" cy="316.0" r="12" fill="transparent" data-tip="2KG 箱 J · 10-28
+开价 400 元/箱
+折 200 元/kg · 2 条报价"/><circle cx="364.6" cy="316.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.6" cy="316.0" r="12" fill="transparent" data-tip="2KG 箱 J · 10-29
+开价 400 元/箱
+折 200 元/kg · 1 条报价"/><circle cx="390.3" cy="359.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="390.3" cy="359.0" r="12" fill="transparent" data-tip="2KG 箱 J · 10-30
+开价 300 元/箱
+折 150 元/kg · 2 条报价"/></g><g data-k="2KG-2J"><line x1="133.1" y1="208.5" x2="210.3" y2="230.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="210.3" y1="230.0" x2="236.0" y2="235.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="236.0" y1="235.2" x2="338.9" y2="273.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="338.9" y1="273.0" x2="364.6" y2="273.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="364.6" y1="273.0" x2="390.3" y2="316.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><circle cx="133.1" cy="208.5" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="133.1" cy="208.5" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-20
+开价 650 元/箱
+折 325 元/kg · 1 条报价"/><circle cx="210.3" cy="230.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="210.3" cy="230.0" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-23
+开价 600 元/箱
+折 300 元/kg · 2 条报价"/><circle cx="236.0" cy="235.2" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="236.0" cy="235.2" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-24
+开价 588 元/箱
+（当天从 550 报到 600 元/箱）
+折 294 元/kg · 4 条报价"/><circle cx="338.9" cy="273.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="338.9" cy="273.0" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-28
+开价 500 元/箱
+折 250 元/kg · 2 条报价"/><circle cx="364.6" cy="273.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.6" cy="273.0" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-29
+开价 500 元/箱
+折 250 元/kg · 1 条报价"/><circle cx="390.3" cy="316.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="390.3" cy="316.0" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-30
+开价 400 元/箱
+折 200 元/kg · 2 条报价"/></g><g data-k="2KG-3J"><line x1="133.1" y1="165.5" x2="210.3" y2="182.7" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="210.3" y1="182.7" x2="236.0" y2="187.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="236.0" y1="187.0" x2="338.9" y2="230.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="338.9" y1="230.0" x2="364.6" y2="230.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="364.6" y1="230.0" x2="416.0" y2="294.5" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><circle cx="133.1" cy="165.5" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="133.1" cy="165.5" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-20
+开价 750 元/箱
+折 375 元/kg · 1 条报价"/><circle cx="210.3" cy="182.7" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="210.3" cy="182.7" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-23
+开价 710 元/箱
+（当天从 700 报到 720 元/箱）
+折 355 元/kg · 2 条报价"/><circle cx="236.0" cy="187.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="236.0" cy="187.0" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-24
+开价 700 元/箱
+折 350 元/kg · 1 条报价"/><circle cx="338.9" cy="230.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="338.9" cy="230.0" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-28
+开价 600 元/箱
+折 300 元/kg · 2 条报价"/><circle cx="364.6" cy="230.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.6" cy="230.0" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-29
+开价 600 元/箱
+折 300 元/kg · 1 条报价"/><circle cx="416.0" cy="294.5" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="416.0" cy="294.5" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-31
+开价 450 元/箱
+折 225 元/kg · 1 条报价"/></g><g data-k="2KG-JD"><line x1="133.1" y1="230.0" x2="210.3" y2="262.2" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="210.3" y1="262.2" x2="236.0" y2="294.5" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="236.0" y1="294.5" x2="261.7" y2="273.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="261.7" y1="273.0" x2="338.9" y2="283.8" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="338.9" y1="283.8" x2="364.6" y2="283.8" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="364.6" y1="283.8" x2="416.0" y2="359.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><circle cx="133.1" cy="230.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="133.1" cy="230.0" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-20
+开价 600 元/箱
+折 300 元/kg · 1 条报价"/><circle cx="210.3" cy="262.2" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="210.3" cy="262.2" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-23
+开价 525 元/箱
+（当天从 500 报到 550 元/箱）
+折 262 元/kg · 2 条报价"/><circle cx="236.0" cy="294.5" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="236.0" cy="294.5" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-24
+开价 450 元/箱
+（当天从 400 报到 550 元/箱）
+折 225 元/kg · 4 条报价"/><circle cx="261.7" cy="273.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="261.7" cy="273.0" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-25
+开价 500 元/箱
+折 250 元/kg · 2 条报价"/><circle cx="338.9" cy="283.8" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="338.9" cy="283.8" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-28
+开价 475 元/箱
+（当天从 450 报到 500 元/箱）
+折 238 元/kg · 4 条报价"/><circle cx="364.6" cy="283.8" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.6" cy="283.8" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-29
+开价 475 元/箱
+（当天从 450 报到 500 元/箱）
+折 238 元/kg · 2 条报价"/><circle cx="416.0" cy="359.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="416.0" cy="359.0" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-31
+开价 300 元/箱
+折 150 元/kg · 3 条报价"/></g><g data-k="2KG-2JD"><line x1="133.1" y1="187.0" x2="210.3" y2="208.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="210.3" y1="208.5" x2="236.0" y2="213.7" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="236.0" y1="213.7" x2="313.1" y2="208.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="313.1" y1="208.5" x2="338.9" y2="230.0" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="338.9" y1="230.0" x2="364.6" y2="240.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="364.6" y1="240.8" x2="390.3" y2="308.3" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="390.3" y1="308.3" x2="416.0" y2="316.0" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><circle cx="133.1" cy="187.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="133.1" cy="187.0" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-20
+开价 700 元/箱
+折 350 元/kg · 1 条报价"/><circle cx="210.3" cy="208.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="210.3" cy="208.5" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-23
+开价 650 元/箱
+折 325 元/kg · 2 条报价"/><circle cx="236.0" cy="213.7" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="236.0" cy="213.7" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-24
+开价 638 元/箱
+（当天从 600 报到 650 元/箱）
+折 319 元/kg · 4 条报价"/><circle cx="313.1" cy="208.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="313.1" cy="208.5" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-27
+开价 650 元/箱
+（当天从 600 报到 650 元/箱）
+折 325 元/kg · 5 条报价"/><circle cx="338.9" cy="230.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="338.9" cy="230.0" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-28
+开价 600 元/箱
+（当天从 550 报到 620 元/箱）
+折 300 元/kg · 11 条报价"/><circle cx="364.6" cy="240.8" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.6" cy="240.8" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-29
+开价 575 元/箱
+（当天从 550 报到 600 元/箱）
+折 288 元/kg · 2 条报价"/><circle cx="390.3" cy="308.3" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="390.3" cy="308.3" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-30
+开价 418 元/箱
+（当天从 400 报到 450 元/箱）
+折 209 元/kg · 4 条报价"/><circle cx="416.0" cy="316.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="416.0" cy="316.0" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-31
+开价 400 元/箱
+折 200 元/kg · 3 条报价"/></g><g data-k="2KG-3JD"><line x1="133.1" y1="144.0" x2="210.3" y2="176.2" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="210.3" y1="176.2" x2="236.0" y2="187.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="236.0" y1="187.0" x2="313.1" y2="178.4" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="313.1" y1="178.4" x2="338.9" y2="187.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="338.9" y1="187.0" x2="364.6" y2="197.8" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="364.6" y1="197.8" x2="390.3" y2="258.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="390.3" y1="258.0" x2="416.0" y2="273.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><circle cx="133.1" cy="144.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="133.1" cy="144.0" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-20
+开价 800 元/箱
+折 400 元/kg · 1 条报价"/><circle cx="210.3" cy="176.2" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="210.3" cy="176.2" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-23
+开价 725 元/箱
+（当天从 600 报到 770 元/箱）
+折 362 元/kg · 4 条报价"/><circle cx="236.0" cy="187.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="236.0" cy="187.0" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-24
+开价 700 元/箱
+（当天从 600 报到 750 元/箱）
+折 350 元/kg · 5 条报价"/><circle cx="313.1" cy="178.4" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="313.1" cy="178.4" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-27
+开价 720 元/箱
+（当天从 700 报到 750 元/箱）
+折 360 元/kg · 7 条报价"/><circle cx="338.9" cy="187.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="338.9" cy="187.0" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-28
+开价 700 元/箱
+（当天从 650 报到 720 元/箱）
+折 350 元/kg · 11 条报价"/><circle cx="364.6" cy="197.8" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="364.6" cy="197.8" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-29
+开价 675 元/箱
+（当天从 650 报到 700 元/箱）
+折 338 元/kg · 2 条报价"/><circle cx="390.3" cy="258.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="390.3" cy="258.0" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-30
+开价 535 元/箱
+（当天从 520 报到 550 元/箱）
+折 268 元/kg · 2 条报价"/><circle cx="416.0" cy="273.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="416.0" cy="273.0" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-31
+开价 500 元/箱
+折 250 元/kg · 3 条报价"/></g><text x="426.0" y="359.0" font-size="11" font-weight="600" fill="var(--s1)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">J 300</text><text x="426.0" y="316.0" font-size="11" font-weight="600" fill="var(--s2)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2J 400</text><text x="426.0" y="294.5" font-size="11" font-weight="600" fill="var(--s3)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3J 450</text><line x1="421.0" y1="359.0" x2="422.0" y2="370.5" stroke="var(--s4)" stroke-width="1" opacity=".5"/><text x="426.0" y="374.5" font-size="11" font-weight="600" fill="var(--s4)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">JD 300</text><line x1="421.0" y1="316.0" x2="422.0" y2="327.5" stroke="var(--s5)" stroke-width="1" opacity=".5"/><text x="426.0" y="331.5" font-size="11" font-weight="600" fill="var(--s5)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2JD 400</text><text x="426.0" y="273.0" font-size="11" font-weight="600" fill="var(--s6)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3JD 500</text><line x1="522" y1="402.0" x2="882" y2="402.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="406.0" text-anchor="end" font-size="11" fill="var(--muted)">200</text><line x1="522" y1="359.0" x2="882" y2="359.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="363.0" text-anchor="end" font-size="11" fill="var(--muted)">300</text><line x1="522" y1="316.0" x2="882" y2="316.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="320.0" text-anchor="end" font-size="11" fill="var(--muted)">400</text><line x1="522" y1="273.0" x2="882" y2="273.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="277.0" text-anchor="end" font-size="11" fill="var(--muted)">500</text><line x1="522" y1="230.0" x2="882" y2="230.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="234.0" text-anchor="end" font-size="11" fill="var(--muted)">600</text><line x1="522" y1="187.0" x2="882" y2="187.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="191.0" text-anchor="end" font-size="11" fill="var(--muted)">700</text><line x1="522" y1="144.0" x2="882" y2="144.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="148.0" text-anchor="end" font-size="11" fill="var(--muted)">800</text><line x1="522" y1="101.0" x2="882" y2="101.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="105.0" text-anchor="end" font-size="11" fill="var(--muted)">900</text><line x1="522" y1="58.0" x2="882" y2="58.0" stroke="var(--grid)" stroke-width="1"/><text x="512" y="62.0" text-anchor="end" font-size="11" fill="var(--muted)">1000</text><text x="512" y="48" text-anchor="end" font-size="10.5" fill="var(--muted)">元/箱</text><text x="522" y="34" font-size="12" font-weight="600" fill="var(--ink)">2.5KG 箱（每箱 2.5 公斤）</text><line x1="522" y1="402" x2="882" y2="402" stroke="var(--axis)" stroke-width="1"/><text x="522.0" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-17</text><text x="573.4" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-19</text><text x="624.9" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-21</text><text x="676.3" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-23</text><text x="727.7" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-25</text><text x="779.1" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-27</text><text x="830.6" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-29</text><text x="882.0" y="423" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-31</text><g data-k="2.5KG-J"><line x1="547.7" y1="251.5" x2="676.3" y2="273.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="676.3" y1="273.0" x2="702.0" y2="223.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="702.0" y1="223.5" x2="779.1" y2="195.6" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="779.1" y1="195.6" x2="882.0" y2="359.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><circle cx="547.7" cy="251.5" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="547.7" cy="251.5" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-18
+开价 550 元/箱
+折 220 元/kg · 1 条报价"/><circle cx="676.3" cy="273.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="676.3" cy="273.0" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-23
+开价 500 元/箱
+折 200 元/kg · 1 条报价"/><circle cx="702.0" cy="223.5" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="702.0" cy="223.5" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-24
+开价 615 元/箱
+（当天从 600 报到 630 元/箱）
+折 246 元/kg · 2 条报价"/><circle cx="779.1" cy="195.6" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="779.1" cy="195.6" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-27
+开价 680 元/箱
+折 272 元/kg · 3 条报价"/><circle cx="882.0" cy="359.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="882.0" cy="359.0" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-31
+开价 300 元/箱
+折 120 元/kg · 1 条报价"/></g><g data-k="2.5KG-2J"><line x1="547.7" y1="208.5" x2="676.3" y2="230.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="676.3" y1="230.0" x2="702.0" y2="163.4" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="702.0" y1="163.4" x2="779.1" y2="152.6" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="779.1" y1="152.6" x2="830.6" y2="273.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="830.6" y1="273.0" x2="882.0" y2="337.5" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><circle cx="547.7" cy="208.5" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="547.7" cy="208.5" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-18
+开价 650 元/箱
+折 260 元/kg · 1 条报价"/><circle cx="676.3" cy="230.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="676.3" cy="230.0" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-23
+开价 600 元/箱
+折 240 元/kg · 1 条报价"/><circle cx="702.0" cy="163.4" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="702.0" cy="163.4" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-24
+开价 755 元/箱
+（当天从 750 报到 760 元/箱）
+折 302 元/kg · 2 条报价"/><circle cx="779.1" cy="152.6" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="779.1" cy="152.6" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-27
+开价 780 元/箱
+折 312 元/kg · 3 条报价"/><circle cx="830.6" cy="273.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="830.6" cy="273.0" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-29
+开价 500 元/箱
+折 200 元/kg · 2 条报价"/><circle cx="882.0" cy="337.5" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="882.0" cy="337.5" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-31
+开价 350 元/箱
+（当天从 350 报到 400 元/箱）
+折 140 元/kg · 3 条报价"/></g><g data-k="2.5KG-3J"><line x1="547.7" y1="165.5" x2="676.3" y2="187.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="676.3" y1="187.0" x2="702.0" y2="109.6" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="702.0" y1="109.6" x2="779.1" y2="109.6" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="779.1" y1="109.6" x2="882.0" y2="294.5" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><circle cx="547.7" cy="165.5" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="547.7" cy="165.5" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-18
+开价 750 元/箱
+折 300 元/kg · 1 条报价"/><circle cx="676.3" cy="187.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="676.3" cy="187.0" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-23
+开价 700 元/箱
+折 280 元/kg · 1 条报价"/><circle cx="702.0" cy="109.6" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="702.0" cy="109.6" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-24
+开价 880 元/箱
+折 352 元/kg · 2 条报价"/><circle cx="779.1" cy="109.6" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="779.1" cy="109.6" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-27
+开价 880 元/箱
+折 352 元/kg · 3 条报价"/><circle cx="882.0" cy="294.5" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="882.0" cy="294.5" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-31
+开价 450 元/箱
+（当天从 450 报到 500 元/箱）
+折 180 元/kg · 3 条报价"/></g><g data-k="2.5KG-JD"><line x1="522.0" y1="187.0" x2="547.7" y2="230.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="547.7" y1="230.0" x2="676.3" y2="251.5" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="676.3" y1="251.5" x2="702.0" y2="199.9" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="702.0" y1="199.9" x2="727.7" y2="230.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="727.7" y1="230.0" x2="779.1" y2="174.1" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="779.1" y1="174.1" x2="882.0" y2="337.5" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><circle cx="522.0" cy="187.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="522.0" cy="187.0" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-17
+开价 700 元/箱
+折 280 元/kg · 1 条报价"/><circle cx="547.7" cy="230.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="547.7" cy="230.0" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-18
+开价 600 元/箱
+折 240 元/kg · 3 条报价"/><circle cx="676.3" cy="251.5" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="676.3" cy="251.5" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-23
+开价 550 元/箱
+折 220 元/kg · 1 条报价"/><circle cx="702.0" cy="199.9" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="702.0" cy="199.9" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-24
+开价 670 元/箱
+（当天从 650 报到 690 元/箱）
+折 268 元/kg · 2 条报价"/><circle cx="727.7" cy="230.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="727.7" cy="230.0" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-25
+开价 600 元/箱
+折 240 元/kg · 1 条报价"/><circle cx="779.1" cy="174.1" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="779.1" cy="174.1" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-27
+开价 730 元/箱
+折 292 元/kg · 3 条报价"/><circle cx="882.0" cy="337.5" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="882.0" cy="337.5" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-31
+开价 350 元/箱
+折 140 元/kg · 1 条报价"/></g><g data-k="2.5KG-2JD"><line x1="522.0" y1="144.0" x2="547.7" y2="187.0" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="547.7" y1="187.0" x2="676.3" y2="208.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="676.3" y1="208.5" x2="702.0" y2="150.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="702.0" y1="150.5" x2="727.7" y2="187.0" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="727.7" y1="187.0" x2="779.1" y2="131.1" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="779.1" y1="131.1" x2="830.6" y2="251.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="830.6" y1="251.5" x2="882.0" y2="337.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><circle cx="522.0" cy="144.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="522.0" cy="144.0" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-17
+开价 800 元/箱
+折 320 元/kg · 1 条报价"/><circle cx="547.7" cy="187.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="547.7" cy="187.0" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-18
+开价 700 元/箱
+折 280 元/kg · 3 条报价"/><circle cx="676.3" cy="208.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="676.3" cy="208.5" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-23
+开价 650 元/箱
+折 260 元/kg · 1 条报价"/><circle cx="702.0" cy="150.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="702.0" cy="150.5" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-24
+开价 785 元/箱
+（当天从 750 报到 820 元/箱）
+折 314 元/kg · 2 条报价"/><circle cx="727.7" cy="187.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="727.7" cy="187.0" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-25
+开价 700 元/箱
+折 280 元/kg · 1 条报价"/><circle cx="779.1" cy="131.1" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="779.1" cy="131.1" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-27
+开价 830 元/箱
+折 332 元/kg · 3 条报价"/><circle cx="830.6" cy="251.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="830.6" cy="251.5" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-29
+开价 550 元/箱
+折 220 元/kg · 2 条报价"/><circle cx="882.0" cy="337.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="882.0" cy="337.5" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-31
+开价 350 元/箱
+（当天从 350 报到 450 元/箱）
+折 140 元/kg · 3 条报价"/></g><g data-k="2.5KG-3JD"><line x1="522.0" y1="101.0" x2="547.7" y2="144.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="547.7" y1="144.0" x2="676.3" y2="165.5" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="676.3" y1="165.5" x2="702.0" y2="88.1" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="702.0" y1="88.1" x2="727.7" y2="144.0" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="727.7" y1="144.0" x2="779.1" y2="88.1" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="779.1" y1="88.1" x2="830.6" y2="208.5" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="830.6" y1="208.5" x2="882.0" y2="294.5" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><circle cx="522.0" cy="101.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="522.0" cy="101.0" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-17
+开价 900 元/箱
+折 360 元/kg · 1 条报价"/><circle cx="547.7" cy="144.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="547.7" cy="144.0" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-18
+开价 800 元/箱
+折 320 元/kg · 3 条报价"/><circle cx="676.3" cy="165.5" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="676.3" cy="165.5" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-23
+开价 750 元/箱
+折 300 元/kg · 1 条报价"/><circle cx="702.0" cy="88.1" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="702.0" cy="88.1" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-24
+开价 930 元/箱
+（当天从 920 报到 940 元/箱）
+折 372 元/kg · 2 条报价"/><circle cx="727.7" cy="144.0" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="727.7" cy="144.0" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-25
+开价 800 元/箱
+折 320 元/kg · 1 条报价"/><circle cx="779.1" cy="88.1" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="779.1" cy="88.1" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-27
+开价 930 元/箱
+折 372 元/kg · 3 条报价"/><circle cx="830.6" cy="208.5" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="830.6" cy="208.5" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-29
+开价 650 元/箱
+折 260 元/kg · 4 条报价"/><circle cx="882.0" cy="294.5" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="882.0" cy="294.5" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-31
+开价 450 元/箱
+折 180 元/kg · 2 条报价"/></g><line x1="887.0" y1="359.0" x2="888.0" y2="380.0" stroke="var(--s1)" stroke-width="1" opacity=".5"/><text x="892.0" y="384.0" font-size="11" font-weight="600" fill="var(--s1)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">J 300</text><text x="892.0" y="337.5" font-size="11" font-weight="600" fill="var(--s2)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2J 350</text><text x="892.0" y="294.5" font-size="11" font-weight="600" fill="var(--s3)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3J 450</text><line x1="887.0" y1="337.5" x2="888.0" y2="349.0" stroke="var(--s4)" stroke-width="1" opacity=".5"/><text x="892.0" y="353.0" font-size="11" font-weight="600" fill="var(--s4)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">JD 350</text><line x1="887.0" y1="337.5" x2="888.0" y2="364.5" stroke="var(--s5)" stroke-width="1" opacity=".5"/><text x="892.0" y="368.5" font-size="11" font-weight="600" fill="var(--s5)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2JD 350</text><line x1="887.0" y1="294.5" x2="888.0" y2="306.0" stroke="var(--s6)" stroke-width="1" opacity=".5"/><text x="892.0" y="310.0" font-size="11" font-weight="600" fill="var(--s6)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3JD 450</text></svg></div>
+  <div class="chartwrap onlynarrow"><svg viewBox="0 0 412 820" class="pline pline-m" role="img" aria-label="2KG 与 2.5KG 小箱六个规格的开价走势（元/箱）"><line x1="48" y1="386.0" x2="348" y2="386.0" stroke="var(--grid)" stroke-width="1"/><text x="38" y="390.0" text-anchor="end" font-size="11" fill="var(--muted)">200</text><line x1="48" y1="344.8" x2="348" y2="344.8" stroke="var(--grid)" stroke-width="1"/><text x="38" y="348.8" text-anchor="end" font-size="11" fill="var(--muted)">300</text><line x1="48" y1="303.5" x2="348" y2="303.5" stroke="var(--grid)" stroke-width="1"/><text x="38" y="307.5" text-anchor="end" font-size="11" fill="var(--muted)">400</text><line x1="48" y1="262.2" x2="348" y2="262.2" stroke="var(--grid)" stroke-width="1"/><text x="38" y="266.2" text-anchor="end" font-size="11" fill="var(--muted)">500</text><line x1="48" y1="221.0" x2="348" y2="221.0" stroke="var(--grid)" stroke-width="1"/><text x="38" y="225.0" text-anchor="end" font-size="11" fill="var(--muted)">600</text><line x1="48" y1="179.8" x2="348" y2="179.8" stroke="var(--grid)" stroke-width="1"/><text x="38" y="183.8" text-anchor="end" font-size="11" fill="var(--muted)">700</text><line x1="48" y1="138.5" x2="348" y2="138.5" stroke="var(--grid)" stroke-width="1"/><text x="38" y="142.5" text-anchor="end" font-size="11" fill="var(--muted)">800</text><line x1="48" y1="97.2" x2="348" y2="97.2" stroke="var(--grid)" stroke-width="1"/><text x="38" y="101.2" text-anchor="end" font-size="11" fill="var(--muted)">900</text><line x1="48" y1="56.0" x2="348" y2="56.0" stroke="var(--grid)" stroke-width="1"/><text x="38" y="60.0" text-anchor="end" font-size="11" fill="var(--muted)">1000</text><text x="38" y="46" text-anchor="end" font-size="10.5" fill="var(--muted)">元/箱</text><text x="48" y="32" font-size="12" font-weight="600" fill="var(--ink)">2KG 箱（每箱 2 公斤）</text><line x1="48" y1="386" x2="348" y2="386" stroke="var(--axis)" stroke-width="1"/><text x="48.0" y="407" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-17</text><text x="90.9" y="407" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-19</text><text x="133.7" y="407" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-21</text><text x="176.6" y="407" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-23</text><text x="219.4" y="407" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-25</text><text x="262.3" y="407" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-27</text><text x="305.1" y="407" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-29</text><text x="348.0" y="407" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-31</text><g data-k="2KG-J"><line x1="112.3" y1="241.6" x2="176.6" y2="262.2" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="262.2" x2="198.0" y2="262.2" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="262.2" x2="219.4" y2="282.9" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="219.4" y1="282.9" x2="283.7" y2="303.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="283.7" y1="303.5" x2="305.1" y2="303.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="303.5" x2="326.6" y2="344.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><circle cx="112.3" cy="241.6" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="112.3" cy="241.6" r="12" fill="transparent" data-tip="2KG 箱 J · 10-20
+开价 550 元/箱
+折 275 元/kg · 1 条报价"/><circle cx="176.6" cy="262.2" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="262.2" r="12" fill="transparent" data-tip="2KG 箱 J · 10-23
+开价 500 元/箱
+折 250 元/kg · 3 条报价"/><circle cx="198.0" cy="262.2" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="262.2" r="12" fill="transparent" data-tip="2KG 箱 J · 10-24
+开价 500 元/箱
+（当天从 400 报到 550 元/箱）
+折 250 元/kg · 3 条报价"/><circle cx="219.4" cy="282.9" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="219.4" cy="282.9" r="12" fill="transparent" data-tip="2KG 箱 J · 10-25
+开价 450 元/箱
+折 225 元/kg · 3 条报价"/><circle cx="283.7" cy="303.5" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="283.7" cy="303.5" r="12" fill="transparent" data-tip="2KG 箱 J · 10-28
+开价 400 元/箱
+折 200 元/kg · 2 条报价"/><circle cx="305.1" cy="303.5" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="303.5" r="12" fill="transparent" data-tip="2KG 箱 J · 10-29
+开价 400 元/箱
+折 200 元/kg · 1 条报价"/><circle cx="326.6" cy="344.8" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="326.6" cy="344.8" r="12" fill="transparent" data-tip="2KG 箱 J · 10-30
+开价 300 元/箱
+折 150 元/kg · 2 条报价"/></g><g data-k="2KG-2J"><line x1="112.3" y1="200.4" x2="176.6" y2="221.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="221.0" x2="198.0" y2="226.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="226.0" x2="283.7" y2="262.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="283.7" y1="262.2" x2="305.1" y2="262.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="262.2" x2="326.6" y2="303.5" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><circle cx="112.3" cy="200.4" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="112.3" cy="200.4" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-20
+开价 650 元/箱
+折 325 元/kg · 1 条报价"/><circle cx="176.6" cy="221.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="221.0" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-23
+开价 600 元/箱
+折 300 元/kg · 2 条报价"/><circle cx="198.0" cy="226.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="226.0" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-24
+开价 588 元/箱
+（当天从 550 报到 600 元/箱）
+折 294 元/kg · 4 条报价"/><circle cx="283.7" cy="262.2" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="283.7" cy="262.2" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-28
+开价 500 元/箱
+折 250 元/kg · 2 条报价"/><circle cx="305.1" cy="262.2" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="262.2" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-29
+开价 500 元/箱
+折 250 元/kg · 1 条报价"/><circle cx="326.6" cy="303.5" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="326.6" cy="303.5" r="12" fill="transparent" data-tip="2KG 箱 2J · 10-30
+开价 400 元/箱
+折 200 元/kg · 2 条报价"/></g><g data-k="2KG-3J"><line x1="112.3" y1="159.1" x2="176.6" y2="175.6" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="175.6" x2="198.0" y2="179.8" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="179.8" x2="283.7" y2="221.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="283.7" y1="221.0" x2="305.1" y2="221.0" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="221.0" x2="348.0" y2="282.9" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><circle cx="112.3" cy="159.1" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="112.3" cy="159.1" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-20
+开价 750 元/箱
+折 375 元/kg · 1 条报价"/><circle cx="176.6" cy="175.6" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="175.6" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-23
+开价 710 元/箱
+（当天从 700 报到 720 元/箱）
+折 355 元/kg · 2 条报价"/><circle cx="198.0" cy="179.8" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="179.8" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-24
+开价 700 元/箱
+折 350 元/kg · 1 条报价"/><circle cx="283.7" cy="221.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="283.7" cy="221.0" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-28
+开价 600 元/箱
+折 300 元/kg · 2 条报价"/><circle cx="305.1" cy="221.0" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="221.0" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-29
+开价 600 元/箱
+折 300 元/kg · 1 条报价"/><circle cx="348.0" cy="282.9" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="282.9" r="12" fill="transparent" data-tip="2KG 箱 3J · 10-31
+开价 450 元/箱
+折 225 元/kg · 1 条报价"/></g><g data-k="2KG-JD"><line x1="112.3" y1="221.0" x2="176.6" y2="251.9" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="251.9" x2="198.0" y2="282.9" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="282.9" x2="219.4" y2="262.2" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="219.4" y1="262.2" x2="283.7" y2="272.6" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="283.7" y1="272.6" x2="305.1" y2="272.6" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="272.6" x2="348.0" y2="344.8" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><circle cx="112.3" cy="221.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="112.3" cy="221.0" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-20
+开价 600 元/箱
+折 300 元/kg · 1 条报价"/><circle cx="176.6" cy="251.9" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="251.9" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-23
+开价 525 元/箱
+（当天从 500 报到 550 元/箱）
+折 262 元/kg · 2 条报价"/><circle cx="198.0" cy="282.9" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="282.9" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-24
+开价 450 元/箱
+（当天从 400 报到 550 元/箱）
+折 225 元/kg · 4 条报价"/><circle cx="219.4" cy="262.2" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="219.4" cy="262.2" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-25
+开价 500 元/箱
+折 250 元/kg · 2 条报价"/><circle cx="283.7" cy="272.6" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="283.7" cy="272.6" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-28
+开价 475 元/箱
+（当天从 450 报到 500 元/箱）
+折 238 元/kg · 4 条报价"/><circle cx="305.1" cy="272.6" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="272.6" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-29
+开价 475 元/箱
+（当天从 450 报到 500 元/箱）
+折 238 元/kg · 2 条报价"/><circle cx="348.0" cy="344.8" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="344.8" r="12" fill="transparent" data-tip="2KG 箱 JD · 10-31
+开价 300 元/箱
+折 150 元/kg · 3 条报价"/></g><g data-k="2KG-2JD"><line x1="112.3" y1="179.8" x2="176.6" y2="200.4" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="200.4" x2="198.0" y2="205.3" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="205.3" x2="262.3" y2="200.4" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="262.3" y1="200.4" x2="283.7" y2="221.0" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="283.7" y1="221.0" x2="305.1" y2="231.3" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="231.3" x2="326.6" y2="296.1" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="326.6" y1="296.1" x2="348.0" y2="303.5" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><circle cx="112.3" cy="179.8" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="112.3" cy="179.8" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-20
+开价 700 元/箱
+折 350 元/kg · 1 条报价"/><circle cx="176.6" cy="200.4" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="200.4" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-23
+开价 650 元/箱
+折 325 元/kg · 2 条报价"/><circle cx="198.0" cy="205.3" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="205.3" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-24
+开价 638 元/箱
+（当天从 600 报到 650 元/箱）
+折 319 元/kg · 4 条报价"/><circle cx="262.3" cy="200.4" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="262.3" cy="200.4" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-27
+开价 650 元/箱
+（当天从 600 报到 650 元/箱）
+折 325 元/kg · 5 条报价"/><circle cx="283.7" cy="221.0" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="283.7" cy="221.0" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-28
+开价 600 元/箱
+（当天从 550 报到 620 元/箱）
+折 300 元/kg · 11 条报价"/><circle cx="305.1" cy="231.3" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="231.3" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-29
+开价 575 元/箱
+（当天从 550 报到 600 元/箱）
+折 288 元/kg · 2 条报价"/><circle cx="326.6" cy="296.1" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="326.6" cy="296.1" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-30
+开价 418 元/箱
+（当天从 400 报到 450 元/箱）
+折 209 元/kg · 4 条报价"/><circle cx="348.0" cy="303.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="303.5" r="12" fill="transparent" data-tip="2KG 箱 2JD · 10-31
+开价 400 元/箱
+折 200 元/kg · 3 条报价"/></g><g data-k="2KG-3JD"><line x1="112.3" y1="138.5" x2="176.6" y2="169.4" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="169.4" x2="198.0" y2="179.8" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="179.8" x2="262.3" y2="171.5" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="262.3" y1="171.5" x2="283.7" y2="179.8" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="283.7" y1="179.8" x2="305.1" y2="190.1" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="190.1" x2="326.6" y2="247.8" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="326.6" y1="247.8" x2="348.0" y2="262.2" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><circle cx="112.3" cy="138.5" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="112.3" cy="138.5" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-20
+开价 800 元/箱
+折 400 元/kg · 1 条报价"/><circle cx="176.6" cy="169.4" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="169.4" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-23
+开价 725 元/箱
+（当天从 600 报到 770 元/箱）
+折 362 元/kg · 4 条报价"/><circle cx="198.0" cy="179.8" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="179.8" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-24
+开价 700 元/箱
+（当天从 600 报到 750 元/箱）
+折 350 元/kg · 5 条报价"/><circle cx="262.3" cy="171.5" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="262.3" cy="171.5" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-27
+开价 720 元/箱
+（当天从 700 报到 750 元/箱）
+折 360 元/kg · 7 条报价"/><circle cx="283.7" cy="179.8" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="283.7" cy="179.8" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-28
+开价 700 元/箱
+（当天从 650 报到 720 元/箱）
+折 350 元/kg · 11 条报价"/><circle cx="305.1" cy="190.1" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="190.1" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-29
+开价 675 元/箱
+（当天从 650 报到 700 元/箱）
+折 338 元/kg · 2 条报价"/><circle cx="326.6" cy="247.8" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="326.6" cy="247.8" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-30
+开价 535 元/箱
+（当天从 520 报到 550 元/箱）
+折 268 元/kg · 2 条报价"/><circle cx="348.0" cy="262.2" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="262.2" r="12" fill="transparent" data-tip="2KG 箱 3JD · 10-31
+开价 500 元/箱
+折 250 元/kg · 3 条报价"/></g><text x="358.0" y="344.8" font-size="11" font-weight="600" fill="var(--s1)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">J 300</text><text x="358.0" y="303.5" font-size="11" font-weight="600" fill="var(--s2)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2J 400</text><text x="358.0" y="282.9" font-size="11" font-weight="600" fill="var(--s3)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3J 450</text><line x1="353.0" y1="344.8" x2="354.0" y2="356.2" stroke="var(--s4)" stroke-width="1" opacity=".5"/><text x="358.0" y="360.2" font-size="11" font-weight="600" fill="var(--s4)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">JD 300</text><line x1="353.0" y1="303.5" x2="354.0" y2="315.0" stroke="var(--s5)" stroke-width="1" opacity=".5"/><text x="358.0" y="319.0" font-size="11" font-weight="600" fill="var(--s5)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2JD 400</text><text x="358.0" y="262.2" font-size="11" font-weight="600" fill="var(--s6)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3JD 500</text><line x1="48" y1="776.0" x2="348" y2="776.0" stroke="var(--grid)" stroke-width="1"/><text x="38" y="780.0" text-anchor="end" font-size="11" fill="var(--muted)">200</text><line x1="48" y1="734.8" x2="348" y2="734.8" stroke="var(--grid)" stroke-width="1"/><text x="38" y="738.8" text-anchor="end" font-size="11" fill="var(--muted)">300</text><line x1="48" y1="693.5" x2="348" y2="693.5" stroke="var(--grid)" stroke-width="1"/><text x="38" y="697.5" text-anchor="end" font-size="11" fill="var(--muted)">400</text><line x1="48" y1="652.2" x2="348" y2="652.2" stroke="var(--grid)" stroke-width="1"/><text x="38" y="656.2" text-anchor="end" font-size="11" fill="var(--muted)">500</text><line x1="48" y1="611.0" x2="348" y2="611.0" stroke="var(--grid)" stroke-width="1"/><text x="38" y="615.0" text-anchor="end" font-size="11" fill="var(--muted)">600</text><line x1="48" y1="569.8" x2="348" y2="569.8" stroke="var(--grid)" stroke-width="1"/><text x="38" y="573.8" text-anchor="end" font-size="11" fill="var(--muted)">700</text><line x1="48" y1="528.5" x2="348" y2="528.5" stroke="var(--grid)" stroke-width="1"/><text x="38" y="532.5" text-anchor="end" font-size="11" fill="var(--muted)">800</text><line x1="48" y1="487.2" x2="348" y2="487.2" stroke="var(--grid)" stroke-width="1"/><text x="38" y="491.2" text-anchor="end" font-size="11" fill="var(--muted)">900</text><line x1="48" y1="446.0" x2="348" y2="446.0" stroke="var(--grid)" stroke-width="1"/><text x="38" y="450.0" text-anchor="end" font-size="11" fill="var(--muted)">1000</text><text x="38" y="436" text-anchor="end" font-size="10.5" fill="var(--muted)">元/箱</text><text x="48" y="422" font-size="12" font-weight="600" fill="var(--ink)">2.5KG 箱（每箱 2.5 公斤）</text><line x1="48" y1="776" x2="348" y2="776" stroke="var(--axis)" stroke-width="1"/><text x="48.0" y="797" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-17</text><text x="90.9" y="797" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-19</text><text x="133.7" y="797" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-21</text><text x="176.6" y="797" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-23</text><text x="219.4" y="797" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-25</text><text x="262.3" y="797" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-27</text><text x="305.1" y="797" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-29</text><text x="348.0" y="797" text-anchor="middle" font-size="10.5" fill="var(--muted)">10-31</text><g data-k="2.5KG-J"><line x1="69.4" y1="631.6" x2="176.6" y2="652.2" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="652.2" x2="198.0" y2="604.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="604.8" x2="262.3" y2="578.0" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="262.3" y1="578.0" x2="348.0" y2="734.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><circle cx="69.4" cy="631.6" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="69.4" cy="631.6" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-18
+开价 550 元/箱
+折 220 元/kg · 1 条报价"/><circle cx="176.6" cy="652.2" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="652.2" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-23
+开价 500 元/箱
+折 200 元/kg · 1 条报价"/><circle cx="198.0" cy="604.8" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="604.8" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-24
+开价 615 元/箱
+（当天从 600 报到 630 元/箱）
+折 246 元/kg · 2 条报价"/><circle cx="262.3" cy="578.0" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="262.3" cy="578.0" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-27
+开价 680 元/箱
+折 272 元/kg · 3 条报价"/><circle cx="348.0" cy="734.8" r="4" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="734.8" r="12" fill="transparent" data-tip="2.5KG 箱 J · 10-31
+开价 300 元/箱
+折 120 元/kg · 1 条报价"/></g><g data-k="2.5KG-2J"><line x1="69.4" y1="590.4" x2="176.6" y2="611.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="611.0" x2="198.0" y2="547.1" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="547.1" x2="262.3" y2="536.8" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="262.3" y1="536.8" x2="305.1" y2="652.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="652.2" x2="348.0" y2="714.1" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><circle cx="69.4" cy="590.4" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="69.4" cy="590.4" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-18
+开价 650 元/箱
+折 260 元/kg · 1 条报价"/><circle cx="176.6" cy="611.0" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="611.0" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-23
+开价 600 元/箱
+折 240 元/kg · 1 条报价"/><circle cx="198.0" cy="547.1" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="547.1" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-24
+开价 755 元/箱
+（当天从 750 报到 760 元/箱）
+折 302 元/kg · 2 条报价"/><circle cx="262.3" cy="536.8" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="262.3" cy="536.8" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-27
+开价 780 元/箱
+折 312 元/kg · 3 条报价"/><circle cx="305.1" cy="652.2" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="652.2" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-29
+开价 500 元/箱
+折 200 元/kg · 2 条报价"/><circle cx="348.0" cy="714.1" r="4" fill="var(--s2)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="714.1" r="12" fill="transparent" data-tip="2.5KG 箱 2J · 10-31
+开价 350 元/箱
+（当天从 350 报到 400 元/箱）
+折 140 元/kg · 3 条报价"/></g><g data-k="2.5KG-3J"><line x1="69.4" y1="549.1" x2="176.6" y2="569.8" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="569.8" x2="198.0" y2="495.5" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="495.5" x2="262.3" y2="495.5" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="262.3" y1="495.5" x2="348.0" y2="672.9" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><circle cx="69.4" cy="549.1" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="69.4" cy="549.1" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-18
+开价 750 元/箱
+折 300 元/kg · 1 条报价"/><circle cx="176.6" cy="569.8" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="569.8" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-23
+开价 700 元/箱
+折 280 元/kg · 1 条报价"/><circle cx="198.0" cy="495.5" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="495.5" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-24
+开价 880 元/箱
+折 352 元/kg · 2 条报价"/><circle cx="262.3" cy="495.5" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="262.3" cy="495.5" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-27
+开价 880 元/箱
+折 352 元/kg · 3 条报价"/><circle cx="348.0" cy="672.9" r="4" fill="var(--s3)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="672.9" r="12" fill="transparent" data-tip="2.5KG 箱 3J · 10-31
+开价 450 元/箱
+（当天从 450 报到 500 元/箱）
+折 180 元/kg · 3 条报价"/></g><g data-k="2.5KG-JD"><line x1="48.0" y1="569.8" x2="69.4" y2="611.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="69.4" y1="611.0" x2="176.6" y2="631.6" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="631.6" x2="198.0" y2="582.1" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="582.1" x2="219.4" y2="611.0" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="219.4" y1="611.0" x2="262.3" y2="557.4" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><line x1="262.3" y1="557.4" x2="348.0" y2="714.1" stroke="var(--s4)" stroke-width="2" stroke-linecap="round"/><circle cx="48.0" cy="569.8" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="48.0" cy="569.8" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-17
+开价 700 元/箱
+折 280 元/kg · 1 条报价"/><circle cx="69.4" cy="611.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="69.4" cy="611.0" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-18
+开价 600 元/箱
+折 240 元/kg · 3 条报价"/><circle cx="176.6" cy="631.6" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="631.6" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-23
+开价 550 元/箱
+折 220 元/kg · 1 条报价"/><circle cx="198.0" cy="582.1" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="582.1" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-24
+开价 670 元/箱
+（当天从 650 报到 690 元/箱）
+折 268 元/kg · 2 条报价"/><circle cx="219.4" cy="611.0" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="219.4" cy="611.0" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-25
+开价 600 元/箱
+折 240 元/kg · 1 条报价"/><circle cx="262.3" cy="557.4" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="262.3" cy="557.4" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-27
+开价 730 元/箱
+折 292 元/kg · 3 条报价"/><circle cx="348.0" cy="714.1" r="4" fill="var(--s4)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="714.1" r="12" fill="transparent" data-tip="2.5KG 箱 JD · 10-31
+开价 350 元/箱
+折 140 元/kg · 1 条报价"/></g><g data-k="2.5KG-2JD"><line x1="48.0" y1="528.5" x2="69.4" y2="569.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="69.4" y1="569.8" x2="176.6" y2="590.4" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="590.4" x2="198.0" y2="534.7" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="534.7" x2="219.4" y2="569.8" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="219.4" y1="569.8" x2="262.3" y2="516.1" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="262.3" y1="516.1" x2="305.1" y2="631.6" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="631.6" x2="348.0" y2="714.1" stroke="var(--s5)" stroke-width="2" stroke-linecap="round"/><circle cx="48.0" cy="528.5" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="48.0" cy="528.5" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-17
+开价 800 元/箱
+折 320 元/kg · 1 条报价"/><circle cx="69.4" cy="569.8" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="69.4" cy="569.8" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-18
+开价 700 元/箱
+折 280 元/kg · 3 条报价"/><circle cx="176.6" cy="590.4" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="590.4" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-23
+开价 650 元/箱
+折 260 元/kg · 1 条报价"/><circle cx="198.0" cy="534.7" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="534.7" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-24
+开价 785 元/箱
+（当天从 750 报到 820 元/箱）
+折 314 元/kg · 2 条报价"/><circle cx="219.4" cy="569.8" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="219.4" cy="569.8" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-25
+开价 700 元/箱
+折 280 元/kg · 1 条报价"/><circle cx="262.3" cy="516.1" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="262.3" cy="516.1" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-27
+开价 830 元/箱
+折 332 元/kg · 3 条报价"/><circle cx="305.1" cy="631.6" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="631.6" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-29
+开价 550 元/箱
+折 220 元/kg · 2 条报价"/><circle cx="348.0" cy="714.1" r="4" fill="var(--s5)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="714.1" r="12" fill="transparent" data-tip="2.5KG 箱 2JD · 10-31
+开价 350 元/箱
+（当天从 350 报到 450 元/箱）
+折 140 元/kg · 3 条报价"/></g><g data-k="2.5KG-3JD"><line x1="48.0" y1="487.2" x2="69.4" y2="528.5" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="69.4" y1="528.5" x2="176.6" y2="549.1" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="176.6" y1="549.1" x2="198.0" y2="474.9" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="198.0" y1="474.9" x2="219.4" y2="528.5" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="219.4" y1="528.5" x2="262.3" y2="474.9" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="262.3" y1="474.9" x2="305.1" y2="590.4" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><line x1="305.1" y1="590.4" x2="348.0" y2="672.9" stroke="var(--s6)" stroke-width="2" stroke-linecap="round"/><circle cx="48.0" cy="487.2" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="48.0" cy="487.2" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-17
+开价 900 元/箱
+折 360 元/kg · 1 条报价"/><circle cx="69.4" cy="528.5" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="69.4" cy="528.5" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-18
+开价 800 元/箱
+折 320 元/kg · 3 条报价"/><circle cx="176.6" cy="549.1" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="176.6" cy="549.1" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-23
+开价 750 元/箱
+折 300 元/kg · 1 条报价"/><circle cx="198.0" cy="474.9" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="198.0" cy="474.9" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-24
+开价 930 元/箱
+（当天从 920 报到 940 元/箱）
+折 372 元/kg · 2 条报价"/><circle cx="219.4" cy="528.5" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="219.4" cy="528.5" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-25
+开价 800 元/箱
+折 320 元/kg · 1 条报价"/><circle cx="262.3" cy="474.9" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="262.3" cy="474.9" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-27
+开价 930 元/箱
+折 372 元/kg · 3 条报价"/><circle cx="305.1" cy="590.4" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="305.1" cy="590.4" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-29
+开价 650 元/箱
+折 260 元/kg · 4 条报价"/><circle cx="348.0" cy="672.9" r="4" fill="var(--s6)" stroke="var(--surface)" stroke-width="1.8"/><circle cx="348.0" cy="672.9" r="12" fill="transparent" data-tip="2.5KG 箱 3JD · 10-31
+开价 450 元/箱
+折 180 元/kg · 2 条报价"/></g><line x1="353.0" y1="734.8" x2="354.0" y2="756.6" stroke="var(--s1)" stroke-width="1" opacity=".5"/><text x="358.0" y="760.6" font-size="11" font-weight="600" fill="var(--s1)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">J 300</text><text x="358.0" y="714.1" font-size="11" font-weight="600" fill="var(--s2)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2J 350</text><text x="358.0" y="672.9" font-size="11" font-weight="600" fill="var(--s3)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3J 450</text><line x1="353.0" y1="714.1" x2="354.0" y2="725.6" stroke="var(--s4)" stroke-width="1" opacity=".5"/><text x="358.0" y="729.6" font-size="11" font-weight="600" fill="var(--s4)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">JD 350</text><line x1="353.0" y1="714.1" x2="354.0" y2="741.1" stroke="var(--s5)" stroke-width="1" opacity=".5"/><text x="358.0" y="745.1" font-size="11" font-weight="600" fill="var(--s5)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">2JD 350</text><line x1="353.0" y1="672.9" x2="354.0" y2="684.4" stroke="var(--s6)" stroke-width="1" opacity=".5"/><text x="358.0" y="688.4" font-size="11" font-weight="600" fill="var(--s6)" opacity="1" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2" stroke-linejoin="round">3JD 450</text></svg></div>
+  <p class="cap" style="margin:8px 0 6px">小箱从 10.17 就有人报；2KG 报过价的是 10.20、10.23、10.24、10.25、10.27、10.28、10.29、10.30、10.31，
+  2.5KG 是 10.17、10.18、10.23、10.24、10.25、10.27、10.29、10.31。没报的日期不插值，点位取当天各货主报价的中位；
+  <b>3JD 的空心点</b>＝当天没人报、按 3J 加 50 元推算。</p>
+
+  <ul class="who">
+    <li><b>规格走得快：</b>小箱报走的 4 票里，2JD 出现得最多（4 票），最大的单票 10-28 走了 3.5 板；JD/2J/3JD/3J 各 3 票、J 2 票。</li>
+    <li><b>牌子走得快：</b>DOLE 5.5 板（单票：10-31 走 3.5 板、10-31 走 2 板）；TUNICHE 3.5 板（单票：10-28 走 3-4 板）。</li>
+    <li><b>价格高低（同规格横向比，全程）：</b><b>BLACK ROCK 报得最硬</b>——33 次同规格对比里 18 次高于当天中位、只 6 次低，中位高 <b>2.6%</b>（最狠一次 10.24 JD 500（中位 400），高 25%）；SANTINA 略软（26 次，中位低 1.9%）。带牌子的报价太少（能比的只有个位数），牌子层面分不出高下。</li>
+  </ul>
+</div>
+
+<h2>二、到货节奏与走货</h2>
+<p class="lead">到货 ＝ 昨天下午到今早进入市场的新货；出摊 ＝ 早市摆出的总量（含前几天的存货）。
+出摊与到货之差，就是场上累积的库存压力。</p>
+
+<div class="card">
+  <h3>每日到货 vs 出摊</h3>
+  <p class="cap">全市场口径，统一折成 5KG 板数：
+  5KG 箱 120 件/板、2KG 箱 240 件/板（2KG 的件数是推算值）。
+  10.17–10.23 无成体系早报，未纳入；10.29 起出摊量超过到货量，说明在吃前期库存。</p>
+  <div class="legend"><span><i style="background:var(--s1)"></i>到货（板）</span><span><i style="background:var(--s3)"></i>出摊（板）</span></div>
+  <div class="chart">
+      <div class="bargroup" data-tip="10-24｜到货 18 板
+出摊 未披露
+走量 8成">
+        <div class="bl">
+          <span class="b b1" style="height:23.4%"></span>
+          <span class="b b3" style="height:0.6%"></span>
+        </div>
+        <div class="bx">10-24</div>
+      </div>
+      <div class="bargroup" data-tip="10-25｜到货 16 板
+出摊 19.3 板
+走量 7成（约 13.5 板） · 开价持平">
+        <div class="bl">
+          <span class="b b1" style="height:20.8%"></span>
+          <span class="b b3" style="height:25.1%"></span>
+        </div>
+        <div class="bx">10-25</div>
+      </div>
+      <div class="bargroup" data-tip="10-26｜到货 19.3 板
+出摊 5.5 板
+走量 7成">
+        <div class="bl">
+          <span class="b b1" style="height:25.1%"></span>
+          <span class="b b3" style="height:7.2%"></span>
+        </div>
+        <div class="bx">10-26</div>
+      </div>
+      <div class="bargroup" data-tip="10-27｜到货 19.7 板
+出摊 9.1 板
+走量 9成（约 8.2 板） · 开价持平">
+        <div class="bl">
+          <span class="b b1" style="height:25.6%"></span>
+          <span class="b b3" style="height:11.8%"></span>
+        </div>
+        <div class="bx">10-27</div>
+      </div>
+      <div class="bargroup" data-tip="10-28｜到货 69 板
+出摊 47 板
+走量 4成（约 18.8 板） · 价格下跌">
+        <div class="bl">
+          <span class="b b1" style="height:89.7%"></span>
+          <span class="b b3" style="height:61.1%"></span>
+        </div>
+        <div class="bx">10-28</div>
+      </div>
+      <div class="bargroup" data-tip="10-29｜到货 52.3 板
+出摊 76.9 板
+走量 4.5成（约 34.6 板） · 开价偏高">
+        <div class="bl">
+          <span class="b b1" style="height:68.0%"></span>
+          <span class="b b3" style="height:100.0%"></span>
+        </div>
+        <div class="bx">10-29</div>
+      </div>
+      <div class="bargroup" data-tip="10-30｜到货 36.9 板
+出摊 66.3 板
+走量 4成（约 26.5 板） · 开价下调 100–150">
+        <div class="bl">
+          <span class="b b1" style="height:48.0%"></span>
+          <span class="b b3" style="height:86.2%"></span>
+        </div>
+        <div class="bx">10-30</div>
+      </div>
+      <div class="bargroup" data-tip="10-31｜到货 51.1 板
+出摊 57.7 板
+走量 5成（约 28.9 板） · 开价下调">
+        <div class="bl">
+          <span class="b b1" style="height:66.4%"></span>
+          <span class="b b3" style="height:75.0%"></span>
+        </div>
+        <div class="bx">10-31</div>
+      </div></div>
+</div>
+
+<div class="card">
+  <h3>每日走量成数</h3>
+  <p class="cap">整体走量（占出摊的比例）。10.27 及以前是 7–9 成，10.28 起掉到 4–5 成。
+  点柱看悬停，按出摊×成数折出来的板数也在里面。</p>
+  <div class="legend"><span><i style="background:var(--s3)"></i>走量成数</span></div>
+  <div class="chart">
+      <div class="bargroup" data-tip="10-24｜走量 8 成">
+        <div class="bl"><span class="b b3" style="height:80.0%"></span><b class="bv" style="bottom:calc(80.0% + 3px)">8成</b></div>
+        <div class="bx">10-24</div>
+      </div>
+      <div class="bargroup" data-tip="10-25｜走量 7 成（开价持平）
+折成量约 13.5 板（出摊 19.3 板 × 7 成）">
+        <div class="bl"><span class="b b3" style="height:70.0%"></span><b class="bv" style="bottom:calc(70.0% + 3px)">7成</b></div>
+        <div class="bx">10-25</div>
+      </div>
+      <div class="bargroup" data-tip="10-26｜走量 7 成">
+        <div class="bl"><span class="b b3" style="height:70.0%"></span><b class="bv" style="bottom:calc(70.0% + 3px)">7成</b></div>
+        <div class="bx">10-26</div>
+      </div>
+      <div class="bargroup" data-tip="10-27｜走量 9 成（开价持平）
+折成量约 8.2 板（出摊 9.1 板 × 9 成）">
+        <div class="bl"><span class="b b3" style="height:90.0%"></span><b class="bv" style="bottom:calc(90.0% + 3px)">9成</b></div>
+        <div class="bx">10-27</div>
+      </div>
+      <div class="bargroup" data-tip="10-28｜走量 4 成（价格下跌）
+折成量约 18.8 板（出摊 47 板 × 4 成）">
+        <div class="bl"><span class="b b3" style="height:40.0%"></span><b class="bv" style="bottom:calc(40.0% + 3px)">4成</b></div>
+        <div class="bx">10-28</div>
+      </div>
+      <div class="bargroup" data-tip="10-29｜走量 4.5 成（开价偏高）
+折成量约 34.6 板（出摊 76.9 板 × 4.5 成）">
+        <div class="bl"><span class="b b3" style="height:45.0%"></span><b class="bv" style="bottom:calc(45.0% + 3px)">4.5成</b></div>
+        <div class="bx">10-29</div>
+      </div>
+      <div class="bargroup" data-tip="10-30｜走量 4 成（开价下调 100–150）
+折成量约 26.5 板（出摊 66.3 板 × 4 成）">
+        <div class="bl"><span class="b b3" style="height:40.0%"></span><b class="bv" style="bottom:calc(40.0% + 3px)">4成</b></div>
+        <div class="bx">10-30</div>
+      </div>
+      <div class="bargroup" data-tip="10-31｜走量 5 成（开价下调）
+折成量约 28.9 板（出摊 57.7 板 × 5 成）">
+        <div class="bl"><span class="b b3" style="height:50.0%"></span><b class="bv" style="bottom:calc(50.0% + 3px)">5成</b></div>
+        <div class="bx">10-31</div>
+      </div></div>
+</div>
+
+<div class="card">
+  <h3>这十天的到货和走货，就三句话</h3>
+  <ul class="who">
+    <li><b>到货涨到近三倍：</b>10.24–10.27 日均 18.2 板，10.28–10.31 日均 52.3 板
+    （2.9 倍），10-28 单日 69 板是全期最高。
+    <b>不是一点点多起来，是 10.28 一天压上来的</b>。</li>
+    <li><b>10.29 起出摊一直压过到货：</b>10-29 出摊 76.9 板对到货 52.3 板、10-30 的 66.3 对 36.9、10-31 的 57.7 对 51.1，库存一直没清掉。</li>
+    <li><b>走量直接砍半：</b>10.27 及以前是 7–9 成，10.28 起稳定在 4–5 成，
+    价格同期一路往下。<b>价让了、量没回来，说明是买的人少了，不是价格没让到位。</b></li>
+  </ul>
+</div>
+
+<h2>三、价格和到货量：量先上来，价才往下走</h2>
+<p class="lead">这两件事是<b>同一天转向</b>的，不是"量慢慢多、价慢慢软"。10.24–10.27 日均到货 18.2 板
+（跟第二节同一个口径）、走量 7–9 成、J 大箱开价 850–1100 元；<b>10.28 单日冲到 69 板</b>，
+10.28–10.31 四天日均 52.3 板（+187%），走量掉到 4 成上下，
+价格在同一时间开始松。
+下面把量、价、走量放在同一条时间轴上，最后再收几句结论。</p>
+
+<div class="card">
+  <h3>到货、开价、走量，同一条时间轴</h3>
+  <div class="legend">
+    <span><i style="background:var(--s1)"></i>J · 5KG 大箱</span>
+    <span><i style="background:var(--s2)"></i>2J · 5KG 大箱</span>
+    <span><i style="background:var(--s3)"></i>3J · 5KG 大箱</span>
+    <span><i style="background:var(--muted);opacity:.55"></i>当日到货（板，柱顶＝走量成数）</span>
+  </div>
+  <div class="chartwrap"><svg viewBox="0 0 900 534" class="pline" role="img" aria-label="每日到货量与 J/2J/3J 大箱开价"><line x1="62" y1="188.0" x2="796" y2="188.0" stroke="var(--grid)"/><text x="52" y="192.0" text-anchor="end" font-size="11" fill="var(--muted)">0</text><line x1="62" y1="146.0" x2="796" y2="146.0" stroke="var(--grid)"/><text x="52" y="150.0" text-anchor="end" font-size="11" fill="var(--muted)">20</text><line x1="62" y1="104.0" x2="796" y2="104.0" stroke="var(--grid)"/><text x="52" y="108.0" text-anchor="end" font-size="11" fill="var(--muted)">40</text><line x1="62" y1="62.0" x2="796" y2="62.0" stroke="var(--grid)"/><text x="52" y="66.0" text-anchor="end" font-size="11" fill="var(--muted)">60</text><line x1="62" y1="20.0" x2="796" y2="20.0" stroke="var(--grid)"/><text x="52" y="24.0" text-anchor="end" font-size="11" fill="var(--muted)">80</text><text x="52" y="12" text-anchor="end" font-size="11" fill="var(--muted)">板</text><line x1="62" y1="464.0" x2="796" y2="464.0" stroke="var(--grid)"/><text x="52" y="468.0" text-anchor="end" font-size="11" fill="var(--muted)">400</text><line x1="62" y1="400.7" x2="796" y2="400.7" stroke="var(--grid)"/><text x="52" y="404.7" text-anchor="end" font-size="11" fill="var(--muted)">800</text><line x1="62" y1="337.3" x2="796" y2="337.3" stroke="var(--grid)"/><text x="52" y="341.3" text-anchor="end" font-size="11" fill="var(--muted)">1200</text><line x1="62" y1="274.0" x2="796" y2="274.0" stroke="var(--grid)"/><text x="52" y="278.0" text-anchor="end" font-size="11" fill="var(--muted)">1600</text><text x="52" y="266" text-anchor="end" font-size="11" fill="var(--muted)">元/箱</text><rect x="89.5" y="150.2" width="36.7" height="37.8" rx="3" fill="var(--muted)" opacity=".55" data-tip="10-24｜到货 18 板
+出摊 未披露 · 走量 8.0 成"/><text x="107.9" y="143.2" text-anchor="middle" font-size="10.5" fill="var(--ink2)">8成</text><rect x="181.3" y="154.4" width="36.7" height="33.6" rx="3" fill="var(--muted)" opacity=".55" data-tip="10-25｜到货 16 板
+出摊 19.3 板 · 走量 7.0 成"/><text x="199.6" y="147.4" text-anchor="middle" font-size="10.5" fill="var(--ink2)">7成</text><rect x="273.0" y="147.5" width="36.7" height="40.5" rx="3" fill="var(--muted)" opacity=".55" data-tip="10-26｜到货 19.3 板
+出摊 5.5 板 · 走量 7.0 成"/><text x="291.4" y="140.5" text-anchor="middle" font-size="10.5" fill="var(--ink2)">7成</text><rect x="364.8" y="146.6" width="36.7" height="41.4" rx="3" fill="var(--muted)" opacity=".55" data-tip="10-27｜到货 19.7 板
+出摊 9.1 板 · 走量 9.0 成"/><text x="383.1" y="139.6" text-anchor="middle" font-size="10.5" fill="var(--ink2)">9成</text><rect x="456.5" y="43.1" width="36.7" height="144.9" rx="3" fill="var(--muted)" opacity=".55" data-tip="10-28｜到货 69 板
+出摊 47.0 板 · 走量 4.0 成"/><text x="474.9" y="36.1" text-anchor="middle" font-size="10.5" fill="var(--ink2)">4成</text><rect x="548.3" y="78.2" width="36.7" height="109.8" rx="3" fill="var(--muted)" opacity=".55" data-tip="10-29｜到货 52.3 板
+出摊 76.9 板 · 走量 4.5 成"/><text x="566.6" y="71.2" text-anchor="middle" font-size="10.5" fill="var(--ink2)">4.5成</text><rect x="640.0" y="110.5" width="36.7" height="77.5" rx="3" fill="var(--muted)" opacity=".55" data-tip="10-30｜到货 36.9 板
+出摊 66.3 板 · 走量 4.0 成"/><text x="658.4" y="103.5" text-anchor="middle" font-size="10.5" fill="var(--ink2)">4成</text><rect x="731.8" y="80.7" width="36.7" height="107.3" rx="3" fill="var(--muted)" opacity=".55" data-tip="10-31｜到货 51.1 板
+出摊 57.7 板 · 走量 5.0 成"/><text x="750.1" y="73.7" text-anchor="middle" font-size="10.5" fill="var(--ink2)">5成</text><line x1="429.0" y1="16" x2="429.0" y2="464" stroke="var(--axis)" stroke-width="1" stroke-dasharray="4 4"/><text x="421.0" y="30" text-anchor="end" font-size="11" fill="var(--muted)">10.28 量能换挡</text><g data-series="J"><line x1="199.6" y1="392.8" x2="291.4" y2="353.2" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="291.4" y1="353.2" x2="383.1" y2="384.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="383.1" y1="384.8" x2="474.9" y2="400.7" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><line x1="474.9" y1="400.7" x2="658.4" y2="432.3" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".55"/><line x1="658.4" y1="432.3" x2="750.1" y2="456.1" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><circle cx="199.6" cy="392.8" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="199.6" cy="392.8" r="13" fill="transparent" data-tip="J 5KG 10-25
+开价 850 元/箱
+当天到货 16 板"/><circle cx="291.4" cy="353.2" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="291.4" cy="353.2" r="13" fill="transparent" data-tip="J 5KG 10-26
+开价 1100 元/箱
+当天到货 19.3 板"/><circle cx="383.1" cy="384.8" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="383.1" cy="384.8" r="13" fill="transparent" data-tip="J 5KG 10-27
+开价 900 元/箱
+当天到货 19.7 板"/><circle cx="474.9" cy="400.7" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="474.9" cy="400.7" r="13" fill="transparent" data-tip="J 5KG 10-28
+开价 800 元/箱
+当天到货 69 板"/><circle cx="658.4" cy="432.3" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="658.4" cy="432.3" r="13" fill="transparent" data-tip="J 5KG 10-30
+开价 600 元/箱
+当天到货 36.9 板"/><circle cx="750.1" cy="456.1" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/><circle cx="750.1" cy="456.1" r="13" fill="transparent" data-tip="J 5KG 10-31
+开价 450 元/箱
+当天到货 51.1 板"/></g><g data-series="2J"><line x1="291.4" y1="321.5" x2="383.1" y2="353.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="383.1" y1="353.2" x2="474.9" y2="369.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><line x1="474.9" y1="369.0" x2="658.4" y2="424.4" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".55"/><line x1="658.4" y1="424.4" x2="750.1" y2="424.4" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/><circle cx="291.4" cy="321.5" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="291.4" cy="321.5" r="13" fill="transparent" data-tip="2J 5KG 10-26
+开价 1300 元/箱
+当天到货 19.3 板"/><circle cx="383.1" cy="353.2" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="383.1" cy="353.2" r="13" fill="transparent" data-tip="2J 5KG 10-27
+开价 1100 元/箱
+当天到货 19.7 板"/><circle cx="474.9" cy="369.0" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="474.9" cy="369.0" r="13" fill="transparent" data-tip="2J 5KG 10-28
+开价 1000 元/箱
+当天到货 69 板"/><circle cx="658.4" cy="424.4" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="658.4" cy="424.4" r="13" fill="transparent" data-tip="2J 5KG 10-30
+开价 650 元/箱
+当天到货 36.9 板"/><circle cx="750.1" cy="424.4" r="4.5" fill="var(--s2)" stroke="var(--surface)" stroke-width="2"/><circle cx="750.1" cy="424.4" r="13" fill="transparent" data-tip="2J 5KG 10-31
+开价 650 元/箱
+当天到货 51.1 板"/></g><g data-series="3J"><line x1="291.4" y1="305.7" x2="383.1" y2="305.7" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="383.1" y1="305.7" x2="474.9" y2="337.3" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/><line x1="474.9" y1="337.3" x2="658.4" y2="408.6" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity=".55"/><circle cx="291.4" cy="305.7" r="4.5" fill="var(--s3)" stroke="var(--surface)" stroke-width="2"/><circle cx="291.4" cy="305.7" r="13" fill="transparent" data-tip="3J 5KG 10-26
+开价 1400 元/箱
+当天到货 19.3 板"/><circle cx="383.1" cy="305.7" r="4.5" fill="var(--s3)" stroke="var(--surface)" stroke-width="2"/><circle cx="383.1" cy="305.7" r="13" fill="transparent" data-tip="3J 5KG 10-27
+开价 1400 元/箱
+当天到货 19.7 板"/><circle cx="474.9" cy="337.3" r="4.5" fill="var(--s3)" stroke="var(--surface)" stroke-width="2"/><circle cx="474.9" cy="337.3" r="13" fill="transparent" data-tip="3J 5KG 10-28
+开价 1200 元/箱
+当天到货 69 板"/><circle cx="658.4" cy="408.6" r="4.5" fill="var(--s3)" stroke="var(--surface)" stroke-width="2"/><circle cx="658.4" cy="408.6" r="13" fill="transparent" data-tip="3J 5KG 10-30
+开价 750 元/箱
+当天到货 36.9 板"/></g><text x="761.1" y="460.1" font-size="11.5" font-weight="600" fill="var(--s1)" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2">J 450</text><text x="761.1" y="428.4" font-size="11.5" font-weight="600" fill="var(--s2)" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2">2J 650</text><text x="669.4" y="412.6" font-size="11.5" font-weight="600" fill="var(--s3)" paint-order="stroke" stroke="var(--surface)" stroke-width="3.2">3J 750</text><line x1="62" y1="464" x2="796" y2="464" stroke="var(--axis)" stroke-width="1"/><text x="107.9" y="484" text-anchor="middle" font-size="11" fill="var(--muted)">10-24</text><line x1="62.0" y1="464" x2="62.0" y2="469" stroke="var(--axis)"/><text x="199.6" y="484" text-anchor="middle" font-size="11" fill="var(--muted)">10-25</text><line x1="153.8" y1="464" x2="153.8" y2="469" stroke="var(--axis)"/><text x="291.4" y="484" text-anchor="middle" font-size="11" fill="var(--muted)">10-26</text><line x1="245.5" y1="464" x2="245.5" y2="469" stroke="var(--axis)"/><text x="383.1" y="484" text-anchor="middle" font-size="11" fill="var(--muted)">10-27</text><line x1="337.2" y1="464" x2="337.2" y2="469" stroke="var(--axis)"/><text x="474.9" y="484" text-anchor="middle" font-size="11" fill="var(--muted)">10-28</text><line x1="429.0" y1="464" x2="429.0" y2="469" stroke="var(--axis)"/><text x="566.6" y="484" text-anchor="middle" font-size="11" fill="var(--muted)">10-29</text><line x1="520.8" y1="464" x2="520.8" y2="469" stroke="var(--axis)"/><text x="658.4" y="484" text-anchor="middle" font-size="11" fill="var(--muted)">10-30</text><line x1="612.5" y1="464" x2="612.5" y2="469" stroke="var(--axis)"/><text x="750.1" y="484" text-anchor="middle" font-size="11" fill="var(--muted)">10-31</text><line x1="704.2" y1="464" x2="704.2" y2="469" stroke="var(--axis)"/><line x1="796" y1="464" x2="796" y2="469" stroke="var(--axis)"/></svg></div>
+  <p class="scrollhint">↔ 手机上可以左右滑动</p>
+  <p class="cap">上格灰柱＝当日到货，跟第二节那张柱图<b>同一个口径</b>，两张图的柱高对得上；
+  柱顶小字是当天的走量成数。<b>下面价格线断开的那一天，是当天没人报这个规格，不是价格没动</b>——
+  虚线那截是跨过去连的，别当成报价。</p>
+</div>
+
+<div class="card">
+  <h3>这条链子怎么走过来的，也三句话</h3>
+  <ul class="who">
+    <li><b>先放量，价才松：</b>10.28 到货一下冲到 69 板，当天的开价还撑在 800 元往上（J 800、3J 1200）；
+    真正的跌在 10.28 之后——J 大箱 800 → 600（10.30）→ 450（10.31）、2J 1000 → 650，
+    <b>相对 10.28 三天累计跌三到四成</b>。</li>
+    <li><b>前后两段摆一起看：</b>10.24–10.27 日均到货 18.2 板、走量 7–9 成、开价还在高位；
+    10.28–10.31 日均 52.3 板、走量 4–5 成。<b>量涨到近三倍，成交砍了一半</b>——
+    这两件事是同一天开始转向的，不是量慢慢多、价慢慢软。</li>
+    <li><b>结论：</b>这轮跌不是货不好，是同一时间进来的太多、买的人没跟着多起来。
+    价让到 450 元（J 大箱）也没把走量拉回 6 成以上，<b>后面再进货，还得继续让价</b>。</li>
+  </ul>
+</div>
+
+
+<div class="card">
+  <h3>接下来几天预计落地</h3>
+  <p class="lead" style="font-size:12.5px;margin:0 0 8px">后几天预计入场
+  <b>245 板</b>。<b>11.1 约 150 板、11.2 约 83 板</b>，时间越往后预报越不准，但量级就是这样、说不定还更高。</p>
+  <ul class="plist plist-b"><li><b>GLOBAL AG</b><span class="pm">81 板</span><span class="pv">SANTINA 72.6、BLACK ROCK 8.9</span><span class='pk'>2.5KG / 2KG</span></li><li><b>LUCKY</b><span class="pm">36 板</span><span class="pv">SANTINA 18.1、SWEET ARYANA 12.1、ROYAL DAWN 2.9、GLEN RED 2.8</span><span class='pk'>5KG / 2×2.5KG</span></li><li><b>TUNICHE</b><span class="pm">35 板</span><span class="pv">BLACK ROCK 35</span><span class='pk'>2KG</span></li><li><b>COLCHAGUA</b><span class="pm">21 板</span><span class="pv">SANTINA 13.1、BLACK ROCK 7.8</span><span class='pk'>2.5KG / 2KG</span></li><li><b>GENERICA</b><span class="pm">18 板</span><span class="pv">SANTINA 10.6、BLACK ROCK 7.8</span><span class='pk'>2.5KG / 2KG</span></li><li><b>RED DREAMS</b><span class="pm">16 板</span><span class="pv">SANTINA 4.7、SWEET ARYANA 4.1、GLEN RED 3.7、ROYAL DAWN 2.9、BLACK PEARL 0.7</span><span class='pk'>5KG / 2×2.5KG</span></li><li><b>SAN FRANCISCO</b><span class="pm">13 板</span><span class="pv">SANTINA 4.7、SWEET ARYANA 3.2、ROYAL DAWN 2.1、GLEN RED 1.9、BLACK PEARL 0.7</span><span class='pk'>5KG / 2×2.5KG</span></li><li><b>DDC</b><span class="pm">4 板</span><span class="pv">SANTINA 4</span><span class='pk'>2.5KG</span></li><li><b>C&amp;L</b><span class="pm">4 板</span><span class="pv">ROYAL DAWN 3、SANTINA 1</span><span class='pk'>5KG / 2×2.5KG / 2.5KG</span></li><li><b>FRESH CHERRIES</b><span class="pm">2 板</span><span class="pv">SANTINA 1、ROYAL DAWN 1</span><span class='pk'>5KG / 2.5KG</span></li><li><b>GARCES</b><span class="pm">1 板</span><span class="pv">SANTINA 0.7、BLACK PEARL 0.7</span><span class='pk'>5KG / 2×2.5KG</span></li></ul>
+  <p class="cap" style="margin:10px 0 0"><b>对行情的影响：</b>摊到每天 85–150 板，比 10.30 / 10.31 已经落过的 37 / 51 板还多——这批 245 板陆续落地，差不多等于把这两天的量再叠一遍到还没消掉的库存上。走量还停在 5 成，开价没有回头的余地，大概率还得往下走。</p>
+  <p class="cap">预报不等于到货：船期、清关、分车都会挪时间，箱面牌子和品种也可能跟预报对不上。</p>
+</div>
+
+<h2>四、品种与品牌的进场 / 退场</h2>
+<p class="lead">条形长度＝从第一次被提到到最后一次被提到的日期跨度；颜色深浅＝单日峰值到货量。</p>
+
+<div class="card">
+  <h3>品种：什么时候进场、什么时候退场</h3>
+  <p class="cap">同一行内颜色越深 = 该品种单日到货峰值越高。</p>
+  <div class="gantt" style="--lw:150px">
+      <div class="grow" data-tip="SANTINA
+进场 10-21 · 退场 10-31（8 个活跃日）
+公告占比 28.3%（120.5 板）
+单日峰值 10-28 40.2 板">
+        <div class="gl">SANTINA</div>
+        <div class="gt"><span class="gb" style="left:26.67%;width:73.33%;opacity:0.93"></span></div>
+        <div class="gv">28.3%</div>
+      </div>
+      <div class="grow" data-tip="BLACK ROCK
+进场 10-20 · 退场 10-31（8 个活跃日）
+公告占比 21.2%（90 板）
+单日峰值 10-28 44.7 板">
+        <div class="gl">BLACK ROCK</div>
+        <div class="gt"><span class="gb" style="left:20.00%;width:80.00%;opacity:1.00"></span></div>
+        <div class="gv">21.2%</div>
+      </div>
+      <div class="grow" data-tip="ROYAL DAWN
+进场 10-27 · 退场 10-31（4 个活跃日）
+公告占比 14.1%（60 板）
+单日峰值 10-31 26.5 板">
+        <div class="gl">ROYAL DAWN</div>
+        <div class="gt"><span class="gb" style="left:66.67%;width:33.33%;opacity:0.74"></span></div>
+        <div class="gv">14.1%</div>
+      </div>
+      <div class="grow" data-tip="BLACK PEARL
+进场 10-27 · 退场 10-31（4 个活跃日）
+公告占比 7.3%（31 板）
+单日峰值 10-28 13 板">
+        <div class="gl">BLACK PEARL</div>
+        <div class="gt"><span class="gb" style="left:66.67%;width:33.33%;opacity:0.54"></span></div>
+        <div class="gv">7.3%</div>
+      </div>
+      <div class="grow" data-tip="AG2
+进场 10-18 · 退场 10-29（6 个活跃日）
+公告占比 6.1%（26 板）
+单日峰值 10-29 12 板">
+        <div class="gl">AG2</div>
+        <div class="gt"><span class="gb" style="left:6.67%;width:80.00%;opacity:0.52"></span></div>
+        <div class="gv">6.1%</div>
+      </div>
+      <div class="grow" data-tip="SWEET ARYANA
+进场 10-26 · 退场 10-31（3 个活跃日）
+公告占比 5.9%（25 板）
+单日峰值 10-27 19 板">
+        <div class="gl">SWEET ARYANA</div>
+        <div class="gt"><span class="gb" style="left:60.00%;width:40.00%;opacity:0.63"></span></div>
+        <div class="gv">5.9%</div>
+      </div>
+      <div class="grow" data-tip="EARLYBING
+进场 10-22 · 退场 10-24（3 个活跃日）
+公告占比 1.9%（8 板）
+单日峰值 10-23 3 板">
+        <div class="gl">EARLYBING</div>
+        <div class="gt"><span class="gb" style="left:33.33%;width:20.00%;opacity:0.39"></span></div>
+        <div class="gv">1.9%</div>
+      </div>
+      <div class="grow" data-tip="ROYAL TIOGA
+进场 10-17 · 退场 10-18（2 个活跃日）
+公告占比 1.1%（4.5 板）
+单日峰值 10-18 3 板">
+        <div class="gl">ROYAL TIOGA</div>
+        <div class="gt"><span class="gb" style="left:0.00%;width:13.33%;opacity:0.39"></span></div>
+        <div class="gv">1.1%</div>
+      </div>
+      <div class="grow" data-tip="NIMBA
+进场 10-26 · 退场 10-27（2 个活跃日）
+公告占比 0.9%（4 板）
+单日峰值 10-26 2 板">
+        <div class="gl">NIMBA</div>
+        <div class="gt"><span class="gb" style="left:60.00%;width:13.33%;opacity:0.38"></span></div>
+        <div class="gv">0.9%</div>
+      </div>
+      <div class="grow" data-tip="CHERRY CUPID
+进场 10-18 · 退场 10-18（1 个活跃日）
+公告占比 0.7%（3 板）
+单日峰值 10-18 3 板">
+        <div class="gl">CHERRY CUPID</div>
+        <div class="gt"><span class="gb" style="left:6.67%;width:6.67%;opacity:0.39"></span></div>
+        <div class="gv">0.7%</div>
+      </div>
+      <div class="grow" data-tip="GLEN RED
+进场 10-27 · 退场 10-28（2 个活跃日）
+公告占比 0.5%（2 板）
+单日峰值 10-28 1 板">
+        <div class="gl">GLEN RED</div>
+        <div class="gt"><span class="gb" style="left:66.67%;width:13.33%;opacity:0.36"></span></div>
+        <div class="gv">0.5%</div>
+      </div>
+      <div class="grow" data-tip="CUPID
+进场 10-17 · 退场 10-17（1 个活跃日）
+公告占比 0.4%（1.5 板）
+单日峰值 10-17 1.5 板">
+        <div class="gl">CUPID</div>
+        <div class="gt"><span class="gb" style="left:0.00%;width:6.67%;opacity:0.37"></span></div>
+        <div class="gv">0.4%</div>
+      </div>
+      <div class="grow" data-tip="CHEER CUPID
+进场 10-22 · 退场 10-25（2 个活跃日）
+公告占比 0.2%（1 板）
+单日峰值 10-22 0.5 板">
+        <div class="gl">CHEER CUPID</div>
+        <div class="gt"><span class="gb" style="left:33.33%;width:26.67%;opacity:0.36"></span></div>
+        <div class="gv">0.2%</div>
+      </div>
+      <div class="grow" data-tip="CHEER NEBULA
+进场 10-22 · 退场 10-25（2 个活跃日）
+公告占比 0.2%（1 板）
+单日峰值 10-22 0.5 板">
+        <div class="gl">CHEER NEBULA</div>
+        <div class="gt"><span class="gb" style="left:33.33%;width:26.67%;opacity:0.36"></span></div>
+        <div class="gv">0.2%</div>
+      </div></div>
+  <div class="axis" style="--lw:150px"><div></div><div class="tk"><span>10-17</span><span>10-25</span><span>10-31</span></div><div></div></div>
+</div>
+
+<div class="card">
+  <h3>品种明细</h3>
+  <div style="overflow-x:auto">
+  <table><thead><tr><th>品种</th><th>进场</th><th>退场</th><th class="n">活跃天数</th>
+  <th class="n">占比</th><th>逐日到货量</th><th class="n">开价元/kg 首→末</th></tr></thead><tbody><tr><td><b>SANTINA</b></td><td>10-21</td><td><span class="hm">还在场</span></td><td class='n'>8</td><td class='n'>28.3%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="16.5" width="5.9" height="1.5" rx="1" fill="var(--s1)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--s1)"/><rect x="41.6" y="15.8" width="5.9" height="2.2" rx="1" fill="var(--s1)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="9.5" width="5.9" height="8.5" rx="1" fill="var(--s1)"/><rect x="69.3" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="76.2" y="15.3" width="5.9" height="2.7" rx="1" fill="var(--s1)"/><rect x="83.1" y="6.8" width="5.9" height="11.2" rx="1" fill="var(--s1)"/><rect x="90.1" y="8.6" width="5.9" height="9.4" rx="1" fill="var(--s1)"/></svg></td><td class='n'>300 ↓ 200<span class="pk">2KG</span></td></tr><tr><td><b>BLACK ROCK</b></td><td>10-20</td><td><span class="hm">还在场</span></td><td class='n'>8</td><td class='n'>21.2%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="16.8" width="5.9" height="1.2" rx="1" fill="var(--s1)"/><rect x="20.8" y="16.7" width="5.9" height="1.3" rx="1" fill="var(--s1)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="15.6" width="5.9" height="2.4" rx="1" fill="var(--s1)"/><rect x="41.6" y="16.0" width="5.9" height="2.0" rx="1" fill="var(--s1)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="12.8" width="5.9" height="5.2" rx="1" fill="var(--s1)"/><rect x="69.3" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="16.0" width="5.9" height="2.0" rx="1" fill="var(--s1)"/><rect x="90.1" y="14.0" width="5.9" height="4.0" rx="1" fill="var(--s1)"/></svg></td><td class='n'>350 ↓ 200<span class="pk">2KG</span></td></tr><tr><td><b>ROYAL DAWN</b></td><td>10-27</td><td><span class="hm">还在场</span></td><td class='n'>4</td><td class='n'>14.1%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="14.6" width="5.9" height="3.4" rx="1" fill="var(--s1)"/><rect x="69.3" y="11.9" width="5.9" height="6.1" rx="1" fill="var(--s1)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="4.8" width="5.9" height="13.2" rx="1" fill="var(--s1)"/><rect x="90.1" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/></svg></td><td class='n'>120 → 120<span class="pk">5KG</span></td></tr><tr><td><b>BLACK PEARL</b></td><td>10-27</td><td><span class="hm">还在场</span></td><td class='n'>4</td><td class='n'>7.3%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="4.2" width="5.9" height="13.8" rx="1" fill="var(--s1)"/><rect x="69.3" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="12.5" width="5.9" height="5.5" rx="1" fill="var(--s1)"/><rect x="90.1" y="12.5" width="5.9" height="5.5" rx="1" fill="var(--s1)"/></svg></td><td class='n'>280 ↓ 180<span class="pk">2*2.5KG</span></td></tr><tr><td><b>AG2</b></td><td>10-18</td><td>10-29</td><td class='n'>6</td><td class='n'>6.1%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="15.0" width="5.9" height="3.0" rx="1" fill="var(--s1)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="13.1" width="5.9" height="4.9" rx="1" fill="var(--s1)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="16.5" width="5.9" height="1.5" rx="1" fill="var(--s1)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="9.0" width="5.9" height="9.0" rx="1" fill="var(--s1)"/><rect x="69.3" y="15.4" width="5.9" height="2.5" rx="1" fill="var(--s1)"/><rect x="76.2" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>300 ↑ 312<span class="pk">2KG</span></td></tr><tr><td><b>SWEET ARYANA</b></td><td>10-26</td><td><span class="hm">还在场</span></td><td class='n'>3</td><td class='n'>5.9%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="14.2" width="5.9" height="3.8" rx="1" fill="var(--s1)"/><rect x="62.4" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="69.3" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="16.1" width="5.9" height="1.9" rx="1" fill="var(--s1)"/></svg></td><td class='n'>270 ↑ 300<span class="pk">2*2.5KG</span></td></tr><tr><td><b>EARLYBING</b></td><td>10-22</td><td>10-24</td><td class='n'>3</td><td class='n'>1.9%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="6.0" width="5.9" height="12.0" rx="1" fill="var(--s1)"/><rect x="34.6" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="41.6" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="69.3" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>250 ↑ 302<span class="pk">2.5KG</span></td></tr><tr><td><b>ROYAL TIOGA</b></td><td>10-17</td><td>10-18</td><td class='n'>2</td><td class='n'>1.1%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="9.0" width="5.9" height="9.0" rx="1" fill="var(--s1)"/><rect x="6.9" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="69.3" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>—</td></tr><tr><td><b>NIMBA</b></td><td>10-26</td><td>10-27</td><td class='n'>2</td><td class='n'>0.9%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="62.4" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="69.3" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>342 → 342<span class="pk">2.5KG</span></td></tr><tr><td><b>CHERRY CUPID</b></td><td>10-18</td><td>10-18</td><td class='n'>1</td><td class='n'>0.7%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="69.3" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>—</td></tr><tr><td><b>GLEN RED</b></td><td>10-27</td><td>10-28</td><td class='n'>2</td><td class='n'>0.5%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="69.3" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>200 → 200<span class="pk">5KG</span></td></tr><tr><td><b>CUPID</b></td><td>10-17</td><td>10-17</td><td class='n'>1</td><td class='n'>0.4%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="69.3" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>—</td></tr><tr><td><b>CHEER CUPID</b></td><td>10-22</td><td>10-25</td><td class='n'>2</td><td class='n'>0.2%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="69.3" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>300 → 300<span class="pk">2.5KG</span></td></tr><tr><td><b>CHEER NEBULA</b></td><td>10-22</td><td>10-25</td><td class='n'>2</td><td class='n'>0.2%</td><td class='sp'><svg width="96" height="18" viewBox="0 0 96 18" role="img" aria-label="逐日到货量"><rect x="0.0" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="6.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="13.9" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="20.8" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="27.7" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="34.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="41.6" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="48.5" y="0.0" width="5.9" height="18.0" rx="1" fill="var(--s1)"/><rect x="55.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="62.4" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="69.3" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="76.2" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="83.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/><rect x="90.1" y="17.4" width="5.9" height="0.6" rx="1" fill="var(--grid)"/></svg></td><td class='n'>—</td></tr></tbody></table>
+  </div>
+  <p class="cap" style="margin-top:10px">开价一列<b>只取该品种报价最多的那一种包装</b>（右侧小字标注），
+  避免前期报 2KG、后期报 5KG 被读成降价。</p>
+</div>
+
+<div class="card">
+  <h3>品牌：牌子不是公司</h3>
+  <p class="lead" style="font-size:12.5px;margin:0 0 6px">箱面印的那个大 logo 只是<b>牌子</b>，同一家公司会同时挂好几个牌子，按牌子数会把一家数成四家。
+  这个判断不是猜的，是照箱子看出来的：10.28 到的那批里，Black Pearl 和 Glen Red 是<b>同一块园、同一条线、同一天装</b>的两箱，
+  LOTE 号 00022 和 00023 挨着，品牌格一个写 SAN FCO、一个写 RED DREAMS；而 RED DREAMS 那个牌号 <code>C0535096</code>，
+  两天前那批 4J 上写的是 LUCKY——<b>一个牌号配过两个名字</b>。所以下面按公司归并，公司名后面是它的出口商号（CSE）。</p>
+  <div class="house">
+    <div class="hrow" data-tip="GLOBAL AG
+155.6 板 · 占比 40.5%
+出口走 Global Talsa Fresh（GLOBAL TALSA AG 是出口商的名，不是箱子上的牌子）；箱面写 GLOBAL AG / COLCHAGUA / GENERICA 的都归这一套，别再当三个牌子">
+      <div class="hname"><b>GLOBAL AG</b><span class='cse'>CSE 3176602</span><span class='rng'>10-18–10-29</span></div>
+      <div class="hnum">155.6 板<em>40.5%</em></div>
+      <div class="hbar"><i style="width:100.0%;background:var(--s1)"></i></div>
+      <div class='chips'><span class='chip'><b>GLOBAL AG</b></span><span class='chip'><b>COLCHAGUA</b></span><span class='chip'><b>GENERICA</b></span></div>
+    </div>
+    <div class="hrow" data-tip="San Francisco Lo Garcés Limitada
+129 板 · 占比 33.6%
+SAN FCO 是它的主牌，LUCKY / RED DREAMS / GARCES 是同一家的另外几个牌子">
+      <div class="hname"><b>San Francisco Lo Garcés Limitada</b><span class='cse'>CSE 88466</span><span class='rng'>10-26–10-31</span></div>
+      <div class="hnum">129 板<em>33.6%</em></div>
+      <div class="hbar"><i style="width:83.0%;background:var(--s1)"></i></div>
+      <div class='chips'><span class='chip'><b>SAN FRANCISCO</b></span><span class='chip'><b>RED DREAMS</b></span><span class='chip'><b>LUCKY</b></span><span class='chip'><b>GARCES</b></span></div>
+    </div>
+    <div class="hrow" data-tip="Tuniche Fruits Limitada
+45 板 · 占比 11.7%
+红箱、盖子上烫金 Sweeties">
+      <div class="hname"><b>Tuniche Fruits Limitada</b><span class='cse'>CSE 89232</span><span class='rng'>10-22–10-31</span></div>
+      <div class="hnum">45 板<em>11.7%</em></div>
+      <div class="hbar"><i style="width:28.9%;background:var(--s1)"></i></div>
+      <div class='chips'><span class='chip'><b>TUNICHE</b></span><span class='chip'><b>TUNICHE(LUCILA)</b></span></div>
+    </div>
+    <div class="hrow" data-tip="Dole plc
+25 板 · 占比 6.5%
+公司名和牌子同名：DOLE 既是这家公司，也是箱面上印的那个牌子">
+      <div class="hname"><b>Dole plc</b><span class='rng'>10-27–10-31</span></div>
+      <div class="hnum">25 板<em>6.5%</em></div>
+      <div class="hbar"><i style="width:16.0%;background:var(--s1)"></i></div>
+      <div class='chips'><span class='chip'><b>DOLE</b></span></div>
+    </div>
+    <div class="hrow" data-tip="Anakena Fresh SPA
+19 板 · 占比 4.9%
+箱面印 LUCKY LION；和 LUCKY 只是名字像，不是一家">
+      <div class="hname"><b>Anakena Fresh SPA</b><span class='rng'>10-26–10-31</span></div>
+      <div class="hnum">19 板<em>4.9%</em></div>
+      <div class="hbar"><i style="width:12.1%;background:var(--s1)"></i></div>
+      <div class='chips'><span class='chip'><b>LUCKY LION</b></span></div>
+    </div>
+    <div class="hrow" data-tip="C&amp;L
+10.5 板 · 占比 2.7%
+群里大多只写 C&amp;L，鲜丰那边写成 FRESH CHERRIES (C&amp;L)，按同一家算；还没对上公开的箱标 / CSE 资料，先按群里的写法叫">
+      <div class="hname"><b>C&amp;L</b><span class='rng'>10-27–10-28</span></div>
+      <div class="hnum">10.5 板<em>2.7%</em></div>
+      <div class="hbar"><i style="width:6.7%;background:var(--s1)"></i></div>
+      <div class='chips'><span class='chip'><b>C&amp;L</b></span><span class='chip'><b>FRESH CHERRIES</b></span></div>
+    </div></div>
+  <p class="cap">条长＝该公司在<b>已归到公司的 384.1 板</b>里的占比；条下面列的只是这家公司用过的牌子名，不单独记数。
+  剩下的 30.4 板公告里没写牌子、11 板是还没对上公司的牌子
+  （谷果集），都<b>不算进这张表</b>，免得把非公司的一起排进去。</p>
+</div>
+
+<div class="card">
+  <h3>牌子明细</h3>
+  <div style="overflow-x:auto">
+  <table><thead><tr><th>牌子</th><th>归到哪家公司</th><th>进场</th>
+  <th class="n">活跃天数</th><th class="n">累计板</th><th class="n">占比</th><th>单日峰值</th></tr></thead>
+  <tbody><tr><td><b>GLOBAL AG</b></td><td class='hm'>GLOBAL AG</td><td>10-20</td><td class='n'>10</td><td class='n'>82.8</td><td class='n'>21.6%</td><td>10-28（30板）</td></tr><tr><td><b>COLCHAGUA</b></td><td class='hm'>GLOBAL AG</td><td>10-18</td><td class='n'>11</td><td class='n'>44.3</td><td class='n'>11.5%</td><td>10-28（20板）</td></tr><tr><td><b>GENERICA</b></td><td class='hm'>GLOBAL AG</td><td>10-18</td><td class='n'>11</td><td class='n'>28.8</td><td class='n'>7.5%</td><td>10-24（8.3板）</td></tr><tr><td><b>SAN FRANCISCO</b></td><td class='hm'>San Francisco Lo Garcés Limitada</td><td>10-26</td><td class='n'>6</td><td class='n'>48.5</td><td class='n'>12.6%</td><td>10-27（23板）</td></tr><tr><td><b>RED DREAMS</b></td><td class='hm'>San Francisco Lo Garcés Limitada</td><td>10-27</td><td class='n'>5</td><td class='n'>38.5</td><td class='n'>10.0%</td><td>10-31（19板）</td></tr><tr><td><b>LUCKY</b></td><td class='hm'>San Francisco Lo Garcés Limitada</td><td>10-26</td><td class='n'>6</td><td class='n'>34</td><td class='n'>8.9%</td><td>10-28（9.5板）</td></tr><tr><td><b>GARCES</b></td><td class='hm'>San Francisco Lo Garcés Limitada</td><td>10-30</td><td class='n'>2</td><td class='n'>8</td><td class='n'>2.1%</td><td>10-30（4板）</td></tr><tr><td><b>TUNICHE</b></td><td class='hm'>Tuniche Fruits Limitada</td><td>10-22</td><td class='n'>10</td><td class='n'>45</td><td class='n'>11.7%</td><td>10-27（11板）</td></tr><tr><td><b>DOLE</b></td><td class='hm'>Dole plc</td><td>10-27</td><td class='n'>5</td><td class='n'>25</td><td class='n'>6.5%</td><td>10-31（10板）</td></tr><tr><td><b>LUCKY LION</b></td><td class='hm'>Anakena Fresh SPA</td><td>10-26</td><td class='n'>6</td><td class='n'>19</td><td class='n'>4.9%</td><td>10-30（7.5板）</td></tr><tr><td><b>C&amp;L</b></td><td class='hm'>C&amp;L</td><td>10-27</td><td class='n'>2</td><td class='n'>9</td><td class='n'>2.3%</td><td>10-27（5板）</td></tr><tr><td><b>FRESH CHERRIES</b></td><td class='hm'>C&amp;L</td><td>10-28</td><td class='n'>1</td><td class='n'>1.5</td><td class='n'>0.4%</td><td>10-28（1.5板）</td></tr></tbody></table>
+  </div>
+  <p class="cap">占比跟上面那张公司表同一个分母：已归到公司的 384.1 板。
+  一行公告同时报了几个<b>不同公司</b>的牌子时，板数按均分记，所以单个牌子的数只是量级，别当精确值用。<br>
+  <b>活跃天数＝从进场到最后一次被提到的自然日数</b>，中间没到货的日子也算在场——没再被提到不等于退场。</p>
+</div>
+
+
+<h2>五、这段时间的市场，和接下来的预期</h2>
+<p class="lead">按开季周次算（10.17 首批空运落地是第 1 周），到 10.31 走完<b>第 1、2 两周、踏进第 3 周</b>。
+这两周里：<b>空运到货从零星变成天天有，第一个换挡节点落在第 2 周尾段到第 3 周——量上去、价转跌。</b></p>
+
+<div class="card">
+  <h3>这两周发生了什么</h3>
+  <ul class="who">
+    <li><b>量：一周之内换挡。</b>第 2 周前半段日均到货 18.2 板、走量 7–9 成；
+    尾段单日顶到 69 板，之后四天日均 52.3 板（+187%），走量掉到 4–5 成。
+    换挡从第 2 周尾段起，一直延续到第 3 周。</li>
+    <li><b>价：跟着量走。</b>六个规格全线往下，10-26 到 10-31 每个规格各自的跌幅在 38%–59% 之间：<b>J 从 1100 让到 450（-59%）跌得最狠</b>，2JD 只跌 38%、相对抗跌——说明市场上缺的是便宜货，不是好货。</li>
+    <li><b>品种：换了一茬，量没少。</b>退场的 9 个品种（AG2 / EARLYBING 等）合计 51 板、只占 12%；撑场的是 SANTINA / BLACK ROCK / ROYAL DAWN / BLACK PEARL，四个占 71%——接上来的全是这一季的智利早熟货。</li>
+    <li><b>牌子：集中在少数几家。</b><b>GLOBAL AG</b> 一家（含3种箱面写法）占 40.5%，San Francisco Lo Garcés 33.6%，两家合起来 74.1%。这两家一放量，市场立刻就松。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>按开季周次往后看</h3>
+  <div style="overflow-x:auto">
+  <table class="wk"><thead><tr><th>开季周次</th><th>日期</th><th>到货</th>
+  <th>走量</th><th>这一段的特点</th></tr></thead>
+  <tbody>
+  <tr><td><b>第 1 周</b></td><td>10.17–10.23</td><td>公告 60 板（早报还没开始）</td><td>—</td>
+      <td>第一批空运落地，价在开季最高的一段</td></tr>
+  <tr><td><b>第 2 周</b></td><td>10.24–10.30</td><td>日均 33 板</td><td>7–9 成，10.28 起掉到 4 成</td>
+      <td>空运到货一天比一天密集，尾段踩到第一个换挡节点：3J 从 1400 让到 750，价从这里由挺转跌</td></tr>
+  <tr><td><b>第 3 周</b></td><td>10.31–11.06</td><td>10.31 已报 51.1 板，11.1 起预报 245 板</td><td>5 成</td>
+      <td>接着上周尾段的换挡往上走，预报量已压过第 2 周，价还在往下走的通道里</td></tr>
+  <tr><td><b>第 4 周</b></td><td>11.07–11.13</td><td>包机加密，SANTINA 开始上量</td><td>—</td>
+      <td>空运这一段爬得最快的一周</td></tr>
+  <tr><td><b>第 5 周</b></td><td>11.14–11.20</td><td>空运在 11 月中旬见顶</td><td>—</td>
+      <td>顶了也就是一天几十吨，跟海运不是一个量级</td></tr>
+  <tr><td><b>第 6 周起</b></td><td>11.21 起</td><td>第一批海运货到港，量级上一个台阶</td><td>—</td>
+      <td>往年这一档跌得比空运期快</td></tr>
+  <tr><td><b>第 8–11 周</b></td><td>12 月</td><td>大船密集到港，全年量最大的一个月</td><td>—</td>
+      <td>空运量这时明显回落；上个产季 12 月批发价比月初跌 20–30%</td></tr>
+  <tr><td><b>第 17 周</b></td><td>2027.02.06 起</td><td>春节备货拉量</td><td>—</td>
+      <td>节前有小幅反弹，节后回落</td></tr>
+  </tbody></table>
+  </div>
+  <ul class="who" style="margin-top:12px">
+    <li><b>空运还会涨一点，但涨不出量级。</b>第 3–5 周包机一批接一批进场，是空运的最后一段，
+    往年在 11 月中旬见顶，之后随海运接棒回落。量级有多大看上个产季：上海空港从 10.17 到 11.25
+    一共只验放 19 架次、1970 吨，平均一周三四架、一天不到 50 吨——还抵不上海运一条快线船。
+    所以接下来几周空运只会小幅增，不会是那种翻天覆地的变化。</li>
+    <li><b>11 月下旬海运头船到，才是真正的大换挡。</b>第 2 周尾段那一档换的是空运的量，海运一到是另一回事。
+    上个产季海运集中到货后，
+    批发价比月初跌 20–30%、同比跌 15–25%；今年船期比去年早，11 月下旬就到。</li>
+    <li><b>放到这两周上：</b>10.31 走量回到 5 成，但后几天还有 245 板（11.1 约 150 板、11.2 约 83 板）在路上，
+    比 10.30 / 10.31 落过的 37 / 51 板还多。
+    11 月上旬空运还会加密，价也还在往下走的通道里，
+    真正的分水岭在第 6 周——11 月下旬海运那批。</li>
+  </ul>
+  <p class="cap">周次从开季第一批空运落地（10.17）算起，一周一档，跟"到第几批货"大致对得上。
+  "往年"的说法取自上个产季（2025/26）的公开报道和船期，只作参考；海运 11 月下旬到港按今年的船期，
+  每天的量以当天的到货合计为准，跟第二节同一套口径。</p>
+</div>
+
+<h2>六、口径与已知问题</h2>
+<div class="warnbox">
+<b>1. 早报从 10.24 才有。</b>10.17–10.23 只有逐笔群消息，没有新到／出摊／走量的汇总数；
+那几天的到货用公告合计，跟后面几天不是一个口径，别接起来比。<br><br>
+<b>2. 表内价格一律是「开价」，不是成交价。</b>群里报的都是喊价，实际成交按质按量议价、普遍低于开价，
+个别货主还会故意往高报、撑着等还价。所以价格只看<b>方向</b>和同一天各规格之间的高低，绝对值不能当成交价用。<br>
+&nbsp;&nbsp;· 另外要留意<b>复述</b>：同一天、同规格、同包装的多条报价里，常有几条数值一模一样——
+那是同一句话被转发，不是几个货主各自报的价。所以某天某个数特别扎眼的时候，先确认它不是复述来的。<br><br>
+<b>3. 包装靠就近绑定，双拼箱算大箱。</b>原文一行里常混排多个包装（如 <code>2KG/…/2*2.5KG/2JD1300/5KG/…</code>），
+报价一律绑定它前面最近的那个包装；整行都没写包装的（10.23 之前基本都是）无法判断箱规，已从价格表剔除，
+所以 10.23 之前那几列是空的。<br>
+&nbsp;&nbsp;· <b>2×2.5KG 双拼箱（群里也写 2IN1）算大箱。</b>两个 2.5KG 装一箱，也是 5 公斤，一般只比散装贵 50–100 元/箱
+（10.26 的 J 散装 1100 / 双拼 1200、2J 散装 1300 / 双拼 1400），所以并进同一条大箱折线。
+例外是 10.26 / 10.27 那条 <code>J1200/JD1300/2J1400/2JD1500 3J1700/3JD1800</code>：连着两天一字不差地报，
+散装那边已经掉下去了它还停着，照它的数会凭空多出一档 300 元的缺口。规矩是<b>同一天散装有人报就用散装，
+双拼只在散装没人报的日子顶上，顶之前先跟最近一天的散装价比，差 150 元以上当偏高剔掉</b>。
+按这个规矩被剔掉的是 10-29 的 2J 1300、10-29 的 2JD 1400、10-29 的 3J 1500、10-31 的 3J 1100（都比前一天的散装价高 300 元以上）；顶上去的只有 10-28 的 2JD 1050 元。<br>
+&nbsp;&nbsp;· 10.27 那条 <code>&amp;2*2.5KG/JD20，拿货数量</code> 里的 <code>JD20</code> 是"JD 20 件"的数量、不是单价，已剔除。<br><br>
+<b>4. 量价关系那几张图的取数。</b>价格只取 5KG 大箱开价，不混 2KG：2KG 小盒折成元/kg 天生贵一截，
+混进来会把"某天只报了 2KG"读成涨价——10.29 就是这样（5KG 散装一个报价都没有，只有双拼箱和小箱有人报，
+所以大箱那条线在 10.29 沿用 10.28 的价）。<br>
+&nbsp;&nbsp;· 价格线断开的那天＝当天没人报这个规格，不是价格没动；跨过空档连起来的那截画成虚线。<br>
+&nbsp;&nbsp;· 10.31 大箱报了 J / JD / 2J / 2JD / 3JD 五个规格，3J 是唯一没人报的，所以后段（10.28–10.31）的 3J 均值只有 10.28、10.30 两天构成。
+</div>
+
+<footer>生成于 2026-11-01</footer>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+const tip = document.getElementById('tip');
+document.addEventListener('mouseover', e => {
+  const t = e.target.closest('[data-tip]');
+  if (!t) return;
+  tip.textContent = t.dataset.tip;
+  tip.style.opacity = '1';
+});
+document.addEventListener('mousemove', e => {
+  if (tip.style.opacity !== '1') return;
+  const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 12);
+  const y = Math.min(e.clientY + 14, innerHeight - tip.offsetHeight - 12);
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+});
+document.addEventListener('mouseout', e => {
+  if (e.target.closest('[data-tip]')) tip.style.opacity = '0';
+});
+
+// 图例点击 → 单独隐藏某条线
+document.querySelectorAll('[data-tog]').forEach(el => {
+  el.addEventListener('click', () => {
+    const off = el.classList.toggle('off');
+    document.querySelectorAll('[data-series="' + el.dataset.tog + '"]')
+            .forEach(n => n.style.opacity = off ? '0.1' : '1');
+  });
+});
+</script>
+</body></html>
