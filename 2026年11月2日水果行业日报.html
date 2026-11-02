@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.11.02</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.11.02</b> 星期一</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">12</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">12</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">7</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">5</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">11</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">11月2日，国内苹果丰产压力继续释放：业内预计新季冷库入库量超1000万吨、果农自存占比超过60%，收购价维持弱势；农业农村部监测6种水果批发均价6.63元/公斤，环比微升0.2%。出口端，陕西洛川苹果年出口创汇突破3200万元、远销12个国家和地区，甘肃静宁50吨红富士分两路发往东盟。进口端，越南榴莲继续主导国内市场，广州江南到货约99—101柜中越南占94柜；佳沛新西兰奇异果已售出95%，本季为历史最大产量，大中华区去化约93%。贸易方面，中瑞自贸协定升级议定书签署，最终零关税覆盖双方超99%贸易额。气象端，美国加州今春极端高温致开心果大幅减产，2026收成年采收约29.9万吨、同比下降58.5%，全球供应链承压。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="安德利累计回购a股132.7万股 已支付7484.81万元 安德利果汁11月2日披露回购进展：截至10月31日累计回购a股132.7万股，占总股本约0.40%，成交价区间51.49—60.00元/股，已支付7484.81万元（不含交易费用）。 安德利果汁 东方财富网" style="--acc:var(--s1)"><a class="n-title" href="https://finance.eastmoney.com/a/202611023918751930.html" target="_blank" rel="noopener noreferrer">安德利累计回购A股132.7万股 已支付7484.81万元</a><p class="n-sum">安德利果汁11月2日披露回购进展：截至10月31日累计回购A股132.7万股，占总股本约0.40%，成交价区间51.49—60.00元/股，已支付7484.81万元（不含交易费用）。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">安德利果汁</span><span>东方财富网</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://finance.eastmoney.com/a/202611023918751930.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="佳沛已售出新西兰95%奇异果 剩余约1100万托盘 佳沛已售出本季新西兰奇异果总产量的95%，剩余约1100万托盘，预计11月底基本售空；本季为有记录以来最大产量，大中华区约93%已售出，中秋后需求放缓。 佳沛zespri 国际果蔬报道（freshplaza中国）" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.cn/article/9887658/jia-pei-yi-shou-chu-xin-xi-lan-95-de-qi-yi-guo-sheng-yu-1100-mo-tuo-pan/" target="_blank" rel="noopener noreferrer">佳沛已售出新西兰95%奇异果 剩余约1100万托盘</a><p class="n-sum">佳沛已售出本季新西兰奇异果总产量的95%，剩余约1100万托盘，预计11月底基本售空；本季为有记录以来最大产量，大中华区约93%已售出，中秋后需求放缓。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">佳沛Zespri</span><span>国际果蔬报道（FreshPlaza中国）</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://www.freshplaza.cn/article/9887658/jia-pei-yi-shou-chu-xin-xi-lan-95-de-qi-yi-guo-sheng-yu-1100-mo-tuo-pan/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="新西兰苹果对华出口超9万吨 新产季出口或达41万吨 usda预测2026/27季新西兰苹果商业产量59万吨、出口量41万吨，为2020/21季以来最高；2026年1—8月对华出口91,349吨，同比增17.74%，中国继续稳居第一大出口市场。 新西兰苹果产业（usda报告） 国际果蔬报道" style="--acc:var(--s2)"><a class="n-title" href="https://news.foodmate.net/2026/11/wap_756164.html" target="_blank" rel="noopener noreferrer">新西兰苹果对华出口超9万吨 新产季出口或达41万吨</a><p class="n-sum">USDA预测2026/27季新西兰苹果商业产量59万吨、出口量41万吨，为2020/21季以来最高；2026年1—8月对华出口91,349吨，同比增17.74%，中国继续稳居第一大出口市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">新西兰苹果产业（USDA报告）</span><span>国际果蔬报道</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://news.foodmate.net/2026/11/wap_756164.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="智利车厘子空运货陆续到货 早熟果损耗偏高 2026/27产季智利车厘子空运货陆续到货，早期ag2、black rock、santina品质一般，裂口和枝头压痕致损耗约25%—30%、糖度15—17；厄尔尼诺致北部早熟产区brooks、nimba等品种损失达70%—80%。 智利车厘子产业 国际果蔬报道（freshplaza中国）" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.cn/article/9887298/kong-yun-zhi-li-che-li-zi-lu-xu-dao-huo-ben-ci-xin-chan-ji-shi-zui-nan-de-yi-nian/" target="_blank" rel="noopener noreferrer">智利车厘子空运货陆续到货 早熟果损耗偏高</a><p class="n-sum">2026/27产季智利车厘子空运货陆续到货，早期AG2、Black Rock、Santina品质一般，裂口和枝头压痕致损耗约25%—30%、糖度15—17；厄尔尼诺致北部早熟产区Brooks、Nimba等品种损失达70%—80%。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">智利车厘子产业</span><span>国际果蔬报道（FreshPlaza中国）</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://www.freshplaza.cn/article/9887298/kong-yun-zhi-li-che-li-zi-lu-xu-dao-huo-ben-ci-xin-chan-ji-shi-zui-nan-de-yi-nian/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="千万吨苹果压进冷库 果农自存占比超过60% 今年全国冷库苹果入库量预计超过1000万吨，果农自存库存占比超过60%，客商收购意愿偏低、收货不多；丰产叠加弱需求，后期销售压力集中在果农端。 苹果产区 网易订阅" style="--acc:var(--s3)"><a class="n-title" href="https://www.163.com/dy/article/LAMMIJST05566RSQ_pdya11y.html" target="_blank" rel="noopener noreferrer">千万吨苹果压进冷库 果农自存占比超过60%</a><p class="n-sum">今年全国冷库苹果入库量预计超过1000万吨，果农自存库存占比超过60%，客商收购意愿偏低、收货不多；丰产叠加弱需求，后期销售压力集中在果农端。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">苹果产区</span><span>网易订阅</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://www.163.com/dy/article/LAMMIJST05566RSQ_pdya11y.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="洛川苹果远销12个国家和地区 年出口创汇突破3200万元 陕西洛川苹果已远销越南、菲律宾、尼泊尔、阿联酋等12个国家和地区，年出口创汇突破3200万元；4个月前10万斤洛川苹果经铁路冷链跨越约3800公里运抵尼泊尔加德满都。 洛川优洛有机果业 中国青年报（中国国家铁路集团转载）" style="--acc:var(--s3)"><a class="n-title" href="http://www.china-railway.com.cn/xwzx/mtjj/cyol/202611/t20261102_161131.html" target="_blank" rel="noopener noreferrer">洛川苹果远销12个国家和地区 年出口创汇突破3200万元</a><p class="n-sum">陕西洛川苹果已远销越南、菲律宾、尼泊尔、阿联酋等12个国家和地区，年出口创汇突破3200万元；4个月前10万斤洛川苹果经铁路冷链跨越约3800公里运抵尼泊尔加德满都。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">洛川优洛有机果业</span><span>中国青年报（中国国家铁路集团转载）</span><span>·</span><span>2026-11-02</span><a class="n-link" href="http://www.china-railway.com.cn/xwzx/mtjj/cyol/202611/t20261102_161131.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="静宁50吨红富士分两路发往东盟 泰国线预计11月6—8日到港 10月21日，50吨静宁红富士启运，分两路进入东盟市场：一车经公海联运，计划11月6—8日运抵泰国；另一车经凭祥口岸已于10月28日抵达越南。 静宁苹果产区 甘肃经济日报·每日甘肃网" style="--acc:var(--s3)"><a class="n-title" href="https://pl.gansudaily.com.cn/system/2026/11/02/031453158.shtml" target="_blank" rel="noopener noreferrer">静宁50吨红富士分两路发往东盟 泰国线预计11月6—8日到港</a><p class="n-sum">10月21日，50吨静宁红富士启运，分两路进入东盟市场：一车经公海联运，计划11月6—8日运抵泰国；另一车经凭祥口岸已于10月28日抵达越南。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">静宁苹果产区</span><span>甘肃经济日报·每日甘肃网</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://pl.gansudaily.com.cn/system/2026/11/02/031453158.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="苹果站上拼多多双11中心位 1—9月苹果销售额同比翻番 苹果成为拼多多双11大促中心品类，山西、陕西、山东等苹果产地商家冲击平台“苹果畅销榜”；2026年1—9月平台苹果销售额同比翻番，苹果是拼多多连年来销售规模最大的水果品类。 拼多多 红桔网" style="--acc:var(--s6)"><a class="n-title" href="http://www.cnwzhjw.cn/news/show.php?itemid=164009" target="_blank" rel="noopener noreferrer">苹果站上拼多多双11中心位 1—9月苹果销售额同比翻番</a><p class="n-sum">苹果成为拼多多双11大促中心品类，山西、陕西、山东等苹果产地商家冲击平台“苹果畅销榜”；2026年1—9月平台苹果销售额同比翻番，苹果是拼多多连年来销售规模最大的水果品类。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">拼多多</span><span>红桔网</span><span>·</span><span>2026-11-01</span><a class="n-link" href="http://www.cnwzhjw.cn/news/show.php?itemid=164009" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="11月1日榴莲行情：越南货主导 广州江南到货约百柜 11月1日广州江南市场榴莲到货约99—101柜，其中泰国4柜、越南94柜、菲律宾1柜，越南货占绝对主导；越南金枕a3/10kg好货走货价330—360元/件，中上货300—330元/件，低端继续下移。 广州江南市场 大数跨境" style="--acc:var(--s7)"><a class="n-title" href="https://www.10100.com/article/156688096" target="_blank" rel="noopener noreferrer">11月1日榴莲行情：越南货主导 广州江南到货约百柜</a><p class="n-sum">11月1日广州江南市场榴莲到货约99—101柜，其中泰国4柜、越南94柜、菲律宾1柜，越南货占绝对主导；越南金枕A3/10kg好货走货价330—360元/件，中上货300—330元/件，低端继续下移。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">广州江南市场</span><span>大数跨境</span><span>·</span><span>2026-11-01</span><a class="n-link" href="https://www.10100.com/article/156688096" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="农业农村部：11月2日6种水果均价6.63元/公斤 环比升0.2% 农业农村部监测显示，11月2日“农产品批发价格200指数”为111.44，比上周五上升0.07点；重点监测的6种水果平均价格为6.63元/公斤，比上周五上升0.2%。 农业农村部 农业农村部" style="--acc:var(--s7)"><a class="n-title" href="https://scs.moa.gov.cn/jcyj/202611/t20261102_6489090.htm" target="_blank" rel="noopener noreferrer">农业农村部：11月2日6种水果均价6.63元/公斤 环比升0.2%</a><p class="n-sum">农业农村部监测显示，11月2日“农产品批发价格200指数”为111.44，比上周五上升0.07点；重点监测的6种水果平均价格为6.63元/公斤，比上周五上升0.2%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">农业农村部</span><span>农业农村部</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://scs.moa.gov.cn/jcyj/202611/t20261102_6489090.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="中瑞自贸协定升级议定书签署 零关税覆盖超99%贸易额 中瑞自贸协定升级议定书签署，双方在原协定基础上对近300个税目进一步降税，最终零关税产品覆盖双方超过99%的贸易额；瑞方进一步开放农产品市场。 商务部 环球时报（新浪转载）" style="--acc:var(--s8)"><a class="n-title" href="https://news.sina.com.cn/zx/gj/2026-11-02/doc-inixhwzc2407103.shtml" target="_blank" rel="noopener noreferrer">中瑞自贸协定升级议定书签署 零关税覆盖超99%贸易额</a><p class="n-sum">中瑞自贸协定升级议定书签署，双方在原协定基础上对近300个税目进一步降税，最终零关税产品覆盖双方超过99%的贸易额；瑞方进一步开放农产品市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">商务部</span><span>环球时报（新浪转载）</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://news.sina.com.cn/zx/gj/2026-11-02/doc-inixhwzc2407103.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国际" data-search="加州花期极端高温致开心果减产58.5% 全球供应链承压 2026年3月加州开心果花期遭遇极端高温，气温高于32℃的天数超过10天创历史纪录，导致大量花序和幼果脱落；2026收成年实际采收约29.9万吨，较上年的72.1万吨下降58.5%，供应趋紧并传导至中国市场价格。 加州开心果产业 新民周刊（来源：河北青年报）" style="--acc:var(--s9)"><a class="n-title" href="https://www.xinminweekly.com.cn/shenghuo/2026/11/02/55215.html" target="_blank" rel="noopener noreferrer">加州花期极端高温致开心果减产58.5% 全球供应链承压</a><p class="n-sum">2026年3月加州开心果花期遭遇极端高温，气温高于32℃的天数超过10天创历史纪录，导致大量花序和幼果脱落；2026收成年实际采收约29.9万吨，较上年的72.1万吨下降58.5%，供应趋紧并传导至中国市场价格。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">加州开心果产业</span><span>新民周刊（来源：河北青年报）</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://www.xinminweekly.com.cn/shenghuo/2026/11/02/55215.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-11-02 17:37 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
