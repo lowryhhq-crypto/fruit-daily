@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.11.03</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.11.03</b> 星期二</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">16</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">16</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">11</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">5</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">16</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">11月3日，第九届进博会进入布展收尾，全球首发、亚洲首展、中国首秀展品超480件：鑫荣懋全球首发泰国佳沃洞洞椰并带来白玉珍珠榴莲、脆脆莓，佳农全球首发荷兰魔星苹果；200公斤南非甜樱桃经进博会特许审批抵沪，完成国内首秀。国内企业方面，国投中鲁临时股东会通过变更公司名称、证券简称等三项议案，安德利果汁当日回购24万股A股、耗资1260.79万元。进口端，第44周中国市场智利空运车厘子Santina 2J约700元/件、较首批回落10%—15%，秘鲁蓝莓14/16mm+约80—90元/件，榴莲到货明显减少；农业农村部监测6种水果均价6.67元/公斤，环比升0.6%。准入与贸易方面，韩国甜柿完成对华检疫审批、17年谈判落地，我国对53个非洲建交国零关税实施半年、深圳关区水果占享惠货值五成。气象端，智利马乌莱大区14个市镇因强降雨和冰雹进入农业紧急状态，樱桃、蓝莓受灾；秘鲁蓝莓受气候影响本季总供应或降15%—20%。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="国投中鲁临时股东会通过更名、关联交易等三项议案 国投中鲁11月2日召开2026年第三次临时股东会，审议通过三项议案：控股孙公司徐州中新果业拟签署房屋征收补偿协议；增加2026年度及2027年1—4月日常关联交易预计额度；变更公司名称、证券简称、注册资本、经营范围并修订《公司章程》。出席会议股东代表股份6.11亿股，占公司有表决权股份总数的75.37%。 国投中鲁 中国证券报" style="--acc:var(--s1)"><a class="n-title" href="http://app.cnstock.com/zzb/zgzqb/html/2026-11/03/nw.D110000zgzqb_20261103_7-B026.htm" target="_blank" rel="noopener noreferrer">国投中鲁临时股东会通过更名、关联交易等三项议案</a><p class="n-sum">国投中鲁11月2日召开2026年第三次临时股东会，审议通过三项议案：控股孙公司徐州中新果业拟签署房屋征收补偿协议；增加2026年度及2027年1—4月日常关联交易预计额度；变更公司名称、证券简称、注册资本、经营范围并修订《公司章程》。出席会议股东代表股份6.11亿股，占公司有表决权股份总数的75.37%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">国投中鲁</span><span>中国证券报</span><span>·</span><span>2026-11-03</span><a class="n-link" href="http://app.cnstock.com/zzb/zgzqb/html/2026-11/03/nw.D110000zgzqb_20261103_7-B026.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="进博会开幕在即：鑫荣懋首发佳沃洞洞椰 佳农首发荷兰魔星苹果 第九届进博会11月5—10日举行，全球首发、亚洲首展、中国首秀展品超480件，数量创历年新高。鑫荣懋智利将全球首发泰国佳沃洞洞椰，并带来白玉珍珠榴莲、脆脆莓等首发鲜果；佳农全球首发荷兰瓦赫宁根大学选育的魔星苹果，计划春节前正式投入市场。 鑫荣懋、佳农 新浪财经（新闻晨报）" style="--acc:var(--s1)"><a class="n-title" href="https://finance.sina.cn/2026-11-03/detail-inixmxcu9886343.d.html" target="_blank" rel="noopener noreferrer">进博会开幕在即：鑫荣懋首发佳沃洞洞椰 佳农首发荷兰魔星苹果</a><p class="n-sum">第九届进博会11月5—10日举行，全球首发、亚洲首展、中国首秀展品超480件，数量创历年新高。鑫荣懋智利将全球首发泰国佳沃洞洞椰，并带来白玉珍珠榴莲、脆脆莓等首发鲜果；佳农全球首发荷兰瓦赫宁根大学选育的魔星苹果，计划春节前正式投入市场。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">鑫荣懋、佳农</span><span>新浪财经（新闻晨报）</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://finance.sina.cn/2026-11-03/detail-inixmxcu9886343.d.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="安德利果汁11月3日回购24万股a股 耗资1260.79万元 安德利果汁（02218.hk）公告，于2026年11月3日斥资1260.79万元回购24万股a股。此前公司披露，截至10月31日累计回购a股132.7万股，已支付约7484.81万元。 安德利果汁 证券之星（智通财经）" style="--acc:var(--s1)"><a class="n-title" href="https://wap.stockstar.com/detail/IG2026110300033563" target="_blank" rel="noopener noreferrer">安德利果汁11月3日回购24万股A股 耗资1260.79万元</a><p class="n-sum">安德利果汁（02218.HK）公告，于2026年11月3日斥资1260.79万元回购24万股A股。此前公司披露，截至10月31日累计回购A股132.7万股，已支付约7484.81万元。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">安德利果汁</span><span>证券之星（智通财经）</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://wap.stockstar.com/detail/IG2026110300033563" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="厄尔尼诺推迟智利车厘子产季 早季报价跳升至95—100美元/箱 厄尔尼诺导致智利车厘子采收推迟。贸易商表示，本季早季价格原本预计为50—60美元/箱，受天气影响已跳升至95—100美元/箱；该价位下零售商多持观望，等待更大批量、更优价格到货。 智利车厘子产业 freshplaza" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.com/asia/article/9887739/el-nino-pushes-back-start-of-chilean-cherry-deal/" target="_blank" rel="noopener noreferrer">厄尔尼诺推迟智利车厘子产季 早季报价跳升至95—100美元/箱</a><p class="n-sum">厄尔尼诺导致智利车厘子采收推迟。贸易商表示，本季早季价格原本预计为50—60美元/箱，受天气影响已跳升至95—100美元/箱；该价位下零售商多持观望，等待更大批量、更优价格到货。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">智利车厘子产业</span><span>FreshPlaza</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://www.freshplaza.com/asia/article/9887739/el-nino-pushes-back-start-of-chilean-cherry-deal/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="秘鲁蓝莓产季提前开启 本季总供应或降15%—20% 秘鲁出口组织masojo负责人navarro表示，受气候变化影响，北部蓝莓提前生产，常规的10—11月出口高峰并未出现，本季总体供应量可能下降15%—20%；牛油果则产量同比下降但价格走强，产季以较好价格收官。 秘鲁蓝莓/牛油果产业（masojo） 国际果蔬报道（freshplaza中国）" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.cn/article/9888136/mi-lu-lan-mei-chan-ji-ti-qian-kai-qi-niu-you-guo-chan-ji-ze-zai-jie-ge-zou-shi-xiang-hao-de-qing-kuang-xia-shou-guan/" target="_blank" rel="noopener noreferrer">秘鲁蓝莓产季提前开启 本季总供应或降15%—20%</a><p class="n-sum">秘鲁出口组织Masojo负责人Navarro表示，受气候变化影响，北部蓝莓提前生产，常规的10—11月出口高峰并未出现，本季总体供应量可能下降15%—20%；牛油果则产量同比下降但价格走强，产季以较好价格收官。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">秘鲁蓝莓/牛油果产业（Masojo）</span><span>国际果蔬报道（FreshPlaza中国）</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://www.freshplaza.cn/article/9888136/mi-lu-lan-mei-chan-ji-ti-qian-kai-qi-niu-you-guo-chan-ji-ze-zai-jie-ge-zou-shi-xiang-hao-de-qing-kuang-xia-shou-guan/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="柳州柑橘旺季开启 融安金桔、本地砂糖橘进入上市倒计时 进入11月，柳州果品市场柑橘类集中上新，金秋砂糖橘、早熟蜜桔、脐橙、冰糖橙等批量铺货，融安金桔和本地砂糖橘进入上市倒计时，柑橘成为当前果品市场主力品类。 广西柑橘产区 柳州日报（柳州新闻网）" style="--acc:var(--s3)"><a class="n-title" href="https://www.lzdaily.com.cn/news/article_view.ashx?id=143126" target="_blank" rel="noopener noreferrer">柳州柑橘旺季开启 融安金桔、本地砂糖橘进入上市倒计时</a><p class="n-sum">进入11月，柳州果品市场柑橘类集中上新，金秋砂糖橘、早熟蜜桔、脐橙、冰糖橙等批量铺货，融安金桔和本地砂糖橘进入上市倒计时，柑橘成为当前果品市场主力品类。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">广西柑橘产区</span><span>柳州日报（柳州新闻网）</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://www.lzdaily.com.cn/news/article_view.ashx?id=143126" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="顺德鲜哈密瓜首次出口马来西亚 货值13.2万元 一批原产新疆、货值13.2万元的哈密瓜，在佛山海关驻顺德办事处监管下，于顺德完成分拣筛选、检验检疫和标准化包装后发往马来西亚，实现顺德辖区水果出口零的突破；出口主体为佛山市果美达农业发展有限公司。 佛山市果美达农业发展有限公司 南方日报" style="--acc:var(--s3)"><a class="n-title" href="https://epaper.nfnews.com/nfdaily/html/202611/03/content_10185063.html" target="_blank" rel="noopener noreferrer">顺德鲜哈密瓜首次出口马来西亚 货值13.2万元</a><p class="n-sum">一批原产新疆、货值13.2万元的哈密瓜，在佛山海关驻顺德办事处监管下，于顺德完成分拣筛选、检验检疫和标准化包装后发往马来西亚，实现顺德辖区水果出口零的突破；出口主体为佛山市果美达农业发展有限公司。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">佛山市果美达农业发展有限公司</span><span>南方日报</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://epaper.nfnews.com/nfdaily/html/202611/03/content_10185063.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="11月3日柑橘产地报价：四川屏山脐橙0.80元/斤 低于成本线 11月3日产地报价显示，四川屏山脐橙0.80元/斤、赣南早采果约1.00元/斤，均低于1.20元/斤的种植成本线；当日全国农产品批发价格200指数111.10，6种水果均价6.67元/公斤。赣南脐橙定于11月6日开摘。 柑橘产区 农资与市场" style="--acc:var(--s3)"><a class="n-title" href="http://www.enongzi.com/news/details/02d7262f-a4ff-46ee-b8d4-48cc82ef8131" target="_blank" rel="noopener noreferrer">11月3日柑橘产地报价：四川屏山脐橙0.80元/斤 低于成本线</a><p class="n-sum">11月3日产地报价显示，四川屏山脐橙0.80元/斤、赣南早采果约1.00元/斤，均低于1.20元/斤的种植成本线；当日全国农产品批发价格200指数111.10，6种水果均价6.67元/公斤。赣南脐橙定于11月6日开摘。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">柑橘产区</span><span>农资与市场</span><span>·</span><span>2026-11-03</span><a class="n-link" href="http://www.enongzi.com/news/details/02d7262f-a4ff-46ee-b8d4-48cc82ef8131" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="京东七鲜打通云南蓝莓48小时直达 11.11上新28mm大果 京东11.11期间，七鲜超市打通云南高山蓝莓产地直采链路，最快48小时从枝头直达门店，并通过“全程溯源”展示种植、检测、大仓质检等节点；同时上新市场少见的28mm超大果蓝莓，通常每100吨鲜果仅约1吨达标。 京东（七鲜超市） 云南网" style="--acc:var(--s6)"><a class="n-title" href="http://society.yunnan.cn/system/2026/11/03/034188351.shtml" target="_blank" rel="noopener noreferrer">京东七鲜打通云南蓝莓48小时直达 11.11上新28mm大果</a><p class="n-sum">京东11.11期间，七鲜超市打通云南高山蓝莓产地直采链路，最快48小时从枝头直达门店，并通过“全程溯源”展示种植、检测、大仓质检等节点；同时上新市场少见的28mm超大果蓝莓，通常每100吨鲜果仅约1吨达标。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">京东（七鲜超市）</span><span>云南网</span><span>·</span><span>2026-11-03</span><a class="n-link" href="http://society.yunnan.cn/system/2026/11/03/034188351.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="第44周中国市场：智利空运车厘子上市 santina 2j约700元/件 智利空运车厘子以black rock、santina为主，规格2j、3j，2.5kg装santina 2j约700元/件、3j约800元/件，较首批到货下降10%—15%，采购商多观望；秘鲁蓝莓14/16mm+约80—90元/件，智利牛油果到货增加、价格走软，榴莲到货明显减少，越南金枕a3约300—360元/件。 进口水果批发市场 freshplaza（第44周中国批发市场报告）" style="--acc:var(--s7)"><a class="n-title" href="https://www.freshplaza.com/asia/article/9888144/air-freighted-chilean-cherries-arrive-while-blueberry-supplies-increase/" target="_blank" rel="noopener noreferrer">第44周中国市场：智利空运车厘子上市 Santina 2J约700元/件</a><p class="n-sum">智利空运车厘子以Black Rock、Santina为主，规格2J、3J，2.5kg装Santina 2J约700元/件、3J约800元/件，较首批到货下降10%—15%，采购商多观望；秘鲁蓝莓14/16mm+约80—90元/件，智利牛油果到货增加、价格走软，榴莲到货明显减少，越南金枕A3约300—360元/件。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">进口水果批发市场</span><span>FreshPlaza（第44周中国批发市场报告）</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://www.freshplaza.com/asia/article/9888144/air-freighted-chilean-cherries-arrive-while-blueberry-supplies-increase/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="农业农村部：11月3日6种水果均价6.67元/公斤 环比升0.6% 农业农村部监测显示，11月3日“农产品批发价格200指数”为111.10，比昨天下降0.34个点；重点监测的6种水果平均价格为6.67元/公斤，比昨天上升0.6%。 农业农村部 农业农村部" style="--acc:var(--s7)"><a class="n-title" href="https://www.moa.gov.cn/xw/zxfb/202611/t20261103_6489134.htm" target="_blank" rel="noopener noreferrer">农业农村部：11月3日6种水果均价6.67元/公斤 环比升0.6%</a><p class="n-sum">农业农村部监测显示，11月3日“农产品批发价格200指数”为111.10，比昨天下降0.34个点；重点监测的6种水果平均价格为6.67元/公斤，比昨天上升0.6%。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">农业农村部</span><span>农业农村部</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://www.moa.gov.cn/xw/zxfb/202611/t20261103_6489134.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="韩国甜柿获准输华 17年检疫谈判落地 庆南农协11月3日表示，韩中甜柿出口检疫协商历时17年达成，对华出口检疫审批已于11月2日完成；庆南农协正与5家参与农协（东邑、北昌原、进永、晋州文山、庆南甜柿园艺）及出口企业敲定出口量和装船日程，推进首批对华发货。 庆南农协、韩国甜柿出口公司 韩国纽西斯通讯社（newsis）" style="--acc:var(--s8)"><a class="n-title" href="https://www.newsis.com/view/NISX20261103_0003853323" target="_blank" rel="noopener noreferrer">韩国甜柿获准输华 17年检疫谈判落地</a><p class="n-sum">庆南农协11月3日表示，韩中甜柿出口检疫协商历时17年达成，对华出口检疫审批已于11月2日完成；庆南农协正与5家参与农协（东邑、北昌原、进永、晋州文山、庆南甜柿园艺）及出口企业敲定出口量和装船日程，推进首批对华发货。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">庆南农协、韩国甜柿出口公司</span><span>韩国纽西斯通讯社（Newsis）</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://www.newsis.com/view/NISX20261103_0003853323" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="进博会特许审批：200公斤南非甜樱桃抵沪 国内首秀 11月2日下午，200公斤南非甜樱桃展品运抵上海浦东国际机场，经上海会展中心海关查验放行后进入进博会展馆，实现国内首秀。南非樱桃产季比南美主产区早约三周，可填补国内市场空档期；进博会特许审批为尚未获得检疫准入的农产品提供展示通道。 上海海关、南非樱桃出口商 看看新闻knews" style="--acc:var(--s8)"><a class="n-title" href="https://www.kankanews.com/detail/RXyOLaMe5QV" target="_blank" rel="noopener noreferrer">进博会特许审批：200公斤南非甜樱桃抵沪 国内首秀</a><p class="n-sum">11月2日下午，200公斤南非甜樱桃展品运抵上海浦东国际机场，经上海会展中心海关查验放行后进入进博会展馆，实现国内首秀。南非樱桃产季比南美主产区早约三周，可填补国内市场空档期；进博会特许审批为尚未获得检疫准入的农产品提供展示通道。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">上海海关、南非樱桃出口商</span><span>看看新闻Knews</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://www.kankanews.com/detail/RXyOLaMe5QV" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国内" data-search="对非零关税实施半年 深圳关区水果占享惠货值五成 我国对53个非洲建交国实施零关税半年来，深圳关区自20个建交国以“享惠+担保”方式进口2424票，货值7.99亿元，减让关税7163.96万元，惠及水果、牛皮革、坚果、葡萄酒等22个品目，其中水果占五成；鲜葡萄柚关税由12%降至零，每票货物节省成本约2万元。 深圳海关 深圳特区报（搜狐转载）" style="--acc:var(--s8)"><a class="n-title" href="https://www.sohu.com/a/1096379221_121384255" target="_blank" rel="noopener noreferrer">对非零关税实施半年 深圳关区水果占享惠货值五成</a><p class="n-sum">我国对53个非洲建交国实施零关税半年来，深圳关区自20个建交国以“享惠+担保”方式进口2424票，货值7.99亿元，减让关税7163.96万元，惠及水果、牛皮革、坚果、葡萄酒等22个品目，其中水果占五成；鲜葡萄柚关税由12%降至零，每票货物节省成本约2万元。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">深圳海关</span><span>深圳特区报（搜狐转载）</span><span>·</span><span>2026-11-03</span><a class="n-link" href="https://www.sohu.com/a/1096379221_121384255" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国内" data-search="海关总署第283号令11月1日施行 进境水果口岸监管加严 《海关总署关于修改部分规章的决定》（署令第283号）自11月1日起施行，修改《进境水果检验检疫监督管理办法》等7部规章：新增《生物安全法》依据，明确进境水果应从符合海关监管条件的口岸进境，未完成检验检疫不得擅自移动、销售、使用，并允许经批准的空运港澳中转按原包装、原证书进境。 海关总署 中食安信" style="--acc:var(--s8)"><a class="n-title" href="https://www.antion.net/Cn/News/viewkuaixun/id/LkFaY2hlfL0.html" target="_blank" rel="noopener noreferrer">海关总署第283号令11月1日施行 进境水果口岸监管加严</a><p class="n-sum">《海关总署关于修改部分规章的决定》（署令第283号）自11月1日起施行，修改《进境水果检验检疫监督管理办法》等7部规章：新增《生物安全法》依据，明确进境水果应从符合海关监管条件的口岸进境，未完成检验检疫不得擅自移动、销售、使用，并允许经批准的空运港澳中转按原包装、原证书进境。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">海关总署</span><span>中食安信</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://www.antion.net/Cn/News/viewkuaixun/id/LkFaY2hlfL0.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国际" data-search="智利马乌莱14个市镇进入农业紧急状态 樱桃、蓝莓受灾 因10月强降雨、冰雹和强风，智利农业部宣布马乌莱大区14个市镇进入农业紧急状态，涉及塔尔卡、库里科、利纳雷斯三省；樱桃、蓝莓、蔬菜、谷物和温室番茄受损较重，出现减产、品质下降及果园积水。indap在最新一轮冰雹前已确认672名生产者受灾，官方损失金额尚待汇总。 智利马乌莱水果产区 freshplaza（西班牙语版）" style="--acc:var(--s9)"><a class="n-title" href="https://www.freshplaza.es/latin-america/article/9888471/chile-decreta-emergencia-agricola-en-14-comunas-del-maule-tras-danos-fruticolas/" target="_blank" rel="noopener noreferrer">智利马乌莱14个市镇进入农业紧急状态 樱桃、蓝莓受灾</a><p class="n-sum">因10月强降雨、冰雹和强风，智利农业部宣布马乌莱大区14个市镇进入农业紧急状态，涉及塔尔卡、库里科、利纳雷斯三省；樱桃、蓝莓、蔬菜、谷物和温室番茄受损较重，出现减产、品质下降及果园积水。INDAP在最新一轮冰雹前已确认672名生产者受灾，官方损失金额尚待汇总。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">智利马乌莱水果产区</span><span>FreshPlaza（西班牙语版）</span><span>·</span><span>2026-11-02</span><a class="n-link" href="https://www.freshplaza.es/latin-america/article/9888471/chile-decreta-emergencia-agricola-en-14-comunas-del-maule-tras-danos-fruticolas/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-11-03 18:36 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
