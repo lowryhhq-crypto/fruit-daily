@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.11.12</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.11.12</b> 星期四</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">11</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">8</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">3</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">9</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">11月12日，智利车厘子空运货集中到市，成都批发市场1J/2J/3J分别约26/44/52元一斤、同比每斤便宜至少30元，5斤装3J由去年六七百元降至350—400元；11月8日80余吨空运货运抵浦东，海运大货预计月底起陆续到港。泰国方向，李强11月13—15日访泰将签署鲜榴莲、蛇皮果输华植物检疫议定书，榴莲包装厂须达GMP标准，今年前9个月泰国对华榴莲出口121.77万吨、1398.78亿泰铢。国内苹果入库进入尾声，全国冷库库存966.80万吨、同比多202.56万吨，陕西库容比86.07%，冷库交易清淡、果农货成交零星。柑橘集中上市承压，砂糖橘全国最低批发价跌破6元/公斤，赣南脐橙三地批发价各降0.5元；云南华宁等地低温阴雨，果园排涝防冻。国际上，智利早熟车厘子产量低于预期约25%，缺冷量、冰雹与降雨抬升裂果风险，行业1.3亿箱出口预估待更新；佳沛新西兰奇异果已售95%，大中华区约93%。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="诺普信下属三家公司被诉侵害蓝莓新品种权 涉诉金额3186.57万元 诺普信公告，下属控股公司云南甄莓好农业、爱莓庄农业集团、光筑（云南）农业收到昆明市中级人民法院传票，被云南美鸣农业以侵害植物新品种权为由起诉，涉诉金额3186.57万元；原告请求停止侵权、销毁相关植株及繁殖材料并赔偿损失，案件一审已立案并排期开庭，公司表示不认可原告主张、将积极应诉。 诺普信、爱莓庄 同花顺财经" style="--acc:var(--s1)"><a class="n-title" href="http://stock.10jqka.com.cn/20261112/c681760904.shtml" target="_blank" rel="noopener noreferrer">诺普信下属三家公司被诉侵害蓝莓新品种权 涉诉金额3186.57万元</a><p class="n-sum">诺普信公告，下属控股公司云南甄莓好农业、爱莓庄农业集团、光筑（云南）农业收到昆明市中级人民法院传票，被云南美鸣农业以侵害植物新品种权为由起诉，涉诉金额3186.57万元；原告请求停止侵权、销毁相关植株及繁殖材料并赔偿损失，案件一审已立案并排期开庭，公司表示不认可原告主张、将积极应诉。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">诺普信、爱莓庄</span><span>同花顺财经</span><span>·</span><span>2026-11-12</span><a class="n-link" href="http://stock.10jqka.com.cn/20261112/c681760904.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="佳沛已售出新西兰奇异果95% 大中华区约93% 中秋后需求放缓、客户反映品质问题 佳沛表示本季新西兰奇异果已售出95%、剩余约1100万托盘，预计11月底基本售罄；大中华区已售出约93%，中秋后消费需求放缓，客户也反映果实品质问题；公司称正面对中国本地g3种植的竞争，并讨论可能的中国供应模式，任何方案都需种植者支持。 佳沛 zespri freshplaza" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.com/asia/article/9887337/zespri-sells-95-of-new-zealand-kiwifruit-crop-with-11-million-trays-remaining/" target="_blank" rel="noopener noreferrer">佳沛已售出新西兰奇异果95% 大中华区约93% 中秋后需求放缓、客户反映品质问题</a><p class="n-sum">佳沛表示本季新西兰奇异果已售出95%、剩余约1100万托盘，预计11月底基本售罄；大中华区已售出约93%，中秋后消费需求放缓，客户也反映果实品质问题；公司称正面对中国本地G3种植的竞争，并讨论可能的中国供应模式，任何方案都需种植者支持。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">佳沛 Zespri</span><span>FreshPlaza</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://www.freshplaza.com/asia/article/9887337/zespri-sells-95-of-new-zealand-kiwifruit-crop-with-11-million-trays-remaining/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="全国苹果冷库库存966.80万吨 同比多202.56万吨 陕西库容比86.07%、山东51.70% 截至11月11日，全国主产区苹果冷库库存量966.80万吨，较上周增加72.73万吨，高于去年同期202.56万吨；山东库容比51.70%、栖霞入库量基本持平去年，陕西库容比86.07%、总体库存高于去年且果农货源占比增加，甘肃库容比最高、库内积压明显。 东方财富期货（mysteel）" style="--acc:var(--s3)"><a class="n-title" href="https://qhweb.eastmoney.com/news/202611123929273448.html" target="_blank" rel="noopener noreferrer">全国苹果冷库库存966.80万吨 同比多202.56万吨 陕西库容比86.07%、山东51.70%</a><p class="n-sum">截至11月11日，全国主产区苹果冷库库存量966.80万吨，较上周增加72.73万吨，高于去年同期202.56万吨；山东库容比51.70%、栖霞入库量基本持平去年，陕西库容比86.07%、总体库存高于去年且果农货源占比增加，甘肃库容比最高、库内积压明显。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>东方财富期货（Mysteel）</span><span>·</span><span>2026-11-12</span><a class="n-link" href="https://qhweb.eastmoney.com/news/202611123929273448.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="苹果冷库交易清淡 栖霞80#一二级2.30—2.50元/斤、洛川70#半商品约3.00元/斤 11月12日西部产区库存苹果交易不多，客商以包装自有货源发市场为主、果农货成交零星，洛川冷库暂无主流交易价；山东栖霞地面货进入尾声，纸袋晚富士80#起步一二级2.30—2.50元/斤、统货1.80—2.00元/斤；陕西洛川纸袋富士70#以上半商品约3.00元/斤、统货70#起步2.40—2.50元/斤、冰雹果1.00—2.00元/斤。 同花顺期货（中果网）" style="--acc:var(--s3)"><a class="n-title" href="http://goodsfu.10jqka.com.cn/20261112/c681748121.shtml" target="_blank" rel="noopener noreferrer">苹果冷库交易清淡 栖霞80#一二级2.30—2.50元/斤、洛川70#半商品约3.00元/斤</a><p class="n-sum">11月12日西部产区库存苹果交易不多，客商以包装自有货源发市场为主、果农货成交零星，洛川冷库暂无主流交易价；山东栖霞地面货进入尾声，纸袋晚富士80#起步一二级2.30—2.50元/斤、统货1.80—2.00元/斤；陕西洛川纸袋富士70#以上半商品约3.00元/斤、统货70#起步2.40—2.50元/斤、冰雹果1.00—2.00元/斤。</p><div class="n-meta"><span class="tag 国内">国内</span><span>同花顺期货（中果网）</span><span>·</span><span>2026-11-12</span><a class="n-link" href="http://goodsfu.10jqka.com.cn/20261112/c681748121.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="砂糖橘全国最低批发价跌破6元/公斤 脐橙三地批发价各降0.5元 11月11日销地报价显示，砂糖橘11个市场最低5.60元/公斤（天津碧城）、最高18.00元/公斤，脐橙12个市场4.00—15.00元/公斤、太原河西等三家各降0.50元/公斤，沃柑仅3个市场报价5.40—9.00元/公斤；广西全州砂糖橘产地价2.01元/斤，为全国产地最高。 农资与市场" style="--acc:var(--s3)"><a class="n-title" href="http://www.enongzi.com/news/details/53e5600d-105c-4cbf-98af-4ec2cb10f4b2" target="_blank" rel="noopener noreferrer">砂糖橘全国最低批发价跌破6元/公斤 脐橙三地批发价各降0.5元</a><p class="n-sum">11月11日销地报价显示，砂糖橘11个市场最低5.60元/公斤（天津碧城）、最高18.00元/公斤，脐橙12个市场4.00—15.00元/公斤、太原河西等三家各降0.50元/公斤，沃柑仅3个市场报价5.40—9.00元/公斤；广西全州砂糖橘产地价2.01元/斤，为全国产地最高。</p><div class="n-meta"><span class="tag 国内">国内</span><span>农资与市场</span><span>·</span><span>2026-11-11</span><a class="n-link" href="http://www.enongzi.com/news/details/53e5600d-105c-4cbf-98af-4ec2cb10f4b2" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="智利车厘子价格大跳水 成都批发1j 26元/斤、2j 44元、3j 52元 同比每斤便宜30元以上 新季空运智利车厘子集中上市，四川雨润国际农产品交易中心11月11日1j约26元/斤、2j约44元/斤、3j约52元/斤，同规格较去年每斤便宜至少30元；以3j计，去年约120元一斤，今年5斤装平均350—400元、折合70—80元一斤，降幅33%—42%；盒马2j 250克29.9元、3j 250克39.9元。 盒马 光明网（四川日报）" style="--acc:var(--s7)"><a class="n-title" href="https://m.gmw.cn/2026-11/12/content_1304585377.htm" target="_blank" rel="noopener noreferrer">智利车厘子价格大跳水 成都批发1J 26元/斤、2J 44元、3J 52元 同比每斤便宜30元以上</a><p class="n-sum">新季空运智利车厘子集中上市，四川雨润国际农产品交易中心11月11日1J约26元/斤、2J约44元/斤、3J约52元/斤，同规格较去年每斤便宜至少30元；以3J计，去年约120元一斤，今年5斤装平均350—400元、折合70—80元一斤，降幅33%—42%；盒马2J 250克29.9元、3J 250克39.9元。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">盒马</span><span>光明网（四川日报）</span><span>·</span><span>2026-11-12</span><a class="n-link" href="https://m.gmw.cn/2026-11/12/content_1304585377.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="80余吨智利车厘子运抵浦东 中智检疫新备忘录下采摘到上市最快48小时 11月8日80余吨智利车厘子运抵上海浦东国际机场，我国每年进口量约占智利车厘子出口量的90%；10月29日中智签署鲜食水果输华检疫补充谅解备忘录，简化标签要求、优化冷处理检疫规则，多个口岸空运车厘子可实现采摘到上市72小时、个别口岸48小时；本产季智利车厘子总产量预计72.7万吨。 搜狐新闻" style="--acc:var(--s7)"><a class="n-title" href="https://www.sohu.com/a/1100469142_121124604" target="_blank" rel="noopener noreferrer">80余吨智利车厘子运抵浦东 中智检疫新备忘录下采摘到上市最快48小时</a><p class="n-sum">11月8日80余吨智利车厘子运抵上海浦东国际机场，我国每年进口量约占智利车厘子出口量的90%；10月29日中智签署鲜食水果输华检疫补充谅解备忘录，简化标签要求、优化冷处理检疫规则，多个口岸空运车厘子可实现采摘到上市72小时、个别口岸48小时；本产季智利车厘子总产量预计72.7万吨。</p><div class="n-meta"><span class="tag 国内">国内</span><span>搜狐新闻</span><span>·</span><span>2026-11-12</span><a class="n-link" href="https://www.sohu.com/a/1100469142_121124604" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国际" data-search="李强13—15日访泰 中泰将签鲜榴莲、蛇皮果输华植物检疫议定书 泰国内阁已批准中泰7项合作文件，其中泰国农业与合作社部同中国海关总署将在李强11月13—15日访泰期间签署鲜榴莲和鲜蛇皮果两项植物检疫议定书：榴莲议定书取代2004年版协议、监管从果园gap延伸至包装厂须达gmp，蛇皮果首次获准对华出口；1—9月泰国对华榴莲出口121.7695万吨、1398.78亿泰铢，蛇皮果年产量约3.2万吨、预计年增出口额至少7600万泰铢。 亚洲水果 asiafruit" style="--acc:var(--s8)"><a class="n-title" href="https://asiafruitchina.net/33034.html" target="_blank" rel="noopener noreferrer">李强13—15日访泰 中泰将签鲜榴莲、蛇皮果输华植物检疫议定书</a><p class="n-sum">泰国内阁已批准中泰7项合作文件，其中泰国农业与合作社部同中国海关总署将在李强11月13—15日访泰期间签署鲜榴莲和鲜蛇皮果两项植物检疫议定书：榴莲议定书取代2004年版协议、监管从果园GAP延伸至包装厂须达GMP，蛇皮果首次获准对华出口；1—9月泰国对华榴莲出口121.7695万吨、1398.78亿泰铢，蛇皮果年产量约3.2万吨、预计年增出口额至少7600万泰铢。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>亚洲水果 Asiafruit</span><span>·</span><span>2026-11-12</span><a class="n-link" href="https://asiafruitchina.net/33034.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国际" data-search="智利早熟车厘子产量低于预期25% 缺冷量、冰雹与降雨抬升裂果风险 智利2026/27产季早熟车厘子产量不及预期，一位出口商称其公司到货量已比初始预估少至少25%，早熟品种坐果不理想，原因可能是冷量不足，部分产区还遭冰雹；降雨虽不直接减产，但会带来裂果与真菌病害风险，行业初始出口预估1.3亿箱、更新预测即将发布，中国仍是其最主要目的地且对品质要求明显提高。 freshplaza" style="--acc:var(--s9)"><a class="n-title" href="https://www.freshplaza.com/north-america/article/9890078/the-chinese-market-no-longer-pays-for-fruit-that-fails-to-meet-its-standards/" target="_blank" rel="noopener noreferrer">智利早熟车厘子产量低于预期25% 缺冷量、冰雹与降雨抬升裂果风险</a><p class="n-sum">智利2026/27产季早熟车厘子产量不及预期，一位出口商称其公司到货量已比初始预估少至少25%，早熟品种坐果不理想，原因可能是冷量不足，部分产区还遭冰雹；降雨虽不直接减产，但会带来裂果与真菌病害风险，行业初始出口预估1.3亿箱、更新预测即将发布，中国仍是其最主要目的地且对品质要求明显提高。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>FreshPlaza</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://www.freshplaza.com/north-america/article/9890078/the-chinese-market-no-longer-pays-for-fruit-that-fails-to-meet-its-standards/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="12日回暖见顶 13—17日大范围雨雪、14—18日两股冷空气降温6—10℃ 11月12日中东部大部处于回暖阶段，13—17日将出现大范围雨雪，华南、江南等地有中到大雨、局地暴雨或大暴雨；14—18日两股冷空气接力，大部降温6—10℃、局地超12℃；第32号台风“查帕卡”已达巅峰后转向东北、快速减弱，预计不登陆我国、无直接影响。 搜狐新闻" style="--acc:var(--s9)"><a class="n-title" href="https://m.sohu.com/a/1100131267_122742195" target="_blank" rel="noopener noreferrer">12日回暖见顶 13—17日大范围雨雪、14—18日两股冷空气降温6—10℃</a><p class="n-sum">11月12日中东部大部处于回暖阶段，13—17日将出现大范围雨雪，华南、江南等地有中到大雨、局地暴雨或大暴雨；14—18日两股冷空气接力，大部降温6—10℃、局地超12℃；第32号台风“查帕卡”已达巅峰后转向东北、快速减弱，预计不登陆我国、无直接影响。</p><div class="n-meta"><span class="tag 国内">国内</span><span>搜狐新闻</span><span>·</span><span>2026-11-12</span><a class="n-link" href="https://m.sohu.com/a/1100131267_122742195" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="云南华宁持续降温降雨 柑桔等作物受影响 果园排涝防冻防霜冻 华宁县连日迎来持续降温降雨天气，低温高湿对小春粮食、蔬菜、柑桔、中药材等特色农作物生长带来不利影响；当地指导果园疏通沟渠排涝、防止积水烂根，采取树干刷白、根部培土防冻，降温前喷施磷钾肥和氨基酸叶面肥，低洼果园提前备好熏烟物资防范霜冻。 澎湃新闻（华宁头条）" style="--acc:var(--s9)"><a class="n-title" href="https://m.thepaper.cn/newsDetail_forward_34455636" target="_blank" rel="noopener noreferrer">云南华宁持续降温降雨 柑桔等作物受影响 果园排涝防冻防霜冻</a><p class="n-sum">华宁县连日迎来持续降温降雨天气，低温高湿对小春粮食、蔬菜、柑桔、中药材等特色农作物生长带来不利影响；当地指导果园疏通沟渠排涝、防止积水烂根，采取树干刷白、根部培土防冻，降温前喷施磷钾肥和氨基酸叶面肥，低洼果园提前备好熏烟物资防范霜冻。</p><div class="n-meta"><span class="tag 国内">国内</span><span>澎湃新闻（华宁头条）</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://m.thepaper.cn/newsDetail_forward_34455636" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-11-12 17:36 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
