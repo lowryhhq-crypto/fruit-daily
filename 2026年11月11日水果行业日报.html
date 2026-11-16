@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水果行业日报 2026.11.11</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+ --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221;
+ --text-1:#fff; --text-2:#c3c2b7; --text-3:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --up:#e66767; --down:#3987e5;
+ --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767; --s9:#14b8a6;}
+:root[data-theme="light"]{color-scheme:light;
+ --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#ffffff;
+ --text-1:#0b0b0b; --text-2:#52514e; --text-3:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --up:#e34948; --down:#2a78d6;
+ --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948; --s9:#0d9488;}
+body{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--page);color:var(--text-1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.hd-left{display:flex;gap:14px;align-items:center}
+.logo{font-size:34px;line-height:1}
+h1{font-size:28px;font-weight:700;letter-spacing:.5px}
+.sub{color:var(--text-2);font-size:13px;margin-top:2px}
+.hd-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-2)}
+.pill b{color:var(--text-1)}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--text-2);cursor:pointer}
+.btn:hover{border-color:var(--text-3)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--text-2);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:17px;margin-bottom:12px}
+.note{font-size:12px;color:var(--text-3);margin-bottom:8px}
+/* ===== 板块区块 ===== */
+.seg-section{margin-bottom:30px}
+.seg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;
+ background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--acc);border-radius:12px;margin-bottom:12px}
+.seg-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.seg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+/* ===== 搜索栏 ===== */
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:20px;max-width:560px}
+.searchbar .sicon{font-size:15px;opacity:.7}
+.searchbar input{flex:1;border:none;outline:none;background:transparent;color:var(--text-1);font-size:14px;font-family:inherit}
+.searchbar input::placeholder{color:var(--text-3)}
+/* ===== 板块区块（纵向铺开，无 Tab；空板块不渲染） ===== */
+.seg-list{display:flex;flex-direction:column;gap:9px}
+/* ===== 新闻卡片（紧凑） ===== */
+.n-card{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:9px;padding:10px 11px;margin-bottom:9px;transition:border-color .15s,box-shadow .15s}
+.n-card:hover{border-color:var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.n-title{color:var(--text-1);font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.45}
+.n-title:hover{text-decoration:underline}
+.n-sum{color:var(--text-2);font-size:12px;margin-top:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.n-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:11px;color:var(--text-3)}
+.tag{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+.tag.国内{color:var(--s3);border-color:var(--s3)}
+.tag.国际{color:var(--s1);border-color:var(--s1)}
+.enp{font-size:10px;color:var(--text-2);background:var(--page);border:1px solid var(--border);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.n-link{color:var(--text-3);font-size:11px;text-decoration:none;white-space:nowrap;margin-left:auto;font-weight:600}
+.n-link:hover{color:var(--text-2);text-decoration:underline}
+.imp{font-size:10px;color:var(--s7);border:1px solid var(--s7);border-radius:999px;padding:1px 7px;font-weight:600;white-space:nowrap}
+/* ===== 今日概览（按板块纵向排列） ===== */
+.ov{list-style:none;margin:0;padding:0}
+.ov li{display:flex;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--grid)}
+.ov li:last-child{border-bottom:none}
+.ov-emoji{flex:none;font-size:15px}
+.ov b{flex:none;white-space:nowrap;font-size:13.5px}
+.ov .t{color:var(--text-2);font-size:13px;line-height:1.6}
+.ov-text{color:var(--text-1);font-size:14px;line-height:1.9;text-align:justify;letter-spacing:.2px}
+footer{color:var(--text-3);font-size:12px;border-top:1px solid var(--grid);padding-top:16px;margin-top:8px}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="hd-left"><span class="logo">🍎</span><div><h1>水果行业日报</h1><p class="sub">产业板块 · 当日动态集中呈现（无新闻板块自动收起）</p></div></div>
+  <div class="hd-right"><span class="pill">🗓 <b>2026.11.11</b> 星期三</span><button class="btn" id="theme" onclick="toggleTheme()">🌙 深色</button></div>
+</header>
+
+<div class="searchbar"><span class="sicon">🔍</span><input id="q" type="text" placeholder="搜索新闻 / 企业 / 来源… 输入后按板块实时过滤"></div>
+
+<div class="kpis">
+<div class="kpi"><div class="v">21</div><div class="l">今日新闻</div></div>
+<div class="kpi"><div class="v">11</div><div class="l">覆盖企业家</div></div>
+<div class="kpi"><div class="v">15</div><div class="l">国内动态</div></div>
+<div class="kpi"><div class="v">6</div><div class="l">国际动态</div></div>
+<div class="kpi"><div class="v">20</div><div class="l">数据来源家</div></div>
+</div>
+
+<section class="card"><h2>📌 今日概览</h2><div class="ov-text">11月11日，智利车厘子新产季空运货集中通关，批发价同比大降约四成，盒马、叮咚2J级250克降到29.9元、部分热门规格售罄，海运大货预计11月中下旬到港、11月底起批量上市。第九届进博会10日闭幕，鑫荣懋签约近3亿美元，佳农首发秘鲁有机香蕉、今年进口水果销售额预计达130亿元，参展企业随后转赴深圳参加APEC相关活动。国内产区柑橘进入集中开采期：四川丹棱预计30万吨、大英砂糖橘300多万斤俏销省外，云南昭通85万亩苹果收尾；四川蒲江12万吨猕猴桃下树，产地涨一块、市场没跟涨。批发端6种水果均价6.60元/公斤、环比降1.5%，富士苹果领跌4.1%。国际上，海关总署新开吉尔吉斯斯坦鲜食浆果准入、上海关区对非零关税半年水果享惠7.4亿元；美国加州花期高温致开心果减产58.5%，厄尔尼诺降雨与智利卡车司机抗议继续扰动南美出口。</div></section>
+
+<section class="seg-section" id="seg-domestic" data-title="🏭 国内" style="--acc:var(--s1)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s1)"></span>🏭 国内</div></div><div class="seg-list"><article class="n-card" data-seg="domestic" data-region="国内" data-search="鑫荣懋九赴进博会签约近3亿美元 与佳沛、乐淇、华润万家达成十多项进口水果合作 鑫荣懋集团海外公司在第九届进博会上与佳沛、乐淇、华润万家等上下游伙伴达成十多项进口水果战略合作，签约金额近3亿美元；本届全球首发佳沃白玉珍珠榴莲、佳沃洞洞椰、佳沃脆脆莓等apec鲜果。 鑫荣懋 中国证券网（同花顺转载）" style="--acc:var(--s1)"><a class="n-title" href="http://news.10jqka.com.cn/20261110/c681655292.shtml" target="_blank" rel="noopener noreferrer">鑫荣懋九赴进博会签约近3亿美元 与佳沛、乐淇、华润万家达成十多项进口水果合作</a><p class="n-sum">鑫荣懋集团海外公司在第九届进博会上与佳沛、乐淇、华润万家等上下游伙伴达成十多项进口水果战略合作，签约金额近3亿美元；本届全球首发佳沃白玉珍珠榴莲、佳沃洞洞椰、佳沃脆脆莓等APEC鲜果。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">鑫荣懋</span><span>中国证券网（同花顺转载）</span><span>·</span><span>2026-11-10</span><a class="n-link" href="http://news.10jqka.com.cn/20261110/c681655292.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="domestic" data-region="国内" data-search="佳农首发秘鲁有机香蕉 钱凯港直航最短22天 今年进口水果销售额预计130亿元 佳农集团在进博会首发秘鲁有机香蕉，从钱凯港直航中国最短22天可达；其香蕉进口量连续12年全国第一，全国建有32个配送中心、覆盖200多个城市，2026年进口水果销售额预计达130亿元。 佳农 网易新闻" style="--acc:var(--s1)"><a class="n-title" href="https://www.163.com/dy/article/LBDG7B2T0514CFC7.html" target="_blank" rel="noopener noreferrer">佳农首发秘鲁有机香蕉 钱凯港直航最短22天 今年进口水果销售额预计130亿元</a><p class="n-sum">佳农集团在进博会首发秘鲁有机香蕉，从钱凯港直航中国最短22天可达；其香蕉进口量连续12年全国第一，全国建有32个配送中心、覆盖200多个城市，2026年进口水果销售额预计达130亿元。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">佳农</span><span>网易新闻</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://www.163.com/dy/article/LBDG7B2T0514CFC7.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-overseas" data-title="🌍 海外" style="--acc:var(--s2)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s2)"></span>🌍 海外</div></div><div class="seg-list"><article class="n-card" data-seg="overseas" data-region="国际" data-search="都乐三季度营收23.7亿美元增3.8% 鲜果板块降8% 全年ebitda指引下调至3.8亿—3.9亿美元 dole plc第三季度营收23.7亿美元、同比增3.8%，鲜果板块营收8.187亿美元、降8.0%，主因关税、北美香蕉量减及欧洲菠萝受天气影响；调整后ebitda为8410万美元，全年指引由约4亿美元下调至3.8亿—3.9亿美元。 dole financial news" style="--acc:var(--s2)"><a class="n-title" href="https://www.financial-news.co.uk/dole-cuts-full-year-profit-outlook-after-q3-earnings-miss/" target="_blank" rel="noopener noreferrer">都乐三季度营收23.7亿美元增3.8% 鲜果板块降8% 全年EBITDA指引下调至3.8亿—3.9亿美元</a><p class="n-sum">Dole plc第三季度营收23.7亿美元、同比增3.8%，鲜果板块营收8.187亿美元、降8.0%，主因关税、北美香蕉量减及欧洲菠萝受天气影响；调整后EBITDA为8410万美元，全年指引由约4亿美元下调至3.8亿—3.9亿美元。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span class="enp">Dole</span><span>Financial News</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://www.financial-news.co.uk/dole-cuts-full-year-profit-outlook-after-q3-earnings-miss/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="overseas" data-region="国际" data-search="佳沛进博会：为中国市场研发更甜绿果 探索与中国种植者合作延长供应期 佳沛主席nathan flowerday在第三次参展进博会时表示，公司正为中国消费者偏好研发新的猕猴桃品种（更甜的绿果），并探索与中国种植者合作，以延长在华供货期；未透露商业化时间表。 佳沛 zespri freshplaza" style="--acc:var(--s2)"><a class="n-title" href="https://www.freshplaza.com/asia/article/9891104/zespri-develops-sweeter-green-kiwifruit-variety-for-chinese-market/" target="_blank" rel="noopener noreferrer">佳沛进博会：为中国市场研发更甜绿果 探索与中国种植者合作延长供应期</a><p class="n-sum">佳沛主席Nathan Flowerday在第三次参展进博会时表示，公司正为中国消费者偏好研发新的猕猴桃品种（更甜的绿果），并探索与中国种植者合作，以延长在华供货期；未透露商业化时间表。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">佳沛 Zespri</span><span>FreshPlaza</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://www.freshplaza.com/asia/article/9891104/zespri-develops-sweeter-green-kiwifruit-variety-for-chinese-market/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-production" data-title="🌱 种植" style="--acc:var(--s3)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s3)"></span>🌱 种植</div></div><div class="seg-list"><article class="n-card" data-seg="production" data-region="国内" data-search="四川丹棱桔橙正式开采 预计总产30万吨 坚持不抢早、晚熟供应到次年5月 11月10日丹棱桔橙开采仪式举行，爱媛果冻橙正式采摘，今年预计总产量30万吨；当地坚持“不抢早”，把上市期整体后移，晚熟柑橘供应可延续至次年5月。 丹棱柑橘 封面新闻" style="--acc:var(--s3)"><a class="n-title" href="https://www.thecover.cn/news/NvtzIxZ2XA%2BH90qSdq8Jkw==" target="_blank" rel="noopener noreferrer">四川丹棱桔橙正式开采 预计总产30万吨 坚持不抢早、晚熟供应到次年5月</a><p class="n-sum">11月10日丹棱桔橙开采仪式举行，爱媛果冻橙正式采摘，今年预计总产量30万吨；当地坚持“不抢早”，把上市期整体后移，晚熟柑橘供应可延续至次年5月。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">丹棱柑橘</span><span>封面新闻</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://www.thecover.cn/news/NvtzIxZ2XA%2BH90qSdq8Jkw==" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="云南昭通85万亩苹果进入采收尾期 出口备案基地20余万亩 昭通全市苹果种植面积达85万亩、出口备案基地20余万亩，每年7月至11月鲜果陆续上市；当地以红露、秦脆、瑞雪等品种构建早中晚熟梯次供应，推进标准化与国际化。 云南网" style="--acc:var(--s3)"><a class="n-title" href="http://finance.yunnan.cn/system/2026/11/11/034193404.shtml" target="_blank" rel="noopener noreferrer">云南昭通85万亩苹果进入采收尾期 出口备案基地20余万亩</a><p class="n-sum">昭通全市苹果种植面积达85万亩、出口备案基地20余万亩，每年7月至11月鲜果陆续上市；当地以红露、秦脆、瑞雪等品种构建早中晚熟梯次供应，推进标准化与国际化。</p><div class="n-meta"><span class="tag 国内">国内</span><span>云南网</span><span>·</span><span>2026-11-11</span><a class="n-link" href="http://finance.yunnan.cn/system/2026/11/11/034193404.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="四川大英金秋砂糖橘采收至11月底 今年产量300多万斤、增收100多万斤俏销省外 大英县金秋砂糖橘自10月12日开始采摘、持续到11月底，今年产量300多万斤，较去年增收100多万斤，产品除本地外主要销往河南等省外市场。 大英县人民政府" style="--acc:var(--s3)"><a class="n-title" href="https://www.daying.gov.cn/xinwen/show/b3068c71bee6d95975b5f7835c8bb383.html" target="_blank" rel="noopener noreferrer">四川大英金秋砂糖橘采收至11月底 今年产量300多万斤、增收100多万斤俏销省外</a><p class="n-sum">大英县金秋砂糖橘自10月12日开始采摘、持续到11月底，今年产量300多万斤，较去年增收100多万斤，产品除本地外主要销往河南等省外市场。</p><div class="n-meta"><span class="tag 国内">国内</span><span>大英县人民政府</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://www.daying.gov.cn/xinwen/show/b3068c71bee6d95975b5f7835c8bb383.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="production" data-region="国内" data-search="四川蒲江十二万吨猕猴桃全部下树 产地涨一块、市场没跟涨 蒲江2026年猕猴桃采收于10月底结束，约12万吨鲜果全部下树，红阳、东红、金艳依次收尾；报道显示产地价上涨约一元、终端市场并未同步跟涨，次果转入果汁、果酱、冻干脆片等加工。 网易新闻" style="--acc:var(--s3)"><a class="n-title" href="https://www.163.com/dy/article/LBE2H06E05566RSQ_pdya11y.html" target="_blank" rel="noopener noreferrer">四川蒲江十二万吨猕猴桃全部下树 产地涨一块、市场没跟涨</a><p class="n-sum">蒲江2026年猕猴桃采收于10月底结束，约12万吨鲜果全部下树，红阳、东红、金艳依次收尾；报道显示产地价上涨约一元、终端市场并未同步跟涨，次果转入果汁、果酱、冻干脆片等加工。</p><div class="n-meta"><span class="tag 国内">国内</span><span>网易新闻</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://www.163.com/dy/article/LBE2H06E05566RSQ_pdya11y.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-processing" data-title="🧃 加工" style="--acc:var(--s4)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s4)"></span>🧃 加工</div></div><div class="seg-list"><article class="n-card" data-seg="processing" data-region="国内" data-search="丹江口柑橘榨汁厂项目进入投产倒计时 主产hpp鲜榨果汁 项目占地约61.51亩、总建筑面积约1.86万平方米，改造既有榨汁与hpp灌装车间并新建果皮处理车间、冷冻库等，投产后生产hpp鲜榨果汁等高附加值产品，补齐当地柑橘精深加工短板。 丹江口柑橘榨汁厂 十堰日报" style="--acc:var(--s4)"><a class="n-title" href="https://syrb.10yan.com/html/20261111/223378.html" target="_blank" rel="noopener noreferrer">丹江口柑橘榨汁厂项目进入投产倒计时 主产HPP鲜榨果汁</a><p class="n-sum">项目占地约61.51亩、总建筑面积约1.86万平方米，改造既有榨汁与HPP灌装车间并新建果皮处理车间、冷冻库等，投产后生产HPP鲜榨果汁等高附加值产品，补齐当地柑橘精深加工短板。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">丹江口柑橘榨汁厂</span><span>十堰日报</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://syrb.10yan.com/html/20261111/223378.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="processing" data-region="国内" data-search="咸宁珍果季果蔬项目一期投产 总投资5亿元、布局16条果蔬饮料生产线 珍果季（湖北）食品一期11月初建成投产，一期投资1.5亿元，布局16条专业化果蔬饮料生产线，配备无菌冷灌装与超高压灭菌设备，主营浓缩果蔬汁、果酱及固体饮品，已与多家茶饮品牌合作。 珍果季 香城都市报" style="--acc:var(--s4)"><a class="n-title" href="http://szb.xnnews.com.cn/newb/html/2026-11/10/content_860162.htm" target="_blank" rel="noopener noreferrer">咸宁珍果季果蔬项目一期投产 总投资5亿元、布局16条果蔬饮料生产线</a><p class="n-sum">珍果季（湖北）食品一期11月初建成投产，一期投资1.5亿元，布局16条专业化果蔬饮料生产线，配备无菌冷灌装与超高压灭菌设备，主营浓缩果蔬汁、果酱及固体饮品，已与多家茶饮品牌合作。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">珍果季</span><span>香城都市报</span><span>·</span><span>2026-11-10</span><a class="n-link" href="http://szb.xnnews.com.cn/newb/html/2026-11/10/content_860162.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-supermarket" data-title="🏪 商超" style="--acc:var(--s5)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s5)"></span>🏪 商超</div></div><div class="seg-list"><article class="n-card" data-seg="supermarket" data-region="国内" data-search="2026中国（上海）国际果蔬展10日开幕 350余家企业参展、20余个采购团组对接 展会11月10日上午在上海新国际博览中心开幕，集结20余个参展团组、350余个参展企业，汇聚印尼、泰国、新加坡、俄罗斯、土耳其、马来西亚采购商，同期举办一对一采销洽谈，覆盖鲜果、冷链、深加工全链条。 中国果品流通协会 食品伙伴网（万果会）" style="--acc:var(--s5)"><a class="n-title" href="https://news.foodmate.net/2026/11/756859.html" target="_blank" rel="noopener noreferrer">2026中国（上海）国际果蔬展10日开幕 350余家企业参展、20余个采购团组对接</a><p class="n-sum">展会11月10日上午在上海新国际博览中心开幕，集结20余个参展团组、350余个参展企业，汇聚印尼、泰国、新加坡、俄罗斯、土耳其、马来西亚采购商，同期举办一对一采销洽谈，覆盖鲜果、冷链、深加工全链条。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">中国果品流通协会</span><span>食品伙伴网（万果会）</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://news.foodmate.net/2026/11/756859.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-ecommerce" data-title="🛍️ 电商" style="--acc:var(--s6)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s6)"></span>🛍️ 电商</div></div><div class="seg-list"><article class="n-card" data-seg="ecommerce" data-region="国内" data-search="叮咚买菜“求真溯源”扩至生鲜全品类 70余款商品接入、果切可查切配时间与冷链 叮咚买菜“求真溯源”已覆盖蔬菜、肉禽蛋、果切、水产等品类，共70余款商品接入溯源系统、40余款在app端展示；果切品类把切配时间、加工环境与冷链流转纳入可查范围，链路照片与生产批次绑定。 叮咚买菜 中国食品安全网" style="--acc:var(--s6)"><a class="n-title" href="https://www.cfsn.cn/news/detail/87/376148.html" target="_blank" rel="noopener noreferrer">叮咚买菜“求真溯源”扩至生鲜全品类 70余款商品接入、果切可查切配时间与冷链</a><p class="n-sum">叮咚买菜“求真溯源”已覆盖蔬菜、肉禽蛋、果切、水产等品类，共70余款商品接入溯源系统、40余款在APP端展示；果切品类把切配时间、加工环境与冷链流转纳入可查范围，链路照片与生产批次绑定。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="enp">叮咚买菜</span><span>中国食品安全网</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://www.cfsn.cn/news/detail/87/376148.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-retail" data-title="🛒 鲜果供应链" style="--acc:var(--s7)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s7)"></span>🛒 鲜果供应链</div></div><div class="seg-list"><article class="n-card" data-seg="retail" data-region="国内" data-search="车厘子价格大跳水 盒马、叮咚2j级250克29.9元 山姆等多平台热门规格售罄 新季空运智利车厘子上市后价格明显下调，深圳商超首批空运货批发价降幅约42%，某超市首批订单量为去年1.5倍、每天订货约400—500份；上海盒马、叮咚2j级250克29.9元、3j级39.9元、4j级59.9元，个别畅销规格一度售罄。 盒马、叮咚买菜、山姆 新浪财经（新闻坊）" style="--acc:var(--s7)"><a class="n-title" href="https://finance.sina.com.cn/wm/2026-11-11/doc-iniyitsa2092512.shtml" target="_blank" rel="noopener noreferrer">车厘子价格大跳水 盒马、叮咚2J级250克29.9元 山姆等多平台热门规格售罄</a><p class="n-sum">新季空运智利车厘子上市后价格明显下调，深圳商超首批空运货批发价降幅约42%，某超市首批订单量为去年1.5倍、每天订货约400—500份；上海盒马、叮咚2J级250克29.9元、3J级39.9元、4J级59.9元，个别畅销规格一度售罄。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span class="enp">盒马、叮咚买菜、山姆</span><span>新浪财经（新闻坊）</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://finance.sina.com.cn/wm/2026-11-11/doc-iniyitsa2092512.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="retail" data-region="国内" data-search="首批空运智利车厘子多口岸通关 价格跳水、即将批量上市 首批空运智利车厘子已陆续在上海、深圳、珠海等口岸通关进入国内市场，终端价格较上市初期明显跳水；随着11月中下旬海运货到港、11月底起批量抵达，供应高峰将出现在12月中旬至次年1月中下旬。 光明网" style="--acc:var(--s7)"><a class="n-title" href="https://m.gmw.cn/2026-11/10/content_1304584466.htm" target="_blank" rel="noopener noreferrer">首批空运智利车厘子多口岸通关 价格跳水、即将批量上市</a><p class="n-sum">首批空运智利车厘子已陆续在上海、深圳、珠海等口岸通关进入国内市场，终端价格较上市初期明显跳水；随着11月中下旬海运货到港、11月底起批量抵达，供应高峰将出现在12月中旬至次年1月中下旬。</p><div class="n-meta"><span class="tag 国内">国内</span><span>光明网</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://m.gmw.cn/2026-11/10/content_1304584466.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-relations" data-title="🌐 国际关系" style="--acc:var(--s8)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s8)"></span>🌐 国际关系</div></div><div class="seg-list"><article class="n-card" data-seg="relations" data-region="国内" data-search="上海海关：对非零关税半年水果享惠货值7.4亿元 税款减让1亿元 自5月1日对53个非洲建交国实施零关税半年，上海海关累计保障7436票货物享惠、货值超43亿元；其中水果享惠货值7.4亿元、税款减让1亿元，并对南非鲜橙、葡萄柚、苹果等生鲜水果开辟绿色通道。 东方财富网（澎湃新闻）" style="--acc:var(--s8)"><a class="n-title" href="https://finance.eastmoney.com/a/202611113928350519.html" target="_blank" rel="noopener noreferrer">上海海关：对非零关税半年水果享惠货值7.4亿元 税款减让1亿元</a><p class="n-sum">自5月1日对53个非洲建交国实施零关税半年，上海海关累计保障7436票货物享惠、货值超43亿元；其中水果享惠货值7.4亿元、税款减让1亿元，并对南非鲜橙、葡萄柚、苹果等生鲜水果开辟绿色通道。</p><div class="n-meta"><span class="tag 国内">国内</span><span class="imp">⭐ 重要</span><span>东方财富网（澎湃新闻）</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://finance.eastmoney.com/a/202611113928350519.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="海关总署149号公告：即日起允许吉尔吉斯斯坦鲜食浆果进口 海关总署11月10日发布2026年第149号公告，允许符合检疫要求的吉尔吉斯共和国鲜食浆果进口，品类包括树莓、黑醋栗、黑莓，明确果园与包装厂注册、有害生物监测、包装标识及植物检疫证书要求。 中国（新疆）国际贸易单一窗口" style="--acc:var(--s8)"><a class="n-title" href="https://singlewindow.xj.cn/zcfg/869040448712773.shtml" target="_blank" rel="noopener noreferrer">海关总署149号公告：即日起允许吉尔吉斯斯坦鲜食浆果进口</a><p class="n-sum">海关总署11月10日发布2026年第149号公告，允许符合检疫要求的吉尔吉斯共和国鲜食浆果进口，品类包括树莓、黑醋栗、黑莓，明确果园与包装厂注册、有害生物监测、包装标识及植物检疫证书要求。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>中国（新疆）国际贸易单一窗口</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://singlewindow.xj.cn/zcfg/869040448712773.shtml" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国际" data-search="中越河口招商会签约5800万元 弥勒高泰果业赴越南、老挝建海外仓并供货 11月9日中越园区产业招商会在云南河口举行，弥勒高泰果业与越南老街吉源商贸签订两项协议、总额5800万元：境外海外仓项目投资800万元，出口战略合作约定采购水果及农副产品5000万元，销往越南、老挝等东南亚市场。 高泰果业 网易新闻（弥勒市融媒体中心）" style="--acc:var(--s8)"><a class="n-title" href="https://www.163.com/dy/article/LBDN9CMS0550B6VI.html" target="_blank" rel="noopener noreferrer">中越河口招商会签约5800万元 弥勒高泰果业赴越南、老挝建海外仓并供货</a><p class="n-sum">11月9日中越园区产业招商会在云南河口举行，弥勒高泰果业与越南老街吉源商贸签订两项协议、总额5800万元：境外海外仓项目投资800万元，出口战略合作约定采购水果及农副产品5000万元，销往越南、老挝等东南亚市场。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="enp">高泰果业</span><span>网易新闻（弥勒市融媒体中心）</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://www.163.com/dy/article/LBDN9CMS0550B6VI.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="relations" data-region="国内" data-search="第九届进博会闭幕 参展企业转赴深圳参加apec 农食展区人气最旺 11月10日第九届进博会在上海闭幕，不少参展企业结束上海行程后转赴深圳参加apec相关活动；央视报道称农食产品展区人气最旺，秘鲁香蕉、蓝莓等明星产品试吃排起长队，开放合作接力从上海延续到深圳。 红网（央视新闻）" style="--acc:var(--s8)"><a class="n-title" href="https://news.rednet.cn/nograb/646055/54/16458969.html" target="_blank" rel="noopener noreferrer">第九届进博会闭幕 参展企业转赴深圳参加APEC 农食展区人气最旺</a><p class="n-sum">11月10日第九届进博会在上海闭幕，不少参展企业结束上海行程后转赴深圳参加APEC相关活动；央视报道称农食产品展区人气最旺，秘鲁香蕉、蓝莓等明星产品试吃排起长队，开放合作接力从上海延续到深圳。</p><div class="n-meta"><span class="tag 国内">国内</span><span>红网（央视新闻）</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://news.rednet.cn/nograb/646055/54/16458969.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+<section class="seg-section" id="seg-weather" data-title="⛈️ 气象" style="--acc:var(--s9)"><div class="seg-head"><div class="seg-title"><span class="seg-dot" style="background:var(--s9)"></span>⛈️ 气象</div></div><div class="seg-list"><article class="n-card" data-seg="weather" data-region="国际" data-search="美国加州花期极端高温致开心果严重空壳 本季产量约29.9万吨、同比降58.5% 加州开心果关键花期遭遇持续高温，叠加低产“小年”，实际采收量约29.9万吨，较上一收成年72.1万吨下降58.5%，明显低于inc此前31.5万吨预测；批发价升至多年高位，全球开心果供应链承压。 新京报" style="--acc:var(--s9)"><a class="n-title" href="https://www.bjnews.com.cn/detail/1794302684129354.html" target="_blank" rel="noopener noreferrer">美国加州花期极端高温致开心果严重空壳 本季产量约29.9万吨、同比降58.5%</a><p class="n-sum">加州开心果关键花期遭遇持续高温，叠加低产“小年”，实际采收量约29.9万吨，较上一收成年72.1万吨下降58.5%，明显低于INC此前31.5万吨预测；批发价升至多年高位，全球开心果供应链承压。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>新京报</span><span>·</span><span>2026-11-10</span><a class="n-link" href="https://www.bjnews.com.cn/detail/1794302684129354.html" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国际" data-search="厄尔尼诺降雨叠加卡车司机抗议 智利车厘子首班快线改港、秘鲁蓝莓预测再下调 智利圣安东尼奥港因卡车司机抗议一度中断，首班对华“樱桃快线”改由瓦尔帕莱索启航；厄尔尼诺降雨使智利车厘子果个偏小、品质下降，毛莱部分地区11月2日宣布农业紧急状态，秘鲁蓝莓本季产量预测下调至比上年低约10%。 tzp news" style="--acc:var(--s9)"><a class="n-title" href="https://tzp.news/en/news/2026-11-11-el-nino-ve-kamyoncu-eylemi-guney-amerika-meyve-ihracatinda-lojistigi-zorluyor/" target="_blank" rel="noopener noreferrer">厄尔尼诺降雨叠加卡车司机抗议 智利车厘子首班快线改港、秘鲁蓝莓预测再下调</a><p class="n-sum">智利圣安东尼奥港因卡车司机抗议一度中断，首班对华“樱桃快线”改由瓦尔帕莱索启航；厄尔尼诺降雨使智利车厘子果个偏小、品质下降，毛莱部分地区11月2日宣布农业紧急状态，秘鲁蓝莓本季产量预测下调至比上年低约10%。</p><div class="n-meta"><span class="tag 国际">国际</span><span class="imp">⭐ 重要</span><span>TZP News</span><span>·</span><span>2026-11-11</span><a class="n-link" href="https://tzp.news/en/news/2026-11-11-el-nino-ve-kamyoncu-eylemi-guney-amerika-meyve-ihracatinda-lojistigi-zorluyor/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article><article class="n-card" data-seg="weather" data-region="国内" data-search="寒潮影响接近尾声 云南降雨持续至12日 0℃线南压至陕西南部 11月10日中东部寒潮过程接近尾声、气温回升但早晚仍低，早晨0℃线南压至陕西南部到华北南部一带；云南、贵州、四川西南部、广西多降水，云南中西部部分地区大到暴雨，降雨将持续至12日，利于缓和旱情但需防山洪滑坡。 中国农业农村信息网" style="--acc:var(--s9)"><a class="n-title" href="http://www.agri.cn/sc/nyqx/202611/t20261110_8882728.htm" target="_blank" rel="noopener noreferrer">寒潮影响接近尾声 云南降雨持续至12日 0℃线南压至陕西南部</a><p class="n-sum">11月10日中东部寒潮过程接近尾声、气温回升但早晚仍低，早晨0℃线南压至陕西南部到华北南部一带；云南、贵州、四川西南部、广西多降水，云南中西部部分地区大到暴雨，降雨将持续至12日，利于缓和旱情但需防山洪滑坡。</p><div class="n-meta"><span class="tag 国内">国内</span><span>中国农业农村信息网</span><span>·</span><span>2026-11-10</span><a class="n-link" href="http://www.agri.cn/sc/nyqx/202611/t20261110_8882728.htm" target="_blank" rel="noopener noreferrer">原文 ↗</a></div></article></div></section>
+
+<footer>
+  <p>生成时间：2026-11-11 17:35 ｜ 数据来源：公开网络新闻（见各条链接）｜ 新闻按影响力重要性排序（imp 字段）</p>
+  <p>板块色：🏭国内 蓝 / 🌍海外 橙 / 🌱种植 青 / 🧃加工 黄 / 🏪商超 粉 / 🛍️电商 绿 / 🛒鲜果供应链 紫 / 🌐国际关系 红 / ⛈️气象 青绿</p>
+  <p>本日报由 <b>/水果日报</b> 技能自动汇总生成，新闻摘要基于公开报道整理，仅供内部参考。</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){var h=document.documentElement;var c=h.getAttribute("data-theme");
+h.setAttribute("data-theme",c==="dark"?"light":"dark");
+document.getElementById("theme").textContent=h.getAttribute("data-theme")==="dark"?"☀️ 亮色":"🌙 深色";}
+/* 搜索：按板块就地过滤（页面无 Tab、九板块纵向铺开） */
+function applyFilters(){
+var q=(document.getElementById("q").value||"").trim().toLowerCase();
+var hasQ=q!=="";
+document.querySelectorAll(".seg-section").forEach(function(section){
+var cards=Array.prototype.slice.call(section.querySelectorAll(".n-card"));
+if(!hasQ){
+section.style.display="";
+cards.forEach(function(c){c.style.display="";});
+return;
+}
+var hits=cards.filter(function(c){return (c.getAttribute("data-search")||"").indexOf(q)>-1;});
+cards.forEach(function(c){c.style.display="none";});
+hits.forEach(function(c){c.style.display="";});
+section.style.display=hits.length?"":"none";
+});
+}
+document.getElementById("q").addEventListener("input",applyFilters);
+applyFilters();
+
+</script>
+</body>
+</html>
